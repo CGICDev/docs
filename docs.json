@@ -35,6 +35,17 @@
         ]
       },
       {
+         "tab": "Quincy Tab",
+         "groups": [
+          {
+            "group": "Quincy 1",
+            "pages": [
+              "for-quincy/quincy"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "API Reference",
         "groups": [
           {
