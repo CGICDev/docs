@@ -87,8 +87,8 @@
     }
   },
   "logo": {
-    "light": "/logo/CGICLogoWhite.svg",
-    "dark": "/logo/CGICLogoDark.svg"
+    "light": "/logo/CGICLogoDark.svg",
+    "dark": "/logo/CGICLogoWhite.svg"
   },
   "navbar": {
     "links": [
