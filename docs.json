@@ -11,10 +11,10 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Core Features",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Products",
             "pages": [
               "index",
               "quickstart",
@@ -22,7 +22,7 @@
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Raw Materials",
             "pages": [
               "essentials/markdown",
               "essentials/code",
@@ -33,40 +33,95 @@
             ]
           },
            {
-            "group": "Quincy Group",
+            "group": "Suppliers",
             "pages": [
               "essentials/markdown",
               "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "essentials/images"
+            ]
+          },
+           {
+            "group": "Customers",
+            "pages": [
+              "essentials/markdown",
+              "essentials/code",
+              "essentials/images"
+            ]
+          },
+           {
+            "group": "Procurement",
+            "pages": [
+              "essentials/markdown",
+              "essentials/code",
+              "essentials/images"
+            ]
+           },
+           {
+            "group": "Finance & Accounts",
+            "pages": [
+              "essentials/markdown",
+              "essentials/code",
+              "essentials/images"
             ]
           }
         ]
       },
       {
-         "tab": "Quincy Tab",
+         "tab": "Manufacturing",
          "groups": [
           {
-            "group": "Quincy 1",
+            "group": "Bill of Materials (BOM)",
             "pages": [
+              "for-quincy/quincy",
+              "for-quincy/quincy",
               "for-quincy/quincy"
+            ]
+          },
+           {
+            "group": "Warehouse Management",
+            "pages": [
+              "essentials/markdown",
+              "essentials/code",
+              "essentials/images"
+            ]
+          },
+           {
+            "group": "Production Planning",
+            "pages": [
+              "essentials/markdown",
+              "essentials/code",
+              "essentials/images"
+            ]
+          },
+           {
+            "group": "Sales & Distribution",
+            "pages": [
+              "essentials/markdown",
+              "essentials/code",
+              "essentials/images"
+            ]
+          },
+           {
+            "group": "Asset Management",
+            "pages": [
+              "essentials/markdown",
+              "essentials/code",
+              "essentials/images"
             ]
           }
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "HR",
         "groups": [
           {
-            "group": "API Documentation",
+            "group": "Employee Management",
             "pages": [
               "api-reference/introduction"
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Payroll",
             "pages": [
               "api-reference/endpoint/get",
               "api-reference/endpoint/create",
