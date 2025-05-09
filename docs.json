@@ -3,9 +3,9 @@
   "theme": "almond",
   "name": "CGIC Docs",
   "colors": {
-    "primary": "#47AFCA",
-    "light": "#47AFCA",
-    "dark": "#47AFCA"
+    "primary": "#07b7e5",
+    "light": "#07b7e5",
+    "dark": "#07b7e5"
   },
   "favicon": "/favicon.svg",
   "navigation": {
