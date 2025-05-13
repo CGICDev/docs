@@ -17,7 +17,6 @@
             "group": "Products",
             "pages": [
               "core-features/products/adding-products",
-              "core-features/products/product-details",
               "core-features/products/update-product-details",
               "index",
               "quickstart",
