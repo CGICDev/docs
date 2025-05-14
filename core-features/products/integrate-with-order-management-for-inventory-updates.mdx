@@ -1,0 +1,79 @@
+---
+title: "Integrate with Order management for inventory updates"
+description: "Automatically sync your sales and purchase orders with inventory to keep stock levels accurate in the CGIC App."
+---
+
+<Info>
+  Prerequisites: Before creating a product you’re should have;
+
+  - Logged in and have access to CGIC App inventory management role.
+  - Your products, warehouses, and Suppliers/Customers are already set up
+</Info>
+
+### 1. How Integration Works
+
+<AccordionGroup>
+  <Accordion title="Sales Orders → Delivery Notes → Stock Out ">
+     - When a **Sales Order** is submitted, it reserves stock but doesn’t yet adjust inventory.  
+
+       - Create and submit a **Delivery Note** against the Sales Order.  
+
+       - Submitting the Delivery Note generates a **Stock Entry** of type **Material Issue**, which deducts the delivered quantity from your warehouse.
+  </Accordion>
+  <Accordion title="Purchase Orders → Purchase Receipts → Stock In ">
+       - When a **Purchase Order** is submitted, stock is not yet in hand.  
+
+       - Create and submit a **Purchase Receipt** against the Purchase Order.  
+
+       - Submitting the Purchase Receipt generates a **Stock Entry** of type **Material Receipt**, which increases your warehouse stock.
+  </Accordion>
+  <Accordion title="Returns & Exchanges ">
+     - For sales returns, use **Delivery Note Return** to credit inventory back via a **Material Receipt** stock entry.  
+
+       - For purchase returns, use **Purchase Return** to debit inventory via a **Material Issue** stock entry.
+  </Accordion>
+</AccordionGroup>
+
+### 2. Step-by-Step Setup
+
+1. **Enable Stock Integration**  
+
+   - Go to **Stock ▶️ Settings**.  
+
+   - Ensure **“Maintain Stock”** is checked for all stock-tracked items.  
+
+2. **Configure Default Warehouses**  
+
+   - On each Item record, set **Default Warehouse** under the **Inventory** section.  
+
+   - Optionally, set a **Customer-specific** or **Supplier-specific** warehouse in **Stock Settings ▶️ Warehouse**.
+
+3. **Use Order to Delivery/Purchase Workflow**  
+
+   - Always trigger inventory adjustments via Delivery Notes and Purchase Receipts—never by manual Stock Entry alone.  
+
+   - Link each Delivery Note to its Sales Order and each Purchase Receipt to its Purchase Order.
+
+4. **Automate via Naming Series** (optional)  
+
+   - Standardize your document naming under **Setup ▶️ Naming Series** for Sales Order, Delivery Note, Purchase Order, and Purchase Receipt.  
+
+![Screenshot2025 05 14at7 26 16PM Pn](/images/Screenshot2025-05-14at7.26.16PM.png)
+
+### 3. Monitoring & Reporting
+
+- **Stock Balance Report:** Reflects real-time stock once Delivery Notes and Purchase Receipts are submitted.  
+
+- **Stock Ledger:** Shows every Material Issue/Receipt entry linked back to its originating document.  
+
+- **Reorder Report:** Uses updated stock levels to flag items below their reorder threshold.  
+
+<Accordion title="Best Practices">
+  - **Reserve Before Issue:** Always create Sales Orders before Delivery Notes to reserve stock.  
+
+  - **Match Quantities:** Ensure Delivery Note quantities match Sales Order lines to avoid stock mismatches.  
+
+  - **Regular Audits:** Reconcile Physical Stock vs. Stock Balance using **Stock Reconciliation** entries.  
+
+  - **Permissions:** Restrict manual Stock Entry creation to senior inventory staff to prevent unsynced adjustments.
+</Accordion>

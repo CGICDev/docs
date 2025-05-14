@@ -22,6 +22,7 @@
               "core-features/products/view-product-profile",
               "core-features/products/search-product-records",
               "core-features/products/track-product-stock-levels",
+              "core-features/products/integrate-with-order-management-for-inventory-updates",
               "index",
               "quickstart",
               "development"
