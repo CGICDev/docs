@@ -18,6 +18,8 @@
             "pages": [
               "core-features/products/adding-products",
               "core-features/products/update-product-details",
+              "core-features/products/delete-product",
+              "core-features/products/view-product-profile",
               "index",
               "quickstart",
               "development"
