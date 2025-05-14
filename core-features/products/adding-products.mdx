@@ -8,10 +8,10 @@ description: "This guide walks you through the complete process of adding and co
 Before creating a product you're should have;
 
 - Logged in and have access to CGIC App inventory management role.
-- Determine; \\
-  - **Item code**  (unique identifier, e.g. `OVITA-500ML)`\\
-  - **Item Group** (e.g. “Beverages”)\\
-  - **Default Unit of Measure** (e.g. “Liter”)\\
+- Determine; 
+  - **Item code**  (unique identifier, e.g. `OVITA-500ML)`
+  - **Item Group** (e.g. “Beverages”)
+  - **Default Unit of Measure** (e.g. “Liter”)
   - **Relevant Warehouses** (for stock purposes)
 
 ### 2. How to add products
@@ -37,10 +37,13 @@ Before creating a product you're should have;
 - **Disabled**: If you disable an Item, it cannot be selected in any transaction.
 - **Allow Alternative Item**: Sometimes when manufacturing a finished good, specific material may not be available. If you tick this, you can create and select an alternative item from the Item Alternative list. To know more, visit the [<u>Item Alternative</u>](#) page.
 - **Maintain Stock:** If you are maintaining stock of this Item in your Inventory, ERPNext will make a stock ledger entry for each transaction of this item. Ensure to keep this option unchecked when creating a non-stock Item (make to order/engineer) or a service.
-- **Include Item in Manufacturing**: This is for raw material Items that'll be used to create finished goods. If the Item is an additional service like 'washing' that'll be used in the BOM, keep this unchecked.
 - **Valuation Rate**: There are two options to maintain valuation of stock. FIFO (first in - first out) and Moving Average. To understand this topic in detail please visit [<u>Item Valuation, FIFO and Moving Average</u>](#).
-- **Standard Selling Rate**: When _creating_ an Item, entering a value for this field will automatically create an [<u>Item Price</u>](#) at the backend. Entering a value after the Item has been saved will not work. In this case, the Item Price is created from any transactions with the Item. The rate at which you'll sell the item. This will be fetched in Sales Orders and Sales Invoices.
 - **Is Fixed Asset**: Tick this checkbox if this item is a company Asset. Check out the [<u>Asset Module</u>](#) to know more.
-- **Auto Create Assets on Purchase**: If Item is a Company Asset, tick this checkbox if you want to auto create assets while purchasing this item through [<u>Purchase Cycle</u>](#). Check out the [<u>Asset Page</u>](#) to know more.
-- **Allowance Percentage**: This option will be available only when you create and save the item. This is the percent by which you will be allowed to over-bill or over-deliver this Item. If not set, it will select from [<u>Stock Settings</u>](#).
 - **Uploading an Image**: To upload an image for your icon that will appear in all transactions, save the partially filled form. Only after your file is saved the 'Change' button will appear on the Image icon. Click on Change, then click on Upload, and upload the image.
+
+### **3. Brand and Description**
+
+- **Brand**: If you have more than one brand save them under Selling \> Brand and pre-select them while filling a New Item.
+- **Description**: Description of the item. The text from the Item Code will be fetched by default
+
+![Screenshot2025 05 14at1 45 24AM Pn](/images/Screenshot2025-05-14at1.45.24AM.png)
