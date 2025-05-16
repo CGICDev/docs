@@ -25,6 +25,7 @@
               "core-features/products/track-product-stock-levels",
               "core-features/products/integrate-with-order-management-for-inventory-updates",
               "core-features/products/manage-update-product-pricing",
+              "core-features/products/manage-product-vendors-distributors",
               "index",
               "quickstart",
               "development"
