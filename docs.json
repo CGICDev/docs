@@ -21,6 +21,7 @@
               "core-features/products/delete-product",
               "core-features/products/view-product-profile",
               "core-features/products/search-product-records",
+              "core-features/products/manage-product-categories",
               "core-features/products/track-product-stock-levels",
               "core-features/products/integrate-with-order-management-for-inventory-updates",
               "core-features/products/manage-update-product-pricing",
