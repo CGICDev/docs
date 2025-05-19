@@ -26,6 +26,7 @@
               "core-features/products/integrate-with-order-management-for-inventory-updates",
               "core-features/products/manage-update-product-pricing",
               "core-features/products/manage-product-vendors-distributors",
+              "core-features/products/provide-product-data-for-financial-reporting",
               "index",
               "quickstart",
               "development"
