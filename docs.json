@@ -27,7 +27,7 @@
               "core-features/products/manage-update-product-pricing",
               "core-features/products/manage-product-vendors-distributors",
               "core-features/products/provide-product-data-for-financial-reporting",
-              "core-features/products/provide-product-data-for-financial-reporting",
+              "core-features/products/inventory-transfer-store-to-store-warehouse-to-warehouse-warehouse-to-store",
               "index",
               "quickstart",
               "development"
