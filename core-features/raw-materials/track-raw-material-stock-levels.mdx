@@ -1,0 +1,45 @@
+---
+title: "Track Raw Material Stock Levels"
+description: "Stay on top of your raw material inventory by using the **Stock Balance** and **Stock Ledger** reports in the CGIC App."
+---
+
+<Info>
+  Prerequisites
+
+  - Raw materials are created under **Stock ▶️ Item List** with **Item Group = Raw Materials**
+  - Warehouses (e.g., “Raw Material Store”) are configured
+</Info>
+
+### 1.0 View Current Stock with Stock Balance
+
+1. **Open Stock Balance**
+   - Navigate to **Stock ▶️ Stock Balance**.
+2. **Filter for Raw Materials**
+   - Click **Add Filter ▶️ Item Group = Raw Materials**.
+   - (Optional) Add **Warehouse = Raw Material Store**.
+3. **Read Columns**
+   - **Opening Qty**: Stock at period start
+   - **In Qty**: Purchases / receipts during period
+   - **Out Qty**: Usage in production or transfers
+   - **Closing Qty**: Available on hand
+
+### 2.0 Analyze Movements with Stock Ledger
+
+1. **Open Stock Ledger**
+   - Go to **Stock ▶️ Stock Ledger**.
+2. **Filter to Your Material**
+   - **Item**: enter the raw material code (e.g., `RM-WF-25KG`).
+   - **Warehouse**: select “Raw Material Store” if needed.
+3. **Interpret Entries**
+   - **Date** / **Time** of each transaction
+   - **Voucher Type** (Purchase Receipt, Material Issue, Transfer)
+   - **In Qty** / **Out Qty** and running **Balance Qty**
+
+### 3.0 Set Reorder Alerts
+
+1. **Configure Reorder Levels**
+   - In each raw material’s **Item** record under **Inventory**, set **Reorder Level** and **Reorder Qty**.
+2. **Run Reorder Report**
+   - **Stock ▶️ Reports ▶️ Reorder Report** to list items below threshold.
+3. **Plan Purchases**
+   - Use this report to generate Purchase Orders before stockouts occur.
