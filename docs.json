@@ -37,6 +37,7 @@
             "group": "Raw Materials",
             "pages": [
               "core-features/raw-materials/add-raw-material",
+              "core-features/raw-materials/update-raw-material-details",
               "essentials/markdown",
               "essentials/code",
               "essentials/images",
