@@ -30,6 +30,7 @@
               "core-features/products/inventory-transfer-store-to-store-warehouse-to-warehouse-warehouse-to-store",
               "core-features/products/products-in-tracking-returns-from-manufacturing",
               "core-features/products/products-out-tracking-to-distributors-individual-orders-damages-expire-products",
+              "core-features/products/audit-trail-movement-log-per-product",
               "index",
               "quickstart",
               "development"
