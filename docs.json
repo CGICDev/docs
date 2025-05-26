@@ -38,6 +38,9 @@
             "pages": [
               "core-features/raw-materials/add-raw-material",
               "core-features/raw-materials/update-raw-material-details",
+              "core-features/raw-materials/delete-raw-material-if-applicable",
+              "core-features/raw-materials/view-raw-material-profile",
+              "core-features/raw-materials/search-raw-material-records",
               "essentials/markdown",
               "essentials/code",
               "essentials/images",
