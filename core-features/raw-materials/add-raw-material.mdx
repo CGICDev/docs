@@ -4,36 +4,25 @@ description: "Learn how to create and configure a new raw material item in your 
 ---
 
 <Info>
-  Prerequisites\
-  \
-  1. **Basic Setup**  
+  Prerequisites
 
-     - Warehouses where you’ll store raw materials (e.g., “Raw Material Store”) are created under **Stock ▶️ Warehouse**.  
-
-     - Unit of Measure entries (e.g., Kilogram, Litre, Piece) exist under **Setup ▶️ UOM**.  
-
-  2. **Information on Hand**  
-
-     - **Material Name** (e.g., “Premium Wheat Flour”)  
-
-     - **Material Code** (unique, e.g. `RM-WF-25KG`)  
-
-     - **Default UOM** (e.g., Kilogram)  
-
-     - **Default Warehouse** (where stock is stored)  
+  1. **Basic Setup**
+     - Warehouses where you’ll store raw materials (e.g., “Raw Material Store”) are created under **Stock ▶️ Warehouse**.
+     - Unit of Measure entries (e.g., Kilogram, Litre, Piece) exist under **Setup ▶️ UOM**.
+  2. **Information on Hand**
+     - **Material Name** (e.g., “Premium Wheat Flour”)
+     - **Material Code** (unique, e.g. `RM-WF-25KG`)
+     - **Default UOM** (e.g., Kilogram)
+     - **Default Warehouse** (where stock is stored)
 </Info>
 
 ### 1.0 Steps to Add a Raw Material
 
-1. **Open the Item List**  
-
+1. **Open the Item List**
    - From the home page, click **Stock ▶️ Item ▶️ Item List**.
-
-2. **Create a New Item**  
-
+2. **Create a New Item**
    - Click **New** in the top-right corner.
-
-3. **Enter Basic Details**  
+3. **Enter Basic Details**
 
 | Field           | What to Enter                                    |
 | --------------- | ------------------------------------------------ |
@@ -43,7 +32,7 @@ description: "Learn how to create and configure a new raw material item in your 
 | **Default UOM** | Kilogram                                         |
 | **Description** | Brief notes, e.g., “High-grade flour for baking. |
 
-  4. **Inventory Settings**  
+4. **Inventory Settings**
 
 Switch to the **Inventory** tab and fill in:
 
@@ -58,7 +47,7 @@ Switch to the **Inventory** tab and fill in:
 | Weight UOM                    | e.g. `Kilogram`                                                |
 | Allow Negative Stock          | ✔️ (optional) – permits back-to-back selling when stock hits 0 |
 
-5. **Define Barcodes (Optional)**  
+5. **Define Barcodes (Optional)**
 
    Still on the **Inventory** tab, scroll to **Barcodes** and click **Add Row** to map any of these:
 
@@ -71,52 +60,32 @@ Switch to the **Inventory** tab and fill in:
 ![Screenshot2025 05 26at12 51 03PM Pn](/images/Screenshot2025-05-26at12.51.03PM.png)
 
 \
-6. **Purchasing Configuration**  
+6. **Purchasing Configuration**
 
-   - Click the **Purchasing** tab.  
+- Click the **Purchasing** tab.
+- **Purchase UOM**: confirm (e.g., “Kilogram”)
+- **Supplier Details**:
+  - Click **Add Row** under **Supplier Details**
+  - **Supplier**: pick from your list (or create one if needed)
+  - **Lead Time (Days)**: average delivery time
+  - **Last Purchase Rate**: cost per UOM (for valuation)
+  - ✔️ **Allow Purchase** should be checked
 
-   - **Purchase UOM**: confirm (e.g., “Kilogram”)  
-
-   - **Supplier Details**:  
-
-     - Click **Add Row** under **Supplier Details**  
-
-     - **Supplier**: pick from your list (or create one if needed)  
-
-     - **Lead Time (Days)**: average delivery time  
-
-     - **Last Purchase Rate**: cost per UOM (for valuation)  
-
-     - ✔️ **Allow Purchase** should be checked  
-
-7. **Accounting Setup**  
-
-   - Click the **Accounting** tab.  
-
-   - **Valuation Method**: choose **FIFO** or **Moving Average**  
-
-   - **Expense Account**: e.g., “Cost of Goods Sold – Raw Materials”  
-
-   - **Stock Adjustment Account**: e.g., “Inventory Adjustments”  
-
-8. **Upload Image & Attachments** (optional)  
-
-   - Save the Item first.  
-
-   - Click the image placeholder to **Change** and upload a photo or spec sheet.  
-
-9. **Save Your New Raw Material**  
-
-   - Click **Save** in the top-right corner.  
-
+7. **Accounting Setup**
+   - Click the **Accounting** tab.
+   - **Valuation Method**: choose **FIFO** or **Moving Average**
+   - **Expense Account**: e.g., “Cost of Goods Sold – Raw Materials”
+   - **Stock Adjustment Account**: e.g., “Inventory Adjustments”
+8. **Upload Image & Attachments** (optional)
+   - Save the Item first.
+   - Click the image placeholder to **Change** and upload a photo or spec sheet.
+9. **Save Your New Raw Material**
+   - Click **Save** in the top-right corner.
    - Your raw material is now available for purchase orders, stock entries, and BOMs.
 
 <Tip>
-  - **Shelf Life & End of Life**: Vital for perishable materials—set them to trigger expiry alerts.  
-
-  - **Valuation Method**: Choose according to your accounting policy; FIFO is common for raw ingredients.  
-
-  - **Weight Fields**: Power shipping and cost calculations automatically.  
-
-  - **Barcodes**: Streamline receiving and picking by scanning directly into transactions.  
+  - **Shelf Life & End of Life**: Vital for perishable materials—set them to trigger expiry alerts.
+  - **Valuation Method**: Choose according to your accounting policy; FIFO is common for raw ingredients.
+  - **Weight Fields**: Power shipping and cost calculations automatically.
+  - **Barcodes**: Streamline receiving and picking by scanning directly into transactions.
 </Tip>
