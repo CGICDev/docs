@@ -39,6 +39,7 @@
           {
             "group": "Raw Materials",
             "pages": [
+              "core-features/raw-materials/adding-products",
               "essentials/markdown",
               "essentials/code",
               "essentials/images",
