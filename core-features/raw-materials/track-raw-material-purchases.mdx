@@ -1,0 +1,57 @@
+---
+title: "Track Raw Material Purchases"
+description: "Stay on top of your raw material procurement by creating Purchase Orders, recording receipts, and reviewing purchase reports in the CGIC App."
+---
+
+<Info>
+  Prerequisites
+
+  - Raw materials exist under **Stock ▶️ Item ▶️ Item List**
+  - Suppliers are set up under **Buying ▶️ Supplier ▶️ Supplier List**
+</Info>
+
+### 1.0 Create a Purchase Order
+
+1. **Go to Purchase Orders**
+   - Navigate to **Buying ▶️ Purchase Order ▶️ New Purchase Order**.
+2. **Select Supplier & Date**
+   - Choose the **Supplier** for your raw materials.
+   - Set **Order Date** and **Company**.
+3. **Add Raw Materials**
+   - Click **Add Row** in the **Items** table.
+   - For each material, enter:
+     - **Item Code** (e.g. `RM-WF-25KG`)
+     - **Qty** to order
+     - **Schedule Date** for expected delivery
+     - **Rate** (optional—defaults from Item settings)
+4. **Save & Submit**
+   - Click **Save**, then **Submit**.
+   - The Purchase Order now tracks what you’ve committed to buy.
+
+### 2.0 Record Purchase Receipts
+
+1. **Open Purchase Order**
+   - Go to **Buying ▶️ Purchase Order**, find your order.
+2. **Create Purchase Receipt**
+   - Click **Create ▶️ Purchase Receipt** at the top.
+3. **Verify Items & Qty**
+   - Confirm each **Item Code**, **Qty Received**, and **Warehouse** (e.g., “Raw Material Store”).
+4. **Save & Submit**
+   - Click **Save**, then **Submit**.
+   - A **Material Receipt** stock entry posts and increases your raw material inventory.
+
+### 3.0 Review Stock & Ledger
+
+- **Stock Balance**
+  - Go to **Stock ▶️ Stock Balance**, filter **Item Group = Raw Materials** to see updated quantities.
+- **Stock Ledger**
+  - Navigate to **Stock ▶️ Stock Ledger**, filter **Item** and **Voucher Type = Purchase Receipt** to view purchase entries.
+
+### 4.0 Monitor Purchase Reports
+
+- **Purchase Register**
+  - **Buying ▶️ Reports ▶️ Purchase Register** shows all PO and receipt details, including supplier, dates, and amounts.
+- **Supplier-wise Purchases**
+  - **Buying ▶️ Reports ▶️ Supplier Purchase Analytics** to analyze spend and volume per vendor.
+- **Pending Orders**
+  - **Buying ▶️ Reports ▶️ Purchase Order Status** highlights orders not fully received or billed.
