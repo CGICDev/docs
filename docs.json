@@ -30,16 +30,13 @@
               "core-features/products/inventory-transfer-store-to-store-warehouse-to-warehouse-warehouse-to-store",
               "core-features/products/products-in-tracking-returns-from-manufacturing",
               "core-features/products/products-out-tracking-to-distributors-individual-orders-damages-expire-products",
-              "core-features/products/audit-trail-movement-log-per-product",
-              "index",
-              "quickstart",
-              "development"
+              "core-features/products/audit-trail-movement-log-per-product"
             ]
           },
           {
             "group": "Raw Materials",
             "pages": [
-              "core-features/raw-materials/adding-products",
+              "core-features/raw-materials/add-raw-material",
               "essentials/markdown",
               "essentials/code",
               "essentials/images",
