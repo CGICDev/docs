@@ -1,0 +1,91 @@
+---
+title: "Track Raw Material Movement (In/Out)"
+description: "Tracking raw material movement (incoming and outgoing) in the CGIC App ensures accurate inventory control, cost management, and compliance with production workflows. This documentation guides you through recording and monitoring raw material transactions using built-in stock tools and reports."
+---
+
+<Info>
+  Ensure warehouses (e.g., `Stores`, `Work-in-Progress`) are created under `Stock > Status > Warehouse`
+</Info>
+
+### **1.0 Record Incoming Raw Materials**
+
+#### **1.1 Via Purchase Receipt**
+
+1. Navigate to `Stock > Stock Transactions > Purchase Receipt > New`.
+2. Fill in:
+   - **Supplier**: Select the vendor.
+   - **Items Table**: Add the raw material item.
+   - **Quantity**: Enter received quantity.
+   - **Warehouse**: Select the destination warehouse (e.g., `Stores`).
+   - **Batch/Serial No** (if enabled): Assign or create a batch.
+3. **Submit** to update stock levels.
+
+#### **1.2 Via Stock Entry (Material Receipt)**
+
+Use this for internal transfers or non-purchase receipts (e.g., returns):
+
+1. Go to `Stock > Stock Transactions > Stock Entry > New`.
+2. Set **Purpose** to `Material Receipt`.
+3. Under **Items**:
+   - Add the raw material.
+   - Specify **Quantity** and **Target Warehouse**.
+4. **Submit** to add stock.
+
+### **2.0 Record Outgoing Raw Materials**
+
+#### **2.1. For Production (Stock Entry)**
+
+1. Navigate to `Stock > Stock Transactions > Stock Entry > New`.
+2. Set **Purpose** to `Material Issue` or `Manufacture`.
+3. Under **Items**:
+   - Add the raw material.
+   - Select **Source Warehouse** (e.g., `Stores`).
+   - Assign **Batch/Serial No** (if tracked).
+4. **Submit** to deduct stock.
+
+#### **2.2. Via Delivery Note**
+
+For outgoing materials to customers or other locations:
+
+1. Go to `Stock > Stock Transactions > Delivery Note > New`.
+2. Add the raw material item.
+3. Select **Source Warehouse** and **Quantity**.
+4. **Submit** to record the outbound transaction.
+
+### **3.0 Monitor Material Movement**
+
+#### **3.1 Stock Ledger Report**
+
+1. Navigate to `Stock > Stock Reports > Stock Ledger`.
+2. Filter by **Item**, **Warehouse**, or **Batch** to view:
+   - All incoming/outgoing transactions.
+   - Dates, quantities, and linked documents (e.g., Purchase Receipts, Stock Entries).
+
+#### **3.2 Stock Balance Report**
+
+1. Go to `Stock > Stock Reports > Stock Balance`.
+2. Filter by **Item** or **Warehouse** to see:
+   - Current stock quantity.
+   - Incoming/outgoing trends.
+
+#### **3.3 Batch-Wise Tracking**
+
+1. Navigate to `Stock > Serial No and Batch > Batch`.
+2. Open a batch to view its **Stock Ledger** for movement history.
+
+### **4.0 Automate Alerts and Reordering**
+
+1. **Reorder Levels**: Set **Minimum Stock Level** for items in the **Item List** to trigger alerts.
+2. **Stock Projected Qty Report**: Use `Stock > Stock Reports > Stock Projected Qty` to forecast stock needs.
+
+<Accordion title="Tips" defaultOpen>
+  <Check>
+    **Real-Time Tracking**: Stock levels update automatically with every transaction.
+  </Check>
+  <Check>
+    **Integration**: Movements sync with accounting (e.g., inventory valuation) and manufacturing modules.
+  </Check>
+  <Check>
+    **Audit Trail**: Every transaction is logged with timestamps and user details.
+  </Check>
+</Accordion>

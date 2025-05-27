@@ -1,0 +1,71 @@
+---
+title: "Track Expiry Dates of Raw Materials"
+description: "Tracking expiry dates for raw materials ensures compliance with safety standards, reduces waste, and maintains product quality. The CGIC App allows you to assign and monitor expiry dates at the batch/lot level, providing visibility into shelf life and automating alerts for nearing expiration."
+---
+
+<Note>
+  **Prerequisites**
+
+  - The raw material must be set up as an **Item** in CGIC.
+  - Ensure the item has **Has Batch** enabled
+</Note>
+
+### **1.0 Enable Expiry Date Tracking for an Item**
+
+1. Navigate to the **Item List** (`Stock > Items > Item`).
+2. Select the raw material item.
+3. Under the **Inventory** section:
+   - Ensure **Has Batch** is checked.
+   - Check **Has Expiry Date** to enable expiry tracking.
+4. Save the item.
+
+### **1.1 Assign Expiry Dates to Batches**
+
+#### **A. During Batch Creation**
+
+1. Go to the **Batch** list (`Stock > Batch`).
+2. Click **New**.
+3. Fill in:
+   - **Batch ID**: Unique identifier (e.g., `BATCH-RAW-2024`).
+   - **Item**: Select the raw material item.
+   - **Expiry Date**: Set the expiration date (mandatory).
+4. Save.
+
+#### **B. During Stock Receipt (Purchase Receipt)**
+
+1. Create a **Purchase Receipt** (`Stock > Purchase Receipt > New`).
+2. Add the raw material item and batch:
+   - If **Automatically Create New Batch** is enabled, the system will prompt you to enter the **Expiry Date** for the new batch.
+3. Submit the receipt.
+
+### **2.0 Monitor Expiry Dates**
+
+#### **A. Batch List View**
+
+1. Go to **Batch** list (`Stock > Batch`).
+2. Use filters or the **Expiry Date** column to identify batches nearing expiration.
+
+#### **B. Expiry Report**
+
+1. Run the **Stock Ageing Report** (`Stock > Reports > Stock Ageing`).
+2. Filter by **Item** and **Batch** to view expiry dates and remaining shelf life.
+
+### **3.0 Set Up Expiry Alerts**
+
+1. Navigate to **Stock Settings** (`Settings > Stock Settings`).
+2. Under **Expiry Alerts**:
+   - Enable **Notify Before Expiry**.
+   - Set **Alert Days** (e.g., 30 days before expiry).
+3. Assign **Users/Roles** to receive notifications.
+
+### **4.0 Handle Expired Batches**
+
+- **Block Usage**: Expired batches are automatically excluded from being selected in **Stock Entry** or **Production** transactions.
+- **Write Off**: Create a **Stock Entry** with purpose **Material Transfer** to move expired batches to a scrap warehouse.
+
+<Tip>
+  - **Batch-Wise Valuation**: Track the cost of expired batches separately.
+  - **Auto-Expiry**: Configure workflows to automatically flag expired batches.
+</Tip>
+
+---
