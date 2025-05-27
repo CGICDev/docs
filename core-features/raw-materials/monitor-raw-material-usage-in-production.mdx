@@ -4,79 +4,54 @@ description: "Keep a close eye on how raw materials are consumed during manufact
 ---
 
 <Info>
-  Prerequisites\
-  \
-  - Raw materials and finished goods are defined as **Items**  
+  Prerequisites
 
-  - Bills of Materials (BOMs) exist for your production items 
+  - Raw materials and finished goods are defined as **Items**
+  - Bills of Materials (BOMs) exist for your production items
 </Info>
 
 ### 1.0 Use Production Order Reports
 
-1. **Open Production Order List**  
-
-   - Navigate to **Manufacturing ▶️ Production Order ▶️ Production Order List**.  
-
-2. **Filter by Status**  
-
-   - Use **Filters ▶️ Status = “Completed”** to see finished runs.  
-
-3. **Open a Production Order**  
-
+1. **Open Production Order List**
+   - Navigate to **Manufacturing ▶️ Production Order ▶️ Production Order List**.
+2. **Filter by Status**
+   - Use **Filters ▶️ Status = “Completed”** to see finished runs.
+3. **Open a Production Order**
    - Click an order to view details. Under the **Materials** section, see exactly which raw materials and quantities were issued.
 
 ### 2.0 Review Material Consumption Report
 
-1. **Access Material Consumption**  
-
-   - Go to **Manufacturing ▶️ Reports ▶️ Material Consumption**.  
-
-2. **Set Your Parameters**  
-
-   - **From Date / To Date**: define the period.  
-
-   - **Item Group**: select **Raw Materials**.  
-
-   - (Optional) **Production Item**: filter for specific finished goods.  
-
-3. **Run Report**  
-
-   - Click **Refresh**.  
-
+1. **Access Material Consumption**
+   - Go to **Manufacturing ▶️ Reports ▶️ Material Consumption**.
+2. **Set Your Parameters**
+   - **From Date / To Date**: define the period.
+   - **Item Group**: select **Raw Materials**.
+   - (Optional) **Production Item**: filter for specific finished goods.
+3. **Run Report**
+   - Click **Refresh**.
    - The report shows each raw material, quantity planned (per BOM) vs. quantity consumed (actual issues).
 
 ### 3.0 Compare Planned vs. Actual
 
-- **Planned Qty**: the amount of raw material the BOM called for  
-
-- **Actual Qty**: the amount consumed via **Material Issue** entries  
-
-- **Variance**: planned minus actual—for spotting over-use or wastage  
+- **Planned Qty**: the amount of raw material the BOM called for
+- **Actual Qty**: the amount consumed via **Material Issue** entries
+- **Variance**: planned minus actual—for spotting over-use or wastage
 
 Use these insights to adjust BOMs, improve yield, or investigate production inefficiencies.
 
 ### 4.0 Drill Into Stock Ledger
 
-1. **Open Stock Ledger**  
-
-   - **Stock ▶️ Stock Ledger**  
-
-2. **Filter for Specific Production Runs**  
-
-   - **Voucher Type = “Stock Entry”** and **Purpose = “Material Issue”**  
-
-   - **Against Voucher**: select your Production Order ID  
-
-3. **Analyze Movements**  
-
+1. **Open Stock Ledger**
+   - **Stock ▶️ Stock Ledger**
+2. **Filter for Specific Production Runs**
+   - **Voucher Type = “Stock Entry”** and **Purpose = “Material Issue”**
+   - **Against Voucher**: select your Production Order ID
+3. **Analyze Movements**
    - Each line shows raw material out-flow with timestamps and batch/serial numbers (if used).
 
 ### 5.0 Adjustments & Returns
 
-- If you return unused material from a production run:  
-
-  1. Create a **Stock Entry ▶️ Material Receipt**  
-
-  2. Link to the original Production Order under **Against Voucher**  
-
-  3. Enter returned quantities to update stock  
+- If you return unused material from a production run:
+  1. Create a **Stock Entry ▶️ Material Receipt**
+  2. Link to the original Production Order under **Against Voucher**
+  3. Enter returned quantities to update stock
