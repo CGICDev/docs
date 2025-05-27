@@ -47,6 +47,7 @@
               "core-features/raw-materials/track-raw-material-purchases",
               "core-features/raw-materials/set-reorder-points-for-raw-materials",
               "core-features/raw-materials/monitor-raw-material-usage-in-production",
+              "core-features/raw-materials/manage-product-suppliers",
               "essentials/markdown",
               "essentials/code",
               "essentials/images",
