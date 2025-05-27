@@ -1,0 +1,89 @@
+---
+title: "Track Costing of Raw Materials"
+description: "Monitor and analyze the cost of your raw materials—from purchase price to on-hand valuation—using CGIC App’s costing and valuation tools."
+---
+
+<Info>
+  **Prerequisites**
+
+  - Raw materials defined under **Stock \> Item \> Item List**  
+  -  **Valuation Method** set on each item (FIFO or Moving Average)  
+  - Purchase Receipts recorded with correct **Basic Rate**  
+</Info>
+
+> **Overview**
+>
+> Raw material costing ensures you understand how much you spend on inputs and the value of stock in hand. The CGIC App (built on ERPNext) offers multiple reports and settings to:
+>
+> - Capture purchase costs automatically
+> - Value inventory using FIFO or Moving Average
+> - View real-time stock valuation by item or warehouse 
+> - Track cost variances over time
+
+### Step 1: Set Valuation Method on Each Item 
+
+1. Go to **Stock \> Item \> Item List** and open a raw material.  
+
+2. Click the **Inventory** tab.  
+
+3. Under **Valuation Method**, choose:  
+
+   - **FIFO** (First In, First Out)  
+
+   - **Moving Average**  
+
+4. Click **Save**.  
+
+<Tip>
+  FIFO gives precise batch-by-batch costing; Moving Average smooths price fluctuations.
+</Tip>
+
+### Step 2: Record Purchase Receipts with Cost  
+
+1. Navigate to **Buying \> Purchase Order**, open an order, and click **Create \> Purchase Receipt**.  
+
+2. In each item line, confirm **Basic Rate** reflects the vendor’s unit cost.  
+
+3. Submit the receipt—CGIC App logs this cost and updates stock value.
+
+### Step 3: View Stock Value Report  
+
+1. Go to **Stock \> Reports \> Stock Value**.  
+
+2. Filter by **Item Group = Raw Materials** and **Warehouse** (optional).  
+
+3. Click **Generate New Report**.  
+
+4. The report shows for each item:  
+
+   - **Qty on Hand** × **Valuation Rate** = **Stock Value**  
+
+<Tip>
+  Use this to see total investment in raw materials by warehouse.
+</Tip>
+
+### Step 4: Check Item Price List  
+
+1. Go to **Selling \> Price List** (or **Buying \> Price List**).  
+
+2. Select the **Price List** (e.g., Purchase Price List).  
+
+3. Filter by your raw material to view historical cost entries.  
+
+### Step 5: Analyze Cost Variance with Stock Ledger  
+
+1. Navigate to **Stock \> Stock Ledger**.  
+
+2. Filter by **Item = [Your Raw Material]** and **Voucher Type = Purchase Receipt**.  
+
+3. Review the **Rate** column to see each receipt’s unit cost.  
+
+4. Compare that to the **Balance Qty** to detect cost shifts.  
+
+<Note>
+  Additional Features
+
+  - **Revaluation Entries**: Use **Stock Reconciliation ▶️ Revalue** to adjust on-hand valuation if prices change. 
+  - **Batch-Wise Valuation**: If batches have different costs, enable **Batch Tracking** and view batch rates in **Stock Ledger**.   
+  - **Cost Center Reporting**: Tag receipts to cost centers for departmental cost analysis.
+</Note>

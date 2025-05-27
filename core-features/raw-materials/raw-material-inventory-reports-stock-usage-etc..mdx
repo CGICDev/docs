@@ -1,14 +1,49 @@
 ---
 title: "Raw Material Inventory Reports (Stock, Usage, etc.)"
-description: "Gain actionable insights into your raw material inventory using the built-in report suite of the CGIC App. From current stock levels to consumption trends and ageing analysis, these reports help you optimize procurement, prevent stockouts, and minimize waste.
-"
+description: "
+The CGIC App provides a suite of raw material inventory reports that give visibility into available stock levels, usage trends, and movement history. These reports help ensure materials are available when needed, minimize wastage, and support better decision-making for procurement and production planning."
 ---
 
 <Info>
   Prerequisites
 
-  - Your raw materials are tagged under **Item Group = “Raw Materials”**  
-  - **Warehouses (e.g. “Raw Material Store”) are created in Stock \> Warehouse**
+  - Raw materials have been created and assigned to the **Raw Materials** item group 
+  - Warehouses are configured under **Stock ▶️ Warehouse**
 </Info>
 
 ### 1.0 Stock Balance Report
+
+This shows opening, received, issued, and closing quantities for each raw material over a period.
+
+> 1. Navigate to **Stock \> Reports \> Stock Balance**  
+> 2. Set filters:  
+>
+>    - **Item Group = Raw Materials**  
+>
+>    - **Warehouse = [Your RM Warehouse]** 
+>
+>    - **From Date / To Date**  
+>
+> 3. Click **Generate New Report**  
+>
+> 4. Review columns:  
+>
+>    - **Opening Qty**, **In Qty**, **Out Qty**, **Closing Qty** 
+
+### 2.0 Stock Ledger Report
+
+Provides a detailed log of every raw material transaction (receipts, issues, transfers).
+
+>  1. Go to **Stock \> Reports \> Stock Ledger**  
+>
+> 2. Filter by:  
+>
+>    - **Item = [Raw Material Code]**  
+>
+>    - **Purpose = Material Receipt / Material Issue** (optional)  
+>
+>    - **Warehouse** (optional)  
+>
+> 3. Click **Refresh**  
+>
+> 4. Examine each entry’s **Date**, **In Qty**, **Out Qty**, **Balance Qty**, and **Voucher No**  
