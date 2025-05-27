@@ -1,0 +1,66 @@
+---
+title: "Record Raw Material Batches/Lots"
+description: "In the CGIC App, tracking raw material Batches or Lots ensures traceability, compliance, and efficient inventory management. This feature allows you to assign unique identifiers to raw materials, monitor their usage in production, and maintain quality control."
+---
+
+<Tip>
+  Prerequisites\
+  \
+  - Raw materials exist as **Items** under **Stock ▶️ Item ▶️ Item List**  
+
+  - **Batch Tracking** is enabled in your account via **Stock ▶️ Settings ▶️ Enable Batch and Serial No. Tracking**
+</Tip>
+
+### 1.0  **Enable Batch Tracking for the Item**
+
+1. Navigate to the **Item List** (`Stock > Items > Item`).
+2. Select the raw material item or create a new one.
+3. Under the **Inventory** section:
+   - Check **Has Batch**.
+   - Optional: Enable **Automatically Create New Batch** to generate batch IDs during transactions.
+4. Save the item.
+
+![Screenshot2025 05 27at4 45 01AM Pn](/images/Screenshot2025-05-27at4.45.01AM.png)
+
+### 1.1 **Create Batches/Lots Manually**
+
+If batches require manual creation (e.g., for specific lot numbers or expiration dates):
+
+1. Go to the **Batch** list (`Stock > Batch`).
+2. Click **New**.
+3. Fill in:
+   - **Batch ID**: Unique identifier (e.g., `BATCH-RAW-001`).
+   - **Item**: Select the raw material item from the **Item List**.
+   - **Expiry Date** (if applicable).
+4. Save.
+
+### 2.0 **Record Batches in Stock Transactions**
+
+#### **A. Receiving Batches (Purchase Receipt)**
+
+1. Create a **Purchase Receipt** (`Stock > Purchase Receipt > New`).
+2. Add the raw material item from the **Item List** under the **Items** table.
+3. In the **Batch** column:
+   - Select an existing batch or enter a new batch ID (if auto-creation is enabled).
+4. Submit the receipt.
+
+#### **B. Consuming Batches (Stock Entry for Production)**
+
+1. Create a **Stock Entry** (`Stock > Stock Entry > New`).
+2. Set **Purpose** to **Material Issue** or **Manufacture**.
+3. Under **Items**:
+   - Add the raw material item from the **Item List**.
+   - Select the **Batch** to consume.
+4. Submit the entry.
+
+### 3.0 **Track Batch-wise Stock**
+
+1. View batch-specific stock levels:
+   - Go to the **Batch** list (`Stock > Batch`).
+   - Open the batch to see **Stock Balance** and **Ledger**.
+2. Use the **Stock Balance Report** (`Stock > Reports > Stock Balance`) and filter by batch.
+
+<Accordion title="Additional Features" defaultOpen>
+  - **Automatic Batch Numbering**: Configure numbering series in **Stock Settings** (`Settings > Stock Settings > Batch Number Series`).
+  - **Batch Expiry Alerts**: Set up **Auto-Repeat** for expiry notifications.
+</Accordion>
