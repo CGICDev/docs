@@ -1,0 +1,40 @@
+---
+title: "Manage Raw Material Returns (to Suppliers)"
+description: "Returning raw materials to suppliers is essential for addressing defects, overstocking, or quality issues. The CGIC App allows you to process returns while maintaining accurate inventory records and supplier accountability. This guide covers two methods: Stock Entry and Purchase Receipt reversal."
+---
+
+<Info>
+  **Prerequisites**
+
+  1. **Original Purchase Receipt**: Ensure the raw material was received via a **Purchase Receipt**.
+  2. **Warehouse Setup**: Verify the raw material exists in a warehouse (e.g., `Stores`).
+</Info>
+
+### **Method 1: Return via Stock Entry**
+
+Use this method for direct returns without linking to the original Purchase Receipt.
+
+1. **Create a Stock Entry**:
+   - Navigate to `Stock > Stock Transactions > Stock Entry > New`.
+   - Set **Purpose** to `Material Issue` or `Material Transfer`.
+   - Under **Items**:
+     - **Item**: Select the raw material to return.
+     - **Quantity**: Enter the return quantity (negative value if allowed).
+     - **Source Warehouse**: Select the warehouse where the material is stored.
+     - **Target Warehouse**: _Optional_ – Use a virtual warehouse like `Supplier Returns` if configured.
+     - **Batch/Serial No**: Assign if tracked.
+   - Add comments (e.g., "Return to Supplier – Defective Batch").
+   - **Submit** to deduct stock.
+
+### **Method 2: Reverse Purchase Receipt**
+
+Use this to link the return directly to the original receipt for better traceability.
+
+1. **Create a Return Purchase Receipt**:
+   - Navigate to `Stock > Stock Transactions > Purchase Receipt > New`.
+   - Select the **Supplier** and raw material **Item**.
+   - Enter a **negative quantity** (e.g., `-100`) to reverse the original transaction.
+   - Under **Items**:
+     - **Warehouse**: Select the source warehouse.
+     - **Batch/Serial No**: Match the batch from the original receipt.
+   - **Submit** to reverse stock levels and create a return record.
