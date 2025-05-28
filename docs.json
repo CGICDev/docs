@@ -92,6 +92,10 @@
             "group": "Finance & Accounts",
             "pages": [
               "core-features/finance-accounts/create-and-manage-chart-of-accounts",
+              "core-features/finance-accounts/profit-loss-statement",
+              "core-features/finance-accounts/balance-sheet",
+              "core-features/finance-accounts/cash-flow-statement",
+              "core-features/finance-accounts/trial-balance",
               "core-features/finance-accounts/X",
               "essentials/markdown",
               "essentials/code",
