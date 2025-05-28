@@ -1,4 +1,64 @@
 ---
 title: "Profit & Loss statement"
-description: "Description of your new file."
+description: "The Profit & Loss (P&L) statement—also known as an Income Statement—summarizes your company’s revenues, costs, and expenses over a period, showing net profit or loss. In the CGIC App, you can run a P&L report with flexible filters, date ranges, and cost-center breakdowns."
 ---
+
+> Overview  
+>
+> - **What it does:** Aggregates Income and Expense ledger balances into a structured P&L format  
+>
+> - **Why it matters:** Reveals profitability, cost structure, and margin trends for informed decision-making  
+
+<Info>
+  **Prerequisites  **
+
+  - **Setup:**  
+
+  - Income & Expense accounts defined under `Accounts > Chart of Accounts`  
+  - Cost Centers (optional) configured under `Accounts > Cost Center`  
+  -  All Sales Invoices, Purchase Invoices, and Stock Valuation entries posted  
+</Info>
+
+### 1.0 Navigate to the P&L Report  
+
+1. From the home page, go to `Accounting > Reports > Profit and Loss`.  
+
+2. The P&L form will open, showing basic parameters at the top.
+
+### 1.1 Set Your Filters  
+
+- **Company:** Select the legal entity (e.g., Charisma Industrial)  
+
+- **Fiscal Year:** Choose the accounting year (e.g., 2024–2025)  
+
+- **From Date / To Date:** Define a custom period (e.g., 2025-04-01 to 2025-04-30)  
+
+- **Cost Center** (optional): Filter to department-level P&L  
+
+<Tip>
+  For monthly P&L, set both dates within the same month; for year-to-date, set “From Date” to the fiscal year start.
+</Tip>
+
+### 2.0 Generate the Report  
+
+1. Click **Run** (or **Refresh**).  
+
+2. The report displays:  
+
+   - **Revenue** (Sales, Other Income) subtotal  
+
+   - **Cost of Goods Sold** (COGS) subtotal  
+
+   - **Gross Profit** (Revenue – COGS)  
+
+   - **Expenses** (Operating, Administrative, Other) subtotal  
+
+   - **Net Profit** (Gross Profit – Expenses)  
+
+### 3.0 Drill Down & Analyze  
+
+- **Expand / Collapse Sections:** Click the arrows next to each heading to view ledger-level details.  
+
+- **Cost Center Breakout:** If filtered by Cost Center, you’ll see P&L per department.  
+
+- **Export / Print:** Use the **Download** button to export CSV/PDF for presentations.
