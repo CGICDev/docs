@@ -1,0 +1,54 @@
+---
+title: "Record Raw Material Damages/Spoilage"
+description: "When raw materials are damaged or spoiled, you need to remove them from inventory to keep your stock levels accurate. In the CGIC App, this is done via a **Stock Entry** of type **Material Issue** directing the quantity to a “Damages” or “Scrap” warehouse."
+---
+
+<Info>
+  Prerequisites
+
+  - A “Damages” (or “Scrap”) warehouse exists under `Stock > Warehouse`
+  - Raw materials are defined under `Stock > Item > Item List`
+</Info>
+
+> **Overview**
+>
+> Recording spoilage ensures your system reflects only usable raw materials. By issuing damaged stock into a dedicated “Damages” location, you maintain accurate inventory valuation and can later analyze waste patterns.
+
+### Steps to Record Damages
+
+<Steps>
+  <Step title="Open a New Stock Entry" titleSize="p">
+    1. Navigate to `Stock > Stock Entry`.  
+    2. Click **New** to open a blank Stock Entry form. 
+  </Step>
+  <Step title="Choose “Material Issue” as Purpose">
+    1. In the **Stock Entry Type** (or **Purpose**) dropdown, select **Material Issue**.  
+    2. This tells the system you’re removing stock.
+  </Step>
+  <Step title="Add Damaged Items">
+    1. In the **Items** table, click **Add Row**.  
+    2. For each damaged raw material:  
+
+       - **Item Code**: select the material (e.g., “Premium Wheat Flour”).  
+
+       - **Qty**: enter the spoiled quantity.  
+
+       - **Source Warehouse**: choose where the material currently resides (e.g., “Raw Material Store”).  
+
+       - **Target Warehouse**: select your “Damages” or “Scrap” warehouse.  
+
+       - **Basic Rate**: auto-filled or adjust if needed for valuation.
+  </Step>
+  <Step title="Document the Damage ">
+    1. In the **Remarks** field, briefly note the cause (e.g., “Heat damage,” “Contamination”).  
+
+    2. (Optional) Attach a photo or inspection report via `Attachments > Add Attachment`.
+  </Step>
+  <Step title="Save & Submit">
+    1. Click **Save** to draft your entry.  
+
+    2. Review the quantities and warehouses, then click **Submit**.  
+
+    3. Inventory is updated: usable stock decreases, and damaged stock moves to your “Damages” location.
+  </Step>
+</Steps>
