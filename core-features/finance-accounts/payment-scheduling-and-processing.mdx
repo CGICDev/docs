@@ -1,4 +1,69 @@
 ---
 title: "Payment scheduling and processing"
-description: "Description of your new file."
+description: "Manage your payables with ease—schedule upcoming payments and process them on time in the CGIC App."
 ---
+
+<Info>
+  Prerequisites
+
+  - Purchase Orders exist with valid suppliers and amounts
+  - Suppliers have **Payment Terms** set (e.g., Net 30, Net 60)
+</Info>
+
+<Accordion title="Overview">
+  **What it does:**\
+  Allows you to define payment schedules on purchase orders and then create, track, and submit payment entries when due.
+
+  **Why it matters:**
+
+  - Ensures on-time supplier payments
+  - Improves cash-flow planning
+  - Reduces late-payment fees and strengthens vendor relationships
+</Accordion>
+
+### 1.0 Define Payment Terms on Purchase Orders
+
+1. Go to `Buying > Purchase Order > New` (or open an existing PO).
+2. In the header, find **Payment Terms Template**.
+3. Select a template (e.g., **Net 30**).
+4. Add or adjust **Payment Schedule** rows specifying:
+   - **Due Date** (e.g., 30 days from invoice date)
+   - **Amount (%)** or **Fixed Amount**
+5. Click **Save** and **Submit** your PO.
+
+> Create custom **Payment Terms Templates** under `Buying > Setup > Payment Terms` for repeated use.
+
+### 2.0 Generate Payment Reminders
+
+1. Go to `Buying > Reports > Supplier Due Date`.
+2. Filter by:
+   - **Supplier** (optional)
+   - **From Date / To Date**
+3. Click **Refresh** to see all upcoming and overdue payments.
+4. Export or schedule the report to email yourself or your team.
+
+> Bookmark this report on your dashboard for daily monitoring.
+
+### 3.0 Create a Payment Entry
+
+1. Navigate to `Accounts > Payment Entry > New Payment Entry`.
+2. Select **Payment Type**:
+   - **Pay** (outgoing) for supplier invoices
+   - **Receive** (incoming) if refunding
+3. Set **Party Type = Supplier** and **Party = [Supplier Name]**.
+4. Link the related **Purchase Invoice** or **Journal Entry** in the **References** table.
+5. Confirm **Paid Amount**, **Payment Account**, and **Bank Charges** (if any).
+6. Click **Save**, then **Submit**.
+
+> The system automatically applies the payment to the invoice based on the schedule you defined.
+
+### 4.0 Reconcile Payments
+
+1. Go to `Accounts > Bank Reconciliation`.
+2. Select your **Bank Account**.
+3. Enter **Statement Date** and **Closing Balance**.
+4. Click **Get Entries** to fetch unreconciled Payment Entries and bank statement lines.
+5. Match each payment entry to its bank transaction.
+6. Click **Reconcile** to finalize.
+
+> Regular reconciliation keeps your ledger and bank statement in sync and highlights discrepancies early.

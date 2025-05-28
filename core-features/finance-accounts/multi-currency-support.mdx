@@ -1,4 +1,72 @@
 ---
 title: "Multi-currency support"
-description: "Description of your new file."
+description: "Handle transactions in multiple currencies—record sales, purchases, payments, and more in foreign currencies with automatic conversion and reporting in the CGIC App."
 ---
+
+<Info>
+  Prerequisites
+
+  - Your company’s **Base Currency** is set in `Accounts > Company`
+  - Customers and suppliers have their **Currency** field populated
+  - Exchange rates are defined under `Accounts > Currency Exchange`
+</Info>
+
+<Accordion title="Overview">
+  **What it does:**\
+  Enables you to transact in different currencies, automatically convert amounts to your base currency, and maintain accurate currency-wise balances.
+
+  **Why it matters:**
+
+  - Simplifies international trade and vendor/customer management
+  - Ensures accurate financials with real-time exchange rates
+  - Reduces manual calculation errors and streamlines auditing
+</Accordion>
+
+### 1.0 Steps to Enable and Use Multi-Currency
+
+**1.1 Enable Currency Exchange**
+
+1. Go to `Accounts > Settings`
+2. Check **Enable Currency Exchange Rate Management**
+3. Click **Save**
+
+> This allows you to manage rates manually or configure automatic rate fetching.
+
+**1.2 Maintain Exchange Rates**
+
+1. Navigate to `Accounts > Currency Exchange > Currency Exchange List`
+2. Click **New**
+3. Enter:
+   - **From Currency** (e.g., USD)
+   - **To Currency** (your base, e.g., NGN)
+   - **Exchange Rate**
+   - **Date**
+4. Click **Save**
+
+> Update daily for frequent FX transactions.
+
+**1.3 Assign Currency to Parties**
+
+1. Open a **Customer** or **Supplier** record
+2. Set the **Currency** field (e.g., EUR)
+3. Click **Save**
+
+> All transactions for that party will default to their assigned currency.
+
+### 2.0 Create Transactions in Foreign Currency
+
+#### 2.1 Sales Invoice
+
+1. Go to `Sales > Sales Invoice > New`
+2. Select a customer with a non-base currency
+3. Confirm **Currency** and **Exchange Rate**
+4. Add items, then **Save** and **Submit**
+
+#### 2.2 Purchase Invoice
+
+1. Go to `Buying > Purchase Invoice > New`
+2. Choose a supplier set to a foreign currency
+3. Verify **Currency** and **Exchange Rate**
+4. **Save** and **Submit**
+
+> With Multi-Currency Support in the CGIC App, you can confidently manage global transactions, maintain precise financial records, and report in both local and foreign currencies—seamlessly and accurately.
