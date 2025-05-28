@@ -1,4 +1,80 @@
 ---
 title: "Account Payables"
-description: "Description of your new file."
+description: "Record supplier bills, schedule and process payments, and monitor outstanding payables to maintain strong vendor relationships and healthy cash flow."
 ---
+
+<Info>
+  Prerequisites  
+
+  - Suppliers are set up under `Buying > Supplier`  
+
+  - Expense and liability accounts exist under `Accounts > Chart of Accounts`  
+</Info>
+
+<Accordion title="Overview">
+  **What it does:**  
+
+  Allows you to capture purchase invoices, schedule and record payments, and view aging reports for all outstanding payables.
+
+  **Why it matters:**  
+
+  - Ensures timely supplier payments and avoids late fees  
+
+  - Provides visibility into upcoming cash outflows  
+
+  - Strengthens vendor trust and supports better procurement decisions  
+</Accordion>
+
+### **1.0 Enter a Purchase Invoice**
+
+1. Navigate to `Buying > Purchase Invoice > New  `
+
+2. Select **Supplier**, **Posting Date**, and **Company**  
+
+3. Add item lines or expense descriptions, quantities, rates, and tax rules  
+
+4. Review **Total Amount** and **Due Date**  
+
+5. Click **Save** and then **Submit**  
+
+<Note>
+  If you received goods via a Purchase Receipt, click `Get Items From > Purchase Receipt `to auto-populate lines.
+</Note>
+
+### 1.1 Schedule Payments
+
+1. Open the submitted Purchase Invoice  
+
+2. In the **Payment Schedule** section, click **Add Row**  
+
+3. Specify **Installment Date** and **Amount** (percentage or fixed)  
+
+4. Click **Save**  
+
+<Tip>
+  Define common payment terms (Net 30, 60) under `Buying > Setup > Payment Terms` for reuse.
+</Tip>
+
+### 1.2 Record Payments
+
+1. Go to `Accounts > Payment Entry > New  `
+
+2. Set **Payment Type = Pay**, **Party Type = Supplier**, and choose the **Supplier**  
+
+3. Link open Purchase Invoices in the **References** table  
+
+4. Confirm **Paid Amount**, **Mode of Payment**, and **Paid From** (bank/cash account)  
+
+5. Click **Save**, then **Submit**  
+
+### 1.3 Monitor Payables Aging
+
+1. Open `Accounts > Reports > Payables Aging ` 
+
+2. Filter by **Company**, **From Date / To Date**, or **Supplier**  
+
+3. Click **Refresh** to view:  
+
+   - Invoice dates and due dates  
+
+   - Outstanding amounts grouped by aging buckets (0–30, 31–60 days, etc.)  
