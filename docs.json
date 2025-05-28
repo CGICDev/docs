@@ -91,6 +91,8 @@
            {
             "group": "Finance & Accounts",
             "pages": [
+              "core-features/finance-accounts/create-and-manage-chart-of-accounts",
+              "core-features/finance-accounts/X",
               "essentials/markdown",
               "essentials/code",
               "essentials/images"
