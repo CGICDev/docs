@@ -1,4 +1,56 @@
 ---
 title: "Bank account management"
-description: "Description of your new file."
+description: "Configure and maintain your bank and cash accounts to seamlessly record transactions and reconcile statements in the CGIC App."
 ---
+
+<Accordion title="Overview">
+  **What it does:**\
+  Allows you to create, edit, and deactivate bank or cash accounts, record balances, and reconcile against bank statements.
+
+  **Why it matters:**
+
+  - Provides accurate cash position and liquidity reporting
+  - Ensures reliable reconciliation between system and bank records
+  - Supports multi-currency and multi-company operations
+</Accordion>
+
+<Info>
+  Prerequisites
+
+  - Your company is set up under `Accounts > Company`
+  - Base currency and any additional currencies are configured
+</Info>
+
+### 1.0 Create a New Bank/Cash Account
+
+1. Navigate to `Accounts > Bank Account > New Bank Account.`
+2. Fill in required fields:
+   - **Account Name** (e.g., “CGIC Operating USD Account”)
+   - **Account Number** (your bank’s identifier)
+   - **Bank** (select bank name or add new under `Master Data > Bank`)
+   - **Account Type**: choose **Bank** or **Cash**
+   - **Currency**: base or foreign currency
+   - **Company**: assign to your legal entity
+3. (Optional) Set **Default Cost Center** for transaction tagging.
+4. Click **Save** and then **Submit**.
+
+### 2.0 Edit or Deactivate an Account
+
+1. Go to `Accounts > Bank Account > Bank Account List`.
+2. Click the account name to open its record.
+3. To update details, click **Edit**, make changes, then **Save**.
+4. To remove from active use, check **Disabled** and click **Save**—this preserves history.
+
+### 3.0  Record Opening Balances
+
+1. Open the bank account record.
+2. Under **Opening Balance**, enter your starting balance as of the **As On Date**.
+3. Click **Save**—this creates an initial journal entry for correct opening figures.
+
+### 4.0 Reconcile Bank Statements
+
+1. Navigate to `Accounts > Bank Reconciliation > New Bank Reconciliation.`
+2. Select **Bank Account**, enter **Statement Date**, and **Closing Balance**.
+3. Click **Get Entries** to fetch unreconciled payment and receipt entries.
+4. Match each line to your bank statement transactions.
+5. Click **Reconcile** to finalize.

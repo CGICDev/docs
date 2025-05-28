@@ -96,10 +96,19 @@
               "core-features/finance-accounts/balance-sheet",
               "core-features/finance-accounts/cash-flow-statement",
               "core-features/finance-accounts/trial-balance",
-              "core-features/finance-accounts/X",
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images"
+              "core-features/finance-accounts/multi-dimensional-reporting-by-company-productline-etc.",
+              "core-features/finance-accounts/track-and-manage-inter-company-transactions",
+              "core-features/finance-accounts/multi-currency-support",
+              "core-features/finance-accounts/payment-scheduling-and-processing",
+              "core-features/finance-accounts/accounts-receivables",
+              "core-features/finance-accounts/account-payables",
+              "core-features/finance-accounts/purchase-orders",
+              "core-features/finance-accounts/bank-account-management",
+              "core-features/finance-accounts/general-ledger",
+              "core-features/finance-accounts/sales-tax-VAT-management",
+              "core-features/finance-accounts/withholding-tax-management",
+              "core-features/finance-accounts/audit-trail-for-all-financial-transactions",
+              "core-features/finance-accounts/audit-log-for-user-activities"
             ]
           }
         ]
