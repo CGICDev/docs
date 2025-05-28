@@ -4,87 +4,62 @@ description: "A well-structured Chart of Accounts (CoA) is the backbone of accur
 ---
 
 <Info>
-  Prerequisites  
+  Prerequisites
 
-  - Company created under `Accounting > Company`  
-
-    - Default currency set in `Accounting > Settings `
+  - Company created under `Accounting > Company` 
+  - Default currency set in `Accounting > Settings `
 </Info>
 
-### 1.0 Open the Chart of Accounts  
+### 1.0 Open the Chart of Accounts
 
-1. From the home page, click `Accounting > Chart of Accounts`.  
-
+1. From the home page, click `Accounting > Chart of Accounts`.
 2. You’ll see a tree view of existing account groups and ledgers.
 
-### 1.1 Create an Account Group  
+### 1.1 Create an Account Group
 
-1. Click the **\+ New** button at the top right.  
-
-2. In the **Account Type** dropdown, choose **Account Group**.  
-
-3. Fill in:  
-
-   - **Company:** select your entity (e.g., Charisma Industrial)  
-
-   - **Group Name:** e.g., “`Assets > Current Assets > Inventory`”  
-
-   - **Parent Account:** pick the higher-level group (e.g., “Current Assets”)  
-
-   - **Is Group:** ✔️ (so you can nest sub-groups or ledgers)  
-
-4. Click **Save**.  
+1. Click the **\+ New** button at the top right.
+2. In the **Account Type** dropdown, choose **Account Group**.
+3. Fill in:
+   - **Company:** select your entity (e.g., Charisma Industrial)
+   - **Group Name:** e.g., “`Assets > Current Assets > Inventory`”
+   - **Parent Account:** pick the higher-level group (e.g., “Current Assets”)
+   - **Is Group:** ✔️ (so you can nest sub-groups or ledgers)
+4. Click **Save**.
 
 ![Screenshot2025 05 28at1 50 25PM Pn](/images/Screenshot2025-05-28at1.50.25PM.png)
 
-### 2.0 Create a Ledger Account  
+### 2.0 Create a Ledger Account
 
-1. Back in the Chart of Accounts list, click **\+ New** again.  
-
-2. Select **Account** for **Account Type**.  
-
-3. Fill in:  
-
-   - **Company**  
-
-   - **Account Name:** e.g., “COGS – Raw Materials”  
-
-   - **Parent Account:** choose the relevant group (e.g., “Cost of Goods Sold”)  
-
-   - **Account Number** (optional): a unique code for sorting  
-
-   - **Account Currency** (if multi-currency)  
-
-4. Click **Save**.  
+1. Back in the Chart of Accounts list, click **\+ New** again.
+2. Select **Account** for **Account Type**.
+3. Fill in:
+   - **Company**
+   - **Account Name:** e.g., “COGS – Raw Materials”
+   - **Parent Account:** choose the relevant group (e.g., “Cost of Goods Sold”)
+   - **Account Number** (optional): a unique code for sorting
+   - **Account Currency** (if multi-currency)
+4. Click **Save**.
 
 <Note>
   Ledger accounts cannot have child accounts—ensure **Is Group** is unchecked.
 </Note>
 
-### 3.0 Edit or Reassign an Account  
+### 3.0 Edit or Reassign an Account
 
-1. In the tree, click any account or group to open its form.  
-
-2. Click **Edit** (or `Actions > Edit`).  
-
-3. Modify fields like **Account Name**, **Parent Account**, or **Account Number**.  
-
-4. Click **Save**.  
+1. In the tree, click any account or group to open its form.
+2. Click **Edit** (or `Actions > Edit`).
+3. Modify fields like **Account Name**, **Parent Account**, or **Account Number**.
+4. Click **Save**.
 
 <Tip>
   Avoid moving or renaming accounts in live modules without understanding the impact on existing journal entries.
 </Tip>
 
-### 4.0 Disable or Delete an Account  
+### 4.0 Disable or Delete an Account
 
-- **Disable:**  
-
-  1. Open the account form.  
-
-  2. Check **Disabled** and click **Save**—preserves historical data but prevents new postings.  
-
-- **Delete:**  
-
-  1. Only possible if the account has no child accounts and no posted transactions.  
-
-  2. Open the form, click `Actions > Delete`, and confirm. 
+- **Disable:**
+  1. Open the account form.
+  2. Check **Disabled** and click **Save**—preserves historical data but prevents new postings.
+- **Delete:**
+  1. Only possible if the account has no child accounts and no posted transactions.
+  2. Open the form, click `Actions > Delete`, and confirm.

@@ -3,57 +3,47 @@ title: "Trial balance"
 description: "A Trial Balance lists all ledger accounts and their debit or credit balances at a specific point in time. Use this report to verify that total debits equal total credits before preparing formal financial statements."
 ---
 
-> Overview 
->
-> - Acts as a key internal check to catch posting errors early.
-> - Shows every ledger account’s balance—debit or credit—so you can confirm your books are in balance.  
-
 <Info>
-  Prerequisites    
+  Prerequisites
 
-  **Setup:**  
+  **Setup:**
 
-    - All ledger accounts created under `Accounts > Chart of Accounts`  
-
-    - All Journal Entries, Payment Entries, Receipt Entries, and Stock Valuation entries submitted  
+  - All ledger accounts created under `Accounts > Chart of Accounts`
+  - All Journal Entries, Payment Entries, Receipt Entries, and Stock Valuation entries submitted
 </Info>
 
-### 1.0 Open the Trial Balance Report  
+<Accordion title="Overview">
+  
 
-1. From the home page, click `Accounts > Reports > Trial Balance.`  
+  - **What it does:** Shows every ledger account’s balance—debit or credit—so you can confirm your books are in balance.  
 
+  - **Why it matters:** Acts as a key internal check to catch posting errors early.
+</Accordion>
+
+### 1.0 Open the Trial Balance Report
+
+1. From the home page, click `Accounts > Reports > Trial Balance.`
 2. The report form appears with default filters.
 
-### 1.1 Set Report Parameters  
+### 1.1 Set Report Parameters
 
-- **Company:** Choose your entity (e.g., Charisma Industrial)  
+- **Company:** Choose your entity (e.g., Charisma Industrial)
+- **As On Date:** Select the date for your snapshot (e.g., `2025-05-28`)
+- **Account Filters (optional):**
+  - **Account Type** (Assets, Liabilities, Equity, etc.)
+  - **Cost Center** for department-level balances
 
-- **As On Date:** Select the date for your snapshot (e.g., `2025-05-28`)  
+### 2.0 Generate the Report
 
-- **Account Filters (optional):**  
-
-  - **Account Type** (Assets, Liabilities, Equity, etc.)  
-
-  - **Cost Center** for department-level balances  
-
-### 2.0 Generate the Report  
-
-1. Click **Run** (or **Refresh**).  
-
-2. The report displays:  
-
-   - **Account Name**  
-
-   - **Debit Balance**  
-
-   - **Credit Balance**  
-
+1. Click **Run** (or **Refresh**).
+2. The report displays:
+   - **Account Name**
+   - **Debit Balance**
+   - **Credit Balance**
 3. Verify **Total Debits** = **Total Credits** at the bottom.
 
-### 3.0 Analyze and Export  
+### 3.0 Analyze and Export
 
-- **Review Discrepancies:** Investigate any imbalance by drilling down into ledger entries.  
-
-- **Drill Down:** Click an account balance to view its detailed transactions.  
-
+- **Review Discrepancies:** Investigate any imbalance by drilling down into ledger entries.
+- **Drill Down:** Click an account balance to view its detailed transactions.
 - **Export / Print:** Use **Download** for CSV/PDF or click the print icon for a formatted output.
