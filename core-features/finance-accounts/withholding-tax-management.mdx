@@ -1,4 +1,75 @@
 ---
 title: "Withholding tax management"
-description: "Description of your new file."
+description: "Withholding tax (WHT) is an amount withheld from payments made to vendors, contractors, or service providers and paid directly to the tax authority. In the CGIC App, you can configure and manage withholding tax seamlessly across purchase and payment transactions to stay compliant and maintain accurate financial records."
 ---
+
+<Accordion title="Overview">
+  **What it does:**\
+  Allows you to automatically apply withholding tax to eligible transactions and track the amounts withheld for each supplier and payment.
+
+  **Why it matters:**
+
+  - Ensures compliance with government tax laws
+  - Prevents overpayment or underpayment of vendor dues
+  - Maintains a reliable audit trail for tax remittance
+</Accordion>
+
+<Info>
+  Prerequisites
+
+  - Withholding tax accounts are defined in the **Chart of Accounts**
+  - Your suppliers are tagged with applicable WHT settings
+  - Your tax rates and withholding rules are available
+</Info>
+
+### 1.0 Create Withholding Tax Account
+
+1. Go to `Accounts > Chart of Accounts`
+2. Under **Liabilities**, click **Add Child Account**
+3. Enter:
+   - Account Name: e.g., _Withholding Tax Payable_
+   - Account Type: _Payable_
+   - Currency: Default company currency
+4. Click **Save**
+
+### 1.1 Set Up Tax Withholding Category
+
+1. Navigate to `Accounts > Setup > Tax Withholding Category > New`
+2. Enter:
+   - **Title** (e.g., _WHT 5% Services_)
+   - **Rate** (e.g., 5%)
+   - **Tax Account** (select _Withholding Tax Payable_)
+3. Add **Applicable Document Types**: typically _Purchase Invoice_ and _Payment Entry_
+4. Click **Save**
+
+### 1.2 Assign WHT Category to Suppliers
+
+1. Go to `Buying > Supplier`
+2. Open the supplier record
+3. In the **Tax Settings** section:
+   - Select the **Tax Withholding Category** created
+4. Click **Save**
+
+### 1.3 Apply WHT in Purchase Invoice
+
+1. Navigate to `Buying > Purchase Invoice > New`
+2. Select a supplier with WHT enabled
+3. Add item details and ensure the **Total** is populated
+4. The **Tax Withholding** section will automatically show:
+   - **Withholding Tax Rate**
+   - **Withholding Tax Amount**
+   - **Net Payable Amount**
+5. Click **Save** and **Submit**
+
+➡️ The withheld amount is recorded in the _Withholding Tax Payable_ account
+
+### 1.4 Apply WHT in Payment Entry
+
+1. Go to `Accounts > Payment Entry > New`
+2. Set:
+   - **Payment Type**: _Pay_
+   - **Party Type**: _Supplier_
+   - Select a supplier with WHT
+   - Link the corresponding purchase invoice
+3. The system auto-calculates the WHT and reduces the **Payable Amount** accordingly
+4. Click **Save** and **Submit**

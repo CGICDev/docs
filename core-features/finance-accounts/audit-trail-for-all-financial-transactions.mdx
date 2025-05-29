@@ -1,4 +1,74 @@
 ---
 title: "Audit trail for all financial transactions"
-description: "Description of your new file."
+description: "Maintain full transparency and accountability by tracking every change to your financial data. The CGIC App’s audit trail features let you view who did what, when, and why—across journal entries, invoices, payments, and more."
 ---
+
+<Accordion title="Overview">
+  **What it does:**  
+
+  - Logs creation, edits, submissions, and cancellations of all financial documents.  
+
+  - Captures user, timestamp, and change details for every transaction.
+
+  **Why it matters:**  
+
+  - Supports internal controls and compliance.  
+
+  - Simplifies investigations and resolves discrepancies.  
+
+  - Provides a clear record for auditors and regulators.
+</Accordion>
+
+<Info>
+  Prerequisites
+
+  - Financial modules (Accounts, Stock Valuation, Sales, Purchasing) are active  
+</Info>
+
+### 1.0 Enable Document History
+
+1. Go to `Accounts > Settings` 
+
+2. Ensure **“Track Document History”** (or **“Enable Audit Log”**) is checked.  
+
+3. Click **Save**.
+
+### 1.1 View History on Individual Documents
+
+1. Open any financial document (Journal Entry, Sales Invoice, Purchase Invoice, Payment Entry).  
+
+2. Click `Menu > View History `or the **History**/⏳ icon in the header.  
+
+3. Review entries showing:  
+
+   - **User** who made the change  
+
+   - **Timestamp** of the action  
+
+   - **Field** changed, **Old Value** → **New Value**  
+
+   - **Comments** (if provided)
+
+### 1.2 Run the Global Audit Log
+
+1. Navigate to `Setup > Audit Trail > Audit Log.`  
+
+2. Apply filters:  
+
+   - **Date Range**  
+
+   - **User**  
+
+   - **Document Type** (e.g., Journal Entry, Invoice)  
+
+3. Click **Refresh**.  
+
+4. Export the log to CSV/PDF for external review.
+
+### 1.3 Review Cancellations and Amendments
+
+1. In **Audit Log**, set **Action = Cancelled** or **Action = Amended**.  
+
+2. Drill down on any entry to open the original and canceled/amended documents side by side.  
+
+3. Verify the reasons and linked reversal entries.
