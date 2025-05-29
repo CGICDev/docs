@@ -1,4 +1,78 @@
 ---
 title: "Create and issue purchase orders"
-description: "Description of your new file."
+description: "Generate and send Purchase Orders (POs) to suppliers—formalizing your procurement requests and driving the receipt-to-billing workflow in the CGIC App."
 ---
+
+<Info>
+  Prerequisites
+
+  - Suppliers are defined under `Buying > Supplier`
+  - Items exist under `Stock > Item > Item List`
+</Info>
+
+### Overview
+
+<CardGroup cols={2}>
+  <Card title="What it does" icon="circle-dot" iconType="light">
+    Lets you create detailed POs with items, quantities, prices, delivery dates, and payment terms.
+
+    Automatically reserves stock (if enabled), triggers receipt creation, and provides audit trails.
+  </Card>
+  <Card title="Why it matters" icon="circle-dot" iconType="light">
+    Ensures clarity and consistency when ordering from suppliers
+
+    - \
+      Integrates with Receiving and Accounts Payable for seamless fulfillment and payment
+    - 
+  </Card>
+</CardGroup>
+
+### Steps to Create and Issue a Purchase Order
+
+<Steps>
+  <Step title="Open the Purchase Order Form">
+    1. Navigate to `Buying > Purchase Order > New`
+    2. A blank PO form appears with header fields and an empty **Items** table.
+  </Step>
+  <Step title="Fill in Header Details">
+    - **Supplier:** Select from your vendor list
+    - **Order Date:** Defaults to today; adjust if needed
+    - **Required By:** Enter the expected delivery date
+    - **Company:** Your legal entity
+    - **Payment Terms:** Choose a template (e.g. Net 30)
+    - **Supplier Reference:** (Optional) Enter supplier’s PO number or quote reference
+
+    > Define reusable Payment Terms under `Buying > Setup > Payment Terms` for consistency.
+  </Step>
+  <Step title="Add Line Items">
+    1. In the **Items** table, click **Add Row**.
+    2. For each row, specify:
+       - **Item Code:** Search or scan the item
+       - **Description:** Auto-fills (editable)
+       - **Qty:** Quantity to order
+       - **UOM:** Unit of measure
+       - **Rate:** Unit price (defaults from Item settings)
+       - **Warehouse:** Destination for receipt
+       - **Cost Center:** (Optional) allocate cost
+    3. Repeat until all required items are listed.
+    4. Click **Save** to validate totals and stock reservations.
+  </Step>
+  <Step title="Issue (Submit) the Purchase Order">
+    1. Review the draft PO for accuracy.
+    2. Click **Submit** in the top-right corner.
+       - The PO is assigned a unique number.
+       - If **Reserve Warehouse** is enabled, stock is reserved.
+       - The PO status changes to **Submitted**.
+    3. Optionally, click **Email** to send the PO PDF directly to your supplier.
+
+    > Attach specifications or vendor quotes in the **Attachments** section before issuing.
+  </Step>
+  <Step title="Amend or Cancel (if needed)">
+    - **Amend:**
+      1. Open a submitted PO, click `Actions > Amend`.
+      2. Make your edits, then **Save** and **Submit** again.
+    - **Cancel:**
+      1. Open the PO, click **Cancel**.
+      2. Confirm to void the order—stock reservations are released, and an audit entry is created.
+  </Step>
+</Steps>
