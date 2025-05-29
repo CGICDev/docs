@@ -1,4 +1,122 @@
 ---
 title: "Request for Quotation (RFQ) creation and management"
-description: "Description of your new file."
+description: "Streamline your sourcing process by issuing RFQs to multiple suppliers, comparing quotes, and converting the best offer into a Purchase Order—all within the CGIC App."
 ---
+
+<Accordion title="Overview">
+  **What it does:**  
+
+  - Creates an RFQ document listing required items or services  
+
+  - Sends RFQs to one or more suppliers  
+
+  - Captures supplier responses (rates, lead times, terms)  
+
+  - Enables side-by-side quote comparison and award selection  
+
+  **Why it matters:**  
+
+  - Drives competitive pricing and better terms  
+
+  - Reduces manual follow-up and email chains  
+
+  - Provides a clear audit trail from RFQ to awarded Purchase Order 
+</Accordion>
+
+<Info>
+  Prerequisites
+
+  - Suppliers are set up under `Buying > Supplier  `
+
+  - Items or services exist under `Stock > Item > Item List` (or Service Items group)  
+
+  - Email settings are configured for RFQ distribution  
+</Info>
+
+### 1.0 Create a New RFQ
+
+1. Navigate to `Buying > Request for Quotation > New RFQ  `
+
+2. In the header, fill in:  
+
+   - **RFQ No.**: auto-generated or custom series  
+
+   - **Date**: defaults to today  
+
+   - **Required By**: expected delivery date  
+
+   - **Company**: your legal entity  
+
+   - **Status**: Draft (will change as you progress)  
+
+3. Click **Save**
+
+<Note>
+  Use a clear naming series (e.g., `RFQ-2025-.####`) for easy tracking.
+</Note>
+
+### 1.1 Add Items/Services
+
+1. In the **Items** table, click **Add Row**  
+
+2. For each row, populate:  
+
+   - **Item Code** or **Description** (free-text for services)  
+
+   - **Qty** required  
+
+   - **UOM** (Unit of Measure)  
+
+   - **Project** or **Cost Center** (optional)  
+
+3. Repeat until your full requirements are listed  
+
+4. Click **Save**
+
+### 1.2 Send RFQ to Suppliers
+
+1. In the RFQ header, click **Email → Send RFQ**  
+
+2. In the popup, select one or more **Suppliers**  
+
+3. Customize the email body if needed  
+
+4. Click **Send**  
+
+5. RFQ status updates to **Requested**
+
+### 1.3 Receive and Enter Supplier Quotes
+
+1. As suppliers reply, open the RFQ and click **Add Quotation** under the **Supplier Quotations** section  
+
+2. Select the **Supplier**  
+
+3. In the quoted lines table, enter:  
+
+   - **Quoted Rate**  
+
+   - **Lead Time Days**  
+
+   - **Valid Until** date  
+
+   - **Remarks** (optional)  
+
+4. Click **Save** (status remains **Requested** until all quotes are in)
+
+### 1.4 Compare and Evaluate Quotes
+
+1. Once you have all responses, click **Compare Quotes**  
+
+2. A side-by-side grid shows each supplier’s rate, lead time, and validity  
+
+3. Review to identify the best combination of price and terms  
+
+### 1.5 Award and Convert to Purchase Order
+
+1. In the **Compare Quotes** view, select the preferred supplier for each line (or the entire RFQ)  
+
+2. Click **Make Purchase Order**  
+
+3. The system creates a PO draft pre-populated with awarded items, quantities, rates, and supplier 
+
+4. Review the PO, then **Submit** to finalize  
