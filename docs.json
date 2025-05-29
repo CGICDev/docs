@@ -86,7 +86,7 @@
               "core-features/procurement/purchase-invoice",
               "core-features/procurement/purchase-receipt",
               "core-features/procurement/purchase-analytics",
-              "core-features/procurementpurchase-taxes-and-charges"
+              "core-features/procurement/purchase-taxes-and-charges"
             ]
            },
            {

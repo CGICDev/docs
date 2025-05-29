@@ -1,4 +1,82 @@
 ---
 title: "Purchase Invoice"
-description: "Description of your new file."
+description: "Capture and manage supplier bills by creating Purchase Invoices in the CGIC App—ensuring accurate liability tracking, tax calculation, and seamless integration with Payments and Financial Reports."
 ---
+
+<Info>
+  Prerequisites
+
+  - Suppliers exist under **Buying ▶️ Supplier**  
+
+  - Purchase Orders and/or Receipts exist for items being invoiced  
+
+  - Tax templates and expense accounts are configured  
+</Info>
+
+### 1.0 Open the Purchase Invoice Form  
+
+1. Navigate to `Buying > Purchase Invoice > New Purchase Invoice. ` 
+
+2. A blank form appears with header and items table.
+
+---
+
+### 1.1 Link to Purchase Order or Receipt  
+
+- **Option A: From Purchase Order**  
+
+  1. Click **Get Items From ▶️ Purchase Order**.  
+
+  2. Select the PO—lines and quantities pull in automatically.  
+
+- **Option B: From Purchase Receipt**  
+
+  1. Click **Get Items From ▶️ Purchase Receipt**.  
+
+  2. Choose the receipt—item lines and rates populate.
+
+<Note>
+  If you received goods multiple times, import from Receipt to match actual quantities.
+</Note>
+
+### 1.2 Review and Edit Line Items  
+
+1. In the **Items** table, verify each row:  
+
+   - **Item Code / Description**  
+
+   - **Qty** (matches PO/Receipt)  
+
+   - **UOM**  
+
+   - **Rate** (unit price)  
+
+   - **Amount** (Qty × Rate)  
+
+2. Add or edit tax in the **Taxes and Charges** section if needed.  
+
+3. Apply any **Discounts** at the header or line level.
+
+### 1.3 Save and Submit  
+
+1. Click **Save** to draft the invoice.  
+
+2. Review **Invoice Total**, **Tax Total**, and **Grand Total**.  
+
+3. Click **Submit** to finalize—liability posts to your AP account.
+
+<Note>
+  Once submitted, the invoice cannot be edited; use **Cancel** if changes are needed.
+</Note>
+
+### 2.0 Link Payment Entry  
+
+1. After invoicing, go to `Accounts > Payment Entry > New.`  
+
+2. Set **Payment Type = Pay**, **Party Type = Supplier**, and choose the supplier.  
+
+3. In **References**, link the new Purchase Invoice.  
+
+4. Enter **Paid Amount** and **Paid From** account.  
+
+5. Save and **Submit** to settle the invoice.
