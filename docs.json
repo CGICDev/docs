@@ -55,13 +55,7 @@
               "core-features/raw-materials/raw-material-inventory-reports-stock-usage-etc.",
               "core-features/raw-materials/track-costing-of-raw-materials",
               "core-features/raw-materials/record-raw-material-damage-spoilage",
-              "core-features/raw-materials/provide-raw-material-data-for-financial-reporting",
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "core-features/raw-materials/provide-raw-material-data-for-financial-reporting"
             ]
           },
            {
