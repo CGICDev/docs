@@ -1,4 +1,50 @@
 ---
 title: "Sales tax/VAT management"
-description: "Description of your new file."
+description: "Manage your sales tax or VAT requirements end-to-end—configure tax rules, apply them to transactions, and report compliance—all within the CGIC App."
 ---
+
+<Accordion title="Overview">
+  **What it does:**\
+  Lets you set up tax rates and templates, automatically calculate tax on sales and purchase transactions, and generate tax reports for filing.
+
+  **Why it matters:**
+
+  - Ensures regulatory compliance
+  - Automates accurate tax calculations
+  - Simplifies tax filing and audit preparation
+</Accordion>
+
+<Info>
+  Prerequisites
+
+  - Your company’s **Tax ID** and **Tax Authority** details are available
+  - Chart of Accounts includes tax receivable and tax payable accounts
+  - Customers and suppliers have correct tax statuses (e.g., taxable vs. exempt)
+</Info>
+
+### Steps to Configure and Use Tax/VAT
+
+<Steps>
+  <Step title="Set Up Tax Accounts">
+    1. Go to `Accounts > Chart of Accounts.`
+    2. Create or verify:
+       - **Sales Tax Payable** account under Liabilities
+       - **VAT Input** account under Assets (for purchase credits)
+    3. Click **Save**.
+  </Step>
+  <Step title="Create Tax Templates">
+    1. Navigate to `Accounts > Setup > Tax Template > New`.
+    2. Enter:
+       - **Template Name** (e.g., “Standard VAT @ 7.5%”)
+       - **Tax Rate** (%)
+       - **Account Head**: select your Sales Tax Payable account
+       - **Description** (optional)
+    3. Save the template.
+  </Step>
+  <Step title="Apply Taxes to Items and Parties">
+    1. Open an **Item** under `Stock > Item >Item List`.
+    2. In the **Sales** tab, set **Default Tax Template** to your VAT template.
+    3. Save.
+    4. Repeat for **Purchase** tab if you reclaim input VAT on purchases.
+  </Step>
+</Steps>

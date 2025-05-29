@@ -1,4 +1,60 @@
 ---
 title: "General Ledger"
-description: "Description of your new file."
+description: "Review all journal entries and ledger balances in one place. The General Ledger (GL) provides a complete, chronological record of every financial transaction—ensuring full transparency and audit readiness."
 ---
+
+<Accordion title="Overview">
+  **What it does:**  
+
+  Lists every debit and credit posting by account, date, and document—giving you a single source of truth for all financial activity.
+
+  **Why it matters:**  
+
+  - Validates transaction accuracy and sequence  
+
+  - Aids in reconciliations and audits  
+
+  - Enables drill-down into detailed entries for any account  
+</Accordion>
+
+<Info>
+  Prerequisites
+
+    
+
+  - Chart of Accounts and Cost Centers are configured under `Accounts > Chart of Accounts and Accounts > Cost Center`  
+
+  - Journal Entries, Sales Invoices, Purchase Invoices, Payment Entries, and Stock Valuation entries are submitted  
+</Info>
+
+### 1.0 Open the General Ledger Report  
+
+1. From the home page, navigate to `Accounts > Reports > General Ledger. ` 
+
+2. The General Ledger form appears with filter fields at the top.
+
+### 2.0 Configure Filters  
+
+- **Company:** Select your entity (e.g., Charisma Industrial)  
+
+- **From Date / To Date:** Define the reporting period  
+
+- **Account:** (Optional) Choose one or more ledger accounts  
+
+- **Cost Center:** (Optional) Filter by department or project  
+
+- **Voucher Type:** (Optional) Limit to specific transaction types (e.g., Sales Invoice)  
+
+- **Include Opening Entries:** Check to show opening balances  
+
+### 3.0 Run and Review  
+
+1. Click **Run** (or **Refresh**).  
+
+2. The report displays:  
+
+   - **Posting Date**, **Voucher Type**, **Voucher No.**  
+
+   - **Debit**, **Credit**, and **Balance** columns  
+
+   - **Against Voucher** links for quick drill-down  
