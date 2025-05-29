@@ -77,9 +77,16 @@
            {
             "group": "Procurement",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images"
+              "core-features/procurement/request-for-quotation-RFQ-creation-and-management",
+              "core-features/procurement/create-and-issue-purchase-orders",
+              "core-features/procurement/automated-purchase-order-generation-based-on-inventory-levels",
+              "core-features/procurement/PO-amendments-and-revisions",
+              "core-features/procurement/track-purchase-order-status-open-closed-pending",
+              "core-features/procurement/create-and-manage-material-requests",
+              "core-features/procurement/purchase-invoice",
+              "core-features/procurement/purchase-receipt",
+              "core-features/procurement/purchase-analytics",
+              "core-features/procurementpurchase-taxes-and-charges"
             ]
            },
            {
