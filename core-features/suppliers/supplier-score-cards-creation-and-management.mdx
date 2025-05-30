@@ -1,4 +1,53 @@
 ---
 title: "Supplier score cards creation and management"
-description: "Description of your new file."
+description: "Evaluate and monitor supplier performance by creating customizable score cards—tracking key metrics such as on-time delivery, quality, and cost compliance—directly in the CGIC App."
 ---
+
+<Info>
+  Prerequisites
+
+  - Suppliers exist under `Buying > Supplier`
+  - Historical purchase, receipt, and inspection data is up to date
+</Info>
+
+### 1.0 Define Score Card Template
+
+1. Navigate to `Buying > Setup > Supplier Score Card Template > New.`
+2. Enter:
+   - **Template Name** (e.g., “Standard Performance”)
+   - **Description** (optional)
+3. In the **Metrics** table, click **Add Row** for each KPI:
+   - **Metric** (On-Time Delivery, Quality Rate, Invoice Accuracy, etc.)
+   - **Weight (%)** (sum must equal 100%)
+   - **Calculation Basis** (e.g., % of POs delivered on time)
+4. Click **Save**.
+
+### 2.0 Assign Template to Suppliers
+
+1. Go to `Buying > Supplier > Supplier List` and open a supplier.
+2. In the **Performance** tab, select your **Score Card Template**.
+3. Click **Save**.
+
+### 3.0 Calculate and Record Scores
+
+1. Navigate to `Buying > Supplier > Score Card > Generate Scores.`
+2. Choose:
+   - **Supplier(s)**
+   - **Template**
+   - **Date Range** for analysis
+3. Click **Generate**. The system fetches transaction data, calculates each metric, and computes a weighted score.
+4. Review and **Publish** the score card for stakeholder visibility.
+
+### 4.0 Review and Compare Supplier Performance  
+
+1. Open `Buying > Reports > Supplier Performance Dashboard.`  
+
+2. Use filters to view:  
+
+   - Top-performing suppliers  
+
+   - Low-scoring metrics by supplier  
+
+   - Score trends over time  
+
+3. Drill down on any supplier to see metric-level details and underlying transactions.
