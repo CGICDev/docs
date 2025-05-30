@@ -1,4 +1,59 @@
 ---
 title: "Purchase receipt"
-description: "Description of your new file."
+description: "Record incoming goods or services against your Purchase Orders to update inventory and trigger accounting entries in the CGIC App."
 ---
+
+<Info>
+  Prerequisites
+
+  - A **submitted** Purchase Order with items to receive exists  
+
+  - Suppliers are defined under `Buying > Supplier ` 
+
+  - Warehouses configured under `Stock > Warehouse` 
+</Info>
+
+### Steps to Create a Purchase Receipt
+
+<Steps>
+  <Step title="Open the Purchase Receipt Form">
+    1. Navigate to `Buying > Purchase Order > Purchase Order List.  `
+
+    2. Locate and open the submitted PO you wish to receive.  
+
+    3. Click `Create > Purchase Receipt` in the top toolbar.  
+  </Step>
+  <Step title="Import Items from PO">
+    1. The Purchase Receipt form opens, pre-filled with header details (Supplier, Date, Company).  
+
+    2. In the **Items** table, click `Get Items From > Purchase Order` if not auto-populated.  
+
+    3. Select your PO to pull in item lines, quantities, and rates.  
+  </Step>
+  <Step title="Specify Target Warehouse and Quantities  ">
+    1. In each item row, confirm or update:  
+
+       - **Target Warehouse** where the stock will be stored  
+
+       - **Qty Received** (matches the delivered amount)  
+
+       - **Batch No.** or **Serial No.** if batch tracking is enabled  
+
+    2. (Optional) Attach inspection certificates or packing lists via `Attachments > Add Attachment.`  
+  </Step>
+  <Step title="Save and Submit">
+    1. Click **Save** to draft the receipt.  
+
+    2. Review the **Total Received Value** and inventory movements.  
+
+    3. Click **Submit** to finalize:  
+
+       - Inventory is increased in the target warehouse  
+
+       - A Material Receipt entry is posted to the Stock Ledger  
+
+       - Accounting entries are generated to move stock into inventory value  
+  </Step>
+</Steps>
+
+> By accurately creating Purchase Receipts in the CGIC App, you’ll keep your inventory records in sync with physical deliveries, ensure correct stock valuation, and maintain a clear audit trail from purchase order through goods receipt and invoicing.  
