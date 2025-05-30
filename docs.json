@@ -61,9 +61,16 @@
            {
             "group": "Suppliers",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images"
+              "core-features/suppliers/create-add-new-suppliers",
+              "core-features/suppliers/update-supplier-records",
+              "core-features/suppliers/search-supplier-records",
+              "core-features/suppliers/supplier-information-management-inc.-banks",
+              "core-features/suppliers/supplier-score-cards-creation-and-management",
+              "core-features/suppliers/manage-payment-terms-and-schedules-for-suppliers",
+              "core-features/suppliers/process-and-track-supplier-payments",
+              "core-features/suppliers/reconcile-payments-against-supplier-invoices-and-orders",
+              "core-features/suppliers/spend-analysis-by-supplier",
+              "core-features/suppliers/manage-supplier-groups"
             ]
           },
            {
