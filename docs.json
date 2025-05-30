@@ -121,9 +121,11 @@
           }
         ]
       },
+
+      
       {
-         "tab": "Manufacturing",
-          "groups": [
+        "tab": "Manufacturing",
+        "groups": [
           {
             "group": "Bill of Materials (BOM)",
             "pages": [
