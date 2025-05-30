@@ -1,4 +1,92 @@
 ---
 title: "Purchase taxes and charges"
-description: "Description of your new file."
+description: "Configure and apply taxes, duties, and other charges on purchase transactions—ensuring accurate landed cost calculation and liability posting in the CGIC App."
 ---
+
+<Info>
+  Prerequisites\
+    
+
+  - Tax and charge ledger accounts exist under `Accounts > Chart of Accounts ` 
+
+  - Suppliers have appropriate tax settings if jurisdictional rules apply  
+</Info>
+
+<CardGroup cols={2}>
+  <Card title="What it does" icon="circle-dashed" iconType="regular">
+    - Defines tax and charge templates for use on Purchase Orders, Receipts, and Invoices  
+
+    - Automatically calculates line- and document-level taxes, freight, insurance, and other costs  
+
+    - Posts tax amounts to the correct payable accounts  
+  </Card>
+  <Card title="Why it matters" icon="circle-dashed">
+    - Ensures you capture full landed cost of goods  
+
+    - Automates tax liability and expense postings
+
+      
+
+    - Simplifies compliance and audit trails  
+  </Card>
+</CardGroup>
+
+## Steps to Configure and Apply Purchase Taxes & Charges
+
+### 1.0 Create Tax and Charge Templates  
+
+1. Navigate to `Accounts > Setup > Taxes and Charges Template > New`.  
+
+2. Enter:  
+
+   - **Template Name** (e.g., “Standard Purchase VAT \+ Freight”)  
+
+   - **Type**: Select **On Net Total**, **On Previous Row Amount**, or **Actual**  
+
+3. In the **Tax and Charges** table, click **Add Row** for each component:  
+
+   - **Charge Type**: e.g., **GST @ 7.5%**, **Freight**, **Insurance**  
+
+   - **Tax Rate** or **Amount**  
+
+   - **Account Head**: Ledger account to post the charge  
+
+   - **Description** (optional)  
+
+4. Repeat until complete, then click **Save**.
+
+### 2.0 Assign Default Template to Suppliers or Items  
+
+1. **Supplier-level Default**  
+
+   - Open a **Supplier** record under `Buying > Supplier`.  
+
+   - In **Tax Settings**, select the **Default Taxes and Charges Template**.  
+
+   - Click **Save**.  
+
+2. **Item-level Default**  
+
+   - Open an **Item** under `Stock > Item > Item List`.  
+
+   - In the **Purchase** tab, choose the **Default Taxes and Charges Template**.  
+
+   - Click **Save**.
+
+### 3.0 Apply on Purchase Transactions  
+
+1. **On Purchase Order / Receipt**  
+
+   - After linking items, expand the **Taxes and Charges** section.  
+
+   - Click **Get Template** and select your template.  
+
+   - Review calculated amounts per line and totals.  
+
+2. **On Purchase Invoice**  
+
+   - Link to PO or Receipt, then open **Taxes and Charges**.  
+
+   - Use **Get from PO**, **Get from Receipt**, or **Get from Supplier/Item**.  
+
+   - Adjust rates or amounts if needed before **Save** and **Submit**.
