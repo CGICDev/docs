@@ -1,4 +1,67 @@
 ---
 title: "Process and track supplier payments"
-description: "Description of your new file."
+description: "Efficiently settle your payables and monitor payment status by creating Payment Entries, reconciling against bank statements, and reviewing aging—right within the CGIC App."
 ---
+
+<Info>
+  Prerequisites\
+   
+
+  - Suppliers and their invoices exist in the system  
+
+  - Bank or cash accounts set up under `Accounts > Bank Account `
+</Info>
+
+### 1.0 Create a Payment Entry  
+
+1. Navigate to `Accounts > Payment Entry > New Payment Entry. ` 
+
+2. Set header fields:  
+
+   - **Payment Type**: _Pay_  
+
+   - **Party Type**: _Supplier_  
+
+   - **Party**: select the supplier  
+
+   - **Paid From**: choose your bank or cash account  
+
+   - **Paid On**: payment date  
+
+3. In the **References** table, click **Add Row** and link each open Purchase Invoice or Journal Entry:  
+
+   - **Reference Type** (e.g., Purchase Invoice)  
+
+   - **Reference Name** (select invoice number)  
+
+   - **Outstanding Amount** (auto-filled)  
+
+   - **Amount To Pay** (enter full or partial payment)
+
+4. Review **Total Paid Amount** at the top.
+
+5. Click **Save** and then **Submit**.
+
+<Note>
+  For bulk payments, use `Tools > Payment Run` to batch-pay multiple invoices in one entry.
+</Note>
+
+### 2.0 Verify Payment Status  
+
+1. Open the relevant Purchase Invoice under `Buying > Purchase Invoice > Purchase Invoice List.`  
+
+2. Check the **Payment Status** badge (Unpaid, Part Paid, Paid).  
+
+3. View linked Payment Entry under the **Payments** section.
+
+### 3.0 Reconcile Against Bank Statements  
+
+1. Go to `Accounts > Bank Reconciliation > New Bank Reconciliation.`  
+
+2. Select your **Bank Account**, enter **Statement Date** and **Closing Balance**.  
+
+3. Click **Get Entries** to list unreconciled Payment Entries and statement lines.  
+
+4. Match each Payment Entry to its bank transaction.  
+
+5. Click **Reconcile** to finalize.
