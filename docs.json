@@ -127,9 +127,9 @@
           {
             "group": "Bill of Materials (BOM)",
             "pages": [
-              "for-quincy/quincy",
-              "for-quincy/quincy",
-              "for-quincy/quincy"
+              "essentials/markdown",
+              "essentials/code",
+              "essentials/images"
             ]
           },
            {
