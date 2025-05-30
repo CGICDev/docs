@@ -1,4 +1,40 @@
 ---
 title: "Delete customer"
-description: "Description of your new file."
+description: "Remove outdated or erroneous customer profiles safely—either by disabling (soft delete) to preserve history or permanently deleting (hard delete) when no transactions exist."
 ---
+
+<Info>
+  Prerequisites
+
+  - The customer exists under `Selling > Customer > Customer List ` 
+</Info>
+
+### 1.0 Option A: Disable (Soft Delete)
+
+1. Navigate to `Selling > Customer > Customer List`  
+
+2. Click the customer’s **Name** to open their profile  
+
+3. Click `Actions > Disable` (or check **Disabled** if on the form)  
+
+4. Click **Save**
+
+<Note>
+  **Result:** Customer remains in the database (for historical reports) but cannot be selected in new transactions.
+</Note>
+
+### 1.1 Option B: Delete Permanently (Hard Delete)
+
+<Warning>
+  You can only delete customers with **no** linked transactions (sales orders, invoices, payments).
+</Warning>
+
+1. Ensure the customer has **no** submitted Sales Orders, Invoices, or Payment Entries  
+
+2. Open `Selling > Customer > Customer List ` 
+
+3. Click the customer’s **Name**, then `Actions > Delete ` 
+
+4. Confirm the deletion when prompted
+
+> Use the disable function for most scenarios to preserve history, and reserve permanent deletion for truly obsolete records. This approach keeps your customer list accurate without losing crucial transaction data.  
