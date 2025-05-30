@@ -121,53 +121,45 @@
           }
         ]
       },
-
-      
       {
         "tab": "Manufacturing",
         "groups": [
           {
             "group": "Bill of Materials (BOM)",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images"
+              "api-reference/introduction"
             ]
           },
-           {
+          {
             "group": "Warehouse Management",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images"
+              "api-reference/introduction"
             ]
           },
-           {
+          {
             "group": "Production Planning",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images"
+              "api-reference/introduction"
             ]
           },
-           {
+          {
             "group": "Sales & Distribution",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images"
+              "api-reference/introduction"
             ]
           },
-           {
+          {
             "group": "Asset Management",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images"
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/create",
+              "api-reference/endpoint/delete",
+              "api-reference/endpoint/webhook"
             ]
           }
         ]
       },
+    
       {
         "tab": "HR",
         "groups": [
