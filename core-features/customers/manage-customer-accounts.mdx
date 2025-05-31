@@ -4,71 +4,51 @@ description: "Maintain accurate receivables and customer-specific settings—tra
 ---
 
 <Card title="Overview" icon="sparkles">
-  **What it does:  **
+  **What it does: **
 
-  - Sets and updates credit limits and payment terms per customer  
-
-  - Monitors outstanding balances and aging buckets  
-
-  - Allows adjustments (write-offs, credit notes) directly against customer accounts  
+  - Sets and updates credit limits and payment terms per customer
+  - Monitors outstanding balances and aging buckets
+  - Allows adjustments (write-offs, credit notes) directly against customer accounts
 </Card>
 
 <Info>
   **Prerequisites**
 
-  - Customer profiles exist under `Selling > Customer`  
-
-  - AR accounts configured under `Accounts > Chart of Accounts ` 
+  - Customer profiles exist under `Selling > Customer`
+  - AR accounts configured under `Accounts > Chart of Accounts `
 </Info>
 
 ### 1.0 Configure Financial Settings on Customer
 
-1. Go to `Selling > Customer > Customer List` 
-
-2. Open a customer profile and click `Actions > Edit ` 
-
-3. In **Financial Settings**, update:  
-
-   - **Credit Limit** (max open balance)  
-
-   - **Payment Terms Template** (e.g., Net 30)  
-
-   - **Default Receivable Account** (e.g., “Accounts Receivable – CGIC”)  
-
+1. Go to `Selling > Customer > Customer List`
+2. Open a customer profile and click `Actions > Edit `
+3. In **Financial Settings**, update:
+   - **Credit Limit** (max open balance)
+   - **Payment Terms Template** (e.g., Net 30)
+   - **Default Receivable Account** (e.g., “Accounts Receivable – CGIC”)
 4. Click **Save**
 
 ### 2.0 Monitor Outstanding Balances & Aging
 
-1. Navigate to `Accounts > Reports > Accounts Receivable Aging` 
-
-2. Filter by **Customer**, **Company**, and **Date Range**  
-
-3. Click **Refresh** to view amounts in 0–30, 31–60, 61–90, and 90\+ day buckets  
-
-4. Drill down on any bucket to list the individual invoices  
+1. Navigate to `Accounts > Reports > Accounts Receivable Aging`
+2. Filter by **Customer**, **Company**, and **Date Range**
+3. Click **Refresh** to view amounts in 0–30, 31–60, 61–90, and 90\+ day buckets
+4. Drill down on any bucket to list the individual invoices
 
 ### 3.0 Make Adjustments or Issue Credit Notes
 
-1. To write off small balances, go to `Accounts > Journal Entry > New`  
-
-   - Debit **Bad Debt Expense** and credit the customer’s **AR** account  
-
-2. To issue a refund or credit, go to `Selling > Credit Note > New`  
-
-   - Link the original invoice  
-
-   - Enter credit amount and reason  
-
-   - Save and **Submit**  
+1. To write off small balances, go to `Accounts > Journal Entry > New`
+   - Debit **Bad Debt Expense** and credit the customer’s **AR** account
+2. To issue a refund or credit, go to `Selling > Credit Note > New`
+   - Link the original invoice
+   - Enter credit amount and reason
+   - Save and **Submit**
 
 ### 4.0 Generate Customer Statements
 
-1. Open `Selling > Reports > Customer Statement`  
+1. Open `Selling > Reports > Customer Statement`
+2. Select **Customer**, **Company**, and **Date Range**
+3. Click **Refresh**
+4. Export to PDF/CSV or **Email** directly to the customer
 
-2. Select **Customer**, **Company**, and **Date Range**  
-
-3. Click **Refresh**  
-
-4. Export to PDF/CSV or **Email** directly to the customer  
-
-> By effectively managing customer accounts—setting limits, tracking aging, and handling adjustments—in the CGIC App, you’ll maintain healthy receivables, reduce credit risk, and ensure your AR balances are accurate and up to date.  
+> By effectively managing customer accounts—setting limits, tracking aging, and handling adjustments—in the CGIC App, you’ll maintain healthy receivables, reduce credit risk, and ensure your AR balances are accurate and up to date.
