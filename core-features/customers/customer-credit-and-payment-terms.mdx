@@ -1,4 +1,108 @@
 ---
 title: "Customer credit and payment terms"
-description: "Description of your new file."
+description: "Manage how and when your customers pay—setting credit limits, defining payment terms, and monitoring balances—to ensure healthy cash flow and minimize credit risk in the CGIC App."
 ---
+
+<Card title="Overview" icon="sparkles">
+  **What it does:**  
+
+  - Allows you to set a maximum credit limit for each customer  
+
+  - Defines standard payment terms (Net 30, Net 60, down-payment splits, etc.)  
+
+  - Automatically calculates due dates and enforces credit checks on new orders  
+
+  - Displays outstanding balances and aging for each customer
+</Card>
+
+> **Prerequisites**
+>
+> - Customer records exist under `Selling > Customer`  
+>
+> - Credit Control and AR accounts are configured under `Accounts > Chart of Accounts ` 
+>
+> - Payment Terms templates are created under `Selling > Setup > Payment Terms ` 
+
+### 1.0 Define Payment Terms Templates
+
+1. Go to **S**`elling > Setup > Payment Terms > New.`  
+
+2. Enter:  
+
+   - **Template Name** (e.g., “Net 30”, “50/50 Split”).  
+
+   - **Description** (optional).  
+
+3. In the **Payment Schedule** table, click **Add Row** for each installment:  
+
+   - **Due After (Days)** or **Due On (Date)**.  
+
+   - **Percentage (%)** or **Fixed Amount**.  
+
+4. Verify that total percentages sum to 100% (or fixed amounts equal invoice total).  
+
+5. Click **Save**.
+
+### 1.1 Assign Default Payment Terms to Customers
+
+1. Navigate to `Selling > Customer > Customer List.`  
+
+2. Click the customer’s **Name** to open their profile.  
+
+3. Click `Actions > Edit`.  
+
+4. In **Financial Settings**, set:  
+
+   - **Payment Terms Template**: choose the default terms for this customer.  
+
+   - **Credit Limit**: enter the maximum open balance you’ll extend (e.g., 50,000).  
+
+   - **Default Receivable Account**: select your AR control account.  
+
+5. Click **Save**.
+
+### 1.2 Enforce Credit Checks on Sales Orders
+
+1. When creating a new **Sales Order** under `Selling > Sales Order > New`, the system automatically checks:  
+
+   - **Customer’s Open Balance** \+ **New Order Total** ≤ **Credit Limit**.  
+
+2. If the new order exceeds the credit limit, a warning appears:  
+
+   \> “Customer credit limit exceeded by [amount]. Please adjust order or request approval.”  
+
+3. You can either:  
+
+   - Reduce order quantities or apply a partial upfront payment (using **Advance Payment Entry**).  
+
+   - Request a temporary credit limit increase (via your internal approval workflow).
+
+\> ✅ **Tip:** Configure credit override workflows under **Selling ▶️ Setup ▶️ Credit Control** so managers can approve over-limit orders.
+
+---
+
+### 📅 Step 4: Monitor Outstanding Balances and Aging
+
+1. Navigate to **Accounts ▶️ Reports ▶️ Accounts Receivable Aging**.  
+
+2. Filter by **Customer**, **Company**, and **Date Range**.  
+
+3. Click **Refresh** to view each customer’s:  
+
+   - **Outstanding Amount** in current and aging buckets (0–30, 31–60, etc.).  
+
+4. Drill down on any bucket to see specific invoices.
+
+\> 🕒 **Tip:** Pin this report to your dashboard so you see overdue balances daily.
+
+---
+
+### ✏️ Step 5: Apply Credit Notes and Allocate Advances
+
+1. To issue a credit (refund or discount), go to **Selling ▶️ Credit Note ▶️ New**.  
+
+2. Link the original invoice, enter the **Credit Amount**, and click **Submit**—this reduces the customer’s balance.  
+
+3. To record an advance payment, create a **Payment Entry** with **Payment Type = Receive** and apply the amount as an advance.  
+
+4. When a new invoice is generated, click **Allocate Advances** on the invoice to automatically deduct the advance from the amount due.
