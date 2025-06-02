@@ -4,83 +4,55 @@ description: "Gain instant visibility into inventory quantities in every locatio
 ---
 
 <Card title="Overview" icon="sparkles">
-  **What it does:**  
+  **What it does:**
 
-  - Displays live on-hand quantities for each item in all configured warehouses  
-
-  - Updates automatically as stock moves (receipts, issues, transfers, sales, production)  
-
-  - Provides consolidated and per-warehouse views for accurate decision-making  
+  - Displays live on-hand quantities for each item in all configured warehouses
+  - Updates automatically as stock moves (receipts, issues, transfers, sales, production)
+  - Provides consolidated and per-warehouse views for accurate decision-making
 </Card>
 
 <Info>
-  **Prerequisites**\
-  \
-  - Multiple warehouses are defined under `Stock > Warehouse ` 
+  **Prerequisites**
 
-  - Items exist under `Stock > Item > Item List ` 
-
+  - Multiple warehouses are defined under `Stock > Warehouse `
+  - Items exist under `Stock > Item > Item List `
   - Stock movement transactions (Purchase Receipts, Sales, Stock Entries, etc.) are regularly submitted
 </Info>
 
 ### 1.0 Define Warehouses
 
-1. Navigate to `Stock > Warehouse > Warehouse List.`  
-
-2. Click **New** to create a warehouse (e.g., “East Warehouse,” “Central Store”).  
-
-3. Enter:  
-
-   - **Warehouse Name**  
-
-   - **Parent Warehouse** (optional, for nested locations)  
-
-   - **Company**  
-
-4. Click **Save**.  
-
+1. Navigate to `Stock > Warehouse > Warehouse List.`
+2. Click **New** to create a warehouse (e.g., “East Warehouse,” “Central Store”).
+3. Enter:
+   - **Warehouse Name**
+   - **Parent Warehouse** (optional, for nested locations)
+   - **Company**
+4. Click **Save**.
 5. Repeat for each location you wish to track.
 
 ### 1.1 View Consolidated Stock Balance
 
-1. Go to `Stock > Reports > Stock Balance.`  
-
-2. In the filter panel, set:  
-
-   - **Item Group** or leave blank for all items  
-
-   - **Warehouse** = **All** (default)  
-
-   - **From Date / To Date** = today’s date (for current snapshot)  
-
-3. Click **Generate New Report**.  
-
-4. Review columns:  
-
-   - **Opening Qty** (as of From Date)  
-
-   - **In Qty** (received to date)  
-
-   - **Out Qty** (issued to date)  
-
-   - **Balance Qty** (real-time on-hand)  
+1. Go to `Stock > Reports > Stock Balance.`
+2. In the filter panel, set:
+   - **Item Group** or leave blank for all items
+   - **Warehouse** = **All** (default)
+   - **From Date / To Date** = today’s date (for current snapshot)
+3. Click **Generate New Report**.
+4. Review columns:
+   - **Opening Qty** (as of From Date)
+   - **In Qty** (received to date)
+   - **Out Qty** (issued to date)
+   - **Balance Qty** (real-time on-hand)
 
 ### 1.2 Drill Down to Per-Warehouse Stock
 
-1. In the **Stock Balance** report, click the **“Balance Qty”** value for a specific item.  
-
-2. A pop-up opens showing a breakdown by warehouse:  
-
-   - **Warehouse Name**  
-
-   - **Opening Qty**  
-
-   - **In Qty**  
-
-   - **Out Qty**  
-
-   - **Balance Qty**  
-
+1. In the **Stock Balance** report, click the **“Balance Qty”** value for a specific item.
+2. A pop-up opens showing a breakdown by warehouse:
+   - **Warehouse Name**
+   - **Opening Qty**
+   - **In Qty**
+   - **Out Qty**
+   - **Balance Qty**
 3. Scroll or export this breakdown as needed.
 
 <Tip>
@@ -89,21 +61,14 @@ description: "Gain instant visibility into inventory quantities in every locatio
 
 ### 1.3 Review Stock Ledger for an Item-Warehouse Pair
 
-1. Navigate to `Stock > Reports > Stock Ledger.`  
-
-2. Apply filters:  
-
-   - **Item** = [Select Item Code]  
-
-   - **Warehouse** = [Select specific warehouse]  
-
-   - **From Date / To Date** = desired range (e.g., last month)  
-
-3. Click **Refresh**.  
-
-4. The ledger lists every transaction affecting that item’s quantity in that warehouse:  
-
-   - **Date**, **Voucher Type**, **Qty In**, **Qty Out**, **Balance Qty**  
+1. Navigate to `Stock > Reports > Stock Ledger.`
+2. Apply filters:
+   - **Item** = [Select Item Code]
+   - **Warehouse** = [Select specific warehouse]
+   - **From Date / To Date** = desired range (e.g., last month)
+3. Click **Refresh**.
+4. The ledger lists every transaction affecting that item’s quantity in that warehouse:
+   - **Date**, **Voucher Type**, **Qty In**, **Qty Out**, **Balance Qty**
 
 \> 🔍 **Tip:** Use this to investigate discrepancies or confirm recent movements.
 
@@ -111,14 +76,10 @@ description: "Gain instant visibility into inventory quantities in every locatio
 
 ### 1.4 Monitor Low-Stock Alerts
 
-1. Open `Stock > Auto Reorder > Auto Reorder List.`  
-
+1. Open `Stock > Auto Reorder > Auto Reorder List.`
 2. Ensure each item has **Reorder Level** and **Reorder Qty** defined under `Stock > Item > Item List > Inventory.  `
-
-3. Enable and schedule **Auto Reorder** to run daily.  
-
-   - If **Balance Qty ≤ Reorder Level**, the system will generate draft Purchase Orders.  
-
+3. Enable and schedule **Auto Reorder** to run daily.
+   - If **Balance Qty ≤ Reorder Level**, the system will generate draft Purchase Orders.
 4. Review generated drafts under `Buying > Purchase Order > Drafts` and adjust as needed.
 
 <Tip>

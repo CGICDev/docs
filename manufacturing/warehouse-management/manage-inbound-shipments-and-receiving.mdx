@@ -1,4 +1,140 @@
 ---
 title: "Manage inbound shipments and receiving"
-description: "Description of your new file."
+description: "Efficiently track incoming goods from suppliers—monitor shipment status, record expected arrivals, and receive inventory into your warehouses—using the CGIC App."
 ---
+
+<Card title="Overview" icon="sparkles">
+  **What it does:**  
+
+  - Tracks supplier shipments tied to Purchase Orders (POs)  
+
+  - Provides a centralized “Inbound Shipments” view with expected delivery dates and statuses  
+
+  - Enables you to record Goods Receipt (Purchase Receipt) when stock physically arrives  
+
+  - Automates inventory updates, batch/serial number assignment, and accounting postings
+</Card>
+
+<Info>
+  **Prerequisites**  
+
+  - Suppliers and Items exist under `Buying > Supplier and Stock > Item`  
+
+  - Warehouses are defined under `Stock > Warehouse`
+
+  - Purchase Orders (POs) have been created and submitted for the incoming stock  
+</Info>
+
+### 1.0 Create and Submit a Purchase Order  
+
+1. Navigate to `Buying > Purchase Order > New.`  
+
+2. Populate header details:  
+
+   - **Supplier**  
+
+   - **Order Date** (defaults to today)  
+
+   - **Required By** (expected delivery date)  
+
+   - **Company**  
+
+3. In the **Items** table, add each item code, quantity, UOM, and target warehouse.  
+
+4. Click **Save**, then **Submit**.  
+
+5. Note the **PO Number**—you’ll use it to track shipments.  
+
+<Tip>
+  Ensure each item’s **Target Warehouse** is where you plan to receive the goods, so inventory is updated correctly upon receipt.
+</Tip>
+
+### 1.1 Monitor Inbound Shipment Status  
+
+1. Go to `Buying > Purchase Order > Purchase Order List.`  
+
+2. Filter by **Status = “Submitted”** or **“To Receive and Bill”**.  
+
+3. Click a PO Number to open the PO form.  
+
+4. In the PO, locate the **Schedule** or **Delivery Timeline** section (if your setup includes shipment milestones).  
+
+5. Update shipment progress as follows:  
+
+   - **“Shipment Created”**: When supplier books the order for dispatch.  
+
+   - **“In Transit”**: When goods are confirmed shipped (enter carrier and tracking details in **Comments** or **Additional Info**).  
+
+   - **“Arrived at Port/Warehouse”**: When goods reach your receiving dock—update the **Expected Receipt Date** if it has changed.  
+
+<Tip>
+  Use the **Comments** section or a custom field (e.g., **Tracking No.**) to log carrier and tracking links for transparency.
+</Tip>
+
+### 1.2 Prepare for Receiving  
+
+1. Under `Stock > Reports > Stock Balance`, run a quick report for the PO’s items to verify current on-hand vs. ordered.  
+
+2. Check the **Warehouse Expected Arrivals** view (custom report or dashboard widget) to see all incoming POs with due dates.  
+
+3. Notify your warehouse or store team of the expected delivery date so they can allocate space and manpower for unloading.
+
+<Tip>
+  Pin a dashboard widget—“Inbound Shipments This Week”—to your home screen for daily visibility.
+</Tip>
+
+### 1.3 Record Goods Receipt via Purchase Receipt  
+
+Once goods physically arrive, follow these steps:
+
+1. Open the original **Purchase Order** (`Buying > Purchase Order > PO List`).  
+
+2. Click `Create > Purchase Receipt` in the PO toolbar.  
+
+3. The **Purchase Receipt** form opens, pre-filled with PO header and item lines.  
+
+4. In the **Items** table, verify or adjust:  
+
+   - **Qty Received**: Actual quantity delivered (may be partial or over/under PO quantity)  
+
+   - **Target Warehouse**: Should match where stock will be stored  
+
+   - **Batch No. / Serial No.**: If your Item is batch- or serial-tracked, click **Add Batch** or scan serials to allocate received units.  
+
+   - **UOM** and **Rate**: Verify costs; adjust if there are discrepancies in price or packaging.  
+
+5. (Optional) Attach any **Inspection Certificates**, **Packing Lists**, or **Delivery Notes** under the **Attachments** section.  
+
+6. Click **Save** to draft the receipt. Review the computed **Total Received Value**.  
+
+7. When satisfied, click **Submit** to finalize:  
+
+   - Stock levels in the specified warehouse are updated immediately  
+
+   - A **Stock Ledger Entry** is recorded for each item (increase in-stock)  
+
+   - An **Accounting Entry** moves value into inventory (debit) and records a provisional liability if not yet invoiced  
+
+<Warning>
+  Once submitted, the Purchase Receipt cannot be edited. Use **Cancel & Amend** if you discover errors (e.g., wrong quantity or warehouse).
+</Warning>
+
+### 1.4 Handle Partial or Over-Deliveries  
+
+- **Partial Receipt**:  
+
+  1. On the Purchase Receipt form, enter the actual received quantity (less than PO).  
+
+  2. The remaining quantity stays open on the PO. The PO status changes to **“To Receive and Bill”** until fully received.  
+
+  3. Create additional Purchase Receipts as subsequent shipments arrive.
+
+- **Over-Delivery**:  
+
+  1. If the supplier delivers more than ordered, change **Qty Received** to the higher count.  
+
+  2. The system flags the PO as **“Excess Received”**.  
+
+  3. Discuss with the supplier whether to accept overage (update PO accordingly) or return the surplus.  
+
+  4. If returning, create a `Stock Entry > Material Issue` to send the excess back and adjust inventory.

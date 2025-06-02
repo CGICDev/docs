@@ -1,4 +1,104 @@
 ---
 title: "Manage outbound shipments"
-description: "Description of your new file."
+description: "Coordinate and track all shipments leaving your warehouses—creating delivery notes, updating shipment status, and notifying customers—using the CGIC App."
 ---
+
+<Info>
+  Prerequisites
+
+  - Sales Orders have been submitted under `Selling > Sales Order`  
+
+  - Pick Lists (if used) exist under `Stock > Pick List` 
+
+  - Warehouses and bin locations are configured under `Stock > Warehouse and Stock > Bin Location`  
+
+  - Carriers and shipping methods are defined (optional, via custom fields or integration)  
+</Info>
+
+### 1.0 Generate a Delivery Note
+
+1. Navigate to `Selling > Delivery Note > New Delivery Note.`  
+
+2. In the header, link to a **Sales Order** or **Pick List**:  
+
+   - Click **Get Orders to **`Deliver > Sales Order`, select your SO.  
+
+   - Or click **Get Items to **`Deliver > Pick List`, choose your Pick List.  
+
+3. The **Items** table auto-populates with item codes, quantities, UOM, and bin locations (if bin-managed).  
+
+4. Verify or adjust:  
+
+   - **Qty to Deliver** (matches PO or Pick List)  
+
+   - **Source Warehouse** and **Source Bin** (must reflect where stock is picked from)  
+
+   - **Target Customer Address** (pulls from Customer profile)  
+
+### 1.1 Add Shipping Details
+
+1. In the **Shipping Details** section (below Items), enter:  
+
+   - **Carrier Name** (e.g., FedEx, DHL)  
+
+   - **Service / Shipping Method** (e.g., Ground, Express)  
+
+   - **Tracking Number** (to share with customer)  
+
+   - **Shipment Date** (defaults to today; adjust if delayed)  
+
+2. (Optional) Attach shipping labels, packing slips, or customs documents using the **Attachments** section.  
+
+3. Click **Save** to draft, then **Submit** to finalize.  
+
+   - Inventory is deducted immediately from the listed warehouse/bin.  
+
+   - A **Stock Ledger Entry** and **GL Posting** update stock value and COGS (if configured).  
+
+### 1.2 Print or Export Shipment Documents
+
+1. With the Delivery Note open, click **Print** to generate a formatted PDF—this serves as the **Packing Slip** for warehouse staff.  
+
+2. Click `Download > CSV` to export item and bin data for scanning apps or 3PL integration.  
+
+3. Use **Email** to send the PDF and tracking number to the customer automatically (ensure Email Settings are configured).
+
+### 1.3 Update Shipment Status
+
+1. After the goods leave the dock, reopen the Delivery Note.  
+
+2. In the **Status** dropdown, select one of:  
+
+   - **“In Transit”** (goods have been picked up by the carrier)  
+
+   - **“Partial Delivered”** (if only some items shipped)  
+
+   - **“Delivered”** (confirmed receipt by customer)  
+
+3. Click **Save**.  
+
+   - This status update can trigger automated notifications or KPI updates on dashboards.  
+
+<Tip>
+  If partial returns occur (e.g., damaged goods), create a **Sales Return** against this Delivery Note to adjust inventory and initiate crediting.
+</Tip>
+
+### 1.4 Monitor Outbound Shipments
+
+1. Navigate to `Stock > Reports > Outbound Shipments` (or **Delivery Note List**).  
+
+2. Apply filters:  
+
+   - **Status** (e.g., In Transit, Delivered)  
+
+   - **Warehouse** (to see shipments from a specific dock)  
+
+   - **Date Range** (e.g., past 7 days)  
+
+3. Click **Refresh** for a consolidated view:  
+
+   - **DN Number**, **Customer**, **Shipment Date**, **Carrier**, **Status**  
+
+   - **Total Qty** and **Total Value** per DN  
+
+4. Drill down on any row to open the Delivery Note and see detailed item or bin-level data.

@@ -1,4 +1,86 @@
 ---
 title: "Allocate storage locations for received goods"
-description: "Description of your new file."
+description: "Organize and assign precise bin or rack locations in your warehouses—so received items are stored efficiently and can be located quickly—using the CGIC App."
 ---
+
+<Info>
+  **Prerequisites**
+
+  - At least one warehouse is defined under `Stock > Warehouse ` 
+
+  - You have a basic understanding of your warehouse’s physical layout (e.g., bins, racks, shelves)
+</Info>
+
+### 1.0 Enable Locations in Warehouse Settings
+
+1. Navigate to `Stock > Warehouse > Warehouse List.`  
+
+2. Click the warehouse where you want to enable sub-locations.  
+
+3. In the warehouse form, check **“Enable Bin Location Management”** (or a similarly labeled option).  
+
+4. Click **Save**.  
+
+### 1.1 Create Bin/Location Records
+
+1. Go to `Stock > Bin Location > New Bin Location.`  
+
+2. Fill in:  
+
+   - **Bin Code** (unique short identifier, e.g., “A1-01”)  
+
+   - **Warehouse** (select the parent warehouse)  
+
+   - **Parent Bin** (optional—if using a nested hierarchy like Rack → Shelf)  
+
+   - **Description** (e.g., “Front-Left Rack, Top Shelf”)  
+
+3. Click **Save**.  
+
+4. Repeat for each bin, rack, or sub-location in the warehouse.
+
+### 1.2 Allocate Location During Purchase Receipt
+
+1. When receiving goods, open a **Purchase Receipt** under `Buying > Purchase Order > Purchase Order List → Create > Purchase Receipt.`
+
+2. In the **Items** table, confirm the **Qty Received** and **Target Warehouse** for each line.  
+
+3. A new **Bin Location** column appears (if enabled). Click in that cell to select the bin where you will store the received items.  
+
+4. If you need multiple bins for a single line (e.g., split across two bins), click the “\+” icon to add another row and allocate quantities to each bin.  
+
+5. After assigning locations, click **Save**, then **Submit**.  
+
+   - The stock ledger now reflects item movements into specific bin locations.  
+
+### 1.3 Allocate or Reassign Locations via Stock Entry
+
+1. To move items into bins after initial receipt, go to `Stock > Stock Entry > New Stock Entry. ` 
+
+2. Set **Purpose = Material Transfer**.  
+
+3. In the **Items** table, add the item, then:  
+
+   - **Source Warehouse/Bin**: select the current location (or warehouse if not yet stored in a bin)  
+
+   - **Target Warehouse/Bin**: choose the bin where you want to store it  
+
+   - **Qty**: enter the quantity to move  
+
+4. Repeat as needed for multiple bins or items.  
+
+5. Click **Save**, then **Submit**.  
+
+### 1.4 Verify Bin-Level Stock
+
+1. Navigate to `Stock > Reports > Bin-Wise Stock. ` 
+
+2. Filter by **Warehouse** and/or **Item**.  
+
+3. Click **Run**.  
+
+4. The report displays:  
+
+   - **Bin Code**, **Item Code**, **Qty on Hand** in each bin  
+
+5. Drill down into any bin to see recent transactions affecting that location.
