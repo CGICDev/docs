@@ -141,11 +141,12 @@
             "group": "Warehouse Management",
             "pages": [
               "manufacturing/warehouse-management/real-time-tracking-of-stock-levels-across-warehouses",
-              "manufacturing/warehouse-management/real-time-tracking-of-stock-levels-across-warehouses",
-              "manufacturing/warehouse-management/real-time-tracking-of-stock-levels-across-warehouses",
-              "manufacturing/warehouse-management/real-time-tracking-of-stock-levels-across-warehouses",
-              "manufacturing/warehouse-management/real-time-tracking-of-stock-levels-across-warehouses",
-              "manufacturing/warehouse-management/real-time-tracking-of-stock-levels-across-warehouses"
+              "manufacturing/warehouse-management/manage-inbound-shipments-and-receiving",
+              "manufacturing/warehouse-management/allocate-storage-locations-for-received-goods",
+              "manufacturing/warehouse-management/generate-picking-lists-for-orders",
+              "manufacturing/warehouse-management/manage-outbound-shipments",
+              "manufacturing/warehouse-management/warehouse-inventory-transfer-tracking-in-out",
+              "manufacturing/warehouse-management/barcode-RFID-capabilities"
             ]
           },
           {
