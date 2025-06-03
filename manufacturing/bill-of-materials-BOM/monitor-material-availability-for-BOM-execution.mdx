@@ -7,18 +7,140 @@ description: "Ensure all required raw materials are in stock before starting a p
 
 <CardGroup cols={1}>
   <Card title="Logged In & Role" icon="user" iconType="duotone">
-    - - You are logged into the **CGIC App**.  
+    - - You are logged into the **CGIC App**.
 
-       -Your role is **Production Manager**, **Manufacturing User**, or **Inventory Manager**.
+      -Your role is **Production Manager**, **Manufacturing User**, or **Inventory Manager**.
   </Card>
   <Card title="Warehouse & Stock" icon="chart-pie-simple-circle-currency" iconType="duotone">
-     - Relevant warehouses (e.g., “Raw Material Store,” “Central Warehouse”) are configured under `Stock > Warehouse. ` 
-
-    -   -On-hand stock records are up to date (all Purchase Receipts, Stock Entries, etc. are submitted).
+    - Relevant warehouses (e.g., “Raw Material Store,” “Central Warehouse”) are configured under `Stock > Warehouse. `
+    - -On-hand stock records are up to date (all Purchase Receipts, Stock Entries, etc. are submitted).
   </Card>
   <Card title="Items & BOMs" icon="sitemap" iconType="duotone">
-    - - Finished‐goods item and all raw‐material items exist under `Stock > Item >Item List.`  
-
+    - - Finished‐goods item and all raw‐material items exist under `Stock > Item >Item List.`
       - A submitted (Active) BOM for the finished product is available under `Manufacturing > Bill of Materials > BOM List.`
   </Card>
 </CardGroup>
+
+### 1.0 Open the BOM Material Availability Report
+
+1. Navigate to `Manufacturing > Reports > Material Availability.`  
+
+2. The **Material Availability** interface opens, showing two main filters:  
+
+   - **BOM**: select the BOM you plan to execute (e.g., “BOM-Danaval-Chocolate-001”).  
+
+   - **Quantity to Produce**: enter the planned production quantity (e.g., 500 units).  
+
+3. Click **Refresh** (or **Run**) to generate a real-time comparison between BOM requirements and available stock.
+
+### 2.0 Interpret the Availability Dashboard
+
+1. The top section displays a summary:  
+
+   - **Total Required Qty** (for each component, based on the entered production quantity)  
+
+   - **Total On-Hand Qty** (sum of current stock across selected warehouses)  
+
+   - **Shortage Qty** (difference: Required − On-Hand, if any)  
+
+2. The **Materials Table** lists each raw material with columns:  
+
+   - **Item Code & Description**  
+
+   - **Required Qty** (for this run)  
+
+   - **Available Qty** (real-time on-hand in the chosen warehouse(s))  
+
+   - **Shortage Qty** (when Available \< Required)  
+
+   - **Warehouse** (default source location per BOM; optional filter to view other warehouses)  
+
+3. If all **Shortage Qty** values show **0**, you have sufficient stock to execute the BOM. If any **Shortage Qty** is positive, you need to procure or transfer that quantity before scheduling production.
+
+<Note>
+  y default, the report checks all warehouses you have access to. Use the **Warehouse Filter** to restrict the view to a specific location if needed.
+</Note>
+
+### 3.0 Drill Down into Specific Item Shortages
+
+1. In the **Materials Table**, click on the **Item Code** of any component flagged with a shortage.  
+
+2. A pop-up or new tab opens the **Stock Ledger** for that item, filtered by relevant warehouses, showing:  
+
+   - **Recent Receipts** (dates and quantities)  
+
+   - **Recent Issues** (sales, transfers, picks)  
+
+   - **Pending Material Requests** or Reserved Quantities  
+
+3. Use this detail to identify if incoming stock is on the way (e.g., Purchase Orders in-transit) or if reallocation from another warehouse is possible.
+
+<Tip>
+  Sort the Stock Ledger by **Date** descending to see the latest movements. Use filters like **Voucher Type = Purchase Receipt** to focus on replenishments.
+</Tip>
+
+### 4.0 Create or Update Material Requests for Shortages
+
+1. From the **Material Availability** report, click **Create Material Request** (button usually located at the top-right or in the toolbar) to open a pre-filled MR form.  
+
+2. In the new **Material Request** form:  
+
+   - **Request Type**: automatically set to **“Manufacture”**.  
+
+   - **BOM**: pre-selected based on your report choice.  
+
+   - **Quantity**: mirrors the **Quantity to Produce** used in the report.  
+
+   - **Items** table: lists only the components with **Shortage Qty** \> 0, with **Required Qty** equal to the shortage amount and **Available Qty** showing zero or insufficient stock.  
+
+3. Confirm or manually adjust any **Warehouse** assignments if you plan to source from multiple locations.  
+
+4. Click **Save**, then **Submit** to log a Material Request. If you need to send Purchase Orders immediately, click `Create > Purchase Order` from the MR toolbar.  
+
+<Tip>
+  If some components are available but reserved by other MRs or Work Orders, adjust the MR’s **Required Qty** accordingly and add notes in the **Comments** section for procurement follow-up.
+</Tip>
+
+### 5.0 Plan Inter-Warehouse Transfers (If Applicable)
+
+\> _If shortages exist only in the default “From Warehouse” but another warehouse has sufficient stock, you can transfer instead of purchasing._
+
+1. In the **Materials Table**, click **Available Qty** for a component to view bin/warehouse breakdown.  
+
+2. Note the warehouse(s) with surplus stock.  
+
+3. Create a `Stock Entry > New Stock Entry` with **Purpose = Material Transfer**:  
+
+   - **Item Code**: the component.  
+
+   - **Qty**: amount to move (up to surplus).  
+
+   - **Source Warehouse / Bin**: where stock resides.  
+
+   - **Target Warehouse**: the BOM’s default source.  
+
+4. Click **Save**, then **Submit** to move stock.  
+
+5. Return to **Material Availability** report and click **Refresh** to confirm that the shortage has been resolved.
+
+<Note>
+  You may need to repeat Steps 3 and 4 for multiple components if sourcing across warehouses.
+</Note>
+
+### 6.0 Final Verification Before Work Order Creation
+
+1. Once all **Shortage Qty** values read **0** in the **Materials Table**, your materials are fully available.  
+
+2. Navigate to `Manufacturing > Work Order > New. ` 
+
+3. Select the same **BOM** and re-enter the **Quantity to Produce** you used in the Material Availability report.  
+
+4. Confirm that the **Material Availability Warning** no longer appears at the top of the Work Order form.  
+
+5. Click **Save**, then **Submit** to queue the Work Order—confident that production can proceed without raw material interruptions.
+
+<Tip>
+  You may need to repeat Steps 3 and 4 for multiple components if sourcing across warehouses.
+</Tip>
+
+> By monitoring material availability against your BOM requirements in the CGIC App, you eliminate guesswork and ensure production runs are fully supported by inventory on hand or in process. This proactive approach prevents unplanned downtime, aligns procurement and planning teams, and keeps your manufacturing schedule on track.  
