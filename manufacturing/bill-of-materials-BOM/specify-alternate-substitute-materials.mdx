@@ -1,4 +1,63 @@
 ---
 title: "Specify Alternate/Substitute Materials"
-description: "Description of your new file."
+description: "This shows how to define backup materials for CGIC products when primary ingredients are unavailable. Set up alternates once, and the system will automatically suggest them during shortages - keeping production running smoothly."
 ---
+
+<Info>
+  Prerequisites
+
+  1. **Item Setup**: Both primary and alternate materials must exist as _Items_
+     - Example: _Yeast-Brand-A_ and _Yeast-Brand-B_ for Valdana Bread
+  2. **BOM Access**: Your user role needs permissions to edit Bill of Materials
+  3. **Stock Settings**: Enable _Allow Item Alternatives_ in `Stock Settings`
+</Info>
+
+### **1. Overview**
+
+**Alternate Materials** ensure CGIC maintains continuous production even during supply shortages. For example:
+
+- Swap _Imported Yeast_ with _Local Yeast_ for Valdana Bread during shipping delays
+- Use _Recycled Pulp_ instead of _Virgin Pulp_ for Onina Tissue to support sustainability initiatives\
+  This feature prevents production halts without modifying your Bill of Materials (BOM).
+
+### **2. Key Benefits**
+
+- **Avoid Stoppages**: Automatically suggest backups when primary materials run low
+- **Cost Control**: Use cheaper alternatives during price spikes (e.g., _Additive-Y_ vs _Additive-X_ for Luca Oil)
+- **Flexibility**: Manage temporary substitutions without permanent BOM changes
+
+### **3. Step-by-Step Setup**
+
+#### **3.1 Define Alternate Items**
+
+1. Go to: `Stock > Items > [Select Item]` (e.g., _Yeast for Valdana Bread_)
+2. Under **Alternatives Section**:
+   - **Add Row**
+   - **Item Code**: Select substitute (e.g., _Yeast-Local_)
+   - **Qty Ratio**: Set conversion (e.g., `1:1` if equal)
+
+#### **3.2 Enable in BOM**
+
+1. Open BOM: `Manufacturing > BOM > [BOM Name]`
+2. Check **Allow Alternative Item** for relevant components
+3. Set **Priority** (1 = highest preference):
+
+   ```
+   Primary: PET-Bottle-A (Priority 1)  
+   Backup: PET-Bottle-B (Priority 2)  
+   Emergency: Glass-Bottle (Priority 3) 
+   ```
+
+### **4. CGIC Product Examples**
+
+| **Product**         | **Primary Material** | **Alternate**      | **Use Case**       |
+| :------------------ | :------------------- | :----------------- | :----------------- |
+| **Ovita Waters**    | Blue Caps            | White Caps         | Supplier shortage  |
+| **Luca Engine Oil** | Additive-X (\$10/L)  | Additive-Y (\$8/L) | Cost reduction     |
+| **Valdana Bread**   | Brand A Yeast        | Brand B Yeast      | Supply chain delay |
+
+### **5. During Production**
+
+- **Auto-Prompt**: System suggests alternates if primary stock is low during **Stock Entry**
+- **Manual Override**: Operators can select alternates on **Job Cards**
+- **Audit Trail**: Production records show which alternate was used

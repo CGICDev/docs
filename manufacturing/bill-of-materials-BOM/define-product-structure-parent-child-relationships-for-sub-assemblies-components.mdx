@@ -51,5 +51,28 @@ _Link components to finished goods_:
    | `ADDITIVE-PKG` | Raw Material | 5 L      |
    | 20 units       | 20 units     | 20 units |
 
-   | |
-   | :-- |
+### **2.0 CGIC Product Examples**
+
+#### **Onina Tissue**
+
+| **Level**   | **Item**               | **Type**      | **Qty** |
+| :---------- | :--------------------- | :------------ | :------ |
+| **Parent**  | Onina Tissue (24-pack) | Finished Good | 1       |
+| ↳ **Child** | Tissue Core Rolls      | Sub-Assembly  | 24      |
+| ↳ **Child** | Pulp                   | Raw Material  | 5 kg    |
+| ↳ **Child** | Adhesive               | Raw Material  | 0.5 L   |
+| ↳ **Child** | Packaging Box          | Raw Material  | 1       |
+
+#### **Valdana Bread**
+
+| **Level**   | **Item**           | **Type**      |
+| :---------- | :----------------- | :------------ |
+| **Parent**  | Valdana Bread Loaf | Finished Good |
+| ↳ **Child** | Dough Batch        | Sub-Assembly  |
+| ↳ **Child** | Packaging Sleeve   | Raw Material  |
+
+### **3.0 Key Features**
+
+- **Cost Roll-Up**: Auto-calculates total cost (e.g., _Pre-Mixed Oil \+ Additives = Luca Oil cost_).
+- **Nested Manufacturing**: Produce sub-assemblies first (e.g., make _Dough Batch_ before baking Valdana Bread).
+- **Version Control**: Track BOM revisions for formula changes.
