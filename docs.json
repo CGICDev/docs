@@ -177,11 +177,10 @@
               "manufacturing/production-planning/integrate-with-material-requests",
               "manufacturing/production-planning/create-and-manage-work-orders",
               "manufacturing/production-planning/link-work-orders-with-bill-of-materials-BOM",
-              "manufacturing/production-planning/create-production-plan",
-              "manufacturing/production-planning/create-production-plan",
-              "manufacturing/production-planning/create-production-plan",
-              "manufacturing/production-planning/create-production-plan",
-              "manufacturing/production-planning/create-production-plan"
+              "manufacturing/production-planning/manage-work-orders-for-sub-assemblies",
+              "manufacturing/production-planning/handle-custom-one-off-production-orders",
+              "manufacturing/production-planning/generate-production-reports",
+              "manufacturing/production-planning/manage-multiple-production-lines"
             ]
           },
           {
