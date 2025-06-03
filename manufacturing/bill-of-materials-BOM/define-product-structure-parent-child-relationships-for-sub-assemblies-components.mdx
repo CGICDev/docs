@@ -1,4 +1,55 @@
 ---
 title: "Define Product Structure (Parent-Child Relationships for sub-assemblies & components)"
-description: "Description of your new file."
+description: "Product Structure defines how CGIC products (like Onina Tissue or Luca Engine Oil) are built from components and sub-assemblies. "
 ---
+
+<CardGroup cols={1}>
+  <Card title="This hierarchy enables">
+    Accurate production planning
+
+    Cost roll-up calculations
+
+    Inventory tracking of nested components
+
+    Simplified manufacturing of complex products
+  </Card>
+  <Card title="Key Concepts">
+    **Parent Item**: Finished product (e.g., _Ovita Waters 500ml_).
+
+    - **Child Items**:
+      - **Raw Materials**: Base components (e.g., _bottles, caps_).
+      - **Sub-Assemblies**: Intermediate items (e.g., _"Pre-Mixed Oil Blend"_ for Luca Engine Oil).
+  </Card>
+</CardGroup>
+
+### **1.0 Step-by-Step Setup**
+
+#### **1.1 Create Sub-Assemblies**
+
+_Define reusable intermediate products_:
+
+1. Go to: `Stock > Items > New Item`
+2. Set **Item Type**: _Sub-Assembly_.
+3. Example:
+   - **Item Code**: `PRE-MIX-OIL`
+   - **Item Name**: _Pre-Mixed Oil Base for Luca Engine Oil_
+
+#### **1.2 Build Parent-Child Hierarchy via BOM**
+
+_Link components to finished goods_:
+
+1. Go to: `Manufacturing > BOM > New`
+2. Configure:
+   - **Item**: Select _finished product_ (e.g., "Luca Engine Oil 5W-30").
+   - **Quantity**: Output quantity (e.g., _100 liters_).
+   - **With Operations**: Enable if assembly steps exist.
+3. **Add Components**:
+
+   | Item           | Type         | Qty      |
+   | -------------- | ------------ | -------- |
+   | `PRE-MIX-OIL`  | Sub-Assembly | 95 L     |
+   | `ADDITIVE-PKG` | Raw Material | 5 L      |
+   | 20 units       | 20 units     | 20 units |
+
+   | |
+   | :-- |
