@@ -166,7 +166,22 @@
           {
             "group": "Production Planning",
             "pages": [
-              "api-reference/introduction"
+              "manufacturing/production-planning/create-production-plan",
+              "manufacturing/production-planning/update-production-plan-details",
+              "manufacturing/production-planning/delete-production-plans",
+              "manufacturing/production-planning/search-production-plan-records",
+              "manufacturing/production-planning/track-production-progress-status",
+              "manufacturing/production-planning/manage-production-schedules",
+              "manufacturing/production-planning/track-production-output-units-produced",
+              "manufacturing/production-planning/calculate-production-costs",
+              "manufacturing/production-planning/integrate-with-material-requests",
+              "manufacturing/production-planning/create-and-manage-work-orders",
+              "manufacturing/production-planning/link-work-orders-with-bill-of-materials-BOM",
+              "manufacturing/production-planning/create-production-plan",
+              "manufacturing/production-planning/create-production-plan",
+              "manufacturing/production-planning/create-production-plan",
+              "manufacturing/production-planning/create-production-plan",
+              "manufacturing/production-planning/create-production-plan"
             ]
           },
           {
