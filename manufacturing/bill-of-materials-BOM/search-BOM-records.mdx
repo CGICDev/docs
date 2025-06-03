@@ -1,4 +1,105 @@
 ---
 title: "Search BOM Records"
-description: "Description of your new file."
+description: "Quickly locate any Bill of Materials (BOM) in the CGIC App by using the search bar, filters, and list views—so you can review, amend, or compare manufacturing recipes without delay."
 ---
+
+<CardGroup cols={2}>
+  <Card title="What it does">
+    - Enables you to find specific BOMs by number, item name, status, or other attributes  
+
+    - Lets you filter and sort the BOM list to zero in on active, disabled, or historical versions  
+
+    - Provides direct links to open the full BOM profile for review or editing 
+  </Card>
+  <Card title="Why it matters">
+    - Saves time when working with a large library of BOMs  
+
+    - Ensures you can quickly confirm which version of a recipe is in use  
+
+    - Helps troubleshoot production issues by finding the correct BOM immediately
+  </Card>
+</CardGroup>
+
+<Info>
+  Prerequisites 
+
+  - At least one BOM has been created under `Manufacturing > Bill of Materials > BOM List ` 
+
+  - You know at least one search criterion (e.g., BOM number, finished item name, status, “Applicable From” date)
+</Info>
+
+### 1.0 Open the BOM List
+
+1. From the main menu, navigate to `Manufacturing > Bill of Materials > BOM List.`  
+
+2. The BOM List page displays all submitted and draft BOMs. Columns typically include:  
+
+   - **BOM No.** (e.g., “BOM-Bottled Water-001”)  
+
+   - **Item** (the finished product name)  
+
+   - **Quantity** (default manufacture quantity)  
+
+   - **Status** (e.g., Active, Draft, Disabled)  
+
+   - **Applicable From** (date when this version is effective)
+
+### 1.1 Use the Search Bar for a Quick Match
+
+1. Click the **Search** field at the top-right of the BOM List.  
+
+2. Type any part of a BOM number or item name (e.g., “Water-001” or “Chocolate Bread”).  
+
+3. Press **Enter**.  
+
+4. The list refreshes to show matches where the typed text appears in either the **BOM No.** or **Item** columns.
+
+### 1.2 Apply Filters for Granular Results
+
+1. Click `Filter > Add Filter` (usually to the left of column headers).  
+
+2. Choose a field to filter by from the drop-down. Common filters include:  
+
+   - **Item:** Search by the finished product.  
+
+   - **Status:** Select “Active” or “Disabled” to narrow by BOM status.  
+
+   - **Applicable From:** Enter a date range to find versions effective within specific dates.  
+
+   - **Quantity:** Filter BOMs that produce a certain batch size.  
+
+3. After selecting a filter field, choose the operator (e.g., **=**, **\>=**, **like**) and enter the matching value.  
+
+4. Click **Apply**. You can stack multiple filters to refine results further (e.g., `Item = “Davana Bread”`  AND  `Status = “Active”`).
+
+### 1.3 Sort and Customize Columns
+
+1. Hover over any column header (e.g., **BOM No.**, **Item**, **Applicable From**).  
+
+2. Click the small **arrow** icon that appears to sort ascending or descending.  
+
+3. To add or remove columns, click the **three-dot menu (⋮)** next to the column headers and select **“Customize Columns”**.  
+
+4. Check or uncheck fields like **Quantity**, **Status**, or **Cost** to tailor the list view to your needs.  
+
+5. Click **Apply** to update the visible columns.
+
+### 1.4 Save and Reuse Filters
+
+1. After applying your desired filters and sorting, click **Save Filter** (usually at the bottom of the filter panel).  
+
+2. Give the filter set a descriptive name (e.g., “Q2 2025 Active BOMs”).  
+
+3. Click **Save**.  
+
+4. In future sessions, open **BOM List**, click **Filter ▶️ Saved**, and select your saved filter set to reapply instantly.
+
+### 1.5 Open the BOM Profile
+
+1. Once you locate the BOM row you need, click the **BOM No.** or **Item** link.  
+
+2. The full **BOM Profile** opens in view mode.  
+
+3. Review tabs such as **Production Item**, **Operations**, **Costing**, and **Connections** as needed.  
+
+4. If you have permission to amend, click **New Version** or **Edit** to make changes.
