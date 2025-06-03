@@ -1,4 +1,69 @@
 ---
 title: "Calculate Total Material Requirements for Production Runs"
-description: "Description of your new file."
+description: "This guide shows how to calculate exact raw material quantities needed for CGIC production runs (e.g., 10,000 Ovita Water bottles). Automate planning to avoid shortages or overstocking."
 ---
+
+<Info>
+  **Prerequisites**
+
+  Before calculating:
+
+  1. **Active BOMs**: For all products (e.g., _Onina Tissue BOM_ with pulp, adhesive, packaging).
+  2. **Accurate Stock**: Update raw material quantities in `Stock > Stock Balance`.
+  3. **Substitutes**: Define alternates (e.g., _Yeast-Brand-B_ for Valdana Bread).
+</Info>
+
+### **1.0 Overview**
+
+**Material Requirements Planning (MRP)** calculates total raw materials needed based on:
+
+- **Production Quantity** (e.g., _5,000 Valdana Bread loaves_)
+- **Bill of Materials (BOM)**
+- **Current Stock Levels**
+- **Planned Substitutions**
+
+### **2. 0 Step-by-Step Calculation**
+
+**2.1 Generate Production Plan**
+
+1. Go to: `Manufacturing > Production Plan > New`
+2. Fill in:
+   - **Item**: Finished product (e.g., _Luca Engine Oil 5W-30_)
+   - **Quantity**: Production target (e.g., _1,000 liters_)
+   - **Use Multi-Level BOM**: ✓ Check if using sub-assemblies
+3. **Get Raw Materials**:
+   - System auto-calculates requirements based on BOM.
+
+#### **2.2 Review Material Requests**
+
+1. **Raw Materials Table** shows:
+   - **Required Qty**: Total materials needed (e.g., _950L base oil for 1,000L Luca Oil_)
+   - **Available Qty**: Current stock
+   - **Additional Qty**: Shortfall to procure
+2. **Consider Substitutes**:
+   - If _Additive-X_ is low, system suggests _Additive-Y_ (if defined as alternate).
+
+#### **2.3 Adjust for Waste/Scrap**
+
+In BOM settings:
+
+1. Set **Scrap %** for loss-prone materials:
+   - _Example_: 5% scrap rate for Ovita Water caps → system adds extra 5% to requirement.
+
+### **3.0 CGIC Product Examples**
+
+#### **Valdana Bread (1,000 loaves)**
+
+| **Material** | **BOM Qty/Loaf** | **Total Required** | **Available** | **To Order**               |
+| :----------- | :--------------- | :----------------- | :------------ | :------------------------- |
+| Flour        | 0.5 kg           | 500 kg             | 300 kg        | 200 kg                     |
+| Yeast        | 0.02 kg          | 20 kg              | 5 kg          | 15 kg (_or Yeast-Brand-B_) |
+| Sugar        | 0.1 kg           | 100 kg             | 120 kg        | 0 kg                       |
+
+#### **Ovita Waters (5,000 bottles)**
+
+| **Material**   | **BOM Qty/Bottle** | **Total Required**         |
+| :------------- | :----------------- | :------------------------- |
+| Bottles        | 1                  | 5,000                      |
+| Caps           | 1                  | 5,000 (\+5% scrap = 5,250) |
+| Purified Water | 0.5L               | 2,500L                     |

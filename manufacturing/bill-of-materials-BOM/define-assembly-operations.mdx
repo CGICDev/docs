@@ -3,19 +3,15 @@ title: "Define Assembly Operations"
 description: "Specify the sequential steps, workstations, and operation times required to assemble or manufacture a finished product by defining “Operations” in the Bill of Materials (BOM) within the CGIC App. These operations guide production planning and scheduling, ensuring each work center knows exactly what tasks to perform."
 ---
 
-<CardGroup cols={2}>
+<CardGroup cols={1}>
   <Card title="What it does">
-    - Allows you to detail each assembly or production step (e.g., “Mixing,” “Embossing,” “Quality Inspection”)  
-
-    - Specifies which workstation or machine handles that step, how long it takes, and any fixed setup time  
-
+    - Allows you to detail each assembly or production step (e.g., “Mixing,” “Embossing,” “Quality Inspection”)
+    - Specifies which workstation or machine handles that step, how long it takes, and any fixed setup time
     - Integrates with Work Orders so the production scheduler can allocate resources, calculate labor costs, and sequence tasks
   </Card>
   <Card title="Why it matters">
-    - Standardizes your manufacturing process so every unit follows the same defined steps  
-
-    - Improves scheduling accuracy by assigning clear time estimates and resource allocation  
-
+    - Standardizes your manufacturing process so every unit follows the same defined steps
+    - Improves scheduling accuracy by assigning clear time estimates and resource allocation
     - Enables cost roll-ups by adding operation labor and machine costs to the overall BOM cost
   </Card>
 </CardGroup>
@@ -23,33 +19,24 @@ description: "Specify the sequential steps, workstations, and operation times re
 <Info>
   Prerequisites
 
-  - Finished‐goods Item and Workstations are set up:  
-
-    - `Stock > Item > Item List` contains the product you want to build.  
-
-    - `Manufacturing > Workstation > Workstation List` contains each work center or machine (e.g., “Injection Molding Machine A,” “Paint Booth 1”).  
-
+  - Finished‐goods Item and Workstations are set up:
+    - `Stock > Item > Item List` contains the product you want to build.
+    - `Manufacturing > Workstation > Workstation List` contains each work center or machine (e.g., “Injection Molding Machine A,” “Paint Booth 1”).
   - A submitted BOM for the product exists under `Manufacturing > Bill of Materials > BOM List`. (If no BOM exists, create one first—see “Create BOM” documentation.)
 </Info>
 
 ### 1.0 Open the Existing BOM
 
-1. Navigate to `Manufacturing > Bill of Materials > BOM List.`  
-
-2. Locate the BOM you need to update:  
-
-   - Use the **Search Bar** (e.g., type part of the BOM No. or Item name).  
-
-   - Or click `Filters > Add Filter > Item`**= [Your Product Name]** .  
-
+1. Navigate to `Manufacturing > Bill of Materials > BOM List.`
+2. Locate the BOM you need to update:
+   - Use the **Search Bar** (e.g., type part of the BOM No. or Item name).
+   - Or click `Filters > Add Filter > Item`**= [Your Product Name]** .
 3. Click the BOM’s name (e.g., **BOM-Danaval-Chocolate-001**) to open its detail view.
 
 ### 2.0 Enter Edit Mode (Amend if Needed)
 
-1. In the BOM form header, click **New Version** (if the BOM is already submitted).  
-
-2. CGIC creates a new draft version prefixed with “Amended from [Original BOM No.].”  
-
+1. In the BOM form header, click **New Version** (if the BOM is already submitted).
+2. CGIC creates a new draft version prefixed with “Amended from [Original BOM No.].”
 3. Click **Save** to reserve the new version number and enable editing.
 
 <Tip>
@@ -58,20 +45,13 @@ description: "Specify the sequential steps, workstations, and operation times re
 
 ### 3.0 Navigate to the Operations Tab
 
-1. Within the BOM form, click the **Operations** tab (located near “Production Item” and “Scrap & Process Loss”).  
-
-2. You’ll see a table header with columns:  
-
-   - **No.** (sequence number)  
-
-   - **Operation** (name/description of the step)  
-
-   - **Workstation Type** (machine or work center)  
-
-   - **Operation Time** (minutes per unit)  
-
-   - **Fixed Time** (check box if step takes a flat time regardless of quantity)  
-
+1. Within the BOM form, click the **Operations** tab (located near “Production Item” and “Scrap & Process Loss”).
+2. You’ll see a table header with columns:
+   - **No.** (sequence number)
+   - **Operation** (name/description of the step)
+   - **Workstation Type** (machine or work center)
+   - **Operation Time** (minutes per unit)
+   - **Fixed Time** (check box if step takes a flat time regardless of quantity)
    - **Operating Cost (NGN)** (optional: total cost for this operation)
 
 <Note>
@@ -80,60 +60,36 @@ description: "Specify the sequential steps, workstations, and operation times re
 
 ### 4.0 Add New Operations
 
-1. Click **Add Row** below the Operations table.  
-
-2. For each new operation row, fill in:  
-
-   - **No.**: Enter the sequence number (e.g., “1” for the first step, “2” for the second).  
-
-   - **Operation**: Type the operation name (e.g., “Filling & Sealing,” “Labeling,” “Quality Inspection”).  
-
-   - **Workstation Type**: Click the lookup (🔍) and select the workstation (e.g., “Filling Machine #3,” “Labeller”).  
-
-   - **Operation Time**: Enter time in minutes required to complete the operation per unit (e.g., “0.500” for half‐a‐minute per unit).  
-
-   - **Fixed Time**: Check this box if the operation takes a flat time per batch rather than scaling per unit (e.g., 5 minutes per batch for oven preheat).  
-
-   - **Operating Cost (NGN)**: (Optional) Enter the labor or machine cost for this operation (e.g., “150.00” NGN per unit) if you track cost here.  
-
-3. Repeat for each assembly step.  
-
+1. Click **Add Row** below the Operations table.
+2. For each new operation row, fill in:
+   - **No.**: Enter the sequence number (e.g., “1” for the first step, “2” for the second).
+   - **Operation**: Type the operation name (e.g., “Filling & Sealing,” “Labeling,” “Quality Inspection”).
+   - **Workstation Type**: Click the lookup (🔍) and select the workstation (e.g., “Filling Machine #3,” “Labeller”).
+   - **Operation Time**: Enter time in minutes required to complete the operation per unit (e.g., “0.500” for half‐a‐minute per unit).
+   - **Fixed Time**: Check this box if the operation takes a flat time per batch rather than scaling per unit (e.g., 5 minutes per batch for oven preheat).
+   - **Operating Cost (NGN)**: (Optional) Enter the labor or machine cost for this operation (e.g., “150.00” NGN per unit) if you track cost here.
+3. Repeat for each assembly step.
 4. Click **Save** at the top‐right to validate the operations table.
 
 ### 5.0 Edit or Remove Existing Operations
 
-- **Edit Operation Details:**  
-
-  1. Click the cell you want to update (e.g., change “Operation Time” from “0.500” to “0.600”).  
-
-  2. Press **Enter** or click outside the cell to confirm.  
-
+- **Edit Operation Details:**
+  1. Click the cell you want to update (e.g., change “Operation Time” from “0.500” to “0.600”).
+  2. Press **Enter** or click outside the cell to confirm.
   3. Click **Save** to persist changes.
-
-- **Remove an Operation:**  
-
-  1. Check the box at the left of the row you wish to delete.  
-
-  2. Click the **Trash‐Can Icon** that appears at the top of the table.  
-
-  3. Confirm the delete prompt.  
-
+- **Remove an Operation:**
+  1. Check the box at the left of the row you wish to delete.
+  2. Click the **Trash‐Can Icon** that appears at the top of the table.
+  3. Confirm the delete prompt.
   4. Click **Save** to apply the deletion.
 
 ### 6.0 Review & Submit the BOM Version
 
-1. Scroll back to the BOM header. Verify that:  
-
-   - **Production Item** and **Quantity to Manufacture** are correct.  
-
-   - All newly added operations appear in the right sequence.  
-
-   - Operation times and workstations match your workshop layout.  
-
-2. Click **Submit** at the top‐right to activate this BOM version.  
-
-   - The BOM status changes to **Submitted (Active)**.  
-
-   - CGIC assigns a new **Revision Number** (e.g., BOM-0001-02).  
-
+1. Scroll back to the BOM header. Verify that:
+   - **Production Item** and **Quantity to Manufacture** are correct.
+   - All newly added operations appear in the right sequence.
+   - Operation times and workstations match your workshop layout.
+2. Click **Submit** at the top‐right to activate this BOM version.
+   - The BOM status changes to **Submitted (Active)**.
+   - CGIC assigns a new **Revision Number** (e.g., BOM-0001-02).
    - All future Work Orders will reference these updated operations.
