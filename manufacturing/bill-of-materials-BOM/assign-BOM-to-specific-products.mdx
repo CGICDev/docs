@@ -1,4 +1,74 @@
 ---
 title: "Assign BOM to Specific Products"
-description: "Description of your new file."
+description: "Ensure each manufactured item uses the correct Bill of Materials (BOM) by assigning (or linking) an active BOM to its corresponding finished‐goods item in the CGIC App."
 ---
+
+<Info>
+  Prerequisites
+
+  - Finished-goods items and BOMs exist under:  
+
+    - `Stock > Item > Item List` (for product items)  
+
+    - `Manufacturing > Bill of Materials > BOM List` (for BOM documents)  
+
+  - The BOM you intend to assign is in **Submitted** (Active) status.
+</Info>
+
+### 1.0 Verify the BOM and Finished-Goods Item
+
+1. **Locate the BOM**  
+
+   - Go to `Manufacturing > Bill of Materials > BOM List.`  
+
+   - Use filters (e.g., **Item = “Danaval Chocolate Bread”**) or the search bar to find the specific BOM you want to assign.  
+
+   - Confirm the BOM’s status is **Submitted** (Active) and its **Production Item** matches the intended product.
+
+2. **Locate the Finished-Goods Item**  
+
+   - Navigate to `Stock > Item > Item List.`  
+
+   - Search for the product (e.g., “Danaval Chocolate Bread”).  
+
+   - Ensure this item’s **Is Stock Item** flag is checked (it must be a stock-tracked finished good).
+
+### 2.0 Open the Finished-Goods Item Record
+
+1. In the **Item List**, click the product’s **Item Code** to open its profile.  
+
+2. Review the **Item Details**: make sure the item type, UOM, and default warehouse are set correctly.  
+
+3. Click `Actions > Edit` to enable editing of item fields.
+
+### 3.0 Link the BOM in the Item’s Manufacturing Settings
+
+1. Scroll down (or click the **Manufacturing** tab, if shown) to find the **Default BOM** field.  
+
+2. Click the **Lookup (🔍)** icon next to **Default BOM**.  
+
+3. In the pop-up, start typing the BOM number or product name (e.g., “BOM-Danaval-Chocolate-001”).  
+
+4. Select the matching BOM from the list; the **BOM No.** populates automatically.  
+
+5. (Optional) If the item has multiple valid BOMs (e.g., seasonal recipes), confirm that the one you selected has the correct **Applicable From** date so it’s active for new production.
+
+### 4.0 Save and Confirm
+
+1. After selecting the **Default BOM**, click **Save** in the item form.  
+
+2. The item’s profile now shows the assigned BOM number under **Manufacturing Settings**.
+
+### 5.0 Verify Automatic BOM Use in Work Orders
+
+1. Create a new Work Order to confirm the BOM assignment:  
+
+   - Go to `Manufacturing > Work Order > New`.  
+
+   - In the **Work Order** header, select your product under **Production Item**.  
+
+2. When you select the item, CGIC automatically populates the **BOM** field with the BOM you assigned.  
+
+3. Confirm the **Quantity** and **UOM**; you’ll see the component list and operations pulled from that BOM.  
+
+4. Click **Save** (and **Submit** when ready). The Work Order now references the correct BOM.
