@@ -1,4 +1,87 @@
 ---
 title: "Update Production Plan Details"
-description: "Description of your new file."
+description: "Modify an existing Production Plan—adjusting quantities, dates, or planned BOMs—to ensure your manufacturing schedule stays aligned with demand and resource availability in the CGIC App."
 ---
+
+### Overview
+
+<CardGroup cols={1}>
+  <Card title="What it does" icon="sparkles" iconType="duotone">
+    - Allows you to edit key fields in a submitted Production Plan (e.g., quantities to produce, start and end dates, linked BOMs, priority)
+    - Automatically recalculates Material Requests, Work Orders, and resource allocations based on updated details
+    - Maintains an audit trail of changes so you can track who modified the plan and when
+  </Card>
+  <Card title="Why it matters" icon="sparkles" iconType="duotone">
+    - Keeps your production schedule responsive to changing demand, inventory, or capacity constraints
+    - Prevents stockouts or overproduction by updating quantities and dates before execution
+    - Ensures that downstream documents (Material Requests, Work Orders) reflect the most current plan
+  </Card>
+</CardGroup>
+
+### Steps to Update Production Plan Details
+
+<Steps>
+  <Step title="Locate the Production Plan">
+    1. Navigate to `Manufacturing > Production Plan > Production Plan List`.
+    2. Use the **Search Bar** or `Filter > Add Filter` to find your plan. Common filter criteria include:
+       - **Production Plan No.** (if you know the exact identifier)
+       - **Status = “Submitted”** (to focus on active plans)
+       - **Planned Start Date / End Date** (to narrow to a specific scheduling window)
+       - **Production Item** (finished‐goods item tied to the plan)
+    3. Click the desired **Production Plan No.** to open its details.
+  </Step>
+  <Step title="Enter Edit Mode">
+    <Warning>
+      You can only edit a Production Plan if its status is **“Submitted”** and no downstream **Work Orders** have already been **Completed** or **In Process**. If a plan is locked, you must cancel linked Work Orders first.
+    </Warning>
+    1. With the Production Plan open, click `Actions > Edit` at the top-right of the form.
+    2. The form switches to **Edit Mode**, enabling fields for modification.
+  </Step>
+  <Step title="Modify Key Fields">
+    In **Edit Mode**, you can adjust any of the following fields. After making changes, be sure to **Save** and **Submit** to reapply downstream impacts.
+
+    1. **Planned Quantities**
+       - In the **Plan Items** table, locate the row(s) for each finished‐good item.
+       - Update the **Planned Qty** column to reflect the new production quantity (e.g., increase from 500 to 750 units).
+       - CGIC will proportionally adjust any pending **Material Requests** or **Work Orders** that have not yet been processed.
+    2. **Production Schedule Dates**
+       - Edit **Planned Start Date** and/or **Planned End Date** fields for the plan as a whole, if the schedule has shifted.
+       - Optionally, update **Expected Delivery Date** if there is a committed customer deadline.
+       - Adjusting these dates ensures that resource allocation and Material Request scheduling align correctly.
+    3. **Linked BOM**
+       - If a different BOM version must be used (e.g., a revised recipe takes effect), click the **BOM** lookup and select the desired version.
+       - Verify that components and operation sequences will update accordingly within updated Work Orders.
+    4. **Priority or Status**
+       - Change the **Priority** field (e.g., Low, Medium, High) if urgency has changed.
+       - If the plan needs to be postponed, you can set **Status = “On Hold”**; or if you decide to cancel entirely, set **Status = “Cancelled”** (note: after cancelling, you cannot revert to Submitted).
+    5. **Remarks / Notes**
+       - Use the **Remarks** or **Comments** section to explain why changes were made (e.g., “Increased Qty due to urgent order” or “Delayed start after raw material backorder”).
+       - This audit note helps other team members understand context.
+  </Step>
+  <Step title="Save and Re-Submit the Plan">
+    1. After making your edits, click **Save** at the top-right.
+       - CGIC validates any dependencies (e.g., ensures updated BOM is valid, dates are in logical order).
+       - If there are validation errors (e.g., overlapping schedule or insufficient capacity), CGIC displays an error message—resolve this first.
+    2. Once the plan passes validation, click **Submit**.
+       - CGIC updates linked **Material Requests** to match the new **Planned Qty** and schedule.
+       - Pending **Work Orders** automatically adjust their production quantities, dates, and linked BOM if changed.
+       - An audit entry is logged under `Menu > View History`—recording what was changed, by whom, and when.
+  </Step>
+  <Step title="Verify Downstream Adjustments">
+    1. **Material Requests**
+       - Go to `Stock > Material Request > Material Request List.`
+       - Filter by **Production Plan** to see all MRs tied to this plan.
+       - Confirm that **Required Qty** and **Schedule Dates** match your updated plan details.
+       - If any MR remains mismatched (e.g., due to cancellation or manual override), edit or cancel it as needed.
+    2. **Work Orders**
+       - Navigate to `Manufacturing > Work Order > Work Order List.`
+       - Filter by **Production Plan** or **Plan No.** to list all WOs generated from this plan.
+       - Check each WO’s **Quantity**, **Start Date**, **End Date**, and **BOM** to verify updates were applied.
+       - If any Work Order requires manual intervention (e.g., already in progress), use `Actions > Cancel`or **Edit** to align it with the revised plan.
+    3. **Capacity & Resource Allocation**
+       - If you use capacity planning or scheduler tools, run `Manufacturing > Reports > Capacity Utilization` to see how the updated plan affects machine and labor loads.
+       - Adjust resource assignments (e.g., shift schedules) if the new quantities or dates create bottlenecks.
+  </Step>
+</Steps>
+
+> By following these steps to update Production Plan details—editing quantities, dates, BOMs, or priorities—you keep your manufacturing schedule flexible, accurate, and aligned with real-world demand and constraints. The CGIC App’s automated downstream updates ensure Material Requests and Work Orders stay in sync, minimizing manual rework and preventing production disruptions.  

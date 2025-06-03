@@ -7,19 +7,17 @@ description: "Run pre-built and customizable reports to analyze BOM‐related da
 
 <CardGroup cols={1}>
   <Card title="Logged In & Role" icon="user" iconType="duotone">
-    - - You’re logged into the **CGIC App**.  
-
-         - Your role is **Production Manager**, **Manufacturing User**, or **System Manager**.
+    - - - You’re logged into the **CGIC App**.
+        - - Your role is **Production Manager**, **Manufacturing User**, or **System Manager**.
   </Card>
   <Card title="Stock & Production Data" icon="chart-pie-simple-circle-currency" iconType="duotone">
-    - - Component items have current on-hand and purchase rate information under `Stock > Item > Item List.`
-    - - Work Orders exist (if you want usage data) under `Manufacturing > Work Order.`
+    - - - Component items have current on-hand and purchase rate information under `Stock > Item > Item List.`
+    - - - Work Orders exist (if you want usage data) under `Manufacturing > Work Order.`
   </Card>
 </CardGroup>
 
 <Card title="Items & BOMs" icon="sitemap" iconType="duotone">
-  - At least one submitted (Active) BOM exists under `Manufacturing > Bill of Materials > BOM List.`  
-
+  - At least one submitted (Active) BOM exists under `Manufacturing > Bill of Materials > BOM List.`
   - All raw material and operation cost data are up to date in the BOM.
 </Card>
 
@@ -29,130 +27,75 @@ description: "Run pre-built and customizable reports to analyze BOM‐related da
 
 ### 1.0 Access the Manufacturing Reports Menu
 
-1. From the main menu, navigate to `Manufacturing > Reports.` 
-
-2. A list of BOM-related reports appears. Common report names include:  
-
-   - **BOM Costing Report**  
-
-   - **BOM Material Requirement Report**  
-
-   - **BOM Version History Report**  
-
+1. From the main menu, navigate to `Manufacturing > Reports.`
+2. A list of BOM-related reports appears. Common report names include:
+   - **BOM Costing Report**
+   - **BOM Material Requirement Report**
+   - **BOM Version History Report**
    - **BOM Usage Report**
 
 ### 2.0 Run the BOM Costing Report
 
-1. Click **BOM Costing Report**.  
-
-2. In the filter panel, set:  
-
-   - **BOM**: select the BOM you want to analyze (e.g., “BOM-Danaval-Chocolate-001”).  
-
-   - **Company**: choose your legal entity (e.g., Charisma Global).  
-
-   - **Quantity**: enter the production batch size (e.g., 500 units).  
-
-   - **Currency** (optional): if multi-currency, select the currency for cost calculations.  
-
-3. Click **Refresh** (or **Run**).  
-
-4. The report displays:  
-
-   - **Raw Material Cost**: sum of (Required Qty × Latest Buying Rate) for each component.  
-
-   - **Operation Cost**: sum of (Operation Time × Operation Rate) for each step.  
-
-   - **Overhead/Additional Costs**: any fixed or percentage-based charges defined in the BOM.  
-
-   - **Total Batch Cost** and **Cost per Unit**.  
-
-5. Review each line item’s cost contribution.  
-
+1. Click **BOM Costing Report**.
+2. In the filter panel, set:
+   - **BOM**: select the BOM you want to analyze (e.g., “BOM-Danaval-Chocolate-001”).
+   - **Company**: choose your legal entity (e.g., Charisma Global).
+   - **Quantity**: enter the production batch size (e.g., 500 units).
+   - **Currency** (optional): if multi-currency, select the currency for cost calculations.
+3. Click **Refresh** (or **Run**).
+4. The report displays:
+   - **Raw Material Cost**: sum of (Required Qty × Latest Buying Rate) for each component.
+   - **Operation Cost**: sum of (Operation Time × Operation Rate) for each step.
+   - **Overhead/Additional Costs**: any fixed or percentage-based charges defined in the BOM.
+   - **Total Batch Cost** and **Cost per Unit**.
+5. Review each line item’s cost contribution.
 6. To export, click `Download > CSV` or **Print** to share with finance or management.
 
 ### 3.0 Run the BOM Material Requirement Report
 
-1. Click **BOM Material Requirement Report**.  
-
-2. Set filters:  
-
-   - **BOM**: select your target BOM.  
-
-   - **Quantity to Produce**: enter the planned production quantity (e.g., 1,000 units).  
-
-   - **From Warehouse** (optional): to check material availability in a specific location.  
-
-   - **Include Future Items** (toggle): if you want to consider materials on pending Purchase Orders.  
-
-3. Click **Refresh**.  
-
-4. The report lists all raw materials with columns:  
-
-   - **Item Code & Description**  
-
-   - **Required Qty** (scaled for your batch)  
-
-   - **Available Qty** (on-hand in the specified warehouse)  
-
-   - **Shortage Qty** (if any)  
-
-   - **UOM** and **Warehouse**  
-
-5. Use this report to create Material Requests or Purchase Orders by clicking **Create MR** from the toolbar.  
-
+1. Click **BOM Material Requirement Report**.
+2. Set filters:
+   - **BOM**: select your target BOM.
+   - **Quantity to Produce**: enter the planned production quantity (e.g., 1,000 units).
+   - **From Warehouse** (optional): to check material availability in a specific location.
+   - **Include Future Items** (toggle): if you want to consider materials on pending Purchase Orders.
+3. Click **Refresh**.
+4. The report lists all raw materials with columns:
+   - **Item Code & Description**
+   - **Required Qty** (scaled for your batch)
+   - **Available Qty** (on-hand in the specified warehouse)
+   - **Shortage Qty** (if any)
+   - **UOM** and **Warehouse**
+5. Use this report to create Material Requests or Purchase Orders by clicking **Create MR** from the toolbar.
 6. Export with `Download > CSV` or print to share with procurement.
 
 ### 4.0 Run the BOM Version History Report
 
-1. Click **BOM Version History Report**.  
-
-2. Filter by:  
-
-   - **BOM**: choose the base BOM number (e.g., “BOM-Danaval-Chocolate-001”).  
-
-   - **From Date / To Date**: specify a date range to see revisions submitted within that period.  
-
-3. Click **Refresh**.  
-
-4. The report displays:  
-
-   - **Revision No.** (e.g., “BOM-0001-01,” “BOM-0001-02”).  
-
-   - **Modified By** and **Modified On**.  
-
-   - **Change Log Summary** (fields changed, old vs. new values).  
-
-   - **Applicable From** date for each revision.  
-
-5. Click any **Revision No.** to open that historical BOM in read-only mode.  
-
+1. Click **BOM Version History Report**.
+2. Filter by:
+   - **BOM**: choose the base BOM number (e.g., “BOM-Danaval-Chocolate-001”).
+   - **From Date / To Date**: specify a date range to see revisions submitted within that period.
+3. Click **Refresh**.
+4. The report displays:
+   - **Revision No.** (e.g., “BOM-0001-01,” “BOM-0001-02”).
+   - **Modified By** and **Modified On**.
+   - **Change Log Summary** (fields changed, old vs. new values).
+   - **Applicable From** date for each revision.
+5. Click any **Revision No.** to open that historical BOM in read-only mode.
 6. Export or print to archive revision data for audits.
 
 ### 5.0 Run the BOM Usage Report
 
-1. Click **BOM Usage Report**.  
-
-2. Set filters:  
-
-   - **BOM**: select the BOM you want to investigate.  
-
-   - **Status** (optional): filter Work Orders by status (e.g., “Completed,” “In Progress”).  
-
-   - **Date Range**: define a period to see which Work Orders used this BOM.  
-
-3. Click **Refresh**.  
-
-4. The report shows:  
-
-   - **Work Order No.** and **Customer** (if linked to a Sales Order)  
-
-   - **Production Quantity** and **Completed Quantity**  
-
-   - **Workstation** or **Cost Center** (where manufactured)  
-
-   - **Status** of each Work Order  
-
-5. Use this to identify how many units have been produced from a given BOM, and which orders remain open.  
-
+1. Click **BOM Usage Report**.
+2. Set filters:
+   - **BOM**: select the BOM you want to investigate.
+   - **Status** (optional): filter Work Orders by status (e.g., “Completed,” “In Progress”).
+   - **Date Range**: define a period to see which Work Orders used this BOM.
+3. Click **Refresh**.
+4. The report shows:
+   - **Work Order No.** and **Customer** (if linked to a Sales Order)
+   - **Production Quantity** and **Completed Quantity**
+   - **Workstation** or **Cost Center** (where manufactured)
+   - **Status** of each Work Order
+5. Use this to identify how many units have been produced from a given BOM, and which orders remain open.
 6. Export with `Download > CSV` or **Print** for production dashboards and capacity planning.
