@@ -3,21 +3,19 @@ title: "Delete BOM"
 description: "Safely remove an outdated or duplicate BOM from the system—either by disabling it so it cannot be used for new production, or by permanently deleting it if no dependent transactions exist."
 ---
 
-> Overview
->
-> **What it does:**  
->
-> - Disables a BOM to mark it inactive while preserving historical versions and audit trails  
->
-> - Permanently deletes a BOM when it has no linked Work Orders, ensuring your BOM list remains clean and relevant  
+<Card title="Overview">
+  **What it does:**
+
+  Disables a BOM to mark it inactive while preserving historical versions and audit trails
+
+  Permanently deletes a BOM when it has no linked Work Orders, ensuring your BOM list remains clean and relevant
+</Card>
 
 <Info>
-  Prerequisites  
+  Prerequisites
 
-  - The BOM you want to remove appears under `Manufacturing > Bill of Materials > BOM List`  
-
-  - No active Work Orders or pending production runs rely on this BOM  
-
+  - The BOM you want to remove appears under `Manufacturing > Bill of Materials > BOM List`
+  - No active Work Orders or pending production runs rely on this BOM
   - You understand the difference between “disabling” (soft delete) and “deleting” (hard delete)
 </Info>
 
@@ -25,17 +23,12 @@ description: "Safely remove an outdated or duplicate BOM from the system—eithe
 
 _Disabling_ a BOM makes it inactive but preserves its record and version history. Use this approach when you may need to reference the BOM later for audits or reports.
 
-1. Navigate to `Manufacturing > Bill of Materials > BOM List.`  
-
-2. Search or filter to locate the BOM (e.g., **BOM No. = “BOM-Bottled Water-001”**).  
-
-3. Click the BOM’s name to open its detail view.  
-
-4. Click `Actions > Edit` (if not already in edit mode).  
-
-5. In the header, check the **Disabled** checkbox.  
-
-6. Click **Save**.  
+1. Navigate to `Manufacturing > Bill of Materials > BOM List.`
+2. Search or filter to locate the BOM (e.g., **BOM No. = “BOM-Bottled Water-001”**).
+3. Click the BOM’s name to open its detail view.
+4. Click `Actions > Edit` (if not already in edit mode).
+5. In the header, check the **Disabled** checkbox.
+6. Click **Save**.
 
 <Note>
   The BOM status changes to **Disabled**. It no longer appears in “Active BOM” dropdowns or is selectable when creating new Work Orders, but remains available under the “Disabled” filter for historical reference.
@@ -49,22 +42,16 @@ _Permanently deleting_ a BOM removes it entirely from the system. You can only d
   Hard deleting a BOM erases its data and version history. Ensure you have no pending transactions tied to this BOM before proceeding.
 </Warning>
 
-1. Confirm there are no dependent Work Orders:  
-
-   - Navigate to `Manufacturing > Work Order List` and filter by **BOM = [Your BOM Name]**.  
-
-   - If any Work Orders appear, cancel or reassign them before proceeding.  
-
-2. Go back to `Manufacturing > Bill of Materials > BOM List.`  
-
-3. Locate and open the BOM you intend to delete.  
-
-4. Click `Actions > Delete` in the top-right corner.  
-
-5. When prompted, confirm the deletion.  
+1. Confirm there are no dependent Work Orders:
+   - Navigate to `Manufacturing > Work Order List` and filter by **BOM = [Your BOM Name]**.
+   - If any Work Orders appear, cancel or reassign them before proceeding.
+2. Go back to `Manufacturing > Bill of Materials > BOM List.`
+3. Locate and open the BOM you intend to delete.
+4. Click `Actions > Delete` in the top-right corner.
+5. When prompted, confirm the deletion.
 
 <Note>
   The BOM record is permanently removed from the database. It no longer appears in any BOM dropdowns, lists, or reports.
 </Note>
 
-> Deleting a BOM in the CGIC App—whether by disabling it or permanently erasing it—helps keep your manufacturing definitions accurate and relevant. By following these steps, you ensure that only current, valid BOMs remain available for production, while historical versions are retained (if disabled) or removed (if fully obsolete).  
+> Deleting a BOM in the CGIC App—whether by disabling it or permanently erasing it—helps keep your manufacturing definitions accurate and relevant. By following these steps, you ensure that only current, valid BOMs remain available for production, while historical versions are retained (if disabled) or removed (if fully obsolete).

@@ -7,47 +7,37 @@ description: "When your manufacturing process changes—whether you adjust compo
   **What it does:**
 
   - Opens an existing, submitted BOM (e.g., “BOM-Bottled Water-001”) and creates a new draft version
-  - Allows you to update header fields (quantity, warehouse, cost center), adjust raw material lines, and change operation steps (e.g., “Filling & Sealing,” “Labelling”)  
+  - Allows you to update header fields (quantity, warehouse, cost center), adjust raw material lines, and change operation steps (e.g., “Filling & Sealing,” “Labelling”)
   - Links each update to the previous version—preserving historical records and version numbers
 </Card>
 
 <Info>
   Prerequisites
 
-  - - The BOM you want to update is already in **Submitted** (Active) status under `Manufacturing > Bill of Materials > BOM List  `
-
-    - All raw materials and operations you need (e.g., “Filling & Sealing,” “Labelling”) are configured as stock items and workstations in the system 
+  - The BOM you want to update is already in **Submitted** (Active) status under `Manufacturing > Bill of Materials > BOM List`
+  - All raw materials and operations you need (e.g., “Filling & Sealing,” “Labelling”) are configured as stock items and workstations in the system
 </Info>
 
 ### 1.0 Open the Active BOM
 
-1. Navigate to `Manufacturing > Bill of Materials > BOM List.`  
-
-2. Use the search bar or add filters—such as **Item = “Bottled Water”** or **BOM No. = “BOM-Bottled Water-001”**—to locate the BOM you want to update.  
-
+1. Navigate to `Manufacturing > Bill of Materials > BOM List.`
+2. Use the search bar or add filters—such as **Item = “Bottled Water”** or **BOM No. = “BOM-Bottled Water-001”**—to locate the BOM you want to update.
 3. Click the BOM’s name (e.g., **BOM-Bottled Water-001**). This opens the BOM form in view mode, showing tabs like **Production Item**, **Operations**, **Scrap & Process Loss**, **Costing**, etc.
 
 ### 2.0 Create a New Version (Amendment)
 
-1. In the BOM header (top-right), click **New Version**.  
-
-2. A dialog appears asking for the **Applicable From** date—enter the date when the updated BOM should go into effect (e.g., today’s date).  
-
-3. Click **OK**. A new draft BOM opens, prefixed with “\*\*Amended from BOM-Bottled Water-001\*\*.”  
-
+1. In the BOM header (top-right), click **New Version**.
+2. A dialog appears asking for the **Applicable From** date—enter the date when the updated BOM should go into effect (e.g., today’s date).
+3. Click **OK**. A new draft BOM opens, prefixed with “\*\*Amended from BOM-Bottled Water-001\*\*.”
 4. Immediately click **Save** (top-right) to lock in the new version number and enable editing of header, materials, and operations.
 
 ### 3.0 Update Header Fields (If Needed)
 
-1. If your production batch size or warehouse changes, edit these fields:  
-
-   - **Quantity to Manufacture**: Adjust if your standard run size has changed.  
-
-   - **UOM**: Should remain the same (e.g., “Nos” or “Liters”), unless the fundamental unit has shifted.  \
-   - **Warehouse**: Change the source raw material warehouse if procurement locations have shifted.  
-
-   - **Manufacturing Cost Center**: Update if this BOM now ties to a different cost center.  
-
+1. If your production batch size or warehouse changes, edit these fields:
+   - **Quantity to Manufacture**: Adjust if your standard run size has changed.
+   - **UOM**: Should remain the same (e.g., “Nos” or “Liters”), unless the fundamental unit has shifted.  \\
+   - **Warehouse**: Change the source raw material warehouse if procurement locations have shifted.
+   - **Manufacturing Cost Center**: Update if this BOM now ties to a different cost center.
 2. Any change to **Quantity to Manufacture** will automatically scale all raw material quantities in the **Materials** table when you next save.
 
 <Tip>
@@ -56,88 +46,50 @@ description: "When your manufacturing process changes—whether you adjust compo
 
 ### 4.0 Edit Operations (Using the “Operations” Tab)
 
-1. Click the **Operations** tab (as shown in the screenshot). You’ll see a list of existing operation rows, each with columns:  
-
-   - **No.** (sequence number)  
-
-   - **Operation** (e.g., “Filling & Sealing,” “Labelling”)  
-
-   - **Workstation Type** (which machine or work center handles this step)  
-
-   - **Operation Time** (time in minutes per unit, e.g., 0.500)  
-
-   - **Fixed Time** (check if this step takes a flat time irrespective of quantity)  
-
-   - **Operating Cost (NGN)** (calculated or entered cost per operation)  
-
-2. To **add a new operation**:  
-
-   - Scroll to the bottom of the operations table and click **Add Row**.  
-
-   - Enter the next **No.** in sequence (e.g., if “Labeling” is No. 2, your new step becomes No. 3).  
-
-   - In **Operation**, type or select the new operation name (e.g., “Carton Packing”).  
-
-   - In **Workstation Type**, choose the appropriate workstation (e.g., “Packing Machine #2”).  
-
-   - Enter **Operation Time** (e.g., 0.100 minutes per unit) and check **Fixed Time** if the step is a fixed duration (e.g., 5 minutes per batch).  
-
+1. Click the **Operations** tab (as shown in the screenshot). You’ll see a list of existing operation rows, each with columns:
+   - **No.** (sequence number)
+   - **Operation** (e.g., “Filling & Sealing,” “Labelling”)
+   - **Workstation Type** (which machine or work center handles this step)
+   - **Operation Time** (time in minutes per unit, e.g., 0.500)
+   - **Fixed Time** (check if this step takes a flat time irrespective of quantity)
+   - **Operating Cost (NGN)** (calculated or entered cost per operation)
+2. To **add a new operation**:
+   - Scroll to the bottom of the operations table and click **Add Row**.
+   - Enter the next **No.** in sequence (e.g., if “Labeling” is No. 2, your new step becomes No. 3).
+   - In **Operation**, type or select the new operation name (e.g., “Carton Packing”).
+   - In **Workstation Type**, choose the appropriate workstation (e.g., “Packing Machine #2”).
+   - Enter **Operation Time** (e.g., 0.100 minutes per unit) and check **Fixed Time** if the step is a fixed duration (e.g., 5 minutes per batch).
    - Optionally, adjust **Operating Cost (NGN)** if you track labor or machine cost directly in the BOM.
-
-3. To **edit an existing operation** (e.g., change time for “Labelling”):  
-
-   - Click the cell under **Operation Time** (or **Workstation Type**, **Fixed Time**, **Operating Cost**) for that row.  
-
-   - Change the value as needed (for example, update “Labelling” time from **0.060** to **0.075** minutes per unit).  
-
+3. To **edit an existing operation** (e.g., change time for “Labelling”):
+   - Click the cell under **Operation Time** (or **Workstation Type**, **Fixed Time**, **Operating Cost**) for that row.
+   - Change the value as needed (for example, update “Labelling” time from **0.060** to **0.075** minutes per unit).
    - Press **Enter** or click outside the cell to confirm.
-
-4. To **remove an operation**:  
-
-   - Check the box at the left of the row you want to delete.  
-
-   - Click the **trash-can icon** that appears at the top of the operations table.  
-
+4. To **remove an operation**:
+   - Check the box at the left of the row you want to delete.
+   - Click the **trash-can icon** that appears at the top of the operations table.
    - Confirm the deletion if prompted.
-
 5. Once all operation edits are complete, click **Save** to validate the changes.
 
 ### 5.0 Edit Material Components (If Also Changing Components)
 
-1. Click the **Production Item** tab (or **Materials** table within the **Production Item** view).  
-
-2. To **add** a new raw material:  
-
-   - Click **Add Row** in the **Materials** table.  
-
-   - Select the **Item Code** (e.g., “Bottle Caps”), enter the **Required Qty** (e.g., 1 cap per bottle), verify **UOM**, set **Consumption Type** (e.g., “Mandatory”), and confirm the **Warehouse**.  
-
-3. To **edit** an existing component’s quantity:  
-
-   - Click the cell under **Required Qty** for that item and enter the new amount (e.g., increase “PET Bottles” from 1 to 1.1 bottles per unit if packaging changed).  
-
-   - If you updated **Quantity to Manufacture** in Step 3, click **Save** to auto-scale all component quantities proportionally.  
-
-4. To **remove** a component:  
-
-   - Check the box on the left of its row, then click the **trash-can icon** at the top of the materials table.  
-
+1. Click the **Production Item** tab (or **Materials** table within the **Production Item** view).
+2. To **add** a new raw material:
+   - Click **Add Row** in the **Materials** table.
+   - Select the **Item Code** (e.g., “Bottle Caps”), enter the **Required Qty** (e.g., 1 cap per bottle), verify **UOM**, set **Consumption Type** (e.g., “Mandatory”), and confirm the **Warehouse**.
+3. To **edit** an existing component’s quantity:
+   - Click the cell under **Required Qty** for that item and enter the new amount (e.g., increase “PET Bottles” from 1 to 1.1 bottles per unit if packaging changed).
+   - If you updated **Quantity to Manufacture** in Step 3, click **Save** to auto-scale all component quantities proportionally.
+4. To **remove** a component:
+   - Check the box on the left of its row, then click the **trash-can icon** at the top of the materials table.
 5. After adjusting components, click **Save** again to confirm.
 
 ### 6.0 Review & Submit the Amended BOM
 
-1. Scroll back to the top of the BOM form to ensure:  
-
-   - Header fields reflect the intended changes (e.g., new quantity, warehouse).  
-
-   - The **Materials** table lists the correct raw materials and quantities.  
-
-   - The **Operations** table shows updated or newly added steps with correct timings and costs.  
-
-2. Click **Submit** at the top-right.  
-
-   - The amended BOM is now **Active**, replacing the previous version as of the **Applicable From** date you set.  
-
-   - CGIC will assign a new Revision Number (e.g., “BOM-Bottled Water-002”).  
-
+1. Scroll back to the top of the BOM form to ensure:
+   - Header fields reflect the intended changes (e.g., new quantity, warehouse).
+   - The **Materials** table lists the correct raw materials and quantities.
+   - The **Operations** table shows updated or newly added steps with correct timings and costs.
+2. Click **Submit** at the top-right.
+   - The amended BOM is now **Active**, replacing the previous version as of the **Applicable From** date you set.
+   - CGIC will assign a new Revision Number (e.g., “BOM-Bottled Water-002”).
    - All future Work Orders will reference this version of the BOM.

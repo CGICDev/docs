@@ -1,4 +1,156 @@
 ---
 title: "View BOM Profile"
-description: "Description of your new file."
+description: "Quickly access and review all details of a Bill of Materials (BOM)—including components, operations, costing, and version history—so you understand exactly how a finished good is manufactured."
 ---
+
+<Info>
+  Prerequisites
+
+  - At least one BOM exists under `Manufacturing > Bill of Materials > BOM List.`  
+
+  - You have read-only permissions for Manufacturing if you only need to view (no editing privileges required).
+</Info>
+
+### 1.0 Navigate to the BOM List
+
+1. From the left‐hand menu, click `Manufacturing > Bill of Materials > BOM List. ` 
+
+2. The **BOM List** shows all active and disabled BOMs with columns for **BOM No.**, **Item**, **Quantity**, **Status**, and **Applicable From**.
+
+### 2.0 Locate the BOM You Want to View
+
+1. Use the **Search Bar** at the top to type part of the BOM number or item name (e.g., “BOM-Bottled Water”).  
+
+2. Or click `Filters > Add Filter` to narrow by:  
+
+   - **Item** (finished product name)  
+
+   - **Status** (Active, Disabled)  
+
+   - **Applicable From** date range  
+
+3. Press **Enter** or click **Apply**—the list refreshes to show matching BOMs.
+
+### 3.0 Open the BOM Profile
+
+1. In the filtered list, click the **BOM No.** (e.g., **BOM-Bottled Water-001**).  
+
+2. The BOM form opens in **Read-Only** mode, displaying multiple tabs across the top:  
+
+   - **Production Item**  
+
+   - **Operations**  
+
+   - **Scrap & Process Loss**  
+
+   - **Costing**  
+
+   - **More Info**  
+
+   - **Connections**  
+
+   - **Website** (if configured)
+
+### 4.0 Review Key Tabs
+
+**4.0.1. Production Item Tab  **
+
+- **Item**: Name of the finished good (e.g., Bottled Water).  
+
+- **Quantity to Manufacture**: Default batch size (e.g., 1000 bottles).  
+
+- **UOM**: Unit of measure (e.g., “Nos”).  
+
+- **Warehouse**: Source warehouse for raw materials.  
+
+- **Materials Table**: Shows each component:  
+
+  - **Item Code & Description** (e.g., “PET Bottle, Cap”)  
+
+  - **Required Qty** to produce the batch  
+
+  - **UOM** (e.g., “Nos”, “Kg”)  
+
+  - **Consumption Type** (Mandatory, By-Product, etc.)  
+
+  - **Warehouse** (where to pull that material from)  
+
+Use the scroll bar to see all rows. Hover over any component to view additional details (e.g., stock UOM, conversion factors).
+
+**4.0.2. Operations Tab ** 
+
+- **With Operations** checkbox: ensures operation costs are tracked.  
+
+- **Operations Table**: Lists each production step with columns:  
+
+  - **No.** (sequence)  
+
+  - **Operation Name** (e.g., “Filling & Sealing”, “Labelling”)  
+
+  - **Workstation Type** (machine or work center)  
+
+  - **Operation Time** (minutes per unit)  
+
+  - **Fixed Time** (tick if time does not scale with quantity)  
+
+  - **Operating Cost (NGN)** (calculated labor/machine cost)  
+
+Hover over each operation to view associated workstation details and cost breakdown.
+
+**4.0.3. Scrap & Process Loss Tab ** 
+
+- Displays expected **Scrap %** (e.g., 2% wastage) or **Process Loss** for the item.  
+
+- Helps plan extra raw material procurement to account for expected waste.
+
+**4.0.4. Costing Tab ** 
+
+- Provides a **Cost Breakdown**:  
+
+  - Total **Raw Material Cost** (sum of all components at current rates)  
+
+  - Total **Operation Cost** (sum of all operation times × workstation rates)  
+
+  - **Overhead/Fixed Cost** (if applicable)  
+
+  - **Total Cost per Batch** and **Cost per Unit** (automatically calculated)  
+
+Use the **Update Cost** button (if you have permission) to recalculate costs based on current purchase rates and operation rates.
+
+**4.0.5. More Info Tab  **
+
+- Shows custom fields such as **BOM Version**, **Notes**, or **Effective Date**.  
+
+- May include additional manufacturing attributes, e.g., **Batch Size Tolerance**, **Quality Standards**.
+
+**4.0.6. Connections Tab  **
+
+- Lists linked documents and transactions:  
+
+  - **Work Orders** created from this BOM (with status: Planned, In Progress, Completed)  
+
+  - **Material Requests** generated for raw materials  
+
+  - **Previous BOM Versions** (for easy navigation between revisions)  
+
+Click any linked document to open it directly.
+
+**4.0.7. Website Tab (Optional)  **
+
+- If you’ve configured e-commerce or product pages, this tab displays how the BOM links to your website catalog (less common in pure manufacturing setups).
+
+### 5.0 View Version History
+
+1. In any tab on the BOM form, click the **Menu icon (⋮)** or **“View History”** link (often located in the top‐right or at the bottom).  
+
+2. A pop-up displays:  
+
+   - **Revision Number** (e.g., 001, 002)  
+
+   - **Modified By** (user who made the change)  
+
+   - **Modified On** (timestamp)  
+
+   - **Change Log** (fields that changed, old vs. new values)  
+
+3. Click on a past version entry to open that historical BOM for review (in read-only mode).
