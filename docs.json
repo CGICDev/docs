@@ -134,6 +134,11 @@
           {
             "group": "Bill of Materials (BOM)",
             "pages": [
+              "manufacturing/bill-of-materials-BOM/create-bill-of-materials",
+              "manufacturing/bill-of-materials-BOM/update-BOM-details",
+              "manufacturing/bill-of-materials-BOM/delete-BOM",
+              "manufacturing/bill-of-materials-BOM/view-BOM-profile",
+              "manufacturing/bill-of-materials-BOM/search-BOM-records",
               "api-reference/introduction"
             ]
           },
