@@ -138,6 +138,13 @@
               "manufacturing/bill-of-materials-BOM/update-BOM-details",
               "manufacturing/bill-of-materials-BOM/delete-BOM",
               "manufacturing/bill-of-materials-BOM/view-BOM-profile",
+              "manufacturing/bill-of-materials-BOM/search-BOM-records",
+              "manufacturing/bill-of-materials-BOM/assign-BOM-to-specific-products",
+              "manufacturing/bill-of-materials-BOM/list-raw-materials-required-for-production-with-specified-quantities",
+              "manufacturing/bill-of-materials-BOM/define-assembly-operations",
+              "manufacturing/bill-of-materials-BOM/define-product-structure-parent-child-relationships-for-sub-assemblies-components",
+              "manufacturing/bill-of-materials-BOM/manage-BOM-versions-revision-control",
+              "manufacturing/bill-of-materials-BOM/search-BOM-records",
               "manufacturing/bill-of-materials-BOM/search-BOM-records"
             ]
           },
