@@ -138,8 +138,7 @@
               "manufacturing/bill-of-materials-BOM/update-BOM-details",
               "manufacturing/bill-of-materials-BOM/delete-BOM",
               "manufacturing/bill-of-materials-BOM/view-BOM-profile",
-              "manufacturing/bill-of-materials-BOM/search-BOM-records",
-              "api-reference/introduction"
+              "manufacturing/bill-of-materials-BOM/search-BOM-records"
             ]
           },
           {

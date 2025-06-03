@@ -1,4 +1,120 @@
 ---
 title: "Update BOM Details"
-description: "Description of your new file."
+description: "Modify an existing Bill of Materials (BOM) to reflect changes in components, quantities, or operations—while preserving version history—using the CGIC App."
 ---
+
+<Card title="Overview">
+  **What it does:**  
+
+  - Enables you to amend an active BOM without deleting it  
+
+  - Creates a new version linked to the original, maintaining historical audit trails  
+
+  - Allows updates to raw material quantities, component lists, operations, and attributes  
+</Card>
+
+<Info>
+  Prerequisites  
+
+  - The BOM you want to update is in **Submitted** (Active) status  
+
+  - Raw materials, sub-assemblies, and workstations are configured under `Stock > Item and Manufacturing > Workstation`
+</Info>
+
+### 1.0 Locate and Open the Existing BOM
+
+1. Navigate to `Manufacturing > Bill of Materials > BOM List.`  
+
+2. Use filters (e.g., **Item**, **BOM No.**, **Status = Submitted**) to find the BOM you need to update.  
+
+3. Click the desired **BOM No.** to open its details.
+
+### 2.0 Create an Amendment (New Version)
+
+1. In the BOM form, click `Actions > Amend.`  
+
+2. A new draft BOM opens, labeled “\*\*Amended from [Original BOM No.]\*\*.”  
+
+3. The header will pre-populate with the original BOM’s details (Item, Quantity, UOM, etc.).  
+
+4. Modify any header fields if needed (e.g., change **Applicable From** date to today).  
+
+5. Click **Save** to prepare the amendment.
+
+\> 💡 **Tip:** Use the **Applicable From** date to control when the new BOM version becomes effective.
+
+---
+
+### 🔍 Step 3: Update Materials (Components)
+
+1. Scroll to the **Materials** table in the amended BOM.  
+
+2. To **add** a new component:  
+
+   - Click **Add Row**.  
+
+   - Scan or type the **Item Code**, enter **Required Qty**, verify **UOM**, and confirm **Consumption Type** and **Warehouse**.  
+
+3. To **remove** an existing component:  
+
+   - Click the trash-can icon on the row.  
+
+4. To **edit** a component’s quantity or details:  
+
+   - Click the cell (e.g., **Required Qty**) and update the value.  
+
+   - Change **Consumption Type** or **Warehouse** if needed.  
+
+5. Repeat until all component changes are complete.  
+
+6. Click **Save** to validate material updates.
+
+\> 🔄 **Note:** If you change **Quantity to Manufacture**, CGIC auto-scales all component quantities accordingly.
+
+---
+
+### ⚙️ Step 4: Update Operations (Optional)
+
+1. Scroll to the **Operations** table in the amended BOM.  
+
+2. To **add** a new operation:  
+
+   - Click **Add Row**.  
+
+   - Enter **Operation Name**, select **Workstation**, specify **Time in Minutes**, and set **Sequence**.  
+
+3. To **remove** an existing operation:  
+
+   - Click the trash-can icon on the operation row.  
+
+4. To **edit** an existing operation’s details:  
+
+   - Click any cell (e.g., **Time in Minutes**) and update the value.  
+
+   - Adjust **Sequence** if the step order has changed.  
+
+5. Click **Save** once all operations reflect the new process.
+
+\> 🔧 **Tip:** Ensure your sequence numbers remain contiguous (1, 2, 3…) to avoid workflow confusion.
+
+---
+
+### ▶️ Step 5: Review & Submit the Amended BOM
+
+1. Scroll back to the top of the amended BOM form.  
+
+2. Verify:  
+
+   - **Header** fields (Item, Quantity, Applicable From date)  
+
+   - **Materials** table entries (correct item codes and quantities)  
+
+   - **Operations** (if included) are properly sequenced  
+
+3. Click **Submit**.  
+
+   - A new BOM version is created and marked **Active** as of the Applicable From date.  
+
+   - The original BOM remains in the system as a historic version for reference.
+
+\> 📑 **Tip:** After submission, CGIC assigns a new **Revision Number** (e.g., BOM-0001-02) to distinguish it from the original.
