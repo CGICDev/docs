@@ -1,4 +1,24 @@
 ---
 title: "Monitor Material Availability for BOM Execution"
-description: "Description of your new file."
+description: "Ensure all required raw materials are in stock before starting a production run—by checking availability against your Bill of Materials (BOM) requirements—so you avoid delays or production stoppages in the CGIC App."
 ---
+
+### Prerequisites
+
+<CardGroup cols={1}>
+  <Card title="Logged In & Role" icon="user" iconType="duotone">
+    - - You are logged into the **CGIC App**.  
+
+       -Your role is **Production Manager**, **Manufacturing User**, or **Inventory Manager**.
+  </Card>
+  <Card title="Warehouse & Stock" icon="chart-pie-simple-circle-currency" iconType="duotone">
+     - Relevant warehouses (e.g., “Raw Material Store,” “Central Warehouse”) are configured under `Stock > Warehouse. ` 
+
+    -   -On-hand stock records are up to date (all Purchase Receipts, Stock Entries, etc. are submitted).
+  </Card>
+  <Card title="Items & BOMs" icon="sitemap" iconType="duotone">
+    - - Finished‐goods item and all raw‐material items exist under `Stock > Item >Item List.`  
+
+      - A submitted (Active) BOM for the finished product is available under `Manufacturing > Bill of Materials > BOM List.`
+  </Card>
+</CardGroup>

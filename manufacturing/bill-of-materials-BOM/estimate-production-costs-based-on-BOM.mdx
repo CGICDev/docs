@@ -7,95 +7,62 @@ description: "Calculate the total cost to manufacture a finished product by leve
 
 <CardGroup cols={1}>
   <Card title="Logged In & Role" icon="user" iconType="duotone">
-    - You are logged into the **CGIC App**.
-    - Your role is **Production Manager** or **Manufacturing user**
+    - -You are logged into the **CGIC App**.
+    - -Your role is **Production Manager** or **Manufacturing user**
   </Card>
   <Card title="Warehouse & Currency" icon="chart-pie-simple-circle-currency" iconType="duotone">
-    - All items and operations use consistent **UOM** and the same **Currency** (e.g., NGN).
-    - Your company’s default currency is set under `Accounts > Company.`
+    - -All items and operations use consistent **UOM** and the same **Currency** (e.g., NGN).
+    - -Your company’s default currency is set under `Accounts > Company.`
   </Card>
   <Card title="Items & BOMs" icon="sitemap" iconType="duotone">
-    - Finished‐goods and all component items exist under `Stock > Item > Item List.`
-    - A submitted (Active) BOM for the finished product is available under `Manufacturing > Bill of Materials > BOM List.`
+    - -Finished‐goods and all component items exist under `Stock > Item > Item List.`
+    - -A submitted (Active) BOM for the finished product is available under `Manufacturing > Bill of Materials > BOM List.`
   </Card>
   <Card title="Cost Data Configured" icon="explosion" iconType="duotone">
-    1. **Cost Data Configured**
-       - Each raw material item has a valid **Standard Buying Rate** (latest purchase cost) in its Item record.
-       - Each operation in the BOM has an **Operating Cost** (labor or machine cost per unit or fixed batch cost) entered.
-       - (Optional) Overhead or fixed cost components (e.g., utilities, packaging) are defined via custom BOM fields or in the **Costing** tab.
+    1. **-**Each raw material item has a valid **Standard Buying Rate** (latest purchase cost) in its Item record.
+       - -Each operation in the BOM has an **Operating Cost** (labor or machine cost per unit or fixed batch cost) entered.
+       - -(Optional) Overhead or fixed cost components (e.g., utilities, packaging) are defined via custom BOM fields or in the **Costing** tab.
   </Card>
 </CardGroup>
 
 ### 1.0 Open the BOM and Confirm Cost Settings
 
-1. **Navigate to BOM List**  
-
-   - Go to `Manufacturing > Bill of Materials > BOM List`.  
-
+1. **Navigate to BOM List**
+   - Go to `Manufacturing > Bill of Materials > BOM List`.
    - Locate the BOM for your finished product (e.g., “BOM-Danaval-Chocolate-001”) using search or filters.
-
-2. **Open the BOM Profile**  
-
-   - Click the **BOM No.** to open the BOM form.  
-
+2. **Open the BOM Profile**
+   - Click the **BOM No.** to open the BOM form.
    - Ensure the BOM’s **Status** is **Submitted** (Active). If not, use **New Version**, update and **Submit** a new version.
-
-3. **Verify Raw Material Rates**  
-
-   - In the **Production Item** tab, scroll to the **Materials** table.  
-
-   - Confirm each component’s **Required Qty** and **UOM** are correct.  
-
+3. **Verify Raw Material Rates**
+   - In the **Production Item** tab, scroll to the **Materials** table.
+   - Confirm each component’s **Required Qty** and **UOM** are correct.
    - Check that each raw material’s **Standard Buying Rate** (in its Item master record) is up to date.
-
-4. **Verify Operation Costs**  
-
-   - Click the **Operations** tab.  
-
-   - Confirm each row lists a valid **Operation Time** and **Operating Cost (NGN)**.  
-
+4. **Verify Operation Costs**
+   - Click the **Operations** tab.
+   - Confirm each row lists a valid **Operation Time** and **Operating Cost (NGN)**.
    - If operation costs need updating (e.g., labor rate changes), click **New Version**, adjust costs, then **Submit** the new BOM version.
 
 ### 2.0 Update BOM Costing
 
-1. **Open the Costing Tab**  
-
-   - Within the BOM form, click the **Costing** tab.  
-
-   - The tab shows a **Cost Breakdown**:  
-
-     - **Raw Material Cost** (sum of each component’s Required Qty × Buying Rate)  
-
-     - **Operation Cost** (sum of each operation’s time × operation cost)  
-
-     - **Additional Costs** (if you’ve defined overhead, packaging, or fixed charges)  
-
+1. **Open the Costing Tab**
+   - Within the BOM form, click the **Costing** tab.
+   - The tab shows a **Cost Breakdown**:
+     - **Raw Material Cost** (sum of each component’s Required Qty × Buying Rate)
+     - **Operation Cost** (sum of each operation’s time × operation cost)
+     - **Additional Costs** (if you’ve defined overhead, packaging, or fixed charges)
      - **Total Cost per Batch** and **Cost per Unit**
-
-2. **Recalculate Costs**  
-
-   - Click **Update Cost** (usually a button near the top of the Costing tab).  
-
-   - CGIC automatically pulls the current **Buying Rates** from each raw material’s Item record and the latest **Operating Costs** from operations.  
-
-   - The system displays:  
-
-     - **Cost of Raw Materials**: e.g., 100 units × 50 NGN each = 5,000 NGN  
-
-     - **Cost of Operations**: e.g., Operation A (100 units × 0.5 min × 10 NGN per min) = 500 NGN; Operation B (fixed 200 NGN) = 200 NGN  
-
-     - **Overheads / Packaging**: 300 NGN (if defined)  
-
-     - **Total Batch Cost**: sum of all component and operation costs (e.g., 5,000 \+ 700 \+ 300 = 6,000 NGN)  
-
+2. **Recalculate Costs**
+   - Click **Update Cost** (usually a button near the top of the Costing tab).
+   - CGIC automatically pulls the current **Buying Rates** from each raw material’s Item record and the latest **Operating Costs** from operations.
+   - The system displays:
+     - **Cost of Raw Materials**: e.g., 100 units × 50 NGN each = 5,000 NGN
+     - **Cost of Operations**: e.g., Operation A (100 units × 0.5 min × 10 NGN per min) = 500 NGN; Operation B (fixed 200 NGN) = 200 NGN
+     - **Overheads / Packaging**: 300 NGN (if defined)
+     - **Total Batch Cost**: sum of all component and operation costs (e.g., 5,000 \+ 700 \+ 300 = 6,000 NGN)
      - **Cost per Unit**: Total Batch Cost ÷ Quantity to Manufacture (e.g., 6,000 NGN ÷ 100 units = 60 NGN per unit)
-
-3. **Review Cost Details**  
-
-   - Scroll through the **Cost Components** table to see each raw material line with its cost contribution and each operation’s cost.  
-
-   - Verify that the **Total Batch Cost** matches your expectations.  
-
+3. **Review Cost Details**
+   - Scroll through the **Cost Components** table to see each raw material line with its cost contribution and each operation’s cost.
+   - Verify that the **Total Batch Cost** matches your expectations.
    - If any component’s rate appears incorrect, update the item’s **Standard Buying Rate** under `Stock > Item` and click **Update Cost** again.
 
 <Note>
@@ -104,16 +71,11 @@ description: "Calculate the total cost to manufacture a finished product by leve
 
 ### 3.0 Generate a Cost Estimate Report
 
-1. **Export Costing Data**  
-
-   - In the **Costing** tab, click `Download > CSV` or **Print** to get a detailed breakdown of material, operation, and overhead costs.  
-
+1. **Export Costing Data**
+   - In the **Costing** tab, click `Download > CSV` or **Print** to get a detailed breakdown of material, operation, and overhead costs.
    - Save or distribute this PDF/CSV to finance, pricing, or management teams.
-
-2. **Pin to Dashboard** (Optional)  
-
-   - If you frequently need cost estimates, click the **Add to Dashboard** icon to pin a “BOM Cost Summary” widget.  
-
+2. **Pin to Dashboard** (Optional)
+   - If you frequently need cost estimates, click the **Add to Dashboard** icon to pin a “BOM Cost Summary” widget.
    - Configure the widget to show **Cost per Unit** and **Total Batch Cost** for quick reference.
 
 <Tip>
@@ -122,32 +84,21 @@ description: "Calculate the total cost to manufacture a finished product by leve
 
 ### 4.0 Integrate Cost Estimates with Work Orders
 
-1. **Create a Work Order**  
-
-   - Navigate to `Manufacturing > Work Order > New.`  
-
-   - Select the finished product under **Production Item**.  
-
-   - Confirm the **Quantity to Manufacture** (e.g., 100 units).  
-
+1. **Create a Work Order**
+   - Navigate to `Manufacturing > Work Order > New.`
+   - Select the finished product under **Production Item**.
+   - Confirm the **Quantity to Manufacture** (e.g., 100 units).
    - The **BOM** field auto-populates with the active BOM you just costed.
-
-2. **View Estimated Cost**  
-
-   - Once the system fills in BOM information, scroll to the **Costing** section within the Work Order.  
-
-   - CGIC copies the **Cost per Unit** and **Total Batch Cost** from the BOM.  
-
+2. **View Estimated Cost**
+   - Once the system fills in BOM information, scroll to the **Costing** section within the Work Order.
+   - CGIC copies the **Cost per Unit** and **Total Batch Cost** from the BOM.
    - Confirm these values before submitting the Work Order.
-
-3. **Submit the Work Order**  
-
-   - Click **Save**, then **Submit**.  
-
+3. **Submit the Work Order**
+   - Click **Save**, then **Submit**.
    - The Work Order now carries the estimated production cost—visible in reports like **Production Costing Report** under `Manufacturing > Reports.`
 
 <Tip>
   If you modify the Work Order quantity, click **Refresh** on the cost fields to recalculate batch and unit costs automatically.
 </Tip>
 
-> By following these steps to estimate production costs based on your BOM, you equip your team with clear, accurate manufacturing cost data—enabling informed pricing decisions, tighter budgeting, and improved financial visibility. Leveraging CGIC’s automated cost roll-up ensures every raw material and operation cost is accounted for, giving you confidence in your cost forecasts before production begins.  
+> By following these steps to estimate production costs based on your BOM, you equip your team with clear, accurate manufacturing cost data—enabling informed pricing decisions, tighter budgeting, and improved financial visibility. Leveraging CGIC’s automated cost roll-up ensures every raw material and operation cost is accounted for, giving you confidence in your cost forecasts before production begins.
