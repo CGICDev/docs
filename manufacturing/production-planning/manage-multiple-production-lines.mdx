@@ -1,4 +1,177 @@
 ---
 title: "Manage Multiple Production Lines"
-description: "Description of your new file."
+description: "Coordinate and optimize production across two or more independent lines—each with its own workstations, capacity, and schedules—so you can maximize throughput and avoid bottlenecks in the CGIC App."
 ---
+
+## **Prerequisites**
+
+<CardGroup cols={2}>
+  <Card title="Workstation & Line Configuration" icon="circle-dot" iconType="duotone">
+    - - Individual workstations (machines or work centers) are set up under `Manufacturing > Workstation > Workstation List`.  
+
+         - You have considered how your physical layout groups workstations into distinct production lines (e.g., “Line A: Bottling,” “Line B: Packaging”).
+  </Card>
+  <Card title="Work Orders & BOMs" icon="circle-dot" iconType="duotone">
+    - - Finished‐goods items and active BOMs exist under `Stock > Item > Item List` and `Manufacturing > Bill of Materials > BOM List.  `
+
+         - You have at least one submitted Work Order ready to assign to a line.
+  </Card>
+</CardGroup>
+
+### 1.0 Define Production Lines in Workstations
+
+1. Navigate to `Manufacturing > Workstation > Workstation List.`  
+
+2. For each workstation that belongs to a given line, click the row to open its profile, then click **Edit**. 
+
+3. Locate or add the custom field **Production Line** (e.g., if not shown, request a custom field via your administrator).  
+
+4. In **Production Line**, enter the line name (e.g., “Line A – Bottling,” “Line B – Packaging”).  
+
+5. Click **Save**.  
+
+6. Repeat for all workstations, assigning each to the appropriate line grouping.
+
+<Tip>
+  Use consistent naming conventions—“Line A,” “Line B,” etc.—so filters and reports work seamlessly.
+</Tip>
+
+### 1.1 Create or Update Work Orders with Line Assignments
+
+1. To create a new Work Order, go to `Manufacturing > Work Order > New Work Order.`  
+
+2. Fill in header fields as usual:  
+
+   - **Production Item**, **BOM**, **Quantity**, **Company**, **Planned Dates**.  
+
+3. In the **Operations** tab:  
+
+   - For each operation row, set **Workstation** to one that belongs to your desired line.  
+
+   - The system automatically inherits the **Production Line** field from the workstation.  
+
+4. If you already have a submitted Work Order, open it via **Work Order List**, click **Actions ▶️ Edit** (or **Cancel & Amend** if it’s Completed), and adjust each operation’s **Workstation** to a machine on the target line.  
+
+5. Click **Save**, then **Submit**. The WO is now linked to a specific production line through its operations.
+
+<Note>
+  If a Work Order spans multiple operations on different lines, you can reorder operations so that the first step’s line dictates the primary line assignment.
+</Note>
+
+### 1.2 Schedule Work Orders by Line
+
+1. Navigate to `Manufacturing > Production Schedule > Production Schedule List.`  
+
+2. Click **New** to open the Schedule form.  
+
+3. Click **Get Work Orders**, filter by:  
+
+   - **Status = “Submitted”**  
+
+   - **Production Line** (if your system includes this field as a filter) or filter by **Workstation** belonging to a specific line.  
+
+4. Select Work Orders for **Line A**, click **Add**—they populate the **Scheduled Items** table.  
+
+5. Assign **Planned Start Date**, **Planned End Date**, and confirm the **Workstation** (and therefore **Production Line**) for each row.  
+
+6. Repeat for **Line B** by clicking **Get Work Orders** again and filtering for that line’s workstations.  
+
+7. Click **Save** and **Submit** to lock in the schedule. Each line’s load is now visible separately.
+
+<Tip>
+  Schedule line‐specific time blocks (e.g., “Line A runs 7am–3pm, Line B runs 3pm–11pm”) to avoid overlap.
+</Tip>
+
+### 1.3 Monitor Line Capacity Utilization
+
+1. Go to `Manufacturing > Reports > Capacity Utilization`.  
+
+2. In the filters, set:  
+
+   - **Workstation**: select all workstations for **Line A** to see that line’s utilization.  
+
+   - **From Date / To Date**: the period you want to analyze.  
+
+3. Click **Refresh**. You’ll see:  
+
+   - **Available Hours** and **Utilized Hours** for each machine on **Line A**.  
+
+   - A consolidated **Utilization %** for the entire line based on summing all its workstations.  
+
+4. Repeat with **Workstation** filter set to **Line B’s** machines.  
+
+5. Identify if one line is consistently under- or over-utilized compared to the other.
+
+### 1.4 Reassign Work Orders Between Lines
+
+1. If **Line A** is overloaded and **Line B** has spare capacity, open the relevant WO from **Work Order List**.  
+
+2. Click `Actions > Cancel & Amend` to create a draft version.  
+
+3. In the **Operations** tab, change each operation’s **Workstation** to machines on **Line B**.  
+
+   - Confirm that the new workstations have the requisite capabilities (e.g., same operation type).  
+
+4. Click **Save**, then **Submit**.  
+
+5. Return to **Production Schedule**, click `Actions > Edit`, move the amended WO’s scheduled dates under **Line B**’s rows, and adjust as needed.  
+
+6. Click **Save** and **Submit**.
+
+<Note>
+  You may need to adjust **Material Requests** if some warehouses are line-specific; confirm raw materials are available for the new line’s location.
+</Note>
+
+### 2.0 Additional Features
+
+- **Line-Specific Workstation Groups:**  
+
+  - Under **Workstation List**, create nested hierarchy:  
+
+    - Top level: “Line A”  
+
+    - Child: “Bottling Machine 1,” “Bottling Machine 2”  
+
+    - Similarly for “Line B” and its machines.  
+
+  - This allows filtering by “Production Line” at a summary level.
+
+- **Line Performance Dashboard:**  
+
+  - Pin widgets that show “Line A Throughput” and “Line B Throughput,” comparing units completed over time.  
+
+  - Use **Production Throughput Report** with **Workstation** filters to drive these widgets.
+
+- **Automated Line Balancing:**  
+
+  - If available, enable **Auto Scheduling** under `Manufacturing > Tools > Auto Scheduling` with “Group by Production Line.” CGIC will allocate WOs to lines based on capacity and operation type.
+
+- **Line-Specific Material Requisitions:**  
+
+  - When creating Material Requests from a WO, CGIC can pre-fill a custom field “Production Line” so you know which line’s warehouse or storage area to pull from.
+
+### 3.0 Key Notes
+
+- **Master Data Consistency:**  
+
+  - Ensure every workstation is tagged with its correct **Production Line**—errors here will cause WOs to schedule on the wrong line.  
+
+- **Capacity Limits:**  
+
+  - Define each workstation’s **Working Hours per Day** under **Workstation** settings; CGIC uses these to calculate line capacity.  
+
+- **Permissions:**  
+
+  - Only users with **Production Manager**, **Planning Supervisor**, or **System Manager** roles can tag workstations with lines, amend WOs, and adjust schedules across lines.  
+
+- **Audit Trail:**  
+
+  - All changes to workstation line assignments, WO reassignments, and schedule edits are logged under **View History** for traceability.
+
+- **Material Location:**  
+
+  - If your warehouse layout is line-specific (e.g., “Raw Materials for Line A”), confirm that Material Requests point to the correct line’s storage.  
+
+### 4.0 Closing Note
+
+By defining, scheduling, and monitoring multiple production lines in the CGIC App, you achieve balanced workloads, prevent resource conflicts, and maintain transparency across parallel manufacturing streams. This ensures that high‐level decisions—like shifting capacity from one line to another—are data‐driven, leading to on‐time delivery and efficient use of equipment and labor.

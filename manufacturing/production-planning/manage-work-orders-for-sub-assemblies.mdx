@@ -1,4 +1,60 @@
 ---
 title: "Manage Work Orders for Sub-assemblies"
-description: "Description of your new file."
+description: "Plan, execute, and track manufacturing of subassemblies—semi-finished components used in CGIC's final products—ensuring seamless integration with finished goods production workflows in the CGIC App."
 ---
+
+<Info>
+  **Prerequisites**
+
+  - Items created with **Item Type = "Sub Assembly" **on `Stock > Items > New Item`
+  - BOM defining subassembly components/operations (e.g., _Dough Batch BOM = flour \+ water \+ yeast_). `Manufacturing > BOM > New`
+  - Dedicated stations for subassembly production (e.g., _Mixing Station 1_ for Valdana Bread dough)
+</Info>
+
+## **Step-by-Step Guide**
+
+### **Step 1: Create Work Order for Subassembly**
+
+1. Go to: `Manufacturing > Work Order > New`
+2. Configure:
+   - **Item**: Select subassembly (e.g., _"Pre-Mixed Oil"_)
+   - **Quantity**: Needed for parent production (e.g., _1,000L for Luca Oil batch_)
+   - **Planned Start Date**: Earlier than parent Work Order
+   - **Warehouse**:
+     - Source: _Raw Material Warehouse_ (for components)
+     - Target: _Subassembly Stock_ (for finished subassembly)
+3. **Link to Parent** (Optional):
+   - Add **Parent Work Order** field if creating manually
+4. **Submit** → Triggers Job Cards for operations
+
+### **Step 2: Auto-Generate via Parent Work Order**
+
+_For automatic nesting (recommended):_
+
+1. In **Parent Work Order** (e.g., _"Luca Engine Oil 5W-30"_):
+   - Enable **Produce Subassemblies**
+2. System auto-creates:
+   - Subassembly Work Order for _"Pre-Mixed Oil"_
+   - Dependency: Subassembly WO must complete before parent starts
+3. View nested WOs:
+   - **Subassemblies Table**: Status, Quantity, Completion Date
+
+### **Step 3: Track Subassembly Production**
+
+1. **Job Cards**:
+   - Update progress per operation (e.g., _"Base Oil Mixing: 500L/1,000L"_)
+2. **Quality Checks**:
+   - Record defects (e.g., _"Viscosity out of spec - 10L rejected"_)
+3. **Complete Subassembly WO**:
+   - Output moves to _Subassembly Stock_
+   - Parent Work Order auto-unlocks when ready
+
+### **Step 4: Consume in Final Assembly**
+
+1. **Auto-Consumption**:
+   - When parent Work Order starts, system pulls subassembly from _Subassembly Stock_
+2. **Manual Transfer**:
+   - Create **Stock Entry** if not auto-consumed:
+     - Purpose: _Material Transfer_
+     - From: _Subassembly Stock_
+     - To: _Work-in-Progress Warehouse_
