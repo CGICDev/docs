@@ -1,4 +1,116 @@
 ---
 title: "Manage Employee documents"
-description: "Description of your new file."
+description: "Ensure all employee-related documents—IDs, contracts, certificates, and more—are uploaded, organized, and tracked in the CGIC App so HR and managers have a centralized, audit-ready repository."
 ---
+
+<Info>
+  **Prerequisites**
+
+  - The employee whose documents you want to manage already has a profile under `HR > Employee > Employee List.`
+  - Under `HR > Document Type` (or `Setup > Document Type`), verify that relevant types exist (e.g., “Passport,” “Offer Letter,” “Medical Certificate,” “Training Certificate”).
+  - Add any custom types you need before uploading files.
+</Info>
+
+### Step 1: Navigate to the Employee Profile
+
+1. **Go to Employee List**
+   - In the CGIC App sidebar, click `HR > Employee > Employee List.`
+   - Search or filter to find the employee (e.g., by name or employee code).
+2. **Open the Profile**
+   - Click the employee’s **Name** or **Employee Code** to view their profile.
+   - Ensure the record is in **View** mode. If you need to make edits, click **Amend** or **Edit** first.
+
+### Step 2: Upload New Documents
+
+1. **Scroll to Attachments Section**
+   - Within the employee profile, find the **Attachments** section (typically near the bottom or under a dedicated “Documents” tab).
+2. **Click “Upload”**
+   - Click the **Upload** button or drag-and-drop files into the attachments area.
+   - A dialog appears prompting you to select one or more files from your computer.
+3. **Specify Document Type and Metadata**
+   - For each file, fill in:
+     - **Document Type**: Select from the dropdown (e.g., “Passport,” “Offer Letter,” “Degree Certificate”).
+     - **Description** (optional): A brief note (e.g., “Scanned passport bio page,” “Signed employment contract”).
+     - **Issue Date** / **Expiry Date** (if relevant): For ID cards or certificates that expire.
+4. **Click “Save”**
+   - The CGIC App uploads the file and attaches it to the employee’s profile.
+   - A thumbnail or filename appears in the list, along with the document type and any entered dates.
+
+### Step 3: Categorize and Organize Documents
+
+1. **View Document List**
+   - Under **Attachments** (or **Documents** tab), you’ll see a table listing all files:
+     - **Filename**
+     - **Document Type**
+     - **Upload Date**
+     - **Expiry Date** (if provided)
+     - **Uploaded By**
+2. **Filter by Type or Status**
+   - Click the **Filter** icon above the attachments list.
+   - Filter by **Document Type** (e.g., only show “ID Cards”).
+   - Filter by **Expiry Date** to surface expiring documents (e.g., date ≤ 30 days away).
+3. **Rearrange or Re-order**
+   - If your configuration shows a default sort (e.g., newest first), click the **Upload Date** column header to reverse or re-sort.
+   - Drag to reorder files manually if you prefer a custom sequence (depending on your CGIC App setup).
+
+### Step 4: View, Download, or Preview Documents
+
+1. **Click Filename or Thumbnail**
+   - To preview a document, click its **Filename** or thumbnail image.
+   - The CGIC App opens a lightbox or new window showing the document contents (PDF viewer or image viewer).
+2. **Download Document**
+   - In the preview window, click the **Download** icon to save the file locally.
+   - Alternatively, hover over the file in the list and click the **Download** button on the right-hand side.
+3. **Check Version History**
+   - If multiple versions exist (e.g., updated passport scans), click the **Version** indicator (e.g., “v2”) to see earlier uploads.
+   - Download or preview any previous version if needed for audit.
+
+### Step 5: Edit Document Metadata or Replace Files
+
+1. **Edit Metadata**
+   - Hover over a file row and click the **Edit** (pencil) icon next to it.
+   - Modify fields such as **Document Type**, **Description**, **Issue Date**, or **Expiry Date**.
+   - Click **Save** to update.
+2. **Replace a File (New Version)**
+   - If you need to upload a newer scan or replace a document:
+     - Hover over the file and click the **Replace** icon (often shown as two arrows or a refresh symbol).
+     - Select the new file to upload.
+     - The system creates a new version, keeping the old one in history.
+3. **Add Comments or Notes**
+   - In some configurations, you can add a **Comment** to a specific document (e.g., “Passport updated following renewal on 2025-05-20”).
+   - Click **Add Comment** under the file and type your note, then **Save Comment**.
+
+### Step 6: Delete or Archive Documents
+
+1. **Identify Documents to Remove**
+   - Only delete documents that were uploaded in error or duplicates that serve no audit purpose.
+   - For expired IDs or superseded versions, consider archiving instead of deleting (if your CGIC App has that feature).
+2. **Delete a File**
+   - Hover over the file and click the **Delete** (trash can) icon.
+   - A confirmation dialog appears—click **Yes, Delete** to remove permanently.
+   - The CGIC App logs who deleted it and when in the **Audit Trail**.
+3. **Archive Instead of Delete (If Available)**
+   - Some setups allow you to **Archive** a document (removes it from default view but keeps it in storage).
+   - Hover over the file and click **Archive**. In the filter panel, uncheck “Show Archived” to hide it; check that box to view archived docs.
+
+### Step 7: Track and Manage Document Expiry
+
+1. **Configure Expiry Alerts**
+   - Go to `Setup > Email Alert > New.`
+   - Set:
+     - **Document Type**: **Employee Document** (or whichever doctype your attachments belong to).
+     - **Condition**: **Expiry Date = today \+ 30 days** (or your chosen lead time).
+     - **Recipients**: HR Manager, Employee.
+     - **Email Template**: “Reminder: {{ document_type }} for {{ employee_name }} expires on {{ expiry_date }}.”
+   - Save and **Enable**.
+2. **Use Expiry Filters**
+   - In the employee’s **Attachments** list, click \*\*Filter \> Expiry Date ≤” and pick a date range (e.g., next 60 days).
+   - Review all documents nearing expiry to coordinate renewals.
+3. **Renew or Replace Expiring Documents**
+   - For documents flagged as expiring, follow **Step 5** to upload a new version.
+   - Update the **Expiry Date** to reflect the new validity.
+   - Add a **Comment** (e.g., “Passport renewed; new expiry 2028-06-01”).
+
+<Tip>
+  Run a monthly report by going to `HR > Reports > Employee Documen`t Expiry Report (if configured) to ensure nothing slips through.
+</Tip>

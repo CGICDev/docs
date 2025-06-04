@@ -1,4 +1,130 @@
 ---
 title: "Record deductions"
-description: "Description of your new file."
+description: "Ensure accurate payroll by capturing all deductions—taxes, social contributions, loans, advances, and other withholdings—in the CGIC App so net pay reflects correct amounts and compliance is maintained."
 ---
+
+<Info>
+  **Prerequisites**
+
+  - The employee exists under `HR > Employee > Employee List.`
+  - A **Salary Structure** is assigned to the employee under `HR > Salary Structure,` ensuring the system can compute gross pay.
+
+
+  - **Deduction Types Configured**
+    - Under `HR > Deduction Type` (or `Setup > Deduction Type`), confirm you have entries like:
+      - **Statutory Tax**
+      - **Pension Contribution**
+      - **Health Insurance**
+      - **Loan Repayment**
+      - **Salary Advance**
+    - If a needed type is missing, click **New** in **Deduction Type** and define:
+      - **Name** (e.g., “Tax Withholding 2025”)
+      - **Category** (Statutory, Voluntary, Company-Provided)
+      - **Calculation Method** (Fixed Amount, Percentage of Gross, or Custom formula).
+  - **Payroll Period and Settings**
+    - Ensure the **Payroll Period** (e.g., May 2025) is open under `HR > Payroll Entry > Payroll Period List.`
+    - If deductions are salary-slab based (percentage tiers), confirm your **Payroll Settings** in `Setup > Payroll Settings` reflect applicable slabs and tax rules.
+</Info>
+
+### Steps to Record a One-Time Deduction
+
+**Step 1: Navigate to Employee Deduction Entry**
+
+1. **Go to Deduction Entry List**
+   - In the CGIC App sidebar, click `HR > Deduction Entry > Deduction Entry List.`
+   - This view shows all existing deduction entries (one-time and recurring).
+2. **Click “New”**
+   - In the top-right corner, click **New** to open a blank **Deduction Entry** form.
+
+**Step 2: Fill in Deduction Details**
+
+1. **Select Employee**
+   - In the **Employee** field, search for and select the employee (e.g., “EMP-1023 – Jane Doe”).
+2. **Enter Payroll Period**
+   - In **Payroll Period**, choose the relevant month/period (e.g., “May 2025”).
+   - The CGIC App uses this period to calculate net pay for that cycle.
+3. **Choose Deduction Type**
+   - In **Deduction Type**, pick from the dropdown (e.g., “Loan Repayment”).
+   - The linked **Deduction Type** determines how the amount is processed (fixed or percentage).
+4. **Specify Amount or Percentage**
+   - If the Deduction Type is **Fixed Amount**, enter the **Amount** (e.g., ₦50,000).
+   - If it’s **Percentage of Gross**, enter the **Percentage** (e.g., 5%). The system calculates the deduction based on the employee’s gross pay for that period.
+5. **Set Start and End Dates** (for recurring deductions)
+   - If this is a one-time deduction, leave **End Date** blank (the system processes it once).
+   - For recurring entries (e.g., “Salary Advance — 6 Months”), set:
+     - **Start Date**: First deduction month (e.g., 2025-05-01).
+     - **End Date**: Last deduction month (e.g., 2025-10-31).
+   - The CGIC App automatically posts the amount each month until the end date.
+6. **Add Reference or Notes**
+   - In **Reference** (optional), link to a supporting document (e.g., “Loan Agreement #LA-2025-045”).
+   - Use **Notes** to record any additional context (e.g., “₦300,000 loan disbursed on 2025-04-15; repayment over 6 months”).
+7. **Save & Submit**
+   - Click **Save** to validate fields.
+   - If no errors appear, click **Submit**.
+   - The deduction entry status becomes **Submitted**, and the CGIC App logs who created it and when.
+
+**Step 3: Review and Approve Deduction (If Approval Workflow Applies)**
+
+1. **Check Status**
+   - After submission, the **Deduction Entry** status may be **Pending Approval** if your CGIC App has an approval workflow for certain deduction types (e.g., loans over a threshold).
+2. **Open the Entry and Click “Approve”**
+   - As a **Payroll Manager** or designated approver, navigate to **Deduction Entry List**, filter by **Status = Pending Approval**.
+   - Click the relevant entry, review details, and click **Approve**.
+   - Approval routes the entry to **Approved** status; it’s now ready to be included in the next payroll run.
+3. **Reject or Refer Back** (Optional)
+   - If information is incomplete, click **Refer Back** with comments so the creator can correct.
+   - If a deduction is unauthorized, click **Reject**—the entry moves to **Cancelled** status.
+
+## Steps to Record Recurring Deductions
+
+**Step 1: Create a Recurring Deduction Schedule**
+
+1. **Go to Recurring Deductions**
+   - In the CGIC App sidebar, click `HR > Recurring Deduction > Recurring Deduction List.`
+   - This area defines multi-month or continuous deductions (e.g., monthly pension, health insurance).
+2. **Click “New”**
+   - Open a blank **Recurring Deduction** form.
+3. **Fill in Recurring Deduction Details**
+   - **Employee**: Select the employee.
+   - **Deduction Type**: Choose the type (e.g., “Pension Contribution”).
+   - **Start Date**: First payroll period to deduct (e.g., 2025-01-01).
+   - **Frequency**: Set to **Monthly** (default) or another cadence if needed.
+   - **Amount** or **Percentage**:
+     - For fixed: enter the amount per month.
+     - For percentage: enter percentage of gross pay.
+   - **End Date**: When the deduction should automatically stop (e.g., 2050-12-31 or leave blank for indefinite).
+4. **Save & Submit**
+   - Click **Save**, then **Submit**.
+   - The system schedules deduction entries automatically each period without manual intervention.
+
+**Step 2: Monitor Scheduled Deductions**
+
+1. **View Recurring Deduction Status**
+   - In **Recurring Deduction List**, status shows **Active** or **Expired**.
+   - **Active** means the schedule is still in effect; **Expired** means the End Date has passed.
+2. **Edit or Cancel a Recurring Deduction**
+   - To change the schedule (amount, percentage, end date), open the record and click **Edit** (if still a draft) or **Amend** (if already submitted).
+   - After making changes, click **Save** and **Submit**.
+   - To stop a recurring deduction prematurely, click **Cancel**. That stops future postings but retains history of deductions already processed.
+3. **Review Deduction Ledger**
+   - When payroll runs, check **Payroll Entry ▶️ Payroll Entry List** for each period to confirm the deduction was applied under **Deductions** section of the payslip.
+   - If a deduction didn’t post, verify the recurring schedule’s **Start Date**, **End Date**, and **Frequency**.
+
+**Step 3: Include Deductions in Payroll Run**
+
+1. **Run Payroll for the Period**
+   - Navigate to `HR > Payroll Entry > New.`
+   - Select **Employee**, **Payroll Period**, and verify all earnings and allowances appear correctly.
+2. **Scroll to Deductions Section**
+   - Under **Deductions**, you’ll see:
+     - **One-Time Deductions**: those recorded manually under **Deduction Entry**.
+     - **Recurring Deductions**: automatically pulled from **Recurring Deduction** schedules.
+     - **Statutory Deductions**: like tax, if your payroll settings generate them based on salary slabs.
+3. **Verify Deduction Amounts**
+   - Check each deduction line: **Deduction Type**, **Amount**, and **Status** (e.g., Pending, Approved).
+   - If a deduction is missing or incorrect, update the underlying **Deduction Entry** or **Recurring Deduction** before finalizing payroll.
+4. **Submit Payroll Entry**
+   - Click **Save**, then **Submit**. The CGIC App:
+     - Calculates **Net Pay** = Gross Pay − Total Deductions.
+     - Posts accounting entries (Debit Salary Expense, Credit Deductions Payable or Cash/Bank for net payout).
+   - Download or email payslips to employees that display detailed deduction breakdowns.

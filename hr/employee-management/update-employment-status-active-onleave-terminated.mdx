@@ -1,4 +1,90 @@
 ---
 title: "Update employment status (Active, On Leave, Terminated)"
-description: "Description of your new file."
+description: "Keep employee status current in the CGIC App—so HR and managers know exactly who’s active, who’s out on leave, and who’s no longer with the company."
+---
+
+<Info>
+  **Prerequisites**
+
+  - The employee whose status you need to update already has a profile under `HR > Employee > Employee List.`
+</Info>
+
+### Step 1: Locate and Open the Employee Record
+
+1. **Navigate to Employee List**
+   - In the CGIC App sidebar, click `HR > Employee > Employee List`.
+   - Use the search bar or filters (Department, Branch, Employee Code) to find the employee.
+2. **Open the Employee Profile**
+   - Click on their **Name** or **Employee Code** to view their profile.
+
+### Step 2: Enter Edit Mode
+
+1. **Click “Edit” or “Amend”**
+   - If the profile is still in **Draft**, click **Edit**.
+   - If the profile is **Submitted**, click **Amend** to preserve the audit trail. You’ll then see a draft version ready for changes.
+
+### Step 3: Change Status to “On Leave”
+
+1. **Locate the Status Field**
+   - Scroll to the top of the profile. You’ll see **Status** with options: **Active**, **On Leave**, **Terminated**.
+2. **Select “On Leave”**
+   - From the dropdown, choose **On Leave**.
+3. **Fill in Leave Details (If Prompted)**
+   - If your CGIC App is configured to link leave applications, you may see fields like:
+     - **Leave Type** (e.g., “Annual Leave,” “Medical Leave”).
+     - **Leave Start Date** and **Leave End Date**.
+   - Ensure these dates match the approved leave request.
+4. **Save & Submit**
+   - Click **Save**, then **Submit** (if you used **Amend**).
+   - The system:
+     - Temporarily suspends upcoming Approval Workflows (expense, travel) until the employee returns.
+     - Leaves the employee in headcount but flags them as inactive for daily tasks.
+
+### Step 4: Revert Status Back to “Active”
+
+1. **Open the Profile**
+   - Once the employee returns, navigate back to `HR > Employee > Employee List` and open their profile.
+2. **Click “Amend”** (If Previously Submitted)
+   - You’ll be editing a submitted record, so click **Amend**.
+3. **Change Status to “Active”**
+   - From the **Status** dropdown, select **Active**.
+   - If needed, clear any leave-related fields (e.g., **Leave End Date**).
+4. **Save & Submit**
+   - Click **Save**, then **Submit**.
+   - The CGIC App:
+     - Resumes approval workflows for this employee.
+     - Automatically reactivates system access (if temporarily suspended).
+
+     <Tip>
+       Ensure any Pending Leave Approvals are cleared or marked “Done” before reactivating to avoid confusion.
+     </Tip>
+
+### Step 5: Change Status to “Terminated”
+
+1. **Collect Termination Documentation**
+   - Before updating status, confirm you have:
+     - **Manager’s Termination Approval**.
+     - **Exit Clearance** (IT, Security, Finance sign-offs).
+     - **Final Settlement Details** (last salary, severance).
+2. **Open the Profile & Click “Amend”**
+   - Navigate to the employee’s profile.
+   - Click **Amend** since the record is submitted.
+3. **Select “Terminated” from the Status Dropdown**
+   - Choose **Terminated**.
+4. **Fill in Termination Details**
+   - The CGIC App may prompt you for:
+     - **Date of Termination** (last working day).
+     - **Termination Reason** (dropdown or free-text field, e.g., “Resignation,” “Performance,” “Layoff”).
+     - **Notice Period Served** (if applicable).
+     - **Final Settlement Amount** (if you record this here).
+5. **Disable System Access (Optional)**
+   - If your CGIC App is configured with automated user management, you may see a checkbox **“Disable Login”**.
+   - Tick this to revoke their access immediately upon submission.
+6. **Save & Submit**
+   - Click **Save**, then **Submit**.
+   - The system will:
+     - Remove them from **Salary Rolls** (ensuring no further payroll runs).
+     - Automatically update headcount reports to exclude them from “Active Employees.”
+     - Log the termination in the Employee’s **Audit Trail**.
+
 ---
