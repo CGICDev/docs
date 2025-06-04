@@ -2,3 +2,204 @@
 title: "Maintain a detailed registry of all assets"
 description: "Keep a comprehensive, up-to-date record of every company asset—fixed equipment, vehicles, furniture, and more—so you can track acquisition, depreciation, location, and disposal within the CGIC App."
 ---
+
+<Card title="What it does:  " icon="sparkles" iconType="duotone">
+  - Creates and stores individual asset records (Asset Code, Description, Purchase Date, Cost, Location, Depreciation Method, etc.)  
+
+  - Tracks each asset’s status (Active, In Maintenance, Disposed) and history (transfers, maintenance events, depreciation run)  
+
+  - Links asset data to financial ledgers for accurate fixed‐asset accounting and audit trails  
+
+  - Generates asset registry reports for physical inventory, insurance, and compliance
+</Card>
+
+<Info>
+  **Prerequisties**\
+  - A **Fixed Asset Accoun**t exists under `Accounts > Chart of Accounts` (e.g., “1600 - Machinery & Equipment”).  
+
+   - Cost centers or departments (e.g., “Production,” “Maintenance”) are set up under `Accounts > Cost Center List.`
+
+  - Under` Assets > Asset Category Lis`**t**, high-level categories exist (e.g., “Vehicles,” “Computers,” “Furniture”).  
+
+   - Depreciation methods (Straight Line, Reducing Balance) and useful life parameters are configured per category.
+</Info>
+
+### Steps to Maintain the Asset Registry
+
+**Step 1: Configure Asset Categories**
+
+1. Navigate to `Assets > Asset Category List.  `
+
+2. Click **New** to create a category (if none exist).  
+
+   - **Asset Category Name**: e.g., “Office Computers.”  
+
+   - **Parent Asset Category**: leave blank for top-level or choose an existing parent (e.g., “Electronics”).  
+
+   - **Depreciation Method**: choose **Straight Line** or **Reducing Balance**.  
+
+   - **Useful Life (Months)**: enter the asset’s expected lifecycle (e.g., “36” for 3 years).  
+
+   - **Salvage Value (%)**: percentage of original cost remaining at end of life (e.g., “10%”).  
+
+3. Click **Save**.  
+
+4. Repeat for each asset category your company uses (e.g., “Office Furniture,” “Vehicles,” “Laboratory Equipment”).
+
+**Step 2: Create New Asset Records**
+
+1. Navigate to `Assets > Asset List. ` 
+
+2. Click **New** to open a blank Asset form.
+
+3. Populate Header Fields:  
+
+   - **Asset Code**: unique identifier (e.g., “ASSET-PC-001”).  
+
+   - **Asset Name**: descriptive name (e.g., “Dell Optiplex 5070 Desktop”).  
+
+   - **Asset Category**: select from the dropdown (e.g., “Office Computers”).  
+
+   - **Asset Group** (Optional): if you maintain sub-groups (e.g., “Workstations”).  
+
+   - **Purchase Date**: date the asset was acquired (e.g., “2023-08-15”).  
+
+   - **Company**: select your legal entity (e.g., “Charisma Global Industrial Co.”).  
+
+4. Enter Financial Details:  
+
+   - **Asset Cost**: total purchase price (e.g., “₦350,000”).  
+
+   - **Accumulated Depreciation**: usually “0” at creation; system will accrue over time.  
+
+   - **Salvage Value**: auto-calculated based on category’s percentage or override if different.  
+
+   - **Book Value**: auto-calculated as (Asset Cost − Accumulated Depreciation).  
+
+5. Specify Location & Custodian:  
+
+   - **Location**: select from existing locations (e.g., “HQ – Third Floor”).  
+
+   - **Custodian / User**: assign the employee responsible (e.g., “John Doe”).  
+
+   - **Department / Cost Center**: select cost center to track departmental asset usage.  
+
+6. Attach Supporting Documents (Optional):  
+
+   - Click `Attachments > Upload `to add purchase invoices, warranty certificates, or insurance papers.  
+
+7. Click **Save**. The asset’s initial status is set to **“Active.”**
+
+**Step 3: Record Asset Movements and Transfers**
+
+1. To transfer an asset (e.g., from one department to another), open the desired asset record from **Asset List**.  
+
+2. Click `Actions > Transfer Asset.`  
+
+3. In the **Asset Transfer** form:  
+
+   - **Asset**: pre-populated.  
+
+   - **Transfer Date**: date of the move.  
+
+   - **From Location / Cost Center**: auto-populated with current values.  
+
+   - **To Location / Cost Center**: select the new destination (e.g., “Remote Site Warehouse”).  
+
+   - **Custodian**: update if a new user is responsible.  
+
+   - **Reason for Transfer**: enter a brief explanation (e.g., “Assigned to new project”).  
+
+4. Click **Save**, then **Submit**.  
+
+   - The asset’s **Location** and **Cost Center** fields update accordingly.  
+
+   - A counter entry in the Asset’s **Movement Log** is created for audit.
+
+<Tip>
+  Use `Filter > Add Filter > Location`**= [Old Location]**  to list all assets needing relocation before a site move.
+</Tip>
+
+**Step 4: Log Maintenance and Service Events**
+
+1. Open the asset record you need to schedule or log maintenance for.  
+
+2. Click `Questions > Maintenance Log` (or `Actions > Log Maintenance`) to open the Maintenance Journal.  
+
+3. Click **New** to create a service entry:  
+
+   - **Maintenance Date**: when the service occurred.  
+
+   - **Service Provider**: vendor or internal team (e.g., “IT Support Team”).  
+
+   - **Description of Work**: e.g., “Replaced power supply unit,” “Annual calibration.”  
+
+   - **Cost Incurred**: e.g., “₦15,000.”  
+
+   - **Expected Next Service Date** (Optional): schedule the next check.  
+
+4. Click **Save**, then **Submit**.  
+
+   - The asset’s **Status** changes to **“In Maintenance”** if defined (optional toggling).  
+
+   - Maintenance details appear in the asset’s **Maintenance Log** tab.  
+
+5. To mark maintenance complete, open the maintenance entry and click **Close Maintenance** once service is done.  
+
+   - The asset’s **Status** automatically reverts to **“Active.”**
+
+**Step 5: Run Depreciation and Update Book Values**
+
+1. Navigate to `Assets > Depreciation > Run Depreciation.`  
+
+2. In the **Run Depreciation** dialog, set:  
+
+   - **Company**: select your entity.  
+
+   - **Depreciation Date**: e.g., “2025-06-30” (end of quarter).  
+
+   - **Asset Category** (Optional): limit depreciation run to one category.  
+
+3. Click **Run**. CGIC calculates depreciation for each qualifying asset:  
+
+   - **Depreciation Expense**: based on the category’s method and useful life.  
+
+   - **Accumulated Depreciation**: updates automatically.  
+
+   - **Book Value**: reduces by the depreciation expense.  
+
+4. Review the **Depreciation Ledger Entries** generated:  
+
+   - **Debit**: Depreciation Expense account.  
+
+   - **Credit**: Accumulated Depreciation account.  
+
+5. Click **Close** once completed.  
+
+**Step 6: Dispose or Write-Off an Asset**
+
+1. Open the asset you want to retire.  
+
+2. Verify its **Accumulated Depreciation** and **Book Value** under the **Financials** tab.  
+
+3. Click `Actions > Dispose Asset.`  
+
+4. In the **Asset Disposal** form:  
+
+   - **Disposal Date**: date of sale, scrapping, or donation.  
+
+   - **Disposal Method**: choose from **Sale**, **Scrap**, **Donate**.  
+
+   - **Sale Proceeds** (if sold): enter amount received (e.g., “₦50,000”).  
+
+   - **Disposal Cost** (if any, e.g., removal fees).  
+
+   - **Gain/Loss on Disposal**: auto-calculated as (Sale Proceeds − (Book Value \+ Disposal Cost)).  
+
+   - **Comments**: note the reason (e.g., “Obsolete model,” “Damaged beyond repair”).  
+
+5. Click **Save**, then **Submit**.  
+
+   - Asset **Status** changes to **“Disposed.”**  
+
+   - Final depreciation and gain/loss entries post automatically in the general ledger.  
