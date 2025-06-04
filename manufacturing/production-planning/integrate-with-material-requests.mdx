@@ -1,4 +1,79 @@
 ---
 title: "Integrate with Material Requests"
-description: "Description of your new file."
+description: "Seamlessly connect production planning with procurement by auto-generating Material Requests for required components—ensuring timely availability of raw materials while minimizing manual data entry in the CGIC App."
 ---
+
+<Card title="What it does" icon="sparkles" iconType="duotone">
+  - **Auto-Generates Material Requests (MRs)**: Converts production material shortages into procurement requests
+  - **Syncs Real-Time Data**: Updates MRs when production plans change (e.g., Valdana Bread batch increased from 5k to 7k loaves)
+  - **Tracks Procurement Status**: Monitor MR → Purchase Order → Receipt workflow within production plans
+  - **Prioritizes Urgent Needs**: Flags critical shortages (e.g., yeast for Valdana Bread)
+</Card>
+
+<Card title="Prerequisites" icon="sparkles" iconType="duotone">
+  1. **Active Production Plans **
+     - Created in **Manufacturing \> Production Plan** (e.g., _"June Ovita Waters Run"_). 
+     - Status: **"Draft"** or **"Submitted"**
+  2. **Material Shortages Identified **
+     - Run **"Get Raw Materials"** in Production Plan to detect shortages
+  3. **Procurement Setup**
+     - **Default Suppliers**: Assigned to raw materials (e.g., _Yeast Supplier_ for Valdana Bread)
+     - **Buying Roles**: Users with permissions for **Stock \> Material Request**
+</Card>
+
+## **Steps to Integrate Production with Material Requests**
+
+### **Step 1: Auto-Generate MRs from Production Plan**
+
+1. Open **Production Plan** (e.g., _"Valdana Bread Batch #24"_)
+2. Click **Get Raw Materials** → System calculates shortages:
+
+   | **Material** | **Required** | **Available** | **Shortage** |
+   | :----------- | :----------- | :------------ | :----------- |
+   | Flour        | 500 kg       | 300 kg        | 200 kg       |
+   | Yeast        | 20 kg        | 5 kg          | 15 kg        |
+3. Click **Create Material Request**:
+   - **MR Type**: "Purchase"
+   - **Set Priority**:
+     - _High_ (for critical items like yeast)
+     - _Medium/Low_ (for non-urgent items)
+4. **Submit** → MRs auto-generated with:
+   - **Production Plan link**
+   - **Required By Date** (aligned with production schedule)
+
+### **Step 2: Track MR Status in Production Plan**
+
+1. Reopen **Production Plan** → **Raw Materials Table**:
+   - New column: **Material Request Status**
+
+     | Material | Shortage | MR Status     |
+     | -------- | -------- | ------------- |
+     | Flour    | 200 kg   | ✅ PO Created  |
+     | Yeast    | 15 kg    | 🟡 MR Pending |
+2. Click MR links to:
+   - View procurement progress
+   - Resubmit if rejected
+
+### **Step 3: Receive Materials Against MR**
+
+1. When goods arrive:
+   - Create **Purchase Receipt** (`Stock > Purchase Receipt > New`)
+2. **Link to MR**:
+   - Select MR (e.g., _"MR-YEAST-024"_)
+   - System auto-populates items/quantities
+3. **Receive Stock**:
+   - Warehouse: _Raw Material Warehouse_
+   - Batch/Expiry: Record for perishables (e.g., yeast)
+4. **Submit** → Production Plan updates:
+   - **Available Qty** increases
+   - MR status changes to **✅ Received**
+
+## **2.0 CGIC Integration Examples**
+
+### **Onina Tissue Production**
+
+- **Shortage**: 500 kg pulp
+- **Auto-MR**: Created → Sent to _Pulp Supplier Inc._
+- **Workflow**:\
+  `Production Plan → MR-PULP-056 → Purchase Order → Purchase Receipt`
+- **Time Saved**: 15 mins vs. manual entry
