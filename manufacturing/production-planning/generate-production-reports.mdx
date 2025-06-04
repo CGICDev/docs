@@ -1,4 +1,170 @@
 ---
 title: "Generate Production Reports"
-description: "Description of your new file."
+description: "Access and run pre-built production reports—covering work order status, capacity utilization, cost variance, and throughput—so you can monitor performance, identify bottlenecks, and drive continuous improvement in the CGIC App."
 ---
+
+<Info>
+  Prerequisites  
+
+    - Work Orders have been created and relevant statuses (e.g., In Process, Completed) are up to date under `Manufacturing > Work Order > Work Order List.`  
+
+     - Workstations and operation times are configured under `Manufacturing > Workstation > Workstation List.  `
+
+     - BOM cost estimates and actual consumption data are recorded via Stock Entries and Work Order operation logs.  
+
+     - Finished goods receipts and shipment data are complete so that throughput and on-time delivery can be calculated.
+</Info>
+
+### Steps to Generate Production Reports
+
+**Step 1: Navigate to the Reports Menu**
+
+1. From the main menu, click `Manufacturing > Reports.`  
+
+2. A list of production-related reports appears. Common options include:  
+
+   - **Work Order Status Report**  
+
+   - **Capacity Utilization Report**  
+
+   - **Production Cost Variance Report**  
+
+   - **Production Throughput Report**  
+
+   - **On-Time Delivery Report**  
+
+3. Click the report you wish to run.
+
+**Step 2: Run the Work Order Status Report**
+
+1. Click **Work Order Status Report**.  
+
+2. In the filter panel, configure:  
+
+   - **Company**: select your entity.  
+
+   - **From Date / To Date**: specify the date range for which you want to see WO status breakdown.  
+
+   - **Workstation** (optional): filter by a specific machine or leave blank for all.  
+
+3. Click **Refresh**.  
+
+4. The report displays:  
+
+   - **Total Work Orders** in each status (e.g., 15 Draft, 23 In Process, 40 Completed).  
+
+   - A bar chart or pie chart (if enabled) visually breaking down status counts.  
+
+5. Export results by clicking `Download > CSV` or **Print** for presentations or team meetings.
+
+<Note>
+  This report helps you see where bottlenecks occur—e.g., many WOs stuck in “In Process” may signal capacity constraints.
+</Note>
+
+**Step 3: Run the Capacity Utilization Report**
+
+1. Click **Capacity Utilization Report**.  
+
+2. Set filters:  
+
+   - **Workstation**: choose one or several machines or leave blank for all.  
+
+   - **From Date / To Date**: define the period to analyze (e.g., last week, month).  
+
+3. Click **Refresh**.  
+
+4. The report shows:  
+
+   - **Available Hours**: total planned hours for each workstation (e.g., 160 hours for Oven A in a month).  
+
+   - **Utilized Hours**: sum of operation times logged against those workstations.  
+
+   - **Utilization %**: (Utilized ÷ Available) × 100.  
+
+5. Review which workstations are underutilized (e.g., \< 50%) or overutilized (e.g., \> 90%).  
+
+6. Export or print for capacity planning.
+
+**Step 4: Run the Production Cost Variance Report**
+
+1. Click **Production Cost Variance Report**.  
+
+2. Configure filters:  
+
+   - **Work Order** (specific WO) or leave blank to aggregate multiple WOs.  
+
+   - **From Date / To Date**: e.g., last quarter.  
+
+   - **Production Item** (optional): to narrow to a product family.  
+
+3. Click **Refresh**.  
+
+4. The report displays side-by-side:  
+
+   - **Estimated Cost** from the BOM (raw material, operation, overhead).  
+
+   - **Actual Cost** pulled from material issues and operation logs.  
+
+   - **Variance** (Actual − Estimated) in absolute (e.g., 5,000 NGN) and percentage terms (e.g., 8%).  
+
+5. Drill into each row to see itemized details: which material or operation caused the variance.  
+
+6. Export or print to share with finance and continuous improvement teams.
+
+<Tip>
+  Use this report monthly to track trending cost overruns and refine BOM estimates accordingly.
+</Tip>
+
+**Step 5: Run the Production Throughput Report**
+
+1. Click **Production Throughput Report**.  
+
+2. Set filters:  
+
+   - **From Date / To Date**: period in which you want throughput data (e.g., past 30 days).  
+
+   - **Production Item** (optional): a specific product or category.  
+
+3. Click **Refresh**.  
+
+4. The report shows:  
+
+   - **Total Units Produced**: sum of completed WO quantities in the period.  
+
+   - **Total Scrap Units**: sum of scrap recorded during production runs.  
+
+   - **Yield %**: (Produced ÷ (Produced \+ Scrap)) × 100.  
+
+   - **Average Throughput per Day**: total produced ÷ working days in the period.  
+
+5. Identify trends: increasing scrap rates, declining throughput, or seasonal spikes.  
+
+6. Export or print for production reviews.
+
+**Step 6: Run the On-Time Delivery Report**
+
+1. Click **On-Time Delivery Report**.  
+
+2. Configure filters:  
+
+   - **From Date / To Date**: timeframe for deliveries (e.g., last month).  
+
+   - **Customer** (optional): to focus on a particular account.  
+
+   - **Work Order** or **Delivery Note** status (e.g., Completed).  
+
+3. Click **Refresh**.  
+
+4. The report displays:  
+
+   - **Total Shipments** scheduled in the period.  
+
+   - **On-Time Count**: number delivered on or before the planned due date.  
+
+   - **Late Count**: number delivered after the due date.  
+
+   - **On-Time %**: (On-Time ÷ Total) × 100.  
+
+5. Use this metric to gauge customer satisfaction and logistics performance.  
+
+6. Export or print to share with sales, customer service, and management.
