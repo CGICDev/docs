@@ -1,4 +1,138 @@
 ---
 title: "Add Employee (Biodata, Contact Information, IDs, Documents, Role, Salary)"
-description: "Description of your new file."
+description: "Create a complete employee record in the CGIC App—capturing their personal details, contact info, official IDs, supporting documents, assigned role, and salary structure—so HR and managers can onboard new team members seamlessly."
 ---
+
+<Card title="What it does" icon="sparkles" iconType="duotone">
+  - Guides you through creating a fresh Employee record in the CGIC App’s HR module.
+  - Ensures you capture essential biodata (name, DOB, gender), up-to-date contact details, government IDs, and any required paperwork.
+  - Links the employee to the correct Company, Branch, Department, Designation, and Role in the system.
+  - Defines the employee’s salary structure (salary components, bank details, working hours).
+</Card>
+
+<Info>
+  **Prerequisites**
+
+  - **Company** record exists under `Setup > Company` (HR needs the correct legal entity).
+  - **Branches**, **Departments**, and **Designations** are defined under `HR > Branch List`, `HR > Department List`, and `HR > Designation List.`
+  - **Salary Structure** templates and **Salary Components** are configured under `HR > Salary Structure` and `HR > Salary Component` (so you can assign a predefined structure).
+  - Under `Setup > Role List`, ensure roles like **Employee**, **Manager**, **Finance User** are in place.
+  - If you plan to auto-create a login user for the new employee, confirm you have permission to assign a **User Role** and generate a system **Login ID**.
+  - Under `HR > ID Document Type`, verify that fields like **National ID**, **Passport**, **Driver’s License** exist.
+  - Ensure any custom ID types (e.g., “Work Permit”) have been added if needed.
+</Info>
+
+### Step 1: Navigate to the Employee Form
+
+1. In the CGIC App sidebar, go to `HR > Employee > Employee List.`
+2. Click **New** in the top-right corner to open the **Employee** form.
+
+### Step 2: Capture Biodata (Personal Information)
+
+1. **Employee Name & Code**
+   - **Employee Name**: Enter the full legal name (e.g., “Jane A. Doe”).
+   - **Employee Code**: Leave blank to auto-generate, or enter your company’s assigned code (e.g., “CGIC-EMP-1023”).
+2. **Personal Details**
+   - **Date of Birth**: Select the correct birth date.
+   - **Gender**: Choose Male, Female, or Other.
+   - **Nationality**: Pick from the dropdown (e.g., “Nigerian”).
+   - **Marital Status** (Optional): Single, Married, or Other.
+   - **Permanent Address**: Enter street, city, state/province, country, and ZIP/Postal Code.
+   - **Current Address** (Optional if same as Permanent): If the employee lives elsewhere temporarily, enter that address here.
+3. **Emergency Contact**
+   - **Emergency Contact Name**: Name of next of kin or emergency contact.
+   - **Emergency Contact Number**: Phone number.
+   - **Relationship**: Relationship to employee (e.g., “Spouse,” “Parent”).
+4. **Birthplace / Religion / Blood Group** (Optional fields)
+   - Some teams capture **Place of Birth**, **Religion**, or **Blood Group** for internal records—fill in if your company collects these.
+
+### Step 3: Enter Contact Information
+
+1. **Personal Email & Mobile Number**
+   - **Personal Email ID**: Enter their private or preferred email (for non-work communications).
+   - **Mobile Phone**: Add their mobile number with country code (e.g., “\+234 80xxxxxxx”).
+2. **Work Email & Company Phone** (If Created)
+   - If the CGIC App auto-generates a work email (e.g., “[jane.doe@cgic.com](mailto:jane.doe@cgic.com)”), fill it here.
+   - **Company Phone**: If they get a desk phone, enter that extension or number.
+3. **Alternate Contact** (Optional)
+   - If HR needs an alternate number (e.g., a parent or roommate), use **Alternate Contact Number**.
+4. **Social Profiles / Networking** (Optional)
+   - Some organizations track **LinkedIn**, **Twitter**, or **GitHub** profiles. Enter URLs if collected.
+
+### Step 4: Capture IDs and Documents
+
+1. **Government IDs & Passport Details**
+   - **ID Document Type** (Dropdown): Choose from **National ID**, **Passport**, **Driver’s License**, or any custom type.
+   - **ID Number**: Enter the exact number as printed (avoid spaces).
+   - **Issue Date** / **Expiry Date**: If relevant (e.g., Passport expires), fill in both.
+   - To add multiple IDs (e.g., both a National ID and a Driver’s License), click **\+ Add Row** in the **Employee ID Details** table and repeat.
+2. **Upload Supporting Documents**
+   - Scroll to **Attachments** section at the bottom:
+     - Click **Browse** to upload scanned copies of IDs (e.g., passport bio page, driver’s license).
+     - Upload a signed **Offer Letter**, **Resume/CV**, **Certificates** (e.g., degree, training certificates).
+     - If you require a **Medical Clearance** or **Background Check**, upload the PDF/scan here as well.
+   - Ensure each document clearly names the file (e.g., “Jane_Doe_Passport.pdf”).
+3. **Document Validity** (If Your Workflow Requires)
+   - If your company tracks document validity (e.g., work permit expiry), add a custom date field in `Customize Form > Employee.`
+   - Populate **Validity Date** for each ID to trigger renewal reminders later.
+
+### Step 5: Assign Role and Organizational Details
+
+1. **Company, Branch, Department, Designation**
+   - **Company**: This should default to your legal entity (e.g., “CGIC Nigeria Ltd”).
+   - **Branch**: Choose the location where the employee will be based (e.g., “Lagos Plant”).
+   - **Department**: Pick from your preconfigured list (e.g., “Production,” “Quality Assurance,” “Finance”).
+   - **Designation**: Select the job title (e.g., “Senior Engineer,” “Accountant,” “Maintenance Technician”).
+2. **Reporting Manager**
+   - In the **Reports To** field, search for and select the manager’s Employee record (e.g., “John Smith”).
+   - This drives the approval hierarchy (leave requests, expense approvals, etc.).
+3. **User Role Assignment (CGIC App Login)**
+   - If you want to give the employee CGIC App login access immediately:
+     1. Tick **“Create User”** (checkbox).
+     2. **User Name**: Set the system login username (e.g., “jane.doe”).
+     3. **Email**: Ensure the **Work Email** is correct—an invite will be sent there.
+     4. **User Roles**: Click **\+ Add Row**, choose roles like **Employee**, **Employee Self-Service**, or any department-specific role (e.g., **Production User**).
+   - Click **Save**; the CGIC App emails the login link and temporary password.
+
+### Step 6: Define Salary Information
+
+1. **Salary Structure**
+   - In the **Salary** section, click **Select Salary Structure** and choose from your predefined templates (e.g., “Engineer Grade 2 Structure,” “Admin Staff Structure”).
+   - A salary structure template typically includes:
+     - **Basic Pay**
+     - **House Rent Allowance (HRA)**
+     - **Transport Allowance**
+     - **Other Allowances** (e.g., “Meal Allowance,” “Phone Reimbursement”)
+   - Once selected, the CGIC App auto-populates these components with the default amounts.
+2. **Customize Salary Components (If Needed)**
+   - If this employee’s salary varies from the template, click **Edit Salary Components**:
+     - Adjust each component’s **Amount** or **Percentage**.
+     - Add a **New Row** for any one-off component (e.g., “Joining Bonus”).
+   - Confirm the **Gross Salary** (sum of all components) and **Net Salary** (after deductions).
+3. **Bank Account Details & Payroll Metadata**
+   - **Bank Name**: Enter the bank (e.g., “GTBank Nigeria”).
+   - **Bank Account Number**: Employee’s account for salary credit.
+   - **PF / Pension Number** (Optional): If your company tracks Provident Fund or Pension schemes.
+   - **UAN / Tax ID** (Optional): Enter the employee’s tax identification if required.
+4. **Working Hours and Shift** (Optional)
+   - If the CGIC App tracks time, set **Working Hours Per Day** (e.g., 8).
+   - **Shift**: Choose “Day,” “Night,” or “Rotational,” depending on their schedule.
+5. **Effective Date & Currency**
+   - **Salary Effective From**: The date when this salary takes effect (e.g., their first working day).
+   - **Currency**: If you have multi-currency payroll (e.g., “NGN,” “USD”), choose appropriately.
+
+### Step 7: Save and Submit the Employee Record
+
+1. **Review All Sections**
+   - Scroll through each tab or section:
+     - **Biodata**, **Contact Information**, **ID Details**, **Attachments**, **Company/Department/Role**, **Salary Details**.
+   - Ensure there are no mandatory fields left blank (they’ll be marked with a red asterisk).
+2. \*\*Click **Save**
+   - The CGIC App performs validation (e.g., unique Employee Code, valid email format).
+   - If any errors appear, correct them and click **Save** again.
+3. \*\*Click **Submit**
+   - Once submitted, the employee’s profile is locked for edits unless you **Amend**.
+   - The system will:
+     - Generate or activate the **Login User** (if selected).
+     - Trigger any **Email Alerts** (e.g., a welcome email to their work email).
+     - Automatically set up default **Leave Allocation** based on policy (if configured).

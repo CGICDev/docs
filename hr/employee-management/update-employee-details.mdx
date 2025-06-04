@@ -1,4 +1,131 @@
 ---
 title: "Update Employee details"
-description: "Description of your new file."
+description: "Keep employee information accurate and up-to-date in the CGIC App—so HR, managers, and payroll teams always work with the latest biodata, contact info, IDs, role assignments, and salary details."
 ---
+
+<Info>
+  **Prerequisites**
+
+  1. The employee you wish to update must already have a record under `HR > Employee > Employee List.`
+  2. You have visibility into the fields you need to change (some fields may be restricted to certain roles).
+  3. Gather updated information beforehand: new address, updated contact numbers, corrected ID numbers, or revised salary components.
+  4. If you’re updating salary, ensure the relevant **Salary Structure** templates are already configured under `HR > Salary Structure.`
+</Info>
+
+### Step 1: Locate and Open the Employee Record
+
+1. **Navigate to Employee List**
+   - In the CGIC App sidebar, go to `HR > Employee > Employee List.`
+   - Use the search box or filters (by Department, Branch, Employee Code) to find the employee.
+2. **Open the Employee Profile**
+   - Click on the employee’s name—this opens their full profile in **View** mode.
+3. **Click “Edit” or “Amend”**
+   - If the employee is still on probation or you haven’t submitted their record, click **Edit**.
+   - If the record is in **Submitted** state, click **Amend** to preserve audit history. The CGIC App creates a new draft version, linking back to the original.
+
+### Step 2: Update Biodata (Personal Information)
+
+1. **Modify Name or Employee Code (If Allowed)**
+   - **Employee Name**: Correct spelling or update if the employee legally changed their name (e.g., after marriage).
+   - **Employee Code**: Only change if you follow a re-coding policy; otherwise, leave as-is to avoid report mismatches.
+2. **Adjust Date of Birth, Gender, or Nationality**
+   - **Date of Birth**: Rarely changes, but correct if originally entered incorrectly.
+   - **Gender/Nationality**: Update if the employee’s legal documentation or personal identification changed.
+3. **Update Marital Status or Other Optional Fields**
+   - **Marital Status**: e.g., from “Single” to “Married.”
+   - **Blood Group**, **Place of Birth**, or **Religion**: Only if your organization collects these details and they changed.
+4. **Save**
+   - Once personal fields are correct, click **Save** at the bottom. If you used **Amend**, you must click **Submit** later (see Finalize).
+
+### Step 3: Update Contact Information
+
+1. **Edit Address Fields**
+   - **Permanent Address**: Replace street, city, state, postal code if the employee moved.
+   - **Current Address**: If they have a new residential or temporary address (e.g., relocation for training), update it here.
+2. **Change Phone Numbers or Email IDs**
+   - **Mobile Phone**: Update to the new number—include country code (e.g., “\+234 80xxxxxxx”).
+   - **Personal Email ID**: If they now prefer a different email for non-work communications, replace it.
+   - **Work Email**: If your domain changes or you rolled out a new email convention, update the work email so notifications continue.
+3. **Add or Modify Alternate Contact**
+   - If their emergency contact changed (e.g., parent or spouse has a new phone), update **Emergency Contact Name**, **Number**, and **Relationship**.
+4. **Social Profiles / Networking**
+   - Update **LinkedIn**, **Twitter**, or **GitHub** URLs if relevant to their role or if their public profile changed.
+5. **Save**
+   - Click **Save** to persist changes. If using **Amend**, proceed to Submission.
+
+### Step 4: Update IDs and Documents
+
+1. **Correct or Add New Government IDs**
+   - Scroll to **Employee ID Details**.
+   - To edit an existing row (e.g., wrong ID Number), click into the **ID Number** field and make corrections.
+   - To add a newly issued ID (e.g., Passport renewal), click **\+ Add Row**:
+     - **ID Document Type**: Choose “Passport,” “National ID,” etc.
+     - **ID Number**, **Issue Date**, **Expiry Date**: Fill with new values.
+2. **Upload Updated or New Documents**
+   - In the **Attachments** section:
+     - Click **Browse** to upload new scans (e.g., the backside of a new driver’s license, updated work permit).
+     - To replace a document, either delete the old file (click the trash icon) or upload a new version with a clear filename (e.g., “Jane_Doe_NID_2025.pdf”).
+     - If there’s a new offer letter, updated contract, or certification, upload those here as well.
+3. **Remove Expired or Superseded Documents**
+   - If a document is expired (e.g., an old passport), click the checkbox next to it and choose **Delete**—ensuring only valid documents remain.
+4. **Save**
+   - Click **Save** after all ID and document updates. If you amended, you’ll finalize in the last step.
+
+### Step 5: Update Role, Department, or Reporting Structure
+
+1. **Change Company, Branch, Department, or Designation**
+   - **Branch**: If the employee transfers to another location (e.g., from Lagos Plant to Kaduna Branch), select the new branch.
+   - **Department**: Choose the new department (e.g., “Quality Assurance” → “R&D”).
+   - **Designation**: Update job title (e.g., promoted from “Engineer” to “Senior Engineer”).
+2. **Modify “Reports To”**
+   - If the employee’s new manager is different, search for and select the new supervisor under **Reports To**.
+   - This updates approval workflows (leave, expense, appraisal).
+3. **Adjust User Roles (System Access)**
+   - If their responsibilities change (e.g., moving from “Technician” to “Supervisor”), scroll to the **User Roles** section:
+     - Click **\+ Add Row** to grant new roles (e.g., “Supervisor”, “Project Manager”).
+     - To remove obsolete roles, click the trash icon next to that row.
+   - Ensure their **Work Email** is correct so login invites continue.
+4. **Save**
+   - Click **Save** to lock in organizational changes. Remember to **Submit** if you used **Amend**.
+
+   <Tip>
+     Whenever an employee changes departments, check if they require additional training or access (e.g., system permissions) and coordinate with the IT or training team.
+   </Tip>
+
+### Step 6: Update Salary or Compensation Details
+
+1. **Select or Change Salary Structure**
+   - In the **Salary** section, click **Select Salary Structure**:
+     - To move them to a new grade (e.g., from “Engineer Grade 2 Structure” to “Engineer Grade 3 Structure”), choose the updated template.
+     - The CGIC App auto-populates components: **Basic Pay**, **HRA**, **Transport Allowance**, etc.
+2. **Edit Individual Salary Components**
+   - If their salary deviates from the template, click **Edit Salary Components**:
+     - Adjust each component’s **Amount** (e.g., Basic Pay from ₦200,000 to ₦220,000).
+     - Add one-time allowances or **Bonuses** by clicking **\+ Add Row**.
+   - Verify the recalculated **Gross Salary** and **Net Salary** (after deductions).
+3. **Modify Bank Details or Tax Information**
+   - **Bank Name** and **Bank Account Number**: Update if the employee opened a new account.
+   - **Tax ID** or **Pension Number**: Correct if you receive an updated document.
+   - If your payroll setup changed (e.g., moved to a new bank), coordinate with Finance to ensure the next payroll run includes these changes.
+4. **Adjust Working Hours or Shift (If Applicable)**
+   - If they move from a day to night shift, update **Shift** under the **Salary** tab.
+   - If part-time or contract changes, revise **Working Hours Per Day**.
+5. **Save**
+   - Click **Save** to apply salary modifications. Submit if in **Amend** mode. Payroll for the next cycle will use updated figures.
+
+     <Tip>
+       If you’re doing a mid-month salary change, coordinate with the payroll team so they prorate correctly or apply changes from the next pay period.
+     </Tip>
+
+### Step 7: Finalize and Submit Changes
+
+1. **Review All Updated Fields**
+   - Scroll through every section—**Biodata**, **Contact Information**, **ID Details**, **Attachments**, **Company/Role**, **Salary**—to ensure nothing was overlooked.
+2. **Check for Validation Errors**
+   - If a required field was left blank or an invalid format was entered, the CGIC App highlights it in red. Address those before proceeding.
+3. **Click Save**
+   - If you clicked **Edit**, this updates the live record immediately.
+   - If you clicked **Amend**, you now see **Submit** at the top—click it to finalize, which:
+     - Logs an audit trail linking back to the original record.
+     - Triggers any **Email Alerts** (e.g., notifying their manager of a role change or salary revision).
+     - Updates downstream modules (e.g., leave approval workflows, payroll ledger, org charts).

@@ -1,4 +1,119 @@
 ---
 title: "View Employee profile"
-description: "Description of your new file."
+description: "Quickly access and review an employee’s complete record in the CGIC App—so HR, managers, and authorized users can see biodata, contact details, IDs, documents, role assignments, and salary information in one place."
 ---
+
+<Info>
+  **Prerequisites**
+
+  - At least one Employee record has been created under `HR > Employee > Employee List.`
+  - The record you need to view is already submitted (not in draft).
+  - Know the employee’s **Employee Code**, **Name**, or **Department** so you can locate them using search or filters.
+</Info>
+
+### Step 1: Locate the Employee Record
+
+1. **Navigate to Employee List**
+   - In the CGIC App sidebar, click `HR > Employee > Employee List.`
+2. **Search or Filter**
+   - **Search Bar**: Type the employee’s **Name**, **Employee Code**, or **Email** (e.g., “EMP-1023” or “[jane.doe@cgic.com](mailto:jane.doe@cgic.com)”).
+   - **Filters**: Click the filter icon and set criteria such as:
+     - **Department = Production**
+     - **Branch = Lagos Plant**
+     - **Status = Active**
+3. **Select the Employee**
+   - Once the employee appears in the list, click their **Name** or **Employee Code**.
+   - The system opens the Employee profile in **View** mode.
+
+### Step 2: Review Biodata (Personal Information)
+
+1. **Header Information**
+   - At the top, you’ll see the **Employee Name**, **Employee Code**, and **Current Status** (Active, On Leave, Resigned).
+   - A small **Profile Photo** may display if uploaded.
+2. **Personal Details Section**
+   - **Date of Birth**
+   - **Gender**
+   - **Nationality**
+   - **Marital Status**
+   - **Permanent Address** and **Current Address**
+3. **Emergency Contact Details**
+   - **Emergency Contact Name**, **Relation**, and **Phone Number** are visible for quick reference.
+4. **Other Optional Fields**
+   - Depending on configuration, you may also see **Blood Group**, **Place of Birth**, or **Religion**.
+
+### Step 3: View Contact Information
+
+1. **Contact Details Section**
+   - **Personal Email ID** and **Mobile Phone Number** (with country code).
+   - **Work Email** (e.g., “[jane.doe@cgic.com](mailto:jane.doe@cgic.com)”) and **Company Phone** (if assigned).
+   - **Alternate Contact** (if any).
+2. **Social Profiles**
+   - **LinkedIn**, **Twitter**, or other networking URLs (if captured).
+   - Clicking a link opens the profile in a new tab.
+3. **Address Map (If GIS Enabled)**
+   - If your CGIC App instance is configured with a map service, a small map pin may show the **Current Address** location.
+
+### Step 4: Inspect ID Details and Attachments
+
+1. **Employee ID Details Table**
+   - A list of **ID Document Types** (National ID, Passport, Driver’s License).
+   - For each row, you’ll see **ID Number**, **Issue Date**, and **Expiry Date** (if entered).
+2. **Attachments Section**
+   - Uploaded files (scans of IDs, Offer Letter, Certificates).
+   - Click on any file name (e.g., “Jane_Doe_Passport.pdf”) to download or preview.
+3. **Document Validity Indicators**
+   - If an **Expiry Date** is near, you may see a red or yellow warning icon indicating upcoming renewals.
+   - Hover over the icon for details (e.g., “Passport expires in 20 days”).
+
+### Step 5: Check Organizational Assignments
+
+1. **Company, Branch, Department, and Designation**
+   - Displays the employee’s current **Company** (e.g., “CGIC Nigeria Ltd”), **Branch** (e.g., “Kaduna Plant”), **Department** (e.g., “Maintenance”), and **Designation** (e.g., “Technician II”).
+2. **Reporting Manager**
+   - The **Reports To** field shows their direct supervisor.
+   - Click the manager’s name to view their profile.
+3. **Role and User Mapping**
+   - If the employee has a system user account, you’ll see:
+     - **User Name** (e.g., “jane.doe”)
+     - **User Roles** (e.g., “Employee Self-Service,” “Maintenance User”)
+   - Hover over each role to see a brief description.
+4. **Date Fields**
+   - **Date of Joining** shows when they started.
+   - **Date of Confirmation** (if probation applies).
+   - **Last Promotion Date** or **Last Designation Change** may be visible if tracked.
+
+### Step 6: View Salary and Payroll Details
+
+1. **Salary Structure**
+   - Displays the assigned **Salary Structure** template (e.g., “Engineer Grade 2 Structure”).
+   - Click **View Structure** to see breakdown:
+     - **Basic Pay**
+     - **House Rent Allowance (HRA)**
+     - **Transport Allowance**
+     - Any **Special Allowances**.
+2. **Salary Components and Amounts**
+   - A table lists each component and the **Amount** or **Percentage**.
+   - The **Gross Salary** and (if calculations exist) **Net Salary** are displayed at the bottom.
+3. **Bank and Tax Information**
+   - **Bank Name**, **Account Number**, and **IFSC** (if relevant).
+   - **Pension / Provident Fund Number** and **Tax ID** (if stored).
+4. **Last Salary Revision**
+   - Shows the **Effective Date** of the most recent salary change.
+   - Details of the previous structure (if tracked) may be available via a “View History” link.
+
+### Step 7: Explore Additional Tabs and Features
+
+1. **Leave and Attendance**
+   - If your CGIC App instance tracks leave entitlements, a **Leave** tab shows:
+     - **Leave Balance** (e.g., “12 Casual Days,” “8 Sick Days”).
+     - **Leave Applications** (approved, pending).
+   - The **Attendance** tab (if enabled) may display check-in/out records or shift logs.
+2. **Performance and Training**
+   - **Performance Reviews**: Any appraisal scores or feedback cycles linked to this employee.
+   - **Training Records**: List of completed courses or certifications, with dates and scores.
+3. **Asset Allocation**
+   - If you assign company assets (e.g., laptops, tools), the **Assets** tab lists items currently allocated to the employee.
+   - Includes **Asset Code**, **Issue Date**, and **Return Status**.
+4. **Notes and To-Do**
+   - Any HR **Notes** (e.g., disciplinary warnings, commendations).
+   - **To-Do** items assigned to HR or managers (e.g., “Renew Work Permit”).
