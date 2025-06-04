@@ -8,8 +8,6 @@ description: "Unlock insights into how assets are performing, how maintenance ac
 
   - Assets must be created under `Assets > Asset List` with correct details (Asset Code, Category, Location).
   - Maintenance Tasks (preventive and corrective) have been logged under `Maintenance > Maintenance Task`, and costs have been recorded per task.
-
-
   - **Cost Centers and Budgets Configured**
     - Under `Accounts > Chart of Accounts`, asset-related expense accounts are set up.
     - Cost centers are defined in `Accounts > Cost Center List`.
@@ -19,7 +17,7 @@ description: "Unlock insights into how assets are performing, how maintenance ac
 ### Step 1: Access Asset Performance Reports
 
 1. **Navigate to Asset Reports**
-   - Go to **Assets ▶️ Reports ▶️ Asset Performance Report**.
+   - Go to `Assets > Reports > Asset Performance Report.`
    - This report shows metrics like:
      - **Uptime (%)** per asset—calculated as (Total Available Hours − Total Downtime) ÷ Total Available Hours.
      - **Utilization Rate**: Time asset was actually running versus idle.
@@ -31,20 +29,18 @@ description: "Unlock insights into how assets are performing, how maintenance ac
      - **Asset Category** or specific **Asset** names.
      - **Location** or **Cost Center** (if assets are grouped by plant or department).
    - Click **Refresh** to apply filters.
-3. **Review Key Metrics**
-   - Scan the table or chart for assets with:
-     - Low **Uptime (%)**—indicates potential reliability issues.
-     - High **MTTR**—suggests lengthy repairs or spare-parts shortages.
-     - Low **Utilization**—maybe an asset is underused or scheduled work is inefficiently allocated.
 
-> 🔍 _Tip:_ If you need to share these metrics with senior management, click **Export ▶️ CSV** or **Export ▶️ PDF** and include a brief narrative highlighting the top-performing and underperforming assets.
+**Review Key Metrics**
 
----
+- Scan the table or chart for assets with:
+  - Low **Uptime (%)**—indicates potential reliability issues.
+  - High **MTTR**—suggests lengthy repairs or spare-parts shortages.
+  - Low **Utilization**—maybe an asset is underused or scheduled work is inefficiently allocated.
 
-### 🔄 Step 2: Generate Maintenance Compliance and History Reports
+### Step 2: Generate Maintenance Compliance and History Reports
 
 1. **Maintenance Schedule Report**
-   - Navigate to **Maintenance ▶️ Reports ▶️ Maintenance Schedule Report**.
+   - Navigate to `Maintenance > Reports > Maintenance Schedule Report.`
    - Use filters such as:
      - **Status** (Planned, In Progress, Completed).
      - **Due Date Range** (e.g., May 1, 2025 – May 31, 2025).
@@ -53,7 +49,7 @@ description: "Unlock insights into how assets are performing, how maintenance ac
      - List of upcoming and overdue tasks.
      - For each task: Due Date, Assigned Technician, Priority, and Status.
 2. **Maintenance History Report**
-   - Go to **Maintenance ▶️ Reports ▶️ Maintenance History Report**.
+   - Go to `Maintenance > Reports > Maintenance History Report.`
    - Filter by:
      - **Asset**, **Date Range**, **Maintenance Item**, or **Technician**.
    - Click **Refresh** to see:
@@ -65,14 +61,14 @@ description: "Unlock insights into how assets are performing, how maintenance ac
      - **% On-Time Completion**: (Tasks Completed On or Before Due Date) ÷ (Total Tasks).
      - **Average Time over Due**: For tasks completed late, the average number of days overdue.
 
-> 📈 _Tip:_ Monitor **% On-Time Completion** monthly. If it dips below, say, 90%, investigate whether staffing is insufficient or if certain assets need more frequent attention.
+<Tip>
+  Monitor % On-Time Completion monthly. If it dips below, say, 90%, investigate whether staffing is insufficient or if certain assets need more frequent attention.
+</Tip>
 
----
-
-### 📈 Step 3: Run Cost Analysis Reports
+### Step 3: Run Cost Analysis Reports
 
 1. **Asset Maintenance Cost Report**
-   - Go to **Maintenance ▶️ Reports ▶️ Asset Maintenance Cost Report**.
+   - Go to `Maintenance > Reports > Asset Maintenance Cost Report.`
    - Apply filters:
      - **Asset** (e.g., “Pump-03 – Cooling Tower Pump”).
      - **Date Range** (e.g., Fiscal Year 2025).
@@ -83,7 +79,7 @@ description: "Unlock insights into how assets are performing, how maintenance ac
      - **External Service Cost** (sum of linked Purchase Invoices).
      - **Total Maintenance Cost** per asset and aggregated by category.
 2. **Asset Value and Expense Ledger**
-   - Navigate to **Assets ▶️ Reports ▶️ Asset Value and Expense Ledger**.
+   - Navigate to `Assets > Reports > Asset Value and Expense Ledger.`
    - Filter by **Asset** or **Cost Center**.
    - Click **Refresh** to view:
      - **Acquisition Cost** and **Capitalization Date**.
@@ -92,7 +88,7 @@ description: "Unlock insights into how assets are performing, how maintenance ac
      - **Book Value** over time.
    - Scroll horizontally to see how each cost element contributes to total asset cost.
 3. **Budget vs. Actual Report**
-   - Under **Accounts ▶️ Budget ▶️ Budget vs Actual Report**, set:
+   - Under `Accounts > Budget > Budget vs Actual Report`, set:
      - **Fiscal Year** (e.g., 2025–2026).
      - **Cost Center** (e.g., “Maintenance – Plant B”).
      - **Expense Account** (e.g., “Maintenance Expense – Equipment”).
@@ -100,14 +96,10 @@ description: "Unlock insights into how assets are performing, how maintenance ac
      - **Budgeted Amount** versus **Actual Expense** month by month.
      - **Variance** and **% Utilization** of budget.
 
-> 📊 _Note:_ If you spot a big variance—actuals exceeding budget—click the **GL Entries** link (if available) to drill down into specific journal entries for root-cause analysis.
-
----
-
-### 🔧 Step 4: Build Custom Dashboards
+### Step 4: Build Custom Dashboards
 
 1. **Create a New Dashboard**
-   - In the CGIC App’s sidebar, click **Desk ▶️ Dashboard ▶️ New**.
+   - In the CGIC App’s sidebar, click `Desk > Dashboard > New.`
    - Name it something like “Asset Performance & Cost Overview.”
 2. **Add Widgets**
    - Click **\+ Add Widget** and choose from:
@@ -119,5 +111,3 @@ description: "Unlock insights into how assets are performing, how maintenance ac
 3. **Share the Dashboard**
    - Click **Share** and choose roles or specific users (e.g., Asset Managers, Plant Supervisors).
    - They’ll see real-time data every time they log in to the CGIC App.
-
-> 🔍 _Tip:_ Keep your dashboard uncluttered—limit to 4–6 key widgets so stakeholders can quickly grasp performance and cost trends.
