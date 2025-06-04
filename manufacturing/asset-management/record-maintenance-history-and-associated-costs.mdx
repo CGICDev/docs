@@ -1,4 +1,106 @@
 ---
 title: "Record maintenance history and associated costs"
-description: "Description of your new file."
+description: "Maintain a comprehensive log of every maintenance activity with detailed cost breakdown—so CGIC’s assets have trusted service records and accurate expense tracking in the CGIC App."
 ---
+
+<Card title="What it does" icon="sparkles" iconType="duotone">
+  - Captures all maintenance activity details (date, technician, checklist notes).
+  - Logs material, labor, and external vendor costs for each task.
+  - Associates costs with specific assets, ensuring Total Cost of Ownership visibility.
+  - Provides comprehensive maintenance history reports for audits, budgeting, and ROI analysis.
+</Card>
+
+<Info>
+  **Prerequisites**
+
+  - Assets exist under `Assets > Asset List`, with correct **Asset Code** and **Location**.
+  - Preventive or Corrective Maintenance Tasks have been created under `Maintenance > Maintenance Task.`
+  - Under `Accounts > Chart of Accounts`, ensure you have accounts for **Maintenance Expense**, **Labor Expense**, and **Inventory (for spare parts)**.
+  - **Purchase Invoice** or **Expense Claim** entries are enabled to record external vendor invoices.
+</Info>
+
+### Step 1: Complete the Maintenance Task
+
+1. **Access the Maintenance Task**
+   - Navigate to `Maintenance > Maintenance Task > List.`
+   - Filter by **Status: In Progress** or **To Do** and click the relevant task (e.g., **MT-2025-0210 – Quarterly Filter Replacement**).
+2. **Update Task Details**
+   - In the **Checklist** section, tick off each inspection or repair step and add notes if any anomalies were discovered.
+   - In **Comments**, record observations (e.g., “Replaced air filter after observing heavy debris buildup”).
+   - Click **Complete** to move the task to **Status: Completed**.
+   - Once complete, the CGIC App timestamps the finish and logs the technician’s name.
+
+### Step 2: Log Material (Spare Parts) Costs
+
+1. **Add Consumed Items**
+   - Within the completed Maintenance Task, scroll to **Consumed Items**.
+   - Click **\+ Add Row** for each part used during maintenance:
+     - **Item Code** (e.g., “Air Filter Model A-123”).
+     - **Quantity** (e.g., 1).
+     - **Rate** (auto-populated from the Item Master or manually entered if ad-hoc).
+   - The CGIC App deducts consumed quantities from the linked **Warehouse** inventory and calculates the total material cost for the task.
+2. **Verify Cost Posting**
+   - After saving, the system posts a journal entry:
+     - **Debit** Maintenance Expense → Materials.
+     - **Credit** Inventory (Warehouse).
+   - Confirm the **Consumed Items Total** matches the sum of (Quantity × Rate) for all parts.
+
+<Note>
+  If a part is not stocked (e.g., a special gasket), create an Expense Claim or Purchase Invoice for later, as detailed in Step 3.
+</Note>
+
+### Step 3: Record Labor and External Vendor Costs
+
+1. **Log Labor Hours**
+   - In the completed Maintenance Task, update the **Labor Hours** field (e.g., 2.5 hours).
+   - The CGIC App multiplies **Labor Hours** by the **Standard Labor Rate** (configured under `Setup > Maintenance Settings`) to calculate labor cost.
+   - If you have multiple technicians on one task, click **\+ Add Row** under **Labor Details** to enter each technician and their respective hours and rate override if needed.
+2. **Link External Vendor Invoice (If Applicable)**
+   - If a third-party vendor performed part of the work (e.g., specialized pump rebuild), navigate to `Buy > Purchase Invoice > New.`
+   - Select the **Vendor**, **Date**, and the **Maintenance Task Reference** under **References** so costs link back to the correct task.
+   - Under **Items**, add the service line (e.g., “Pump Rebuild Service”) with **Quantity = 1** and **Rate = Vendor Charge**.
+   - Save and **Submit** the Purchase Invoice. The CGIC App will:
+     - **Debit** Maintenance Expense → Services.
+     - **Credit** Accounts Payable (Vendor).
+   - In the **Maintenance Task**, click **Refresh Cost Details** (or navigate to the **References** section) to confirm the external cost is associated.
+
+<Note>
+  Always enter vendor invoices against the Maintenance Task Reference to maintain a consolidated cost view per task.
+</Note>
+
+### Step 4: Review Total Maintenance Cost Per Task
+
+1. **View Cost Summary**
+   - In the Maintenance Task record, check the **Cost Details** panel:
+     - **Materials Cost** (from Consumed Items).
+     - **Labor Cost** (Labor Hours × Rate).
+     - **External Service Cost** (from linked Purchase Invoice).
+     - **Total Task Cost** (aggregate of all three).
+2. **Adjust and Approve**
+   - If you notice discrepancies (e.g., incorrect part rate), click **Edit** and correct the **Rate** or **Quantity** in **Consumed Items**.
+   - For labor, if actual labor rate differs from the standard, override the **Rate** in the **Labor Details** section.
+   - After adjustments, click **Save** to update the total.
+   - When satisfied, the **Maintenance Manager** can click **Approve Costs**—locking the task’s cost details and triggering final accounting entries.
+
+   <Note>
+     Approved costs generate a consolidated journal entry posting to your Maintenance Expense accounts and update the Asset Maintenance Ledger under each Asset record.
+   </Note>
+
+### Step 5: Capture Maintenance History on the Asset
+
+1. **Open the Asset Record**
+   - Navigate to `Assets > Asset List.`
+   - Click the relevant asset (e.g., **Pump-03 – Cooling Tower Pump**).
+2. **View Maintenance Tab**
+   - Select the **Maintenance** tab. Here you’ll see:
+     - **Task ID** (e.g., **MT-2025-0210**).
+     - **Date Completed**.
+     - **Technician**.
+     - **Cost Summary**.
+     - **Attachments** (photos/reports).
+3. **Historical Analysis**
+   - Click **Maintenance History Report** under **Asset** to view all past tasks for that asset, sorted by date.
+   - Verify that each maintenance entry has:
+     - **Checklist Notes** (what was inspected/replaced).
+     - **Cost Breakdowns** (Material, Labor, External).
+     - **Next Scheduled Maintenance** (if auto-generated).

@@ -1,4 +1,156 @@
 ---
 title: "Monitor and control asset-related expenses"
-description: "Description of your new file."
+description: "Gain visibility and manage spending on CGIC’s fixed assets—so you can track acquisition, maintenance, depreciation, and disposal costs in the CGIC App and maintain healthy budgets."
 ---
+
+<Info>
+  **Prerequisites**
+
+  - Assets exist under `Assets > Asset List` with correct **Asset Code**, **Asset Category**, **Purchase Date**, and **Cost** fields populated.
+  - Depreciation parameters (method, useful life) are configured under `Assets > Asset Category List.`
+  - Under `Accounts > Chart of Accounts`, you have accounts for:
+    - **Asset Acquisition** (e.g., “Fixed Assets – Machinery”).
+    - **Asset Maintenance Expense** (e.g., “Maintenance Expense – Equipment”).
+    - **Accumulated Depreciation** and **Depreciation Expense**.
+    - **Asset Disposal Gain/Loss** (if disposing).
+    - Cost centers (e.g., by department, location) are defined under `Accounts > Cost Center List`.
+  - Under `Accounts > Budget`, budgets for key asset expense accounts or cost centers are set up for the fiscal year.
+  - If you plan to monitor monthly vs. annual budgets, ensure “Budget Frequency” is set (Monthly, Quarterly, etc.).
+</Info>
+
+### Step 1: Configure Financial Accounts and Cost Centers
+
+1. **Verify or Create Asset-Related Accounts**
+   - Navigate to `Accounts > Chart of Accounts.`
+   - Confirm you have:
+     - **Fixed Asset Accounts** (e.g., “Fixed Assets – Vehicles,” “Fixed Assets – Equipment”).
+     - **Expense Accounts** (“Maintenance Expense,” “Repair Expense”).
+     - **Accumulated Depreciation** and **Depreciation Expense** accounts.
+     - **Disposal/Gain-Loss** accounts (for when assets are sold or retired).
+   - If any are missing, click **New** to add them, specifying Account Type (Fixed Assets or Expense).
+2. **Set Up Cost Centers**
+   - Go to `Accounts > Cost Center List.`
+   - Create cost centers to track expenses by location (e.g., “Plant A”), department (e.g., “Production”), or project (e.g., “Expansion Project”).
+   - For each cost center, assign a parent if needed for roll-up reporting (e.g., “Production” → parent “Operations”).
+3. **Assign Default Cost Centers on Assets**
+   - Open an asset record under `Assets > Asset List` (e.g., **Asset-1001 – CNC Mill**).
+   - In the **Financials** section, set the **Cost Center** where ongoing expenses should default (e.g., “Production”).
+   - Save the asset so that any expense entry or depreciation linked to this asset automatically tags that cost center.
+
+### Step 2: Record Asset Acquisition and Capitalization
+
+1. **Create a Purchase Invoice for the Asset**
+   - Under `Buy > Purchase Invoice > New`, enter:
+     - **Supplier**, **Invoice Date**, **Due Date**.
+     - In **Items**, add the asset line:
+       - **Item Code** (if you manage fixed assets via Item Master) or a generic “Asset – Equipment” entry.
+       - **Quantity = 1**, **Rate = Purchase Cost** (e.g., \$50,000).
+       - In **Expense Account**, select the relevant **Fixed Asset Account** (e.g., “Fixed Assets – Equipment”).
+       - **Cost Center** should default from the asset record, but you can override if needed.
+   - Attach the vendor invoice PDF under **Attachments** for audit trace.
+   - Click **Save**, then **Submit** to record the capital purchase.
+2. **Create Asset Record (If Not Already Created)**
+   - Go to `Assets > Asset List > New.`
+   - Enter **Asset Code**, **Asset Name**, **Purchase Date**, and **Cost** (match the Purchase Invoice).
+   - Link to the newly created Purchase Invoice under **Supplier Invoice**.
+   - Set the **Asset Category** (which defines depreciation method and useful life).
+   - Set **Cost Center** (verifies expense will flow correctly).
+   - Save and **Submit**. The CGIC App will:
+     - Capitalize the cost into the Fixed Asset Account.
+     - Automatically create an **Accumulated Depreciation** schedule based on the category.
+
+<Note>
+   If you have multiple installments (e.g., part prepaid, part on credit), you can record multiple Purchase Invoices and adjust the Asset’s Cost field once fully paid.
+</Note>
+
+### Step 3: Link Expenses to Assets
+
+1. **Maintenance Tasks and Costs**
+   - When completing any **Maintenance Task** (preventive or corrective), ensure:
+     - **Consumed Items** are logged (spare parts automatically move from inventory and debit “Maintenance Expense”).
+     - **Labor Hours** and **External Service Invoices** are linked back to the **Asset** and tagged with its **Cost Center**.
+   - After costs are approved (see the “Record Maintenance History” doc), the CGIC App posts journal entries that debit **Maintenance Expense** accounts and credit **Inventory** or **Accounts Payable**.
+2. **Depreciation Entries**
+   - Under `Assets > Depreciation > Run Depreciation`, run the depreciation process monthly or quarterly.
+   - The CGIC App will:
+     - Debit **Depreciation Expense** (expense account).
+     - Credit **Accumulated Depreciation** (balance sheet contra-asset).
+     - Reduce the **Book Value** on the asset record.
+3. **Asset Disposal or Retirement**
+   - When an asset is sold, scrapped, or retired:
+     - Open the **Asset** record and click **Dispose Asset**.
+     - Enter **Disposal Date**, **Sale Proceeds** (if any), and **Cost Center** for gain/loss posting.
+     - The CGIC App calculates:
+       - **Book Value** at disposal.
+       - **Gain/Loss** = Sale Proceeds − Book Value.
+     - It posts:
+       - Debit **Accumulated Depreciation** to clear it.
+       - Debit **Cash/Bank** (if sold) or write off.
+       - Credit **Fixed Asset Account** for original cost.
+       - Debit/Credit **Disposal Gain/Loss** account for the difference.
+
+<Tip>
+  Always confirm that the Disposal Gain/Loss account is tied to the correct cost center to avoid misstatements in department budgets.
+</Tip>
+
+### Step 4: Review Asset Expense Reports
+
+1. **Asset Maintenance Cost Report**
+   - Go to `Maintenance > Reports > Asset Maintenance Cost Report.`
+   - Filter by **Asset**, **Date Range**, or **Cost Center**.
+   - Click **Refresh** to see:
+     - **Total Maintenance Cost** (broken into Materials, Labor, External) per asset.
+     - **YTD Maintenance Spend**, comparing against any maintenance budget if configured.
+   - Export to CSV/PDF for review by Maintenance and Finance teams.
+2. **Asset Depreciation Schedule Report**
+   - Under `Maintenance > Reports > Depreciation Schedule Report`, set:
+     - **From Date / To Date** (e.g., Jan 1 – Dec 31, 2025).
+     - **Asset Category** or specific **Asset**.
+   - Click **Refresh** to view period-by-period depreciation amounts and cumulative accumulated depreciation.
+3. **Asset Value and Expense Ledger**
+   - Navigate to `Assets > Reports > Asset Value and Expense Ledger.`
+   - Filter by **Asset** or **Cost Center**.
+   - Click **Refresh** to see a consolidated ledger:
+     - **Acquisition Cost**, **Capitalized Date**.
+     - **Maintenance Costs** (sum of all related tasks).
+     - **Depreciation** (cumulative).
+     - **Disposal Entries** (if applicable).
+     - **Net Book Value** at each period.
+4. **Budget vs. Actual Expense Report**
+   - Under `Accounts > Budget > Budget vs Actual Report`, filter:
+     - **Fiscal Year**, **Cost Center**, and **Expense Account** (e.g., “Maintenance Expense – Equipment”).
+   - Click **Refresh** to see:
+     - **Budgeted Amount** vs. **Actual Expense**.
+     - Percentage of budget utilized.
+     - Variance amounts, highlighting overages.
+
+<Tip>
+  Schedule a monthly expense review meeting. Share these reports with department heads to discuss variances and reallocate budgets as needed.
+</Tip>
+
+### Step 5: Set Budgets and Expense Alerts
+
+1. **Create or Update Budgets**
+   - Navigate to `Accounts > Budget > New` (or open an existing budget).
+   - Specify:
+     - **Fiscal Year** (e.g., 2025–2026).
+     - **Cost Center** (e.g., “Production – Plant A”).
+     - **Expense Account** (e.g., “Maintenance Expense – Equipment”).
+     - **Budget Amount** for each period (Monthly or Quarterly).
+   - Save the budget—CGIC App will now track actual expense postings against these numbers.
+2. **Configure Expense Threshold Alerts**
+   - Go to `Setup > Email Alert > New`.
+   - Set:
+     - **Document Type**: **GL Entry** (to trigger on general ledger postings).
+     - **Condition**: When **Account** equals “Maintenance Expense – Equipment” AND **Cost Center** equals “Plant A”.
+     - **Threshold**: For example, if **Debit Amount** \> \$10,000 for that account and cost center in a single posting.
+     - **Recipients**: Asset Manager, Accounts Manager.
+     - **Email Template**: “Alert: High Maintenance Expense for {{ cost_center }}.”
+   - Save and **Enable** the alert.
+3. **Over Budget Notifications**
+   - CGIC App can automatically notify when actual expenditures exceed budget:
+     - Under `Accounts > Email Alert`, create an alert with:
+       - **Document Type**: **Budget**.
+       - **Condition**: **actual_amount \> budget_amount**.
+       - **Recipients**: Finance Controller, Department Head.
+       - Include fields like **Cost Center**, **Account**, **Budget Period**, **Variance** in the email template.
