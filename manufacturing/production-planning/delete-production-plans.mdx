@@ -1,4 +1,58 @@
 ---
 title: "Delete Production Plans"
-description: "Description of your new file."
+description: "Permanently delete production plans that are no longer needed—such as canceled orders, duplicate entries, or test schedules—while maintaining data integrity across manufacturing workflows in the CGIC App."
 ---
+
+<Card title="What it does:" icon="sparkles" iconType="duotone">
+  - **Permanently removes** production plans from the system
+  - **Prevents accidental execution** of outdated schedules (e.g., canceled Valdana Bread batch)
+  - **Maintains referential integrity**: Automatically cancels linked draft Work Orders/Material Requests
+  - **Audit trail**: Logs deletion details (user, timestamp, plan name)
+</Card>
+
+<Info>
+  **Prerequisites**
+
+  - Production Plan must be **"Draft"** or **"Not Started"**.
+  - All linked documents must be **canceled or deleted**:
+    - Draft Work Orders
+    - Material Requests not yet processed
+  - Exception: Submitted documents require manual cancellation first.
+</Info>
+
+### **1.0 Open Production Plan**
+
+1. Go to: **Manufacturing \> Production Plan \> List**
+2. Search for plan (e.g., "Onina Tissue - Test Run") using:
+   - **Filters**: _Item_ (Tissue), _Status_ (Draft), _Date_
+3. Click the plan name to open it.
+
+### **1.1 Delete the Plan**
+
+1. In the open Production Plan:
+   - Click **Menu \> Delete** (top-right corner).
+2. **Confirmation Prompt**:
+
+   > "Permanently delete [Plan Name] and its dependencies?"
+   - Click **Yes**.
+3. **System Actions**:
+   - Cancels all linked **draft Work Orders**.
+   - Cancels **draft Material Requests**.
+   - Logs deletion in **Audit Log**.
+
+### **1.2 Handle Blocking Issues (If Deletion Fails)**
+
+If deletion is blocked:
+
+1. **Error Message**:
+   - "Cannot delete because linked documents exist"
+2. **Solution**:
+   - **Cancel Work Orders**:
+     1. Go to: **Manufacturing \> Work Order \> List**
+     2. Filter by _Production Plan = [Plan Name]_
+     3. Open each **draft** Work Order → Click **Cancel**.
+   - **Delete Material Requests**:
+     1. Go to: **Stock \> Material Request \> List**
+     2. Filter by _Production Plan = [Plan Name]_
+     3. Delete draft requests (**Menu \> Delete**).
+3. Retry Step 2.
