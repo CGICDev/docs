@@ -1,4 +1,76 @@
 ---
 title: "Manage order allocations and backorders"
-description: "Description of your new file."
+description: "At CGIC, timely and accurate order fulfillment is key—but sometimes, stock availability doesn't line up perfectly with customer demand. When that happens, we use allocations and backorders to stay organized and keep our customers in the loop."
 ---
+
+<Info>
+  **Prerequisites**
+
+  Before jumping into allocations or handling backorders, make sure:
+
+  - You have access to Sales Orders and Stock modules.
+  - You’ve reviewed the Available Stock Report to confirm actual inventory.
+  - The Sales Order is in Submitted status and pending fulfillment.
+  - You understand which items are available and which ones need to be backordered.
+</Info>
+
+### **1.0 What’s the Difference?**
+
+**Order Allocation:** Reserving available stock for specific Sales Orders, so the items aren’t used elsewhere.
+
+**Backorder:** A follow-up order or delivery created when an item can’t be fulfilled immediately due to stock unavailability.
+
+### 2.0 Managing Order Allocations
+
+When you want to reserve items for a Sales Order:
+
+**1. Check Stock Availability**
+
+- Navigate to the `Stock > Stock Balance` or use the Available Stock report.
+- Identify which items are currently available for allocation.
+
+**2. Open the Sales Order**
+
+- Go to the Sales Order list and open the submitted order you want to allocate stock for.
+
+**3. Create a Delivery Note**
+
+Click `Create > Delivery Note`.
+
+- The system will automatically allocate available quantities.
+- If some items aren’t available, the system will show a message or allocate partially.
+
+**4. Review and Submit**
+
+- Confirm the allocated quantities and expected delivery dates.
+- Submit the Delivery Note to lock the stock for this order.
+
+<Note>
+  If the full quantity isn’t available, only the available part gets allocated—and that’s where backorders come in.
+</Note>
+
+### 3.0 Handling Backorders
+
+If an item is only partially available (or completely out of stock), here’s what to do:
+
+**1. Partial Delivery Note**
+
+- When creating a Delivery Note, deliver the available quantity only.
+- Submit the Delivery Note.
+
+**2. Create a Backorder**
+
+After the partial delivery, go back to the original Sales Order.
+
+- Click `Create > Delivery Note` again—the system will prompt you to fulfill the remaining quantity.
+- This new Delivery Note becomes your backorder delivery.
+
+**3. Fulfill Later**
+
+- Once stock is replenished, process and submit the pending Delivery Note to complete the order.
+
+### 4.0 What CGIC’s System Does Behind the Scenes
+
+- Tracks allocated quantities vs. pending quantities for each Sales Order.
+- Automatically generates partial delivery records if full stock isn’t available.
+- Maintains an audit trail so you can always see which orders were fulfilled in parts and when.
