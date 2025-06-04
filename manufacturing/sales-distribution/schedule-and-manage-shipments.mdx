@@ -1,4 +1,85 @@
 ---
 title: "Schedule and manage shipments"
-description: "Description of your new file."
+description: "Once an order is confirmed and goods are ready, the next step is making sure they get to the customer—on time, in full, and with all the right documentation. At CGIC, we plan, schedule, and track shipments smoothly from warehouse to customer."
 ---
+
+<Info>
+  **Prerequisites**
+
+  Before scheduling a shipment, make sure:
+
+  - A Sales Order has been submitted.
+  - Items are available in stock or production is complete.
+  - You have access to the Delivery Note and Shipment modules.
+  - The customer’s shipping address and contact info are up-to-date.
+</Info>
+
+### Step 1: Create a Delivery Note
+
+The Delivery Note is the document that records which items are being shipped, how many, and to whom.
+
+**To create:**
+
+- Go to Sales Order \> open the relevant order.
+- Click Create \> Delivery Note.
+
+Make any adjustments (e.g., partial quantity if doing a split shipment), then Submit the Delivery Note.
+
+<Tip>
+  If shipping directly from production, you can also create a Delivery Note from a Work Order or Finished Goods Stock Entry.
+</Tip>
+
+### Step 2: Schedule the Shipment
+
+Once the Delivery Note is submitted, schedule the shipment:
+
+- Navigate to Stock \> Shipment (or “Shipping Schedule” depending on your ERP view).
+- Click New to create a new shipment schedule.
+- Link the Delivery Note.
+- Fill in:
+
+  | Field                     | Description                                              |
+  | ------------------------- | -------------------------------------------------------- |
+  | Delivery Date             | When the items are expected to ship                      |
+  | Carrier                   | Name of logistics company (e.g., DHL, local transporter) |
+  | Tracking Number           | Provided by the carrier (if available)                   |
+  | Vehicle or Container Info | Optional but useful for internal tracking                |
+  | Shipping Rule (Optional)  | Applies predefined shipping cost logic                   |
+- Click Submit to finalize.
+
+### Step 3: Hand Over to Logistics
+
+Once the shipment is scheduled:
+
+- Print the Delivery Note or Packing Slip.
+- Physically hand over the goods and documents to your logistics provider or driver.
+- Update the Tracking Number in the Shipment document if it wasn’t available earlier.
+
+<Note>
+  If the shipment is being handled by CGIC’s internal fleet, update vehicle info and driver details in the Shipment record.
+</Note>
+
+### Track and Manage Shipments
+
+You can view all scheduled and delivered shipments in the Shipment List or through custom filters like:
+
+| Filter              | What It Shows                              |
+| ------------------- | ------------------------------------------ |
+| Status = Scheduled  | Ready to ship                              |
+| Status = In Transit | Shipped but not yet delivered              |
+| Status = Completed  | Successfully delivered                     |
+| Carrier = [XYZ]     | Shipments via a specific logistics partner |
+
+This gives your team visibility into what’s shipped, what’s pending, and what’s delayed—so you can respond quickly.
+
+### Notify the Customer
+
+Before or after shipment:
+
+- Open the Delivery Note.
+- Click Email.
+- Attach the PDF and add a short message like:
+
+  > “Your order has been shipped and is expected to arrive on [Date]. Please see attached for the delivery details.”
+
+For even more automation, consider setting up email notifications when a Delivery Note or Shipment is submitted.
