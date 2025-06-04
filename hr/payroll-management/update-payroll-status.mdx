@@ -1,4 +1,145 @@
 ---
 title: "Update Payroll status"
-description: "Description of your new file."
+description: "Change the status of existing payroll runs—such as moving from Draft to Submitted, marking as Paid, or cancelling—so you maintain an accurate, auditable record of your organization’s salary processes in the CGIC App."
 ---
+
+<Info>
+  **Prerequisites**
+
+  - One or more payroll runs (Pay Period entries) already exist under **HR \> Payroll \> Payroll Entry List.**
+
+
+  - Each payroll entry has valid salary slips generated and, if already submitted, journal entries posted. 
+
+
+  - Bank accounts for salary disbursement are configured under `Accounts > Bank Account List.`  
+
+
+  - Payroll expense, liability, and bank accounts are mapped correctly in `Accounts > Chart of Accounts.`
+</Info>
+
+### Step 1: Locate the Payroll Entry
+
+1. Navigate to `HR > Payroll > Payroll Entry > Payroll Entry List.`  
+
+2. Use the **Search Bar** or `Filter > Add Filter` to find the specific payroll run by:  
+
+   - **Pay Period** (e.g., “June 2025”)  
+
+   - **Status** (Draft, Submitted, Paid, or Cancelled)  
+
+   - **Company** (if you have multiple entities)  
+
+3. Click the **Payroll Entry No.** to open its detail view.
+
+### Step 2: Change Status from Draft to Submitted
+
+1. Open a payroll entry in **Draft** status.  
+
+2. Review each salary slip in the **Salary Slips** table to ensure components, attendance, and deductions are correct.  
+
+3. Click **Submit** at the top-right.  
+
+   - The system validates that all required fields (Pay Period, Company, Salary Slips) are completed.  
+
+   - Upon successful validation:  
+
+     - All salary slips become “Submitted.”  
+
+     - Payroll journal entries post to the general ledger, debiting payroll expense accounts and crediting payroll liability accounts.  
+
+     - The payroll entry’s status updates to **Submitted**.  
+
+4. If a validation error occurs (e.g., missing salary slip for an employee), correct the issue and click **Submit** again.
+
+### Step 3: Mark a Submitted Payroll Entry as Paid
+
+1. Open a payroll entry with `Status = Submitted.`  
+
+2. Confirm that bank funding is available and salary disbursement is scheduled.  
+
+3. Click `Actions > Mark as Paid` (or **Create Bank Entry**, depending on your setup):  
+
+   - If using **Mark as Paid**, CGIC:  
+
+     - Prompts for **Payment Date** (e.g., today’s date).  
+
+     - Requires selecting the **Bank Account** used to disburse net pay.  
+
+     - Calculates the total net pay amount from salary slips.  
+
+     - Creates a **Bank Voucher** journal entry that debits payroll liability accounts and credits the chosen bank account.  
+
+     - Updates each salary slip’s status to **Paid**.  
+
+     - Updates the payroll entry’s status to **Paid**.  
+
+   - If using **Create Bank Entry**, CGIC opens a draft Bank Voucher with all net pay lines pre-filled—review and **Submit** to record payment.  
+
+4. Click **Submit** (or **Save & Submit**) to finalize payment. The payroll run’s status becomes **Paid**.
+
+### Step 4: Cancel a Payroll Entry
+
+**4.1 Cancel a Draft Payroll Entry  **
+
+1. Open a payroll entry in **Draft** status.  
+
+2. Click `Actions > Cancel.`  
+
+   - The status immediately changes to **Cancelled**.  
+
+   - You may later create a new payroll entry for the same period if required.
+
+**4.2 Cancel a Submitted Payroll Entry  **
+
+<Warning>
+  Cancelling after submission will reverse all related journal entries and reset salary slip statuses. Do this only if the run contained errors (e.g., incorrect salary structure, missing employees).
+</Warning>
+
+1. Open the payroll entry in **Submitted** status.  
+
+2. Ensure no salary slips have already been paid. If any are marked Paid, reverse the “Paid” status first (see Step 5 below).  
+
+3. Click `Actions > Cancel.`  
+
+   - CGIC reverses all journal entries created during submission (reversing payroll expense and liability entries).  
+
+   - All salary slips revert to **Draft** status (allowing corrections).  
+
+   - The payroll entry’s status updates to **Cancelled**.  
+
+4. Correct underlying issues (e.g., adjust leave days or component values) and re-run payroll for that period if needed.
+
+**4.3 Cancel a Paid Payroll Entry  **
+
+<Warning>
+  Cancelling a Paid payroll run is a sensitive operation that impacts bank reconciliation and employee payments.
+</Warning>
+
+1. Open the payroll entry in **Paid** status.  
+
+2. Click `Actions > Reverse Payment` (or **Cancel** if no “Reverse Payment” button exists).  
+
+   - CGIC:  
+
+     - Reverses the bank voucher by creating a mirror entry (debiting bank, crediting payroll liability)\
+     - Resets each salary slip to **Submitted** status.  \
+     - Updates the payroll entry status to **Submitted**.  
+
+3. Now, follow Step 3 steps to mark as Paid again using corrected data, or follow Step 4.2 to cancel entirely.
+
+### **Step 5: Verify Status Changes and Audit**
+
+1. Open the payroll entry after a status change.  
+
+2. In the **Status** field, confirm it reflects the latest state (Draft, Submitted, Paid, or Cancelled).  
+
+3. Click `Menu > View History` to see a detailed log of all actions taken:  
+
+   - Who changed the status (user name)  
+
+   - When the change occurred (timestamp)  
+
+   - What journal entries were posted or reversed  
+
+   - Any notes entered during cancellation or reversal  

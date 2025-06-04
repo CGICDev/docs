@@ -1,4 +1,73 @@
 ---
 title: "Maintain Payroll records"
-description: "Description of your new file."
+description: "Ensure all payroll data is organized, accessible, and audit-ready in the CGIC App—so HR, Finance, and Compliance teams can retrieve historical salary information, track changes, and meet regulatory requirements."
+---
+
+<Info>
+  **Prerequisites**
+
+  - Payroll entries and payslips have been generated and submitted for each period.
+  - Deduction and allowance details for each period are finalized before archiving.
+</Info>
+
+### Step 1: Verify and Finalize Payroll Entries
+
+1. **Confirm All Payroll Entries Are Submitted**
+   - Go to `HR > Payroll Entry > Payroll Entry List` and ensure each payroll period has status **Submitted** or **Closed/Paid**.
+   - Any entry left in **Draft** or **Pending Approval** must be finalized before archiving.
+2. **Generate and Distribute Payslips**
+   - Confirm that all payslips have been created, submitted, and emailed.
+   - If any payslip errors exist, correct underlying data, regenerate payslips, and redeploy before proceeding.
+
+### Step 2: Archive Payroll Data
+
+1. **Archive Payroll Entries**
+   - In each submitted **Payroll Entry**, click `Menu > Mark as Closed` (or **Paid**) to lock records from further edits.
+   - This ensures no accidental changes are made to historical data.
+2. **Store Bank Transfer Files**
+   - After salary disbursement, download the bank transfer CSV or confirmation PDF and attach it to the **Payroll Entry** under **Attachments**.
+   - This file acts as proof of payment and should be retained alongside the payroll entry.
+3. **Archive Payslip PDFs**
+   - Navigate to `HR > Salary Slip > Salary Slip List`, filter by the payroll period, and click **Download Payslips** to retrieve all PDFs in a ZIP.
+   - Save that ZIP in a secure shared folder (e.g., “`Payroll Archive > 2025 > July`”).
+   - In the CGIC App, attach summary reports or the ZIP file itself to a custom doctype (e.g., “Payroll Archive”) if you prefer centralized retrieval.
+
+### Step 3: Maintain Audit Trails
+
+1. **Enable Audit Logging**
+   - Under `Setup > System Settings`, verify that **Track Changes** is enabled for both **Payroll Entry** and **Salary Slip** doctypes.
+   - This ensures every create/edit/submit action is logged with timestamp and user.
+2. **View History When Needed**
+   - To inspect a record’s change log, open a specific **Payroll Entry** or **Salary Slip** and click `Menu > View History.`
+   - Use **Show Changes** to compare field values over time (e.g., see when deduction rates or net pay were altered).
+3. **Record Manual Adjustments**
+   - If post-closure adjustments are required (e.g., a retroactive pay correction), create a **Post-Payroll Adjustment Entry** under `HR > Payroll Adjustment.`
+   - In the entry, reference the original **Payroll Period** and explain the reason. The CGIC App logs this as a separate journal.
+
+### Step 4: Secure and Backup Payroll Records
+
+1. **Set Permissions**
+   - Under `Setup > Permission Manager`, ensure only **Payroll Manager**, **Accounts Manager**, and **System Manager** roles have **Read/Write** on payroll doctypes.
+   - Restrict **Employee Self-Service** to **Read Only (own payslip)** so employees cannot modify historical data.
+2. **Export for Offsite Backup**
+   - Periodically (e.g., quarterly), export all payroll data:
+     - **Payroll Entry**: CSV or JSON via `Menu > Export.`
+     - **Salary Slip**: Bulk‐download as ZIP.
+   - Store these exports in a secure offsite repository (cloud storage or an encrypted network share) to guard against data loss.
+3. **Perform Regular Data Integrity Checks**
+   - Every six months, run a **Payroll Reconciliation Report** comparing totals from CGIC App against your accounting system.
+   - Identify and address any discrepancies promptly to prevent audit issues.
+
+### Step 5: Retrieve Historical Payroll Records
+
+1. **Use List Filters to Locate Old Payrolls**
+   - In `HR > Payroll Entry > Payroll Entry List`, remove default filters, then sort by **Payroll Period** or **Status** to display closed records.
+   - Apply filters such as **Period = “March 2024”** to narrow the search.
+2. **Query Salary Slips by Employee**
+   - In `HR > Salary Slip > Salary Slip List,` filter by **Employee** and **Period Range** to view that employee’s payslips across multiple cycles.
+   - Export the filtered list to CSV if you need a consolidated view.
+3. **Generate Historical Reports**
+   - Under `HR > Reports > Payroll Register Report`, set the date range to include past periods (e.g., January–December 2023).
+   - Click **Refresh** to compile a full year report, then export to PDF or CSV for analysis or submission.
+
 ---

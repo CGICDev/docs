@@ -1,4 +1,75 @@
 ---
 title: "Generate Payroll statements for Auditors"
-description: "Description of your new file."
+description: "Provide auditors with comprehensive, clear payroll statements by exporting and formatting relevant payroll data from the CGIC App—ensuring transparency, compliance, and a complete audit trail."
 ---
+
+<Card title="What it does" icon="sparkles" iconType="duotone">
+  - Exports payroll registers, payslips, and journal entries for a specified audit period.
+  - Consolidates salary totals, deduction details, and employer contributions.
+  - Packages supporting documents (bank files, approval logs) to demonstrate completeness.
+</Card>
+
+<Info>
+  **Prerequisites**
+
+  - All relevant **Payroll Entries** and **Salary Slips** for the audit period are in **Closed/Paid** status.
+  - Deduction and allowance entries for that period are finalized.
+  - Supporting files (e.g., bank transfer CSV, approval emails) are attached to their respective payroll records.
+</Info>
+
+### Step 1: Identify the Audit Period
+
+1. **Determine Start and End Dates**
+   - Confirm the exact dates auditors need (e.g., **January 1, 2025 – December 31, 2025**).
+   - Note any mid‐period adjustments (retroactive pay, loan corrections) so you include them separately.
+2. **List Relevant Payroll Entries**
+   - Go to `HR > Payroll Entry > Payroll Entry List.`
+   - Filter by **Start Date ≥** audit start and **End Date ≤** audit end.
+   - Confirm all entries in that range have status **Closed/Paid**.
+
+### Step 2: Export the Payroll Register Report
+
+1. **Navigate to Payroll Register Report**
+   - Go to `HR > Reports > Payroll Register Report.`
+2. **Apply Date Filters**
+   - Set **From Date =** audit start (e.g., 2025-01-01).
+   - Set **To Date =** audit end (e.g., 2025-12-31).
+   - (Optional) Filter by **Department** or **Cost Center** if auditors request segmentation.
+3. **Refresh and Review**
+   - Click **Refresh**. The report displays each **Payroll Entry** and associated salary components, including gross, deductions, and net pay for every employee.
+4. **Export to CSV and PDF**
+   - Click `Menu > Export > CSV` to download a detailed spreadsheet.
+   - Click `Menu > Export > PDF` to generate a formatted version for auditors.
+
+### Step 3: Export Individual Payslips (Optional)
+
+1. **Download Payslips in Bulk**
+   - Navigate to `HR > Salary Slip > Salary Slip List.`
+   - Filter by **Payroll Entry Date ≥** audit start and **Payroll Entry Date ≤** audit end.
+   - Click **Download Payslips**. The CGIC App packages all payslip PDFs into a ZIP file.
+2. **Verify File Completeness**
+   - Extract the ZIP locally and confirm every employee’s payslip for each payroll period is present.
+   - Check for file naming conventions (e.g., “SL-2025-01-EMP1023.pdf”) for easy reference.
+
+### Step 4: Export Deduction and Contribution Reports
+
+1. **Deduction Register Report**
+   - Go to `HR > Reports > Deduction Register Report.`
+   - Filter by **Period ≥** audit start and **Period ≤** audit end.
+   - Click **Refresh**, then `Export > CSV` and `Export > PDF`.
+   - This shows every deduction type (tax, pension, loans) per employee, per period.
+2. **Contribution Report**
+   - Navigate to `HR > Reports > Contribution Report` (if configured).
+   - Set the same date range.
+   - Export to CSV/PDF and include employer and employee contributions (social security, health insurance, etc.).
+
+### Step 5: Export Journal Entries or GL Report
+
+1. **Accounting Journal Report**
+   - Go to `Accounts > Reports > General Ledger.`
+   - Filter by **Account** = “Salary Expense,” “Deductions Payable,” “Employer Contributions,” etc.
+   - Set **From Posting Date =** audit start; **To Posting Date =** audit end.
+   - Click **Refresh**, then `Export > CSV` and `Export > PDF`.
+2. **Payroll Journal Entry List**
+   - In `Accounts > Journal Entry > List`, filter by **Reference = Payroll Entry** and date range.
+   - Export matching entries that debit salary expense and credit payables or cash disbursement.
