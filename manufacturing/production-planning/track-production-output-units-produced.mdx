@@ -1,4 +1,73 @@
 ---
 title: "Track Production Output (Units Produced)"
-description: "Description of your new file."
+description: "Accurately track and validate the quantity of units manufactured during production runs, enabling real-time inventory updates, performance analysis, and quality control in the CGIC App."
 ---
+
+<Info>
+  **Prerequisites**
+
+  - **Active Work Orders **Must exist in **"In Process"** or **"Completed"** status (e.g., `WO-101` for 10,000 Ovita Waters bottles)
+  - Finished Goods warehouses configured (e.g., _Tissue Finished Stock_, _Beverage Warehouse_)
+</Info>
+
+### **1.0 Enter Output via Job Cards (Per-Operation)**
+
+_For granular tracking during production:_
+
+1. At each workstation, open **Job Card** for the operation:
+   - Scan Work Order QR code _or_ go to **Manufacturing \> Job Card \> List**
+2. Enter **Completed Quantity**:
+   - Example: _"Bottling Line 1: 4,500/10,000 Ovita Waters filled"_
+3. Record **Scrap/Defective Units**:
+   - Specify reason (e.g., _"Underfilled: 50 bottles"_ for Ovita Waters)
+4. Submit → System updates Work Order progress automatically
+
+### **1.1 Validate Final Output at Work Order Completion**
+
+_When all operations finish:_
+
+1. Go to: **Manufacturing \> Work Order \> [WO Number]**
+2. Review **Produced Quantity**:
+   - Auto-calculated from Job Cards (e.g., _9,850/10,000 Onina Tissue packs_)
+3. **Handle Variances**:
+
+   | **Scenario**          | **Action**                                                                         |
+   | --------------------- | ---------------------------------------------------------------------------------- |
+   | **Output \< Planned** | Click **Short Close** → Enter reason (e.g., _"Yeast shortage - 200 loaves short"_) |
+   | **Output \> Planned** | Manually increase quantity → Add justification (e.g., _"Extra dough batch used"_)  |
+4. **Complete Work Order**:
+   - System:
+     - Adds finished goods to warehouse (e.g., _9,850 Onina Tissue packs to Finished Goods_)
+     - Deducts raw material consumption
+     - Triggers quality inspection if configured
+
+### **1.2 Monitor Output Reports**
+
+#### **A. Real-Time Dashboards**
+
+1. **Production Output Dashboard** (**Manufacturing \> Dashboard**):
+   - **Today's Output by Product**:
+
+     ```
+     • Valdana Bread: 8,200/10,000 loaves  
+     • Luca Engine Oil: 1,500 liters (100% of target)  
+     ```
+   - **Line Efficiency**:\
+     \*"Ovita Filling Line 1: 95.2% (4,760 bottles/hr vs. 5,000 target)"\*
+
+#### **B. Scheduled Reports**
+
+1. **Daily Production Report** (**Manufacturing \> Reports \> Production Analytics**):
+   - Filter by product/workstation
+   - Export to PDF for shift handovers
+
+## **2.0 CGIC Product Examples**
+
+### **2.0.1 Onina Tissue Production**
+
+| **Work Order**                                                     | **Operation** | **Completed** | **Scrap**          |
+| ------------------------------------------------------------------ | ------------- | ------------- | ------------------ |
+| WO-205                                                             | Pulp Mixing   | 10,500 kg     | 0 kg               |
+| WO-205                                                             | Embossing     | 9,900 rolls   | 100 rolls (tears)  |
+| WO-205                                                             | Packaging     | 9,850 packs   | 50 packs (damaged) |
+| **Inventory Impact**: 9,850 packs added to _Tissue Finished Stock_ |               |               |                    |
