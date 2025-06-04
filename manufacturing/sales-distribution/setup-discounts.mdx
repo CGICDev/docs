@@ -1,4 +1,77 @@
 ---
 title: "Set up discounts"
-description: "Description of your new file."
+description: "Everyone loves a good deal—and at CGIC, offering discounts the right way keeps customers happy and keeps us compliant with pricing policies. Whether it’s a seasonal promo, customer loyalty discount, or bulk purchase deal, CGIC’s system gives you flexible tools to apply them consistently."
 ---
+
+<Info>
+  **Prerequisites**
+
+  Before setting up any discount, make sure:
+
+  - You have access to the Pricing Rule module.
+  - You know the type of discount: percentage, fixed amount, or override price.
+  - The target group is clear: specific items, customers, or customer groups.
+  - You’ve verified the discount has been approved internally (e.g., by Sales or Management).
+</Info>
+
+### 1.0 Types of Discounts You Can Create
+
+- **Flat Discounts** – e.g., 10% off on a product.
+- **Fixed Price Override** – e.g., sell at \$50 instead of the usual \$65.
+- **Quantity-Based Discounts** – e.g., Buy 10 or more, get 15% off.
+- **Time-Bound Promotions** – e.g., “Discounts valid from June 1 to June 30.”
+
+### 2.0 Step-by-Step: Creating a Discount (Using Pricing Rule)
+
+**1. Navigate to Pricing Rule**
+
+- Go to `Selling > Pricing Rule.`
+
+**2. Click 'New' to Create a Rule**
+
+**3. Fill in Rule Details**
+
+| **Field**       | **What to Enter**                                           |
+| --------------- | ----------------------------------------------------------- |
+| Title           | A clear name (e.g., “June Promo - 10% off Product X”)       |
+| Apply On        | Choose: Item / Item Group / Brand                           |
+| Customer Filter | Apply to specific **Customer or Customer Group** (optional) |
+| Price List      | Typically “Selling”                                         |
+| Company         | Set to CGIC                                                 |
+| Validity Period | Start and End Date for the discount                         |
+
+**4. Set the Discount Logic**
+
+Under **Pricing Rule Details:**
+
+- Choose **Discount Percentage** or **Price Discount Amount.**
+- You can also **override the selling price **if needed.
+
+Optional: Add **min/max quantity thresholds** for bulk discounts.
+
+**5. Save and Submit**
+
+Once submitted, the system will automatically apply the discount when conditions match in a Quotation or Sales Order.
+
+###  3.0 Example Use Cases
+
+| Scenario                                  | Setup Steps                                                    |
+| ----------------------------------------- | -------------------------------------------------------------- |
+| 10% off all products for Retail Customers | Apply to Customer Group: Retail, set 10% Discount %            |
+| Product X at \$45 instead of \$50         | Set Item: Product X, check “Override Price”, set new rate      |
+| Buy 20\+ units, get 15% off               | Set min quantity = 20, Discount % = 15                         |
+| Weekend Sale (Sat–Sun Only)               | Set validity dates, apply discount rule to all or select items |
+
+### 4.0 How the Discount Appears
+
+When a discount rule is triggered:
+
+- It applies automatically in Sales Orders, Quotations, or Invoices.
+- You’ll see the discounted amount reflected in the item rate and total.
+- A small info message may pop up, showing the applied Pricing Rule name—handy for transparency\!
+
+### 5.0 Managing & Auditing Discounts
+
+- Use the Pricing Rule List to filter by active/expired rules.
+- Deactivate old or unused rules to avoid clutter or confusion.
+- Make it a habit to review discounts quarterly with your team lead.

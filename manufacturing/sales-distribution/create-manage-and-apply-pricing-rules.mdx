@@ -1,4 +1,112 @@
 ---
 title: "Create, manage and apply pricing rules"
-description: "Description of your new file."
+description: "At CGIC, we use Pricing Rules to take the guesswork out of giving discounts and special pricing. Whether it’s offering bulk deals, customer-specific pricing, or limited-time promotions, pricing rules help ensure our sales team stays consistent and compliant with approved rates."
 ---
+
+<Info>
+  **Prerequisites**
+
+  Before you set up a pricing rule, make sure:
+
+  - You have permission to access the Pricing Rule module.
+  - You know which item(s), customer(s), or customer group the rule should apply to.
+  - You have clarity on the type of pricing: discount, price override, or special rate.
+  - The rule has been reviewed and approved by your Sales or Finance team if required.
+</Info>
+
+### Step 1: Creating a Pricing Rule
+
+**1. Go to the Pricing Rule Module**
+
+- Navigate to `Selling > Pricing Rule`.
+
+
+- Click New to create a new rule.
+
+**2. Give the Rule a Clear Title**
+
+> Example: Retail Discount – 10% off for Product X
+
+**3. Set Conditions**
+
+Here’s where you define who and what the rule applies to:
+
+| Field                      | Example                          |
+| -------------------------- | -------------------------------- |
+| Apply On                   | Item, Item Group, Brand          |
+| Item Code                  | (if applicable) Product X        |
+| Customer or Customer Group | e.g., Retail, Gold Members       |
+| Price List                 | Typically “Selling”              |
+| Valid From / Valid To      | Optional for limited-time offers |
+
+**4. Define the Rule Logic**
+
+You can choose one of the following:
+
+| Option                | What It Does                                    |
+| --------------------- | ----------------------------------------------- |
+| Discount Percentage   | Reduces the price by a fixed %                  |
+| Price Discount Amount | Reduces price by a fixed value (e.g., ₦500 off) |
+| Rate (Override Price) | Replaces the default price with a new rate      |
+
+Optional fields for **bulk or tiered** pricing:
+
+- Minimum Quantity
+- Maximum Quantity
+
+<Tip>
+  You can create multiple rules for different customer tiers, date ranges, or purchase volumes.
+</Tip>
+
+### Step 2: Managing Pricing Rules
+
+Once you’ve created your rules, CGIC’s system helps you keep them organized and easy to maintain.
+
+**To View or Edit Rules:**
+
+- Go to `Selling > Pricing Rule List`
+- Filter by:
+  - Active/Expired
+  - Customer Group
+  - Item/Item Group
+- Click any rule to edit or review
+
+**To Deactivate a Rule:**
+
+- Open the rule and uncheck "Enable"
+- This prevents the rule from applying without deleting the record
+
+<Tip>
+  Clean up expired rules quarterly to avoid accidental application of outdated discounts.
+</Tip>
+
+### Step 3: Applying Pricing Rules Automatically
+
+Once set up, pricing rules are applied automatically in:
+
+- Sales Orders
+- Quotations
+- Sales Invoices
+
+The system checks:
+
+- Who the customer is
+- What items they’re buying
+- The quantity
+- The date (if rule has validity period)
+
+If everything matches, the pricing rule kicks in—no manual effort needed\!
+
+<Warning>
+   If multiple rules could apply, CGIC App  prioritizes based on specificity (e.g., item-level rule over group-level).
+</Warning>
+
+### 2.0 Reporting and Review
+
+Use the following tools to keep track of how pricing rules are used:
+
+| Tool                         | Purpose                                    |
+| ---------------------------- | ------------------------------------------ |
+| Pricing Rule List            | View all active/inactive rules             |
+| Sales Order / Quotation view | See which pricing rule was applied         |
+| Sales Analytics              | Compare revenue with and without discounts |
