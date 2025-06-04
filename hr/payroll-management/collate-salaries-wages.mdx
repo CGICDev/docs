@@ -1,4 +1,112 @@
 ---
 title: "Collate Salaries/Wages"
-description: "Description of your new file."
+description: "Efficiently gather, review, and prepare all employee salary and wage data in the CGIC App—so payroll, finance, and management teams have an accurate, consolidated view for disbursement and reporting."
 ---
+
+<Card title="Prerequisites" icon="sparkles" iconType="duotone">
+  - The desired **Payroll Period** (e.g., “June 2025”) exists and is in **Open** status under `HR > Payroll Entry > Payroll Period List.`
+  - All changes (attendance, overtime, leave adjustments, deductions) for that period have been recorded.
+  - Each employee intended for inclusion has an active **Salary Structure** assigned under `HR > Salary Structure.`
+  - Any one‐time or recurring deductions, allowances, or bonuses for this period are set up in **Deduction Entry** or **Allowance Entry**.
+  - Under `Setup > Payroll Settings`, the default **Bank Account** for salary disbursement is configured.
+</Card>
+
+### Step 1: Verify Payroll Configuration
+
+1. **Confirm Payroll Settings**
+   - Navigate to `Setup > Payroll Settings.`
+   - Ensure that:
+     - **Default Currency** is correct (e.g., NGN).
+     - **Salary Components Defaults** (Basic, HRA, etc.) are up to date.
+     - **Statutory Rates** (tax, pension) reflect the current period.
+2. **Check Bank Account**
+   - Under **Payroll Settings**, verify the **Bank Account** configured for salary disbursements.
+   - This account will be used to generate the consolidated payment file (if integrated with banking).
+3. **Review Approval Workflow**
+   - If your process requires sign‐off (e.g., Finance Controller approval), ensure that the **Payroll Entry** for the period is in **Pending Approval** status and the approver is notified.
+
+### Step 2: Generate the Payroll for the Period
+
+1. **Initiate Payroll Run**
+   - Go to `HR > Payroll Entry > New.`
+   - In the form, select:
+     - **Company** (e.g., “CGIC Nigeria Ltd”).
+     - **Payroll Period** (e.g., “June 2025”).
+     - **Payroll Type**: “Full and Final,” “Monthly Salary,” or “Wage.” Choose “Monthly Salary” unless wages are paid separately.
+   - Click **Save**.
+2. **Verify Earnings and Deductions**
+   - In the **Earnings** section, confirm that for each employee:
+     - **Basic Pay**, **Allowances**, **Overtime** (if any) are listed.
+     - Any **Bonus** entries appear correctly.
+   - In the **Deductions** section, ensure all items—**Tax**, **Pension**, **Health Insurance**, **Loan Repayment**—are reflected.
+3. **Calculate Net Pay**
+   - Once earnings and deductions are correct, click **Calculate Net Pay**. The CGIC App computes:
+     - **Total Earnings** = Sum of all pay components.
+     - **Total Deductions** = Sum of all statutory and non‐statutory deductions.
+     - **Net Pay** = Total Earnings − Total Deductions.
+4. **Review Individual Payslips**
+   - Scroll through the generated payslip grid. Look for any discrepancies (e.g., unexpected zero amounts where values should exist).
+   - If corrections are needed, either:
+     - Update the underlying **Salary Structure**, **Deduction Entry**, or **Allowance Entry**.
+     - Then click **Recalculate** to refresh net pay.
+5. **Submit Payroll Entry**
+   - After validation, click **Submit** on the Payroll Entry. This moves the payroll into **Submitted** status, ready for collation.
+
+### Step 3: Collate Salary Totals
+
+1. **Access Salary Summary Report**
+   - Navigate to `HR > Reports > Payroll Summary Report.`
+   - Set filters:
+     - **Payroll Period** = “June 2025.”
+     - **Department** (optional) to view department‐wise totals.
+     - **Cost Center** (optional) if you track by project or location.
+   - Click **Refresh**.
+2. **Review Key Columns**
+   - **Employee Count**: Number of employees included.
+   - **Gross Salary Total**: Sum of all employees’ total earnings.
+   - **Total Deductions**: Sum of all employees’ deductions.
+   - **Net Salary Total**: Gross Salary − Total Deductions.
+   - **Employer Contributions** (if captured separately).
+3. **Drill Down as Needed**
+   - Click on any department or cost center row to view individual employee details for that segment.
+   - Verify unusual figures (e.g., very high overtime) before proceeding.
+4. **Export Collated Data**
+   - Click `Menu > Export > CSV` to download a spreadsheet containing:
+     - Each employee’s **Employee Code**, **Name**, **Gross**, **Deductions**, **Net Pay**, **Bank Account Number**, and **Department/Cost Center**.
+   - Alternatively, choose `Export > PDF` for a formatted report summary.
+
+### Step 4: Prepare Disbursement File (If Integrated)
+
+1. **Generate Bank File Format**
+   - If your CGIC App is integrated with banking:
+     - In **Payroll Entry**, after submission, click **Generate Bank File**.
+     - Choose the **Bank Format** (e.g., “GTBank NIBSS,” “Standard Chartered CSV”).
+   - The system produces a file ready for upload to your bank’s payroll portal.
+2. **Verify Bank File Contents**
+   - Before uploading, download the file and open it in a text editor or spreadsheet to confirm:
+     - **Beneficiary Name**, **Bank Account Number**, **Net Amount** for each employee.
+     - No blank or incorrect account numbers.
+   - Correct any discrepancies by amending the employee’s **Bank Account** field in their profile and regenerating the file.
+3. **Upload to Bank Portal**
+   - Log in to your bank’s corporate payroll site.
+   - Upload the generated file.
+   - Complete any additional validations (e.g., OTP confirmations).
+   - Upon successful upload, retrieve the bank’s confirmation receipt and save a copy in a secure location.
+
+### Step 5: Consolidate and Archive Salary Data
+
+1. **Generate Final Payroll Register**
+   - In `HR > Reports > Payroll Register Report`, set:
+     - **Payroll Period** = “June 2025.”
+   - Click **Refresh** to produce a detailed listing of all salary components and deductions per employee.
+   - Export to PDF for official payroll records.
+2. **Archive Payroll Entry**
+   - Once payroll is disbursed and bank confirmation is received, change the **Payroll Entry** status to **Closed** or **Paid** (depending on your workflow).
+   - This prevents further edits and signals completion.
+3. **Notify Stakeholders**
+   - Use **Email Alert** or **Mass Email** from the Payroll Entry:
+     - To send payslips to employees (if enabled).
+     - To send summary confirmation to Finance and Management (e.g., total payroll cost, department breakdowns).
+4. **Store Documentation**
+   - Save exported summaries, bank acknowledgments, and any approval screenshots in a shared, secure folder (e.g., “Payroll Records FY2025”).
+   - Tag them with the payroll period and date for easy retrieval during audits.

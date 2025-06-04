@@ -1,4 +1,45 @@
 ---
 title: "Automatically process payroll runs (Monthly)"
-description: "Description of your new file."
+description: "Streamline payroll by configuring the CGIC App to automatically generate and process monthly payroll—so HR and finance spend less time on manual tasks and ensure employees are paid on schedule."
 ---
+
+<Card title="Prerequisites" icon="sparkles">
+  - Under `Setup > Payroll Settings`, confirm:
+  - **Default Currency** (e.g., NGN).
+
+
+  - **Default Bank Account** for salary disbursement.
+  - **Cut-off Date** for attendance, deductions, and allowances (commonly end of month).
+  - Under `HR > Payroll Period > Payroll Period List`, ensure upcoming periods are defined (e.g., “August 2025” with **Start Date** 2025-08-01 and **End Date** 2025-08-31) and set to **Open** status.
+  - Every active, paid employee must have a **Salary Structure** assigned under `HR > Salary Structure.`
+  - Verify that recurring **Allowance Entries**, **Deduction Entries**, and any **Overtime Records** for the month are set up before the scheduled run date.
+  - Under `Setup > Email Alert`, create or confirm alerts for:
+    - **“Payroll Entry Generated”**, alerting HR when an automated run completes.
+    - **“Payslip Ready”**, notifying employees when their payslip is available.
+</Card>
+
+### Step 1: Define a Scheduled Payroll Script
+
+1. **Navigate to Scheduler Settings**
+   - Go to `Setup > Scheduler Log`. Confirm the scheduler is active (next run time is in the future).
+   - Under `Setup > System Settings`, ensure **Enable Scheduler** is checked.
+2. **Create a Custom Script for Payroll Generation**
+   - Go to **Setup ▶️ Custom Script ▶️ New**.
+   - Choose **Script Type: Scheduler Event**.
+   - In the **Script** field, paste or write a Python snippet that calls the CGIC App’s built-in payroll API. Example (pseudocode):
+
+     ```
+     python
+     ```
+   - Replace `'current_pending_period'` with a dynamic lookup that fetches the next **Open** period.
+   - **Save** the script with a recognizable name (e.g., “Monthly Payroll Run”).
+3. **Schedule the Script**
+   - Go to **Setup ▶️ Scheduler Event ▶️ New**.
+   - Set:
+     - **Event Type**: **Monthly**
+     - **Based On**: Day of Month (e.g., 1) to run on the first day for the prior month’s payroll.
+     - **Method**: `app.custom_scripts.monthly_payroll_run` (the path to your custom script).
+   - Optionally, specify the **Hour** (e.g., 02:00 for a 2 AM execution).
+   - Click **Save**. The scheduler log will confirm the next run date and time.
+
+> 📊 _Tip:_ If you prefer payroll to run after the month ends (e.g., 2 AM on the 2nd day), set **Day of Month = 2** and ensure all transactions for the 1st are recorded.
