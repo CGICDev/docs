@@ -1,4 +1,102 @@
 ---
 title: "Track order status"
-description: "Description of your new file."
+description: "Monitor the real‐time status of customer orders—Sales Orders (SOs), Delivery Notes, and Invoices—so you and your team always know where each order stands in the fulfillment process in the CGIC App."
 ---
+
+<Info>
+  **Prerequisites**
+
+     - At least one **Sales Order** has been created under `Selling > Sales Order > Sales Order List`.  
+
+     - Linked **Delivery Notes** and **Sales Invoices** may already exist for those SOs.
+</Info>
+
+### 1.0 Review Sales Order List
+
+1. Navigate to `Selling > Sales Order > Sales Order List.`  
+
+2. Observe the **Status** column for each SO (Draft, Submitted, Partially Delivered, Completed, Cancelled).  
+
+3. Use the **Search Bar** to locate a specific SO by number or customer name.  
+
+4. Click `Filter > Add Filter` to narrow by:  
+
+   - **Status** (e.g., `Status = “Submitted”` to see orders awaiting delivery)  
+
+   - **Delivery Date** (e.g., `Delivery Date < today` to find overdue shipments)  
+
+   - **Customer** to view all orders for a particular account.  
+
+5. Click **Refresh**. The list updates to show matching orders.
+
+### 1.1 Open a Sales Order to See Linked Documents
+
+1. In the SO List, click the desired **Sales Order No.** to open its profile.  
+
+2. Review the **Status** displayed in the header.  
+
+3. Scroll to the **Delivery Notes** section:  
+
+   - Shows all Delivery Notes generated from this SO, with their statuses (Draft, Submitted, Cancelled).  
+
+   - Indicates the **Qty Delivered** vs. **Qty Ordered** per line.  
+
+4. Scroll to the **Sales Invoice** section:  
+
+   - Lists invoices created from this SO, their statuses, and amounts billed.  
+
+   - Displays **Outstanding Amount** if not fully paid.  
+
+5. If the SO is partially delivered or invoiced, see exactly which items remain pending.
+
+### 1.2 Use the Delivery Note List for Shipment Status
+
+1. Navigate to `Stock > Delivery Note > Delivery Note List.`  
+
+2. Use `Filter > Add Filter` to search by:  
+
+   - **Sales Order**: select the SO number to see all its deliveries.  
+
+   - **Status** (Draft, Submitted, Cancelled) to find unsubmitted shipments.  
+
+   - **Posting Date** (e.g., last week) to see recent activity.  
+
+3. Review the **Status** and **Outstanding Qty** columns to identify partial or pending shipments.  
+
+4. Click the **Delivery Note No.** to see line‐item details and shipment dates.
+
+### 1.3 Monitor Invoices for Billing Status
+
+1. Go to `Accounts > Sales Invoice > Sales Invoice List.`  
+
+2. Use `Filter > Add Filter` to narrow by:  
+
+   - **Sales Order**: link to the SO you want to track billing progress.  
+
+   - **Status** (Draft, Submitted, Paid, Overdue) to find unpaid or overdue invoices.  
+
+   - **Due Date** (e.g., `Due Date < today`) to see invoices past due.  
+
+3. The **Outstanding Amount** column shows what remains uncollected.  
+
+4. Click the **Invoice No.** to view payment entries, aging, and any credit notes applied.
+
+### 1.4 Run the Sales Order Status Report
+
+1. Navigate to `Selling > Reports > Sales Order Status Report. ` 
+
+2. Set filters:  
+
+   - **Company**: your entity.  
+
+   - **From Date / To Date**: period to analyze (e.g., last month).  
+
+   - **Customer** (optional): specific account focus.  
+
+3. Click **Refresh**. The report displays:  
+
+   - **Total SOs** by status (Draft, Submitted, Partially Delivered, Completed, Cancelled).  
+
+   - A breakdown of quantities and amounts per status.  
+
+4. Export or print to share with stakeholders.
