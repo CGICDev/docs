@@ -1,4 +1,141 @@
 ---
 title: "Handle Custom/One-Off Production Orders"
-description: "Description of your new file."
+description: "Manage production runs that deviate from standard recipes—such as prototype batches, special promotions, or experimental products—by creating and processing one-off Work Orders without relying on a predefined BOM in the CGIC App."
 ---
+
+### **What it does:**  
+
+- Lets you produce items that don’t have an established Bill of Materials (BOM) or follow a unique recipe.  
+
+- Enables you to manually specify raw materials, quantities, and operations for a one-time run.  
+
+- Records actual consumption, costs, and outcomes for ad-hoc productions without cluttering your standard BOM library.
+
+<Info>
+  **Prerequisties**
+
+  \
+  - The **Finished-Goods Item** (even if new or temporary) exists under **Stock ▶️ Item ▶️ Item List**, marked as **Is Stock Item**.  
+
+  - All **Raw Materials** you plan to use are defined under **Stock ▶️ Item**, even if you won’t use a formal BOM.  
+
+  - Warehouses for raw materials and finished goods are configured under **Stock ▶️ Warehouse**.
+</Info>
+
+### 1.0 Steps to Create a Custom/One-Off Production Order
+
+**Step 1: Open a New Work Order**
+
+1. Navigate to `Manufacturing > Work Order > New Work Order.`  
+
+2. In the blank Work Order form, fill in header fields:  
+
+   - **Work Order No.**: auto-generated or override if you have a naming convention (e.g., “WO-CUSTOM-001”).  
+
+   - **Production Item**: select the finished item you want to produce (even if new, it must exist in Item List).  
+
+   - **Quantity**: enter the number of units for this one-off run.  
+
+   - **UOM**: auto-fills based on the finished item’s default unit (e.g., “Nos” or “Kg”).  
+
+   - **Company**, **Planned Start Date**, **Planned End Date**, and **Workstation** (optional) as needed.  
+
+3. **Skip the BOM field**: because this is a custom run, leave **BOM** blank.  
+
+4. Click **Save** to draft the Work Order. It will show **Status = Draft** and have no linked BOM.
+
+**Step 2: Manually Define Raw Materials**
+
+1. With the WO in Draft status, scroll to the **Items** section (below the header).  
+
+2. Click **Add Row**. For each raw material:  
+
+   - **Item Code**: select or scan the raw material.  
+
+   - **Qty to Consume**: enter the actual quantity you plan to use for this run (e.g., “5 kg” flour).  
+
+   - **UOM**: should auto-fill based on the raw material’s unit.  
+
+   - **Warehouse / Bin**: choose where you’ll pull this material from (e.g., “Raw Material Store”).  
+
+3. Repeat until all materials for the one-off formula are listed.  
+
+4. Click **Save**.
+
+**Step 3: Manually Define Operations (If Applicable)**
+
+1. Click the **Operations** tab in the WO form.  
+
+2. If **With Operations** is not checked, check it to enable operation lines.  
+
+3. Click **Add Row** for each step in your custom process:  
+
+   - **Operation**: type a descriptive name (e.g., “Mix custom formula,” “Test bake,” “Hand label prototype”).  
+
+   - **Workstation**: select the machine or station (e.g., “Prototype Kitchen” or “Lab Oven”).  
+
+   - **Planned Time (Minutes)**: estimate how long each step takes per unit or per batch (e.g., “1” minute per item).  
+
+   - **Fixed Time (Minutes)**: if a step is a flat amount per batch (e.g., “10” minutes setup).  
+
+   - **Sequence**: number steps in order (1, 2, 3, …).  
+
+4. Click **Save** once all operations are defined.
+
+**Step 4: Submit the Work Order**
+
+1. Once you’ve manually entered raw materials and operations, click **Submit**.  
+
+   - The WO status changes to **“Submitted”**.  
+
+   - No Material Request is generated automatically since no BOM exists. You need to manually reserve or issue materials (next step).  
+
+**Step 5: Issue Materials via Stock Entry**
+
+1. In the submitted Work Order, click `Create > Stock Entry` (Purpose = “Manufacture”).  
+
+2. The **Stock Entry** form opens. In **Items** grid, manually add each raw material:  
+
+   - **Item Code**: select the same raw materials you listed in the WO’s **Items** section.  
+
+   - **Qty to Consume**: enter the actual consumed quantity (must match or exceed the WO draft values).  
+
+   - **Source Warehouse / Bin**: confirm inventory location.  
+
+   - **Batch No.** (if applicable): assign specific batch for traceability.  
+
+3. Click **Save**, then **Submit**—this deducts actual material consumption from inventory and posts a stock ledger entry.
+
+**Step 6: Log Actual Operations**
+
+1. Return to the WO and open the **Operations** tab.  
+
+2. For each operation row, update:  
+
+   - **Actual Time Spent (Minutes)**: record how long the step took in reality (e.g., “1.5” minutes vs. estimated “1”).  
+
+   - **Operator** or **Employee ID** (optional): identify who performed the task.  
+
+3. Click **Save**.
+
+**Step 7: Receive Finished Goods**
+
+1. After completing production, click `Create > Stock Entry` (Purpose = “Manufacture”) or `Create > Delivery Note` if shipping immediately.  
+
+2. In the **Stock Entry (Manufacture)** form:  
+
+   - **Finished Goods Item**: confirm the item you produced.  
+
+   - **Qty to Produce**: enter actual output (which might be less than planned if there was scrap).  
+
+   - **Target Warehouse**: select where to store the finished goods (e.g., “R&D Inventory” or “Sample Storage”).  
+
+3. (Optional) Attach a **Quality Report** or **Test Results** under **Attachments** for audit.  
+
+4. Click **Save**, then **Submit**—this adds the finished goods to inventory and posts cost entries.  
+
+5. The WO’s status automatically updates to **“Completed”** once you submit this entry.
+
+### Closing Note
+
+One-off production orders let you respond quickly to new opportunities without overloading your BOM library. By manually defining materials and operations, issuing stock, and logging costs, you maintain full inventory and financial control. When a custom run proves repeatable, convert it into a formal BOM to streamline future production—keeping your manufacturing processes both agile and organized in the CGIC App.  

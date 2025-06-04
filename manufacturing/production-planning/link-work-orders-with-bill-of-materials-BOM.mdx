@@ -1,4 +1,86 @@
 ---
 title: "Link Work Orders with Bill of Materials (BOM)"
-description: "Description of your new file."
+description: "Ensure each Work Order (WO) is tied to the correct Bill of Materials (BOM) so that production runs pull the accurate component list, operations, and cost data in the CGIC App."
 ---
+
+<Info>
+  **Prerequisties**
+
+   - Finished-goods item exists under `Stock > Item > Item List` (with **Is Stock Item** checked).  
+
+     - A submitted (Active) BOM for that item exists under `Manufacturing > Bill of Materials > BOM List.  `
+
+     - The BOM’s **Applicable From** date is on or before today, ensuring it is eligible for selection.
+
+   - You have access to create or edit Work Orders under `Manufacturing > Work Order > Work Order List. ` 
+
+     - No conflicting Work Orders are already in process for this item (to avoid duplicate reservations).
+</Info>
+
+### 1.0 Create a New Work Order
+
+1. Navigate to `Manufacturing > Work Order > New Work Order.`  
+
+2. In the blank Work Order form, populate header details:  
+
+   - **Production Item**: click the lookup and select the finished-goods item (e.g., “Danaval Chocolate Bread”).  
+
+   - **BOM**: click the lookup and choose the desired BOM version. Only active BOMs appear.  
+
+   - **Quantity**: enter the number of units you plan to produce (e.g., “500”).  
+
+   - **Company**, **Planned Start Date**, **Planned End Date**, and **Workstation** (optional) as needed.  
+
+3. Click **Save** to draft the WO. At this point, the BOM is linked and component details will be pulled when you generate the Material Request.
+
+### 1.1 Verify BOM‐Driven Item Lines
+
+1. With the draft Work Order open, scroll to the **Material Request** or **Items** section.  
+
+2. Click `Actions > Make Material Request` (recommended) or **Get Items from BOM**:  
+
+   - CGIC pulls every component from the linked BOM, scales each component’s **Required Qty** by your WO quantity, and populates the MR or Items table.  
+
+   - For example, if the BOM calls for 0.2 kg of flour per loaf and you set WO quantity = 500, CGIC auto-fills **Flour Required Qty = 100 kg**.  
+
+3. Review the generated lines to confirm:  
+
+   - **Item Code** and **Description** match BOM components.  
+
+   - **Required Qty** is correctly scaled.  
+
+   - **UOM** and **Warehouse** are accurate.
+
+### 1.2 Adjust Operations (If Applicable)
+
+1. Click the **Operations** tab in the Work Order form.  
+
+2. If BOM‐defined operations exist, click **Get BOM Operations** to populate the list of steps (sequence, workstations, planned time).  
+
+3. Verify each row:  
+
+   - **Operation** name aligns with the BOM.  
+
+   - **Workstation** matches or adjust if a different machine should handle this run.  
+
+   - **Planned Time** is correct based on the new quantity. CGIC scales time for per-unit steps, or uses **Fixed Time** for batch steps.  
+
+4. Click **Save**.
+
+### 1.3 Submit the Work Order
+
+1. After confirming materials and operations, click **Submit** at the top-right.  
+
+   - The WO status changes to **“Submitted”**.  
+
+   - CGIC reserves the scaled raw materials via Material Request.  
+
+   - Operation times and workstations are locked in for scheduling.  
+
+2. Downstream:  
+
+   - **Material Requests** use BOM data to pull correct quantities.  
+
+   - **Stock Entries** (Material Issue, Manufacture) reference the linked BOM for consumption and costs.
+
+> Linking Work Orders with the correct Bill of Materials in the CGIC App ensures that every production run uses the approved component list and operation sequence. By following these steps, you maintain consistency, automate material reservation, and enable accurate cost capture—driving reliable, repeatable manufacturing processes. 
