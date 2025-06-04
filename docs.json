@@ -220,7 +220,13 @@
           {
             "group": "Employee Management",
             "pages": [
-              "api-reference/introduction"
+              "hr/employee-management/add-employee-biodata-contact-information-IDs-documents-role-salary",
+              "hr/employee-management/update-employee-details",
+              "hr/employee-management/view-employee-profile",
+              "hr/employee-management/search-employee-records",
+              "hr/employee-management/update-employment-status-active-onleave-terminated",
+              "hr/employee-management/manage-employee-documents",
+              "hr/employee-management/record-deductions"
             ]
           },
           {
