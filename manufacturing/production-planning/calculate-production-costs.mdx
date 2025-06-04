@@ -4,125 +4,76 @@ description: "Determine the true cost of manufacturing a batch or unit—factori
 ---
 
 <Card title="What it does" icon="sparkles" iconType="duotone">
-  - Captures actual raw material consumption, operation (labor/machine) usage, and any scrap or process losses recorded during production  
-
-  - Rolls up these actual costs and compares them to the original BOM estimates  
-
-  - Provides detailed breakdowns at the Work Order and batch level (e.g., cost per unit, cost variance)  
-
-  - Helps identify cost overruns, inefficiencies, and areas for process improvement  
+  - Captures actual raw material consumption, operation (labor/machine) usage, and any scrap or process losses recorded during production
+  - Rolls up these actual costs and compares them to the original BOM estimates
+  - Provides detailed breakdowns at the Work Order and batch level (e.g., cost per unit, cost variance)
+  - Helps identify cost overruns, inefficiencies, and areas for process improvement
 </Card>
 
 <Info>
   **Prerequisites**
 
-  - You have one or more **Work Orders** that have been fully **Submitted** and **Completed** under `Manufacturing > Work Order > Work Order List. ` 
-
-     - Actual raw material usage has been recorded via **Stock Entries (Material Issue)** or **Delivery Notes** for finished goods.  
-
-     - Operation times (labor or machine hours) have been tracked on Work Orders or via time‐capture entries.
-
-  - Any fixed or variable overhead (utilities, facility rent, packaging) has been defined either:  
-
-       - In a custom field on the BOM/Work Order, or  
-
-       - Via an overhead rate in the **Cost Center** settings under `Accounts > Cost Center.`
+  - You have one or more **Work Orders** that have been fully **Submitted** and **Completed** under `Manufacturing > Work Order > Work Order List. `
+    - Actual raw material usage has been recorded via **Stock Entries (Material Issue)** or **Delivery Notes** for finished goods.
+    - Operation times (labor or machine hours) have been tracked on Work Orders or via time‐capture entries.
+  - Any fixed or variable overhead (utilities, facility rent, packaging) has been defined either:
+    - In a custom field on the BOM/Work Order, or
+    - Via an overhead rate in the **Cost Center** settings under `Accounts > Cost Center.`
 </Info>
 
 ### 1.0 Record Actual Material and Labor Consumption
 
-1. **Material Issues**  
-
-   - When you complete a production run, create a `Stock Entry > New Stock Entry` with **Purpose = Material Issue** (or use **Delivery Note** if you are directly shipping finished goods).  
-
-   - In the **Items** grid, for each raw material:  
-
-     - **Item Code**: scan or type the component.  
-
-     - **Qty**: enter the actual quantity consumed (e.g., 52 kg of Flour vs. 50 kg estimated).  
-
-     - **Source Warehouse / Bin**: confirm location.  
-
-     - If batch/serial tracked, assign **Batch No.** or **Serial No.**.  
-
-   - Click **Save**, then **Submit** to post the ledger entry, deducting inventory and capturing actual cost at the purchase‐rate.  
-
-2. **Operation Times / Labor Capture**  
-
-   - On a `Work Order > Work Order List`, open the completed Work Order record.  
-
-   - In the **Operations** section, ensure each step has logged:  
-
-     - **Actual Time Spent** (minutes or hours logged by operators or supervisors).  
-
-     - **Workstation** (machine or labor station) used.  
-
-     - If you track hourly rates per workstation, these rates should be set under `Manufacturing > Workstation > Workstation List.`  
-
-   - If your organization uses a separate time‐capture tool, import or manually enter actual operation times into these fields, then click **Save**, **Submit** (if not already).  
+1. **Material Issues**
+   - When you complete a production run, create a `Stock Entry > New Stock Entry` with **Purpose = Material Issue** (or use **Delivery Note** if you are directly shipping finished goods).
+   - In the **Items** grid, for each raw material:
+     - **Item Code**: scan or type the component.
+     - **Qty**: enter the actual quantity consumed (e.g., 52 kg of Flour vs. 50 kg estimated).
+     - **Source Warehouse / Bin**: confirm location.
+     - If batch/serial tracked, assign **Batch No.** or **Serial No.**.
+   - Click **Save**, then **Submit** to post the ledger entry, deducting inventory and capturing actual cost at the purchase‐rate.
+2. **Operation Times / Labor Capture**
+   - On a `Work Order > Work Order List`, open the completed Work Order record.
+   - In the **Operations** section, ensure each step has logged:
+     - **Actual Time Spent** (minutes or hours logged by operators or supervisors).
+     - **Workstation** (machine or labor station) used.
+     - If you track hourly rates per workstation, these rates should be set under `Manufacturing > Workstation > Workstation List.`
+   - If your organization uses a separate time‐capture tool, import or manually enter actual operation times into these fields, then click **Save**, **Submit** (if not already).
 
 ### 1.1 Run the Production Costing Report
 
-1. Navigate to `Manufacturing > Reports > Production Costing Report. ` 
-
-2. In the filter panel, set:  
-
-   - **Work Order**: select the completed Work Order you want to analyze.  
-
-   - **Company**: choose your legal entity.  
-
-   - **Include Estimates** (toggle): if you want to compare estimated (BOM) vs. actual costs side‐by‐side.  
-
-   - **Date Range** (optional): to group multiple work orders into a single report.  
-
-3. Click **Refresh** (or **Run**). The report displays:  
-
-   - **Raw Material Estimated Cost** (from BOM) vs. **Actual Material Cost** (from issued stock at purchase rates).  
-
-   - **Operation Estimated Cost** (BOM operation rates × planned time) vs. **Actual Operation Cost** (actual time × workstation rate).  
-
-   - **Overhead Cost** (if defined) and whether actual overhead matches what was allocated.  
-
-   - **Total Estimated Cost**, **Total Actual Cost**, and **Cost Variance** (difference).  
-
-   - **Cost per Unit Estimated** vs. **Cost per Unit Actual**.  
-
-4. Review each component to see where variances occurred (e.g., raw material overconsumption, extra labor hours, scrap).  
+1. Navigate to `Manufacturing > Reports > Production Costing Report. `
+2. In the filter panel, set:
+   - **Work Order**: select the completed Work Order you want to analyze.
+   - **Company**: choose your legal entity.
+   - **Include Estimates** (toggle): if you want to compare estimated (BOM) vs. actual costs side‐by‐side.
+   - **Date Range** (optional): to group multiple work orders into a single report.
+3. Click **Refresh** (or **Run**). The report displays:
+   - **Raw Material Estimated Cost** (from BOM) vs. **Actual Material Cost** (from issued stock at purchase rates).
+   - **Operation Estimated Cost** (BOM operation rates × planned time) vs. **Actual Operation Cost** (actual time × workstation rate).
+   - **Overhead Cost** (if defined) and whether actual overhead matches what was allocated.
+   - **Total Estimated Cost**, **Total Actual Cost**, and **Cost Variance** (difference).
+   - **Cost per Unit Estimated** vs. **Cost per Unit Actual**.
+4. Review each component to see where variances occurred (e.g., raw material overconsumption, extra labor hours, scrap).
 
 ### 1.2 Investigate and Adjust BOMs or Processes
 
-1. In the **Production Costing Report**, click on any row (e.g., a raw material line with variance) to drill into detailed transactions:  
-
-   - For raw materials, it opens the **Stock Ledger** filtered to that Work Order’s material issues, showing purchase rates and batch details.  
-
-   - For operations, it opens the Work Order’s **Operation Log**, displaying actual start/end times.  
-
-2. Identify root causes for variances:  
-
-   - **Material Overuse**: check if wastage or scrap was higher than expected—inspect **Scrap & Process Loss** in that BOM.  
-
-   - **Labor Overrun**: verify if machine downtime, rework, or operator skill impacted actual time.  
-
-   - **Rate Discrepancies**: ensure purchase rates used match negotiated supplier prices; update item master if rates have changed.  
-
+1. In the **Production Costing Report**, click on any row (e.g., a raw material line with variance) to drill into detailed transactions:
+   - For raw materials, it opens the **Stock Ledger** filtered to that Work Order’s material issues, showing purchase rates and batch details.
+   - For operations, it opens the Work Order’s **Operation Log**, displaying actual start/end times.
+2. Identify root causes for variances:
+   - **Material Overuse**: check if wastage or scrap was higher than expected—inspect **Scrap & Process Loss** in that BOM.
+   - **Labor Overrun**: verify if machine downtime, rework, or operator skill impacted actual time.
+   - **Rate Discrepancies**: ensure purchase rates used match negotiated supplier prices; update item master if rates have changed.
 3. If a BOM requires adjustment (e.g., refine quantity of raw material or operation time), update the BOM and create a new revision under `Manufacturing > Bill of Materials > BOM List`, then re‐estimate for future work orders.
 
 ### 1.3 Aggregate Multiple Work Orders for Periodic Cost Analysis
 
-1. To view costs across multiple orders, set filters in the **Production Costing Report**:  
-
-   - **From Date / To Date**: e.g., last month or last quarter.  
-
-   - **Production Item**: filter by a specific product or product family.  
-
-   - **Workstation**: compare costs across machines.  
-
-2. Click **Refresh**. The report aggregates:  
-
-   - Total **Estimated Material Cost** vs. **Actual Material Cost** for all selected orders.  
-
-   - Total **Estimated Operation Cost** vs. **Actual Operation Cost**.  
-
-   - Combined **Cost Variance** and **Overall Batch/Unit Cost**.  
-
+1. To view costs across multiple orders, set filters in the **Production Costing Report**:
+   - **From Date / To Date**: e.g., last month or last quarter.
+   - **Production Item**: filter by a specific product or product family.
+   - **Workstation**: compare costs across machines.
+2. Click **Refresh**. The report aggregates:
+   - Total **Estimated Material Cost** vs. **Actual Material Cost** for all selected orders.
+   - Total **Estimated Operation Cost** vs. **Actual Operation Cost**.
+   - Combined **Cost Variance** and **Overall Batch/Unit Cost**.
 3. Export the summary to CSV or PDF for use in budgeting, variance analysis, and management review.
