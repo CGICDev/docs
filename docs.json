@@ -203,10 +203,12 @@
           {
             "group": "Asset Management",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "manufacturing/asset-management/maintain-a-detailed-registry-of-all-assets",
+              "manufacturing/asset-management/track-depreciation-and-asset-value-overtime",
+              "manufacturing/asset-management/schedule-and-track-preventive-maintenance-activities",
+              "manufacturing/asset-management/record-maintenance-history-and-associated-costs",
+              "manufacturing/asset-management/monitor-and-control-asset-related-expenses",
+              "manufacturing/asset-management/generate-reports-on-asset-performance-maintenance-and-costs"
             ]
           }
         ]
