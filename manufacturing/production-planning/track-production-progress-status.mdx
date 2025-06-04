@@ -1,4 +1,98 @@
 ---
 title: "Track Production progress & status"
-description: "Description of your new file."
+description: "Gain visibility into active production runs, identify bottlenecks, and ensure on-time delivery by tracking Work Order statuses, operation completion, and quality checks in the CGIC App."
 ---
+
+<CardGroup cols={1}>
+  <Card title="What it does" icon="sparkles" iconType="duotone">
+    **Real-Time Monitoring**: Track progress of Work Orders for all CGIC product lines
+
+    - **Operation-Level Updates**: Record completion at each production step (e.g., dough mixing → baking → packaging for Valdana Bread)
+    - **Performance Analytics**: Compare planned vs. actual times and quantities
+    - **Automated Alerts**: Notify supervisors about delays or quality failures
+    - **Shop Floor Integration**: Update statuses via mobile devices or shop floor terminals
+  </Card>
+  <Card title="Why it matters" icon="sparkles" iconType="duotone">
+    - Prevents missed deadlines for high-demand products (e.g., summer surge for Ovita Waters)
+    - Reduces waste by catching errors early (e.g., incorrect viscosity in Luca Engine Oil blending)
+    - Provides data to optimize workstation utilization (e.g., oven scheduling for Valdana Bread)
+    - Ensures consistent quality across batches
+  </Card>
+</CardGroup>
+
+<Info>
+  **Prerequisites**
+
+  - **Active Work Orders **Created from Production Plans (`Manufacturing > Work Order`)
+  - BOMs with operations defined (e.g., "Bottle Filling" for Ovita Waters)
+</Info>
+
+### **1.0 Access Active Work Orders**
+
+1. Go to: `Manufacturing > Work Order > List`
+2. Apply filters:
+   - **Status**: "In Process"
+   - **Item**: "Valdana Bread"
+   - **Workstation**: "Baking Line 3"
+3. Key columns:
+   - **WO No.** (e.g., `WO-033`)
+   - **Planned Qty** vs. **Produced Qty**
+   - **Delay %** (red highlight if \>10%)
+
+### **1.1 Update Progress via Job Cards (Shop Floor)**
+
+_For per-operation tracking (e.g., Ovita Waters filling):_
+
+1. **Open Job Card**:
+   - Scan Work Order QR code at workstation
+   - _Or_ go to `Manufacturing > Job Card > List`
+2. **Record Progress**:
+   - Select operation (e.g., "Bottle Filling")
+   - Enter **Completed Qty** (e.g., 4,500/10,000)
+   - Log downtime/issues in **Remarks**
+3. **Quality Check**:
+   - Record defects (e.g., "2% underfilled bottles")
+   - Attach photos if enabled
+4. **Submit**:
+   - Status auto-updates to "Completed" when qty reached
+
+### **1.2 Monitor Real-Time Dashboards**
+
+1. **Production Dashboard** (`Manufacturing > Dashboard`):
+   - **Work Order Status Tiles**:
+     - Not Started (Blue) · In Process (Yellow) · Completed (Green) · Stopped (Red)
+   - **Bottleneck Analysis**:
+     - Longest-running operations (e.g., "Valdana Bread Baking: Avg. 45 mins vs. Planned 40 mins")
+   - **Quality Heatmap**:
+     - Defect rates by workstation (e.g., "Packaging Line 1: 3% damaged tissue packs")
+2. **Gantt View**:
+   - Drag/drop Work Orders to reschedule
+   - Visualize overlaps (e.g., Luca Oil blending vs. Ovita filling)
+
+### **1.3 Handle Exceptions**
+
+1. **Pause Production**:
+   - In Job Card → Click **Hold** → Select reason (e.g., "Machine Breakdown")
+2. **Reroute Work**:
+   - Reassign Work Order to alternate workstation (e.g., move Valdana Bread to Oven 2)
+3. **Short-Closing**:
+   - Mark Work Order as "Completed" early if partially finished (e.g., 8,000/10,000 Ovita Waters)
+
+## **2.0 CGIC Product Tracking Examples**
+
+### **2.1 Onina Tissue Production**
+
+| **Operations**                                                    | **Workstation** | **Status**    | **Completed** |
+| ----------------------------------------------------------------- | --------------- | ------------- | ------------- |
+| Pulp Mixing                                                       | Mixer 5         | ✅ Completed   | 10,000 kg     |
+| Embossing                                                         | Line 2          | 🟡 In Process | 5,000 rolls   |
+| Packaging                                                         | Pack Station 1  | ⚪ Not Started | 0             |
+| **Delay**: Embossing running 20% slow → Alert sent to maintenance |                 |               |               |
+
+### **3.0 Troubleshooting**
+
+| **Issue**                   | **Solution**                                              |
+| --------------------------- | --------------------------------------------------------- |
+| Job Card not opening        | Check Work Order status = "In Process"                    |
+| Completed Qty not updating  | Verify "Allow Partial Completion" enabled in Work Order   |
+| Delay alerts not triggering | Configure thresholds in `Manufacturing Settings > Alerts` |

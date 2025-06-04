@@ -1,4 +1,149 @@
 ---
 title: "Manage Production Schedules"
-description: "Description of your new file."
+description: "Plan, organize, and adjust manufacturing timelines—linking work orders, resources, and material availability—so you ensure on-time production and efficient resource utilization in the CGIC App."
 ---
+
+<CardGroup cols={1}>
+  <Card title="What it does" icon="sparkles" iconType="duotone">
+    - Creates and maintains a structured timeline of upcoming production activities  
+
+    - Links Work Orders to specific dates, workstations, and operators  
+
+    - Provides a consolidated view of load across all work centers  
+
+    - Automatically adjusts schedules when work orders are created, modified, or cancelled
+  </Card>
+  <Card title="Why it matters" icon="sparkles" iconType="duotone">
+    - Ensures that production runs start and finish on time  
+
+    - Balances workload across machines and shifts to avoid bottlenecks  
+
+    - Integrates material availability checks so you don’t schedule jobs you can’t fulfill  
+
+    - Helps managers make data-driven decisions about capacity, overtime, and priorities  
+  </Card>
+</CardGroup>
+
+<Info>
+  **Prerequisites**
+
+  - Workstations are configured under `Manufacturing > Workstation > Workstation List.`  
+
+  - Work Orders exist or can be created under `Manufacturing > Work Order > Work Order List. ` 
+
+  - Material availability is verified (Material Requests created or stock levels updated).  
+</Info>
+
+### 1.0 Access the Production Scheduler
+
+1. Navigate to `Manufacturing > Production Schedule > Production Schedule List.`  
+
+2. Click **New** to open a blank Production Schedule form.
+
+<Tip>
+  If you prefer a Gantt or calendar view, use `Manufacturing > Planning > Production Gantt` (if enabled).
+</Tip>
+
+### 2.0 Link Work Orders to the Schedule
+
+1. In the **Production Schedule** form, click **Get Work Orders**.  
+
+2. In the pop-up, filter by:  
+
+   - **Status = “Submitted”** (so only open work orders appear)  
+
+   - **Workstation** (select specific work center if you’re scheduling by machine)  
+
+   - **Delivery Date** (e.g., next 30 days)  
+
+3. Select one or more Work Orders you want to schedule.  
+
+4. Click **Add**—the chosen Work Orders populate the **Scheduled Items** table.
+
+### 3.0 Assign Dates and Workstations
+
+1. In the **Scheduled Items** table, each row lists a Work Order. Fields include:  
+
+   - **Work Order No.**  
+
+   - **Production Item**  
+
+   - **Qty to Produce**  
+
+   - **BOM**  
+
+   - **Planned Start Date** and **Planned End Date** (blank initially)  
+
+   - **Workstation** (pre-filled from the Work Order but editable)  
+
+2. Click the **Planned Start Date** cell for a row and select the date the job should begin.  
+
+3. Click the **Planned End Date** cell and pick the expected completion date—CGIC can auto-calculate duration if operation times are defined.  
+
+4. If needed, change the **Workstation** to balance load (e.g., switch from “Filling Machine #1” to “Filling Machine #2”).  
+
+5. Repeat for each Work Order until every row has dates and workstations assigned.
+
+<Tip>
+  If your work orders have multiple operations across different workstations, schedule each operation in sequence by creating separate schedule entries per operation.  
+</Tip>
+
+### 4.0 Save and Submit the Schedule
+
+1. After assigning dates and workstations to all rows, click **Save**. CGIC validates for conflicts (e.g., two jobs on the same machine at the same time).  
+
+2. If there are conflicts, CGIC highlights them—adjust dates or change workstations as needed.  
+
+3. Once validation passes, click **Submit**.  
+
+   - The schedule status changes to **Scheduled**.  
+
+   - Work Orders reflect their planned dates and workstations in their own forms.  
+
+   - The scheduler can now generate load reports and capacity charts.
+
+<Warning>
+  Only submitted schedules can drive resource capacity reporting. Draft schedules remain editable until submitted.
+</Warning>
+
+### 5.0 Adjust or Reschedule Work Orders
+
+1. Open the Production Schedule from **Production Schedule List**.  
+
+2. Click `Actions > Edit` to enter edit mode.  
+
+3. In the **Scheduled Items** table, modify:  
+
+   - **Planned Start/End Dates** to shift timeline forward or backward  
+
+   - **Workstation** if you reallocate a job to a different machine  
+
+   - **Qty to Produce** if the Work Order quantity changes  
+
+4. Click **Save**. CGIC re-validates for conflicts—resolve any date or machine overlaps.  
+
+5. Click **Submit** to apply the updated schedule.  
+
+   - Downstream documents (e.g., Work Orders, Material Requests) automatically update to reflect new dates.  
+
+<Tip>
+  Use `Actions > Cancel Schedule` if you need to remove all scheduled dates and start over.
+</Tip>
+
+### 6.0 View Capacity and Load Reports
+
+1. Navigate to `Manufacturing > Reports > Capacity Utilization.`  
+
+2. Filter by **Workstation**, **Date Range**, or **Production Item**.  
+
+3. Click **Refresh**.  
+
+4. Review the load chart showing:  
+
+   - **Scheduled Hours** vs. **Available Hours** per workstation  
+
+   - **Overloaded** workstations (highlighted in red)  
+
+   - **Under-utilized** machines (highlighted in green)  
+
+5. Use these insights to shift jobs between machines or adjust hire/shift plans.
