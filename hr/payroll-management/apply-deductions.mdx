@@ -2,3 +2,61 @@
 title: "Apply deductions"
 description: "Ensure all recorded deductions—statutory, voluntary, and loan repayments—are correctly applied to employee payslips in the CGIC App so net salary reflects accurate withholdings."
 ---
+
+<Info>
+  Prerequisite
+
+  - Employees have active salary structures, and a Payroll Entry exists (Draft or Submitted) for the current period.
+  - All one-time deduction entries are in Submitted status, and recurring deductions are active.
+  - Tax and pension percentages are up to date under `Setup > Payroll Settings.`
+</Info>
+
+### Step 1: Open the Payroll Entry
+
+1. **Navigate to Payroll Entry List**
+   - Go to `HR > Payroll Entry > Payroll Entry List.`
+   - Select the payroll period (e.g., “July 2025”) in Draft or Submitted status.
+2. **Open the Entry**
+   - Click its name (e.g., “PR-2025-07”) to view details.
+
+### Step 2: Review Deductions on Payslips
+
+1. **Scroll to Employee Grid**
+   - In the Payroll Entry, locate each employee’s row with columns for Gross Pay, Deductions, and Net Pay.
+2. **Expand an Employee Detail**
+   - Click the “\+” icon next to a name to see:
+     - **Deduction Type** (e.g., “Tax,” “Loan Repayment”).
+     - **Amount** (fixed or percentage-based).
+     - **Status** (e.g., Submitted, Pending).
+3. **Verify Automatic Calculations**
+   - Confirm fixed deductions match entries and percentage deductions follow `(Percentage ÷ 100) × Gross Pay`.
+
+### Step 3: Manually Adjust Deductions (If Needed)
+
+1. **Edit Payslip Line**
+   - Click the **Edit** icon on an employee’s row to open their payslip details.
+2. **Override or Add Deduction**
+   - To correct a value, update the **Amount** field directly.
+   - To add a missing deduction, click **\+ Add Row**, select the **Deduction Type**, and enter the amount or percentage.
+   - Include a brief **Comment** (e.g., “Adjust loan repayment as negotiated”).
+3. **Remove an Erroneous Deduction**
+   - Click the **Delete** (trash) icon beside the unwanted deduction line.
+4. **Save Changes**
+   - Click **Save** to update that employee’s deductions; the grid will refresh totals.
+
+### Step 4: Recalculate Net Pay
+
+1. **Click “Recalculate”**
+   - After any changes, click **Recalculate** at the top of the Payroll Entry.
+   - The system updates **Net Pay** = **Gross Pay** − **Sum of Deductions** for all employees.
+2. **Review Aggregate Totals**
+   - Compare **Total Deductions** with the **Payroll Summary Report** to ensure consistency.
+
+### Step 5: Finalize Payslips
+
+1. **Submit or Approve**
+   - If in Draft, click **Submit**. If approval is required, it moves to **Pending Approval**, then click **Approve** when ready.
+2. **Generate Payslips**
+   - Once approved, click **Create Payslips** (if not auto-generated) to produce individual **Salary Slip** records including all deductions.
+3. **Email Payslips**
+   - Use **Email Payslips** to send each employee their PDF, clearly showing all deductions.
