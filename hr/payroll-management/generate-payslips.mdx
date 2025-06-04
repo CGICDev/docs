@@ -1,4 +1,47 @@
 ---
 title: "Generate Payslips"
-description: "Description of your new file."
+description: "Quickly produce individual payslips for all employees in a payroll period so they can view breakdowns of earnings, deductions, and net pay in the CGIC App."
 ---
+
+<Info>
+  Prerequisites
+
+  - A Payroll Entry (e.g., “August 2025”) must be in **Submitted** status under `HR > Payroll Entry > Payroll Entry List.`
+
+
+  - A payslip print format exists under `Setup > Print Format > Salary Slip.`
+  - **E**ach employee’s **Work Email** field is populated if you plan to email payslips.
+</Info>
+
+### Step 1: Open the Submitted Payroll Entry
+
+1. **Navigate to Payroll Entry List**
+   - Go to `HR > Payroll Entry > Payroll Entry List.`
+   - Filter by **Status = Submitted** and select your period (e.g., “PR-2025-08”).
+2. **Open the Entry**
+   - Click the entry name to view the payroll details and confirm all earnings and deductions are correct.
+
+### Step 2: Create Payslips in Bulk
+
+1. **Click “Create Payslips”**
+   - Within the Payroll Entry, click the **Create Payslips** button (usually in the top toolbar).
+   - The system will generate a **Salary Slip** record for each active employee included in that payroll.
+2. **Monitor Progress**
+   - A progress bar appears as payslips are generated.
+   - Once complete, each employee’s **Salary Slip** will have **Status = Draft** initially (unless auto‐submitted).
+3. **Review Generated Payslips (Optional)**
+   - Click **View Payslips** to open a list of all slips for that period.
+   - Spot‐check a few payslips by clicking the slug (e.g., “SL-2025-08-EMP1023”) to ensure amounts match the Payroll Entry.
+
+### Step 3: Submit and Email Payslips
+
+1. **Submit Payslips (If Draft)**
+   - In `HR > Salary Slip > Salary Slip List`, filter by **Status = Draft** and **Payroll Entry = [Your Period]**.
+   - Select all drafts and click **Submit** to finalize each payslip. Submission locks amounts and marks them ready for distribution.
+2. **Email Payslips to Employees**
+   - Within the Payroll Entry, click **Email Payslips**.
+   - Choose an email template (e.g., “Monthly Payslip Notification”).
+   - Confirm sender address and click **Send**. The CGIC App emails each employee their PDF payslip.
+3. **Verify Delivery**
+   - Check the **Email Queue** (under `Setup > Email Queue`) for any failed deliveries.
+   - Correct invalid email addresses in employee profiles and resend as needed.
