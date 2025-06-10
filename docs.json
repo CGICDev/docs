@@ -134,21 +134,21 @@
           {
             "group": "Bill of Materials (BOM)",
             "pages": [
-              "manufacturing/bill-of-materials-BOM/create-bill-of-materials",
-              "manufacturing/bill-of-materials-BOM/update-BOM-details",
+              "manufacturing/bill-of-materials-BOM/create-BOM",
+              "manufacturing/bill-of-materials-BOM/edit-BOM",
               "manufacturing/bill-of-materials-BOM/delete-BOM",
-              "manufacturing/bill-of-materials-BOM/view-BOM-profile",
-              "manufacturing/bill-of-materials-BOM/search-BOM-records",
-              "manufacturing/bill-of-materials-BOM/assign-BOM-to-specific-products",
-              "manufacturing/bill-of-materials-BOM/list-raw-materials-required-for-production-with-specified-quantities",
-              "manufacturing/bill-of-materials-BOM/define-assembly-operations",
-              "manufacturing/bill-of-materials-BOM/define-product-structure-parent-child-relationships-for-sub-assemblies-components",
-              "manufacturing/bill-of-materials-BOM/manage-BOM-versions-revision-control",
-              "manufacturing/bill-of-materials-BOM/specify-alternate-substitute-materials",
-              "manufacturing/bill-of-materials-BOM/estimate-production-costs-based-on-BOM",
-              "manufacturing/bill-of-materials-BOM/calculate-total-material-requirements-for-production-runs",
-              "manufacturing/bill-of-materials-BOM/monitor-material-availability-for-BOM-execution",
-              "manufacturing/bill-of-materials-BOM/generate-BOM-reports-cost-material-requirements-etc."
+              "manufacturing/bill-of-materials-BOM/view-BOM",
+              "manufacturing/bill-of-materials-BOM/ssearch-BOMs",
+              "manufacturing/bill-of-materials-BOM/assign-BOM-to-products",
+              "manufacturing/bill-of-materials-BOM/list-required-materials",
+              "manufacturing/bill-of-materials-BOM/set-assembly-operations",
+              "manufacturing/bill-of-materials-BOM/define-product-structure",
+              "manufacturing/bill-of-materials-BOM/manage-BOM-revisions",
+              "manufacturing/bill-of-materials-BOM/specify-alternate-materials",
+              "manufacturing/bill-of-materials-BOM/estimate-production-costs",
+              "manufacturing/bill-of-materials-BOM/calculate-material-requirements",
+              "manufacturing/bill-of-materials-BOM/monitor-material-availability",
+              "manufacturing/bill-of-materials-BOM/generate-BOM-reports"
             ]
           },
           {
