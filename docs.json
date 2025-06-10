@@ -134,6 +134,7 @@
           {
             "group": "Bill of Materials (BOM)",
             "pages": [
+              "manufacturing/introduction-to-bil-of-materials",
               "manufacturing/bill-of-materials-BOM/create-BOM",
               "manufacturing/bill-of-materials-BOM/edit-BOM",
               "manufacturing/bill-of-materials-BOM/delete-BOM",
@@ -154,13 +155,14 @@
           {
             "group": "Warehouse Management",
             "pages": [
-              "manufacturing/warehouse-management/real-time-tracking-of-stock-levels-across-warehouses",
-              "manufacturing/warehouse-management/manage-inbound-shipments-and-receiving",
-              "manufacturing/warehouse-management/allocate-storage-locations-for-received-goods",
-              "manufacturing/warehouse-management/generate-picking-lists-for-orders",
+              "manufacturing/warehouse-management/introduction-to-warehouse-management",
+              "manufacturing/warehouse-management/stock-level-tracking",
+              "manufacturing/warehouse-management/inbound-shipment-receiving",
+              "manufacturing/warehouse-management/allocate-storage-locations",
+              "manufacturing/warehouse-management/generate-picking-lists",
               "manufacturing/warehouse-management/manage-outbound-shipments",
-              "manufacturing/warehouse-management/warehouse-inventory-transfer-tracking-in-out",
-              "manufacturing/warehouse-management/barcode-RFID-capabilities"
+              "manufacturing/warehouse-management/track-inventory-transfers",
+              "manufacturing/warehouse-management/barcode-RFID-support"
             ]
           },
           {

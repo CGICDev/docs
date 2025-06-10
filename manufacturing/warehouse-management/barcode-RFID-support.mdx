@@ -1,0 +1,99 @@
+---
+title: "Barcode & RFID Support"
+description: "Streamline warehouse operations and ensure accuracy by using barcode or RFID scanning for item identification, stock movements, order picking, and shipping in the CGIC App."
+---
+
+<Card title="Overview">
+  **What it does:**
+
+  - Allows you to scan item barcodes or RFID tags instead of manually typing item codes
+  - Accelerates key transactions: Purchase Receipts, Stock Entries (Transfers), Pick Lists, Delivery Notes
+  - Reduces data‐entry errors by verifying scanned items against system records
+  - Supports both 1D barcodes (UPC, EAN) and RFID tags (if hardware integration is set up)
+</Card>
+
+**Prerequisites**
+
+<Check>
+  1. **Hardware & Network**
+     - Functional barcode scanner (USB, Bluetooth) or RFID reader configured to input into your computer or mobile device
+     - Stable network access (Wi-Fi or cellular) to the CGIC App on scanning devices
+</Check>
+
+<Check>
+  2. **App Settings**
+     - Items in `Stock > Item` have valid **Barcode** or **RFID Tag** fields populated
+     - If using RFID, ensure your middleware maps tags to item codes recognized by CGIC
+</Check>
+
+<Check>
+  3. **Item Configuration**
+     - Under `Stock > Item > Item List`, each stock‐tracked Item record must include:
+       - **Barcode** (for 1D scanning) or
+       - **RFID Tag ID** (for RFID scanning)
+     - For batch/serial tracking, enable **Batch or Serial Number** under Item settings.
+</Check>
+
+### 1.0 Receiving Goods (Purchase Receipt)
+
+1. **Open the Purchase Receipt form**
+   - Go to `Buying > Purchase Order > Purchase Order List`, select a PO, then click `Create > Purchase Receipt.`
+2. **Activate Scanning in the Items table**
+   - Click into the **Item Code** cell of a new row.
+   - Use your scanner or RFID reader to scan the item’s barcode or RFID tag. The system auto-populates **Item Code** and **Description**.
+3. **Enter Quantity via Scan**
+   - After scanning the item, move to **Qty Received**.
+   - If your scanner is configured to send quantity (e.g., “ITEM123×5”), the system fills both item code and quantity. Otherwise, scan item once and manually type quantity.
+4. **Assign Batches/Serials (if enabled)**
+   - For batch-tracked items, click **Add Batch**.
+   - Scan the **Batch Barcode** or enter Batch No. manually; system links the batch to the receipt line.
+   - For serialized items, click **Serial No.**, then scan each item’s RFID or barcode to assign unique serials.
+5. **Save & Submit**
+   - Once all lines are scanned and quantities verified, click **Save**, then **Submit**.
+   - Inventory is updated instantly, with on-hand adjustments recorded in the Stock Ledger.
+
+### 2.0 Inter-Warehouse Transfer (Stock Entry)
+
+1. **Open a New Stock Entry**
+   - Go to `Stock > Stock Entry > New Stock Entry` and set **Purpose = Material Transfer**.
+2. **Scan Source Item & Location**
+   - In **Items**, scan the item’s barcode or RFID tag to populate **Item Code**.
+   - In **Source Warehouse** (or **Source Bin** if bin-managed), scan the warehouse bin’s barcode label or enter it manually.
+3. **Scan Target Location**
+   - In **Target Warehouse** / **Target Bin**, scan the destination location’s barcode.
+   - The system ensures the scanned bin belongs to the selected warehouse.
+4. **Enter Quantity**
+   - Scan quantity barcode if supported, or type the number.
+   - Scan multiple times or use a handheld keypad to increment quantity by 1 per scan (if configured).
+5. **Save & Submit**
+   - Click **Save** to review.
+   - Click **Submit** to deduct stock from source and add to target in real time.
+
+### 3.0 Order Picking (Pick List)
+
+1. **Open or Create a Pick List**
+   - Go to `Stock > Pick List > Pick List List`, click **New**, and select Sales Orders to pick.
+2. **Scan Items for Picking**
+   - In **Items to Pick**, click the **Bin Location** cell and scan the bin’s barcode where the item is stored.
+   - In **Item Code**, scan the item barcode/RFID tag to confirm you’re picking the correct product.
+   - In **Qty to Pick**, type or scan quantity.
+3. **Confirm Pick**
+   - Once the scanned item and location match, the row marks as picked.
+   - If bin or item mismatch, the system displays an error to prevent wrong picks.
+4. **Save Pick List**
+   - After scanning all required lines, click **Save**.
+   - Click `Create > Delivery Note` (or **Stock Entry**) to move picked inventory out of the warehouse.
+
+### 4.0 Shipping Goods (Delivery Note)
+
+1. **Open Delivery Note**
+   - Go to `Selling > Delivery Note > New Delivery Note` (or use **Get Items from Pick List**).
+2. **Scan for Verification**
+   - In **Items**, scan the item’s barcode/RFID to auto-populate **Item Code** and **Qty to Deliver**.
+   - Scan the bin label to validate warehouse location before shipping.
+3. **Scan Package/Carton Labels**
+   - If you generate packing labels with barcodes (e.g., “DN-0001-BOX1”), scan the packing barcode to link the physical box to the Delivery Note.
+   - Repeat for each carton or pallet.
+4. **Submit Delivery Note**
+   - After scanning and verifying each line, click **Save**.
+   - Click **Submit** to finalize shipment—inventory is deducted automatically, and shipping status updates.
