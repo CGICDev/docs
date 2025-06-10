@@ -1,0 +1,78 @@
+---
+title: "Manage BOM Revisions"
+description: "Maintain a clear history of every change to your Bills of Materials (BOMs) by leveraging revision control—ensuring you can track, compare, and revert BOM versions as your manufacturing processes evolve in the CGIC App."
+---
+
+<Info>
+  Prerequisites
+
+  - At least one submitted (active) BOM exists under `Manufacturing > Bill of Materials > BOM List.`
+  - You understand the basic structure of a BOM—components, quantities, operations, and costs.
+  - You have permission to create, amend, and view BOM records in the system.
+</Info>
+
+### 1.0 Identify the BOM to Revise
+
+1. Navigate to `Manufacturing > Bill of Materials > BOM List.`
+2. Use the **Search Bar** or `Filter > Add Filter` to find your active BOM (e.g., filter by **Item = “Valdana Chocolate Bread”**).
+3. Confirm that the BOM’s **Status** is **Submitted** (active). You cannot directly edit a draft; only submitted BOMs can be revised.
+
+### 2.0 Create a New Revision (Amend)
+
+<Warning>
+  Never edit a submitted BOM directly. Always create a new version to preserve historical data.
+</Warning>
+
+1. Open the BOM you wish to revise by clicking its **BOM No.** (e.g., **BOM-0001**).
+2. In the BOM header, click **New Version**.
+3. A prompt appears asking for the **“Applicable From”** date.
+   - Enter the date when this new revision should become effective (e.g., today’s date if you want it active immediately).
+4. Click **OK**.
+5. CGIC generates a new draft version prefixed with “\*\*Amended from BOM-0001\*\*” and assigns it a new **Revision Number** (for example, **BOM-0001-02**).
+6. Click **Save** at the top-right to lock in the new revision number and enable editing of the header, materials, and operations.
+
+<Tip>
+  Use “Applicable From” to control which BOM version applies for Work Orders on or after that date—older Work Orders retain their original BOM.
+</Tip>
+
+### 3.0 Edit the New Revision
+
+1. With the draft revision open, make your changes to:
+   - **Header Fields:** Adjust **Quantity to Manufacture**, **Warehouse**, or **Cost Center** if needed.
+   - **Materials Table:** Add, remove, or edit raw material rows and quantities.
+   - **Operations Tab:** Insert new operation steps, modify times or costs, or delete obsolete steps.
+   - **Scrap & Process Loss:** Update expected scrap percentages.
+   - **Costing Tab:** Recalculate costs based on updated component rates or operation expenses.
+2. Click **Save** after each section to ensure data is validated.
+
+<Tip>
+  If you change the **Quantity to Manufacture**, CGIC auto-scales all component quantities. Always click **Save** after adjusting the header to trigger recalculation.
+</Tip>
+
+### 4.0 Review and Submit the Revision
+
+1. Scroll to the top of the BOM form and verify:
+   - **Applicable From** date is correct.
+   - All updated components and operations reflect the intended changes.
+   - Costing results align with expectations (use **Update Cost** if necessary).
+2. Click **Submit** to finalize the new revision. The BOM status changes to **Submitted (Active)**.
+3. The prior version (e.g., **BOM-0001-01**) remains in the system as a historical record but is no longer used for new production after the “Applicable From” date.
+
+<Note>
+  Once submitted, you cannot edit this revision. To make further changes, repeat Step 2 to create another amended version.
+</Note>
+
+### 5.0 View Version History
+
+1. Open any BOM (active or historical) by going to `Manufacturing > Bill of Materials > BOM List` and clicking the desired **BOM No.**
+2. In the BOM form, click `Menu > View History` (often found at top-right or bottom of the form).
+3. A pop-up lists all versions with:
+   - **Revision No.** (e.g., “BOM-0001-01,” “BOM-0001-02”)
+   - **Modified By** (user who submitted that revision)
+   - **Modified On** (timestamp of submission)
+   - **Change Log** (fields changed—e.g., “Required Qty for Flour changed from 10 kg to 12 kg”)
+4. Click any entry to open that specific revision in **read-only** mode for review.
+
+<Tip>
+  Use **Change Log** details to quickly pinpoint what exactly changed between revisions.
+</Tip>
