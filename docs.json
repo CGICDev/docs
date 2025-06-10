@@ -168,6 +168,7 @@
           {
             "group": "Production Planning",
             "pages": [
+              "manufacturing/production-planning/introduction-to-production-planning",
               "manufacturing/production-planning/create-production-plan",
               "manufacturing/production-planning/update-production-plan-details",
               "manufacturing/production-planning/delete-production-plans",
