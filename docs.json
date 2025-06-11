@@ -207,12 +207,13 @@
           {
             "group": "Asset Management",
             "pages": [
-              "manufacturing/asset-management/maintain-a-detailed-registry-of-all-assets",
-              "manufacturing/asset-management/track-depreciation-and-asset-value-overtime",
-              "manufacturing/asset-management/schedule-and-track-preventive-maintenance-activities",
-              "manufacturing/asset-management/record-maintenance-history-and-associated-costs",
-              "manufacturing/asset-management/monitor-and-control-asset-related-expenses",
-              "manufacturing/asset-management/generate-reports-on-asset-performance-maintenance-and-costs"
+              "manufacturing/asset-management/introduction-to-asset-management",
+              "manufacturing/asset-management/asset-registry",
+              "manufacturing/asset-management/depreciation-tracking",
+              "manufacturing/asset-management/preventive-maintenance",
+              "manufacturing/asset-management/maintenance-history-logs",
+              "manufacturing/asset-management/expense-monitoring",
+              "manufacturing/asset-management/asset-performance-reports"
             ]
           }
         ]
@@ -224,12 +225,13 @@
           {
             "group": "Employee Management",
             "pages": [
-              "hr/employee-management/add-employee-biodata-contact-information-IDs-documents-role-salary",
-              "hr/employee-management/update-employee-details",
-              "hr/employee-management/view-employee-profile",
-              "hr/employee-management/search-employee-records",
-              "hr/employee-management/update-employment-status-active-onleave-terminated",
-              "hr/employee-management/manage-employee-documents",
+              "hr/employee-management/aintroduction-to-employee-management",
+              "hr/employee-management/add-employee",
+              "hr/employee-management/update-employee",
+              "hr/employee-management/view-profile",
+              "hr/employee-management/search-records",
+              "hr/employee-management/update-status",
+              "hr/employee-management/manage-documents",
               "hr/employee-management/record-deductions"
             ]
           },
