@@ -1,5 +1,5 @@
 ---
-title: "Create and Manage Work Orders"
+title: "Create Work Orders"
 description: "Generate, schedule, track, and complete Work Orders—formal instructions to manufacture specific quantities of a product—so you streamline production execution and maintain accurate inventory and cost records in the CGIC App."
 ---
 
@@ -14,161 +14,101 @@ description: "Generate, schedule, track, and complete Work Orders—formal instr
 
 <CardGroup cols={1}>
   <Card title="Active BOMs exist for products" icon="circle-dot" iconType="duotone">
-    - Finished‐goods item exists under `Stock > Item > Item List` and is marked **Is Stock Item**.  
-
-       - An active BOM for that product exists under `Manufacturing > Bill of Materials > BOM List.`  
-
-       - Workstations are configured under `Manufacturing > Workstation > Workstation List `(if you track operations).
+    - Finished‐goods item exists under `Stock > Item > Item List` and is marked **Is Stock Item**.
+      - An active BOM for that product exists under `Manufacturing > Bill of Materials > BOM List.`
+      - Workstations are configured under `Manufacturing > Workstation > Workstation List `(if you track operations).
   </Card>
   <Card title="Material Availability" icon="circle-dot" iconType="duotone">
-    - Raw materials in the BOM have adequate on‐hand stock, or a **Material Request** has been created/approved.  
-
-       - Warehouses for raw materials and finished goods are defined under `Stock > Warehouse`.
+    - Raw materials in the BOM have adequate on‐hand stock, or a **Material Request** has been created/approved.
+      - Warehouses for raw materials and finished goods are defined under `Stock > Warehouse`.
   </Card>
 </CardGroup>
 
 ### 1.0 Open the New Work Order Form
 
-1. Navigate to `Manufacturing > Work Order > New Work Order.`  
-
+1. Navigate to `Manufacturing > Work Order > New Work Order.`
 2. A blank Work Order form opens with fields for header information and an empty **Items** section.
 
 ### 1.1 Populate Header Details
 
-- **Work Order No.**  
-
+- **Work Order No.**
   - Auto-generated (e.g., “WO-2025-0001”). You may override if you have a custom naming series.
-
-- **Production Item**  
-
-  - Click the lookup (🔍) and select the finished‐goods item (e.g., “Danaval Bread—Chocolate Loaf”).  
-
+- **Production Item**
+  - Click the lookup (🔍) and select the finished‐goods item (e.g., “Danaval Bread—Chocolate Loaf”).
   - Once selected, **UOM** auto-fills based on the item’s default.
-
-- **BOM**  
-
-  - Click the lookup to select the appropriate BOM. Only active BOM versions whose **Applicable From** date ≤ today appear.  
-
+- **BOM**
+  - Click the lookup to select the appropriate BOM. Only active BOM versions whose **Applicable From** date ≤ today appear.
   - If multiple BOMs exist, choose the one matching your production specifications.
-
-- **Quantity**  
-
-  - Enter the number of units you intend to produce (e.g., “500”).  
-
+- **Quantity**
+  - Enter the number of units you intend to produce (e.g., “500”).
   - The BOM’s component quantities will scale automatically in the **Material Request** and **Items** tables.
-
-- **UOM**  
-
+- **UOM**
   - Auto-populates based on the finished‐goods item’s unit of measure (e.g., “Nos” or “Kg”).
-
-- **Company**  
-
+- **Company**
   - Select your legal entity (e.g., “Charisma Global Industrial Co.”).
-
-- **Planned Start Date** / **Planned End Date**  
-
-  - Enter the dates your production run should begin and finish.  
-
+- **Planned Start Date** / **Planned End Date**
+  - Enter the dates your production run should begin and finish.
   - If left blank, you can schedule later via **Production Schedule** or in the WO’s **Operations** section (if operation times are defined).
-
-- **Workstation** (Optional)  
-
-  - If your company tracks capacity by workstation, select the primary workstation (e.g., “Baking Oven #2”).  
-
+- **Workstation** (Optional)
+  - If your company tracks capacity by workstation, select the primary workstation (e.g., “Baking Oven #2”).
   - If you have multiple operations on different workstations, define them later in the **Operations** table.
-
-- **Project / Cost Center** (Optional)  
-
+- **Project / Cost Center** (Optional)
   - Assign a project or cost center to track production overhead and costs in financial reports.
-
-- **Remarks** (Optional)  
-
+- **Remarks** (Optional)
   - Add any notes about this Work Order (e.g., “Urgent customer order—rush production”).
 
 ### 1.2 Save as Draft
 
-1. Click **Save** to save the WO as a draft.  
-
-   - The system validates required fields: **Production Item**, **BOM**, **Quantity**, and **Company**.  
-
+1. Click **Save** to save the WO as a draft.
+   - The system validates required fields: **Production Item**, **BOM**, **Quantity**, and **Company**.
    - A draft WO will have **Status = Draft**. You can still modify header fields.
 
 ### 1.3 Generate Material Request (Optional but Recommended)
 
-1. With the draft Work Order open, click `Actions > Make Material Request.`  
-
-2. A **Material Request** form opens with:  
-
-   - **Request Type = “Manufacture”**  
-
-   - **Work Order** field pre-filled with the current WO No.  
-
-   - **BOM** and **Quantity** also pre-filled.  
-
-3. Click **Get Items from BOM** (or **Fetch Items**) to explode the BOM and list all required raw materials (scaled to the WO quantity).  
-
-4. Review each row:  
-
-   - **Item Code**, **Required Qty**, **UOM**, **Warehouse**.  
-
-   - Adjust **Warehouse** if materials must be sourced from a different location.  
-
-5. Click **Save**, then **Submit** to reserve raw materials in the specified warehouse(s).  
-
+1. With the draft Work Order open, click `Actions > Make Material Request.`
+2. A **Material Request** form opens with:
+   - **Request Type = “Manufacture”**
+   - **Work Order** field pre-filled with the current WO No.
+   - **BOM** and **Quantity** also pre-filled.
+3. Click **Get Items from BOM** (or **Fetch Items**) to explode the BOM and list all required raw materials (scaled to the WO quantity).
+4. Review each row:
+   - **Item Code**, **Required Qty**, **UOM**, **Warehouse**.
+   - Adjust **Warehouse** if materials must be sourced from a different location.
+5. Click **Save**, then **Submit** to reserve raw materials in the specified warehouse(s).
 6. Return to the Work Order (click **Back**)—you’ll see a link under **Material Request** indicating the MR was created.
 
 ### 1.4 Add Operations (If Tracking Workstation/Time)
 
-1. Click the **Operations** tab within the Work Order form.  
-
-2. If the **With Operations** checkbox is not already ticked, click it to enable the operations section.  
-
-3. Click **Add Row** for each production step:  
-
-   - **Operation**: Select from existing operation types (e.g., “Mixing,” “Baking,” “Packaging”).  
-
-   - **Workstation**: Choose the machine or work center where this step occurs.  
-
-   - **Planned Time (Minutes)**: Enter the expected time per unit or batch (e.g., “0.500” minutes per loaf).  
-
-   - **Fixed Time (Minutes)**: If the step takes a flat time regardless of quantity (e.g., “5” minutes for oven preheat), enter that here.  
-
-   - **Sequence**: Number the steps in production order (1, 2, 3, …).  
-
-4. Repeat for all operations in your production process.  
-
-5. Click **Save**.  
-
+1. Click the **Operations** tab within the Work Order form.
+2. If the **With Operations** checkbox is not already ticked, click it to enable the operations section.
+3. Click **Add Row** for each production step:
+   - **Operation**: Select from existing operation types (e.g., “Mixing,” “Baking,” “Packaging”).
+   - **Workstation**: Choose the machine or work center where this step occurs.
+   - **Planned Time (Minutes)**: Enter the expected time per unit or batch (e.g., “0.500” minutes per loaf).
+   - **Fixed Time (Minutes)**: If the step takes a flat time regardless of quantity (e.g., “5” minutes for oven preheat), enter that here.
+   - **Sequence**: Number the steps in production order (1, 2, 3, …).
+4. Repeat for all operations in your production process.
+5. Click **Save**.
    - CGIC now has a planned operation schedule that can inform capacity planning.
 
 ### 1.5 Submit the Work Order
 
-1. After materials and operations (optional) are set up, click **Submit** at the top-right.  
-
-   - The WO status changes to **“Submitted”**.  
-
-   - CGIC reserves raw materials (if MR was submitted) and flags the WO as **“To Start”** in production dashboards.  
-
+1. After materials and operations (optional) are set up, click **Submit** at the top-right.
+   - The WO status changes to **“Submitted”**.
+   - CGIC reserves raw materials (if MR was submitted) and flags the WO as **“To Start”** in production dashboards.
    - A **Stock Ledger Entry** is not yet created for finished goods until you record actual production.
-
 2. If you need to schedule the WO, use **Actions ▶️ Schedule** or add it to a **Production Schedule**—ensuring shop‐floor teams know when to begin.
 
 ### 2.0  Steps to Manage Existing Work Orders
 
 ### 2.0.1 Locate the Work Order
 
-1. Go to `Manufacturing > Work Order > Work Order List.`  
-
-2. Use the **Global Search** or `Filter > Add Filter` to find your WO by:  
-
-   - **Work Order No.**  
-
-   - **Production Item**  
-
-   - **Status** (Draft, Submitted, In Process, Completed, Cancelled)  
-
-   - **Planned Start Date** / **End Date**  
-
+1. Go to `Manufacturing > Work Order > Work Order List.`
+2. Use the **Global Search** or `Filter > Add Filter` to find your WO by:
+   - **Work Order No.**
+   - **Production Item**
+   - **Status** (Draft, Submitted, In Process, Completed, Cancelled)
+   - **Planned Start Date** / **End Date**
 3. Click the WO’s **Work Order No.** to open its profile.
 
 ### 2.0.2 Edit or Amend a Work Order
@@ -177,78 +117,46 @@ description: "Generate, schedule, track, and complete Work Orders—formal instr
   You can only edit a WO if its status is **“Draft”, “Submitted”, or “In Process”** and no finished goods have been submitted. If the WO is **“Completed”**, you must create a new WO or use an adjustment method.
 </Warning>
 
-1. With the WO open, click `Actions > Edit` (if status is Draft or Submitted).  
-
-2. Modify fields as needed:  
-
-   - **Planned End Date** or **Start Date** (to shift the production timeline).  
-
-   - **Quantity** (if customer order changes, but only if no finished goods have been received).  
-
-   - **Workstation** or **Operations** (e.g., move a step to a different machine).  
-
-3. To change the core BOM or item after submission, click `Actions > Cancel`:  
-
-   - CGIC creates a new draft version of the WO (e.g., “WO-2025-0001-02”) preserving history.  
-
-   - In the new draft, update **Production Item**, **BOM**, **Quantity**, and **Materials/Operations** as needed.  
-
-   - Click **Save**, then **Submit** to reactivate the updated WO.  
+1. With the WO open, click `Actions > Edit` (if status is Draft or Submitted).
+2. Modify fields as needed:
+   - **Planned End Date** or **Start Date** (to shift the production timeline).
+   - **Quantity** (if customer order changes, but only if no finished goods have been received).
+   - **Workstation** or **Operations** (e.g., move a step to a different machine).
+3. To change the core BOM or item after submission, click `Actions > Cancel`:
+   - CGIC creates a new draft version of the WO (e.g., “WO-2025-0001-02”) preserving history.
+   - In the new draft, update **Production Item**, **BOM**, **Quantity**, and **Materials/Operations** as needed.
+   - Click **Save**, then **Submit** to reactivate the updated WO.
 
 ### 2.0.3: Start Production (Material Issue & Operation Log)
 
-1. When production physically begins, open the submitted WO and click `Actions > Start` (if enabled).  
-
-   - Status changes to **“In Process”**.  
-
+1. When production physically begins, open the submitted WO and click `Actions > Start` (if enabled).
+   - Status changes to **“In Process”**.
    - If you track time, operators can now log **Actual Start Time** for operations.
-
-2. **Issue Materials**:  
-
-   - Click `Create > Stock Entry` (Purpose = “Manufacture”) from the WO toolbar.  
-
-   - The **Stock Entry** form opens with:  
-
-     - **Work Order** pre-filled.  
-
-     - **Items** table populated with BOM components and **Required Qty**.  
-
-   - Enter **Qty to Consume** (actual quantity consumed, which may exceed or be less than required). 
-
-   - Assign **Source Warehouse / Bin** and **Batch No.** (if applicable).  
-
+2. **Issue Materials**:
+   - Click `Create > Stock Entry` (Purpose = “Manufacture”) from the WO toolbar.
+   - The **Stock Entry** form opens with:
+     - **Work Order** pre-filled.
+     - **Items** table populated with BOM components and **Required Qty**.
+   - Enter **Qty to Consume** (actual quantity consumed, which may exceed or be less than required).
+   - Assign **Source Warehouse / Bin** and **Batch No.** (if applicable).
    - Click **Save**, then **Submit**—deducting actual material consumption from inventory and posting a stock ledger entry.
-
-3. **Log Operations (If Tracked)**:  
-
-   - In the WO’s **Operations** tab, for each operation row, enter:  
-
-     - **Actual Time Spent** (e.g., “0.600” minutes).  
-
-     - **Operator** or **Employee ID** (optional, if tracking labor).  
-
-   - Click **Save**.  
-
+3. **Log Operations (If Tracked)**:
+   - In the WO’s **Operations** tab, for each operation row, enter:
+     - **Actual Time Spent** (e.g., “0.600” minutes).
+     - **Operator** or **Employee ID** (optional, if tracking labor).
+   - Click **Save**.
    - Repeat until all operations have actual time logged.
 
 ### 2.0.4 Manufacture and Receive Finished Goods
 
-1. Once production is complete, click `Create > Stock Entry` (Purpose = “Manufacture”) or `Create > Delivery Note` (if shipping directly to customer).  
-
-   - **Finished Goods Item** and **Qty to Produce** populate automatically.  
-
+1. Once production is complete, click `Create > Stock Entry` (Purpose = “Manufacture”) or `Create > Delivery Note` (if shipping directly to customer).
+   - **Finished Goods Item** and **Qty to Produce** populate automatically.
    - **Target Warehouse** for finished goods defaults to the item’s default warehouse; adjust if needed.
-
-2. In the **Stock Entry** (Manufacture) form:  
-
-   - Confirm **Qty to Produce** and **Rate** (value per unit, if needed).  
-
-   - Attach any **Inspection Certificates** or **Quality Reports** in the **Attachments** section.  
-
+2. In the **Stock Entry** (Manufacture) form:
+   - Confirm **Qty to Produce** and **Rate** (value per unit, if needed).
+   - Attach any **Inspection Certificates** or **Quality Reports** in the **Attachments** section.
    - Click **Save**, then **Submit**—this adds stock to your finished goods warehouse and posts the inventory value via a stock ledger entry.
-
-3. The WO’s **Status** automatically updates to **“Completed”** once the Stock Entry is submitted.  
-
+3. The WO’s **Status** automatically updates to **“Completed”** once the Stock Entry is submitted.
    - Actual vs. Estimated costs and material usage now appear in the **Production Costing Report**.
 
 <Note>
@@ -257,35 +165,24 @@ description: "Generate, schedule, track, and complete Work Orders—formal instr
 
 ### 2.0.5: Cancel or Close a Work Order
 
-- **Cancel a Draft/Submitted Work Order**:  
-
-  1. Open the WO in **Draft** or **Submitted** status.  
-
-  2. Click `Actions > Cancel`.  
-
-  3. Confirm the cancellation.  
-
-     - CGIC reverses any reserved materials (if a MR or stock reservation existed).  
-
-     - The WO status changes to **“Cancelled”**.  
-
+- **Cancel a Draft/Submitted Work Order**:
+  1. Open the WO in **Draft** or **Submitted** status.
+  2. Click `Actions > Cancel`.
+  3. Confirm the cancellation.
+     - CGIC reverses any reserved materials (if a MR or stock reservation existed).
+     - The WO status changes to **“Cancelled”**.
   4. If you need to restart production later, click `Actions > Create New` to clone the WO and adjust details.
-
-- **Close an In Process Work Order**:  
+- **Close an In Process Work Order**:
 
 <Note>
-  Use only if production cannot continue (e.g., machine breakdown). 
+  Use only if production cannot continue (e.g., machine breakdown).
 </Note>
 
-  1. Open the WO in **In Process** status.  
-
-  2. Click `Actions > Close.`  
-
-  3. Enter a reason (e.g., “Machine failure—postpone remainder”) in the prompt.  
-
-  4. CGIC marks the WO as **“Closed”**, preventing further material issues or receipt entries.  
-
-     - Any unissued materials remain reserved until you create a new WO or cancel the closed one.
+1. Open the WO in **In Process** status.
+2. Click `Actions > Close.`
+3. Enter a reason (e.g., “Machine failure—postpone remainder”) in the prompt.
+4. CGIC marks the WO as **“Closed”**, preventing further material issues or receipt entries.
+   - Any unissued materials remain reserved until you create a new WO or cancel the closed one.
 
 <Warning>
   Do not cancel a **Completed** WO. Instead, create a **Stock Reconciliation** for any adjustments or create a new WO for rework.

@@ -1,0 +1,76 @@
+---
+title: "Search Plans"
+description: "Quickly locate any Production Plan in the CGIC App—using search, filters, and saved views—so you can review, update, or analyze manufacturing schedules without delay."
+---
+
+<Card title="What it does" icon="sparkles" iconType="duotone">
+  - Allows you to find specific Production Plans by plan number, production item, date range, status, or other attributes
+  - Provides filtering and sorting options in the Production Plan List view for precise results
+  - Lets you save custom views and filters for recurring searches
+</Card>
+
+<Info>
+  Prerequisites
+
+  - At least one Production Plan exists under `Manufacturing > Production Plan > Production Plan List.`
+  - You know at least one search criterion (e.g., plan number, production item, status, date).
+</Info>
+
+### 1.0 Open the Production Plan List
+
+1. From the main menu, navigate to `Manufacturing > Production Plan > Production Plan List.`
+2. The list view displays all submitted and draft Production Plans with columns such as:
+   - **Plan No.**
+   - **Production Item**
+   - **Planned Qty**
+   - **Start Date** / **End Date**
+   - **Status** (Draft, Submitted, On Hold, Cancelled)
+
+### 1.1 Use the Global Search Bar
+
+1. Click the **Search** field at the top-right of the Production Plan List.
+2. Type any part of the **Plan No.** (e.g., “PP-2025-001”) or **Production Item** name (e.g., “Danaval Bread”).
+3. Press **Enter**.
+4. The list refreshes to show only matching records where your search text appears in **Plan No.** or **Production Item**.
+
+### 1.2 Apply Filters for Granular Results
+
+1. Click `Filter > Add Filter` (usually located above the column headers).
+2. Select a filter field from the dropdown. Common filters include:
+   - **Plan No.** (exact or partial match)
+   - **Production Item** (e.g., “Ovita Water Bottling”)
+   - **Status** (Draft, Submitted, On Hold, Cancelled)
+   - **Start Date** / **End Date** (e.g., plans starting in Q2 2025)
+   - **Priority** (High, Medium, Low)
+3. Choose the operator (e.g., `=`, `>=`, `<=`, `like`) and enter the value.
+4. Click **Apply**. You can add multiple filters to narrow results further (e.g., `Production Item = “Danaval Bread”` AND `Status = “Submitted”`).
+
+<Tip>
+  To find plans that start after a certain date, set:
+
+  \> - Field: **Start Date**
+
+  \> - Operator: **\>**
+
+  \> - Value: **2025-04-01**
+</Tip>
+
+### 1.3 Sort and Customize Columns
+
+1. To sort, hover over a column header (e.g., **Start Date** or **Plan No.**) and click the up/down arrow that appears.
+2. To add or remove columns, click the **three-dot menu (⋮)** next to the column headers and choose **Customize Columns**.
+3. Check or uncheck fields like **Priority**, **Planned Qty**, or **Comments** to tailor the view.
+4. Click **Apply** to update the display.
+
+### 1.4 Save and Reuse Filtered Views
+
+1. After applying your desired filters and sorting, click **Save Filter** (usually at the bottom of the filter panel).
+2. Give the filter set a descriptive name (e.g., “Q2 2025 High Priority”).
+3. Click **Save**.
+4. In future sessions, open **Production Plan List**, click `Filter > Saved`, and select your saved filter to reapply quickly.
+
+### 1.5 Open the Production Plan Profile
+
+1. Once you locate the desired plan in the list, click the **Plan No.** link.
+2. The full Production Plan form opens in read-only mode (or edit mode if you have permissions).
+3. Review or modify details as needed—fields like **Planned Qty**, **Start Date**, **End Date**, **BOM**, and **Priority**.
