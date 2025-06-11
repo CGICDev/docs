@@ -16,21 +16,22 @@
           {
             "group": "Products",
             "pages": [
-              "core-features/products/adding-products",
-              "core-features/products/update-product-details",
+              "core-features/products/introduction-to-products",
+              "core-features/products/add-product",
+              "core-features/products/edit-product",
               "core-features/products/delete-product",
-              "core-features/products/view-product-profile",
-              "core-features/products/search-product-records",
-              "core-features/products/manage-product-categories",
-              "core-features/products/track-product-stock-levels",
-              "core-features/products/integrate-with-order-management-for-inventory-updates",
-              "core-features/products/manage-update-product-pricing",
-              "core-features/products/manage-product-vendors-distributors",
-              "core-features/products/provide-product-data-for-financial-reporting",
-              "core-features/products/inventory-transfer-store-to-store-warehouse-to-warehouse-warehouse-to-store",
-              "core-features/products/products-in-tracking-returns-from-manufacturing",
-              "core-features/products/products-out-tracking-to-distributors-individual-orders-damages-expire-products",
-              "core-features/products/audit-trail-movement-log-per-product"
+              "core-features/products/view-product",
+              "core-features/products/search-products",
+              "core-features/products/manage-categories",
+              "core-features/products/track-stock-levels",
+              "core-features/products/sync-orders-inventory",
+              "core-features/products/update-pricing",
+              "core-features/products/manage-vendors",
+              "core-features/products/financial-product-data",
+              "core-features/products/transfer-inventory",
+              "core-features/products/track-inbound-products",
+              "core-features/products/track-outbound-products",
+              "core-features/products/product-movement-log"
             ]
           },
           {
