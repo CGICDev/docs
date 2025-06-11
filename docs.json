@@ -189,6 +189,7 @@
           {
             "group": "Sales & Distribution",
             "pages": [
+              "manufacturing/sales-distribution/introduction-to-sales-distribution",
               "manufacturing/sales-distribution/create-and-manage-sales-orders",
               "manufacturing/sales-distribution/track-order-status",
               "manufacturing/sales-distribution/handle-order-amendments-and-cancellations",
