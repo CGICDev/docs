@@ -1,72 +1,48 @@
 ---
-title: "Products In tracking (Returns, From manufacturing)"
+title: "Track Inbound Products"
 description: "Keep your inventory up-to-date by recording products coming back into stock—whether from customer returns or finished-goods receipt after manufacturing—in the CGIC App."
 ---
 
 <Info>
-  Warehouses defined for **Returns** and **Finished Goods**  
+  Warehouses defined for **Returns** and **Finished Goods**
 </Info>
 
 ### 1.0 Recording Customer Returns
 
-1. **Open a New Delivery Note**  
-
+1. **Open a New Delivery Note**
    - Navigate to **Stock ▶️ Delivery Note ▶️ New Delivery Note**.
-
-2. **Enable Return Mode**  
-
-   - Check **Is Return** at the top of the form.  
-
+2. **Enable Return Mode**
+   - Check **Is Return** at the top of the form.
    - The document series updates to indicate a return.
-
-3. **Link Original Sale**  
-
-   - Choose the **Customer**.  
-
+3. **Link Original Sale**
+   - Choose the **Customer**.
    - Click **Get Items From ▶️ Delivery Note** (or **Sales Invoice**) to import returned items and quantities.
-
-4. **Set Return Warehouse**  
-
+4. **Set Return Warehouse**
    - In each line, ensure **Source Warehouse** is your “Returns” staging location.
-
-5. **Review & Submit**  
-
-   - Verify **Total Quantity** and item lines.  
-
-   - Click **Save**, then **Submit** to post the return.  
-
+5. **Review & Submit**
+   - Verify **Total Quantity** and item lines.
+   - Click **Save**, then **Submit** to post the return.
    - A **Material Receipt** entry automatically adds returned stock back into your Returns warehouse.
 
 ---
 
 ### 1.1. Recording Finished Goods from Manufacturing
 
-1. **Open Production Order**  
-
+1. **Open Production Order**
    - Go to **Manufacturing ▶️ Production Order**, select the completed order.
-
-2. **Create Receipt Stock Entry**  
-
+2. **Create Receipt Stock Entry**
    - Click **Create ▶️ Stock Entry** and set **Purpose** to **Material Receipt**.
-
-3. **Confirm Finished Goods**  
-
+3. **Confirm Finished Goods**
    - In the **Items** table, verify the finished product code, quantity, and **Target Warehouse** (e.g., “Finished Goods”).
-
-4. **Submit**  
-
-   - Click **Save**, then **Submit**.  
-
+4. **Submit**
+   - Click **Save**, then **Submit**.
    - A Material Receipt updates your Finished Goods warehouse with the new stock.
 
 ![Screenshot2025 05 23at1 34 43PM Pn](/images/Screenshot2025-05-23at1.34.43PM.png)
 
 ### 2.0 Reviewing Inbound Movements
 
-- **Stock Ledger**  
-
+- **Stock Ledger**
   - **Stock ▶️ Stock Ledger** ▶️ Filter **Voucher Type = “Stock Entry”**, **Purpose = “Material Receipt”**.
-
-- **Stock Balance**  
-
+- **Stock Balance**
   - **Stock ▶️ Stock Balance** ▶️ Include your Returns or Finished Goods warehouses to see updated quantities.
