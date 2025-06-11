@@ -238,13 +238,14 @@
           {
             "group": "Payroll",
             "pages": [
-              "hr/payroll-management/collate-salaries-wages",
-              "hr/payroll-management/automatically-process-payroll-runs-monthly",
+              "hr/payroll-management/introduction-to-payroll",
+              "hr/payroll-management/collate-salaries",
+              "hr/payroll-management/auto-monthly-payroll",
               "hr/payroll-management/apply-deductions",
               "hr/payroll-management/generate-payslips",
               "hr/payroll-management/update-payroll-status",
               "hr/payroll-management/maintain-payroll-records",
-              "hr/payroll-management/generate-payslips"
+              "hr/payroll-management/export-for-audit"
             ]
           }
         ]

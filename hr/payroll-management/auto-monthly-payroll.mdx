@@ -1,0 +1,94 @@
+---
+title: "Auto Monthly Payroll"
+description: "Streamline your payroll by configuring and executing an automated monthly salary run—so all employee salaries, deductions, and statutory contributions are calculated, documented, and posted to accounting in the CGIC App."
+---
+
+<Card title="Prerequisites" icon="sparkles">
+  - Under `Setup > Payroll Settings`, confirm:
+  - **Default Currency** (e.g., NGN).
+  - **Default Bank Account** for salary disbursement.
+  - **Cut-off Date** for attendance, deductions, and allowances (commonly end of month).
+  - Under `HR > Payroll Period > Payroll Period List`, ensure upcoming periods are defined (e.g., “August 2025” with **Start Date** 2025-08-01 and **End Date** 2025-08-31) and set to **Open** status.
+  - Every active, paid employee must have a **Salary Structure** assigned under `HR > Salary Structure.`
+  - Verify that recurring **Allowance Entries**, **Deduction Entries**, and any **Overtime Records** for the month are set up before the scheduled run date.
+  - Under `Setup > Email Alert`, create or confirm alerts for:
+    - **“Payroll Entry Generated”**, alerting HR when an automated run completes.
+    - **“Payslip Ready”**, notifying employees when their payslip is available.
+</Card>
+
+### Step 1: Define Salary Structures and Components
+
+1. Navigate to` HR > Salary Component > Salary Component List.`
+2. Ensure all required components are defined with correct **Component Type** (Earning or Deduction) and **Computation Formula** (if based on percentage or fixed amount).
+3. Click `HR > Salary Structure > Salary Structure List`, then **New** to create a structure:
+   - **Salary Structure Name**: e.g., “Engineer - Grade A.”
+   - **Employee or Employee Group**: link to individual or group (e.g., “Engineers”).
+   - In the **Earnings** section, add rows for each component (Basic, HRA, etc.), specifying amount or percentage of Basic.
+   - In the **Deductions** section, add rows for PF, tax, or other deductions.
+4. Click **Save**, then **Submit**. The structure can now be assigned to employees.
+
+### Step 2: Assign Salary Structures to Employees
+
+1. Go to `HR > Employee > Employee List.  `
+2. Open an employee’s record and click **Edit**.
+3. In the **Payroll Settings** section:
+   - **Salary Structure**: select the appropriate structure (e.g., “Engineer - Grade A”).
+   - **Payment Days Per Month**: typically “26” or “30” depending on policy.
+   - **Bank Account**: select the default account for net pay disbursement.
+4. Click **Save**. Repeat for all employees.
+
+### Step 3: Capture Attendance and Leave Data
+
+1. Ensure all attendance records for the month are submitted:
+   - Navigate to `HR > Attendance > Attendance List.`
+   - Verify that any absences, overtime, or irregularities are correctly recorded.
+2. Confirm leaves taken are approved and reflected under `HR > Leave Application > Leave Application List.  `
+3. If using biometric or third-party attendance integration, sync data before proceeding.
+
+<Tip>
+  Use `HR > Leave Balance Report` to confirm leave balances and handle encashment or unpaid leave deductions.
+</Tip>
+
+### Step 4: Generate a Monthly Payroll Entry
+
+1. Navigate to `HR > Payroll > Payroll Entry > New Payroll Entry. `
+2. In the **Payroll Entry** form:
+   - **Fiscal Year**: e.g., “2024-2025.”
+   - **Month**: select the month for processing (e.g., “June 2025”).
+   - **Company**: choose your entity (e.g., “Charisma Global Industrial Co.”).
+   - **Payroll Date**: defaults to the last day of the month; adjust if needed.
+3. Click **Get Employees**. CGIC fetches all active employees with assigned salary structures.
+4. In the **Salary Slip** table, each row shows:
+   - **Employee** name and **Employee ID**.
+   - **Salary Structure**.
+   - **Gross Pay** (sum of all earnings).
+   - **Total Deductions** (PF, tax, etc.).
+   - **Net Pay** (Gross − Deductions).
+5. Review each line for correctness. If any anomalies appear (e.g., zero net pay or negative), click that row to open the individual **Salary Slip** and adjust salary components, leave deductions, or allowances.
+6. Once satisfied, click **Save** to retain the draft payroll. Then click **Submit** to finalize:
+   - CGIC creates individual **Salary Slip** documents for each employee.
+   - Payroll journal entries post:
+     - **Debit**: Payroll Expense accounts (Basic, HRA, etc.).
+     - **Credit**: Payroll Liability accounts (PF Payable, Tax Payable).
+     - **Credit**: Bank or Cash account for total Net Pay.
+
+### Step 5: Disburse Net Pay to Employees
+
+1. After **Submitting** the Payroll Entry, navigate to `HR > Payroll > Payment Reconciliation.`
+2. In the **Payment Reconciliation** tool:
+   - Select the **Journal Entry** created by the payroll (e.g., “Payroll-Jun-2025”).
+   - Click **Show Unreconciled Entries** to list net pay credits for employees.
+   - Select all net pay lines and click **Make Bank Entry**.
+   - A **Bank Voucher** draft opens with all employee net pay amounts.
+3. Verify bank details one last time. Click **Save**, then **Submit** to record the bank transaction.
+   - Funds are considered disbursed on this date.
+   - Employee salary advances are reduced, and bank balance updates.
+
+### Step 6: Deliver Payslips to Employees
+
+1. In `HR > Payroll > Salary Slip List`, filter by **Month = June 2025** and **Status = “Paid”**.
+2. Click `Download > PDF` to export all payslips as a consolidated PDF.
+3. Email or upload to the employee portal:
+   - Click **Send Email** in the Payroll Entry or Salary Slip list, selecting the template “Salary Slip Email.”
+   - CGIC sends individual payslips to each employee’s registered email.
+4. Confirm receipt by checking the **Email Queue** under `Settings > Email Account` for any bounce or failure notifications.
