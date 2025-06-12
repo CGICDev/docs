@@ -140,7 +140,7 @@
               "manufacturing/bill-of-materials-BOM/edit-BOM",
               "manufacturing/bill-of-materials-BOM/delete-BOM",
               "manufacturing/bill-of-materials-BOM/view-BOM",
-              "manufacturing/bill-of-materials-BOM/ssearch-BOMs",
+              "manufacturing/bill-of-materials-BOM/search-BOMs",
               "manufacturing/bill-of-materials-BOM/assign-BOM-to-products",
               "manufacturing/bill-of-materials-BOM/list-required-materials",
               "manufacturing/bill-of-materials-BOM/set-assembly-operations",
