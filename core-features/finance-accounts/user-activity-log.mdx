@@ -1,0 +1,45 @@
+---
+title: "User Activity Log"
+description: "Track who did what—and when—across the CGIC App’s modules. The User Activity Audit Log records login/logout events, page visits, and key document actions to help you monitor usage, enforce security policies, and investigate issues."
+---
+
+<Accordion title="Overview">
+  **What it does:**
+
+  - Captures user sign-in and sign-out times
+  - Logs page views and module access
+  - Records document actions (create, edit, delete, submit, cancel) with user, timestamp, and IP address
+
+  **Why it matters:**
+
+  - Enhances security monitoring and incident investigation
+  - Supports compliance with data-access policies
+  - Provides visibility into system usage patterns
+</Accordion>
+
+<Info>
+  Prerequisites
+
+  - **Audit Logging** is enabled under `Setup > System Settings `
+</Info>
+
+### 1.0 Enable User Activity Logging
+
+1. Navigate to `Setup > System Settings.  `
+2. Under **Security**, check **Enable User Activity Audit Log**.
+3. Click **Save**.
+
+### 1.1 Access the Audit Log Report
+
+1. Go to `Setup > Audit > User Activity Log. `
+2. The default view shows the most recent 100 entries.
+
+### 1.2 Filter and Drill Down
+
+1. Click **Add Filter** to narrow by:
+   - **User**
+   - **Module** (e.g., Sales, Stock, Accounts)
+   - **Action** (Login, Logout, View, Create, Edit, Delete)
+   - **Date Range**
+2. Click **Refresh** to apply filters.
+3. For any row, click \*\*Details \*\* to see full context (URL, IP address, browser).

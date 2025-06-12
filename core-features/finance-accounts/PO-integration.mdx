@@ -1,0 +1,69 @@
+---
+title: "PO Integration"
+description: "Purchase Orders (POs) formalize your raw material or service requests to suppliers. In the CGIC App, POs drive your procurement process—reserving stock, enforcing budgets, and providing a clear audit trail."
+---
+
+<Info>
+  Prerequisites
+
+  - Suppliers are defined under `Buying > Supplier`
+  - Raw materials or services exist as “Items” under `Stock > Item > Item List`
+  - Warehouses and cost centers are set up if needed
+</Info>
+
+<Accordion title="Overview">
+  **What it does:**
+
+  Allows you to create, approve, and track purchase orders—linking line items, quantities, prices, delivery dates, and payment terms to suppliers.
+
+  **Why it matters:**
+
+  - Ensures clear communication of requirements to vendors
+  - Reserves budget and inventory capacity
+  - Provides an audit trail from request through receipt and invoicing
+</Accordion>
+
+### 1.0 Open the Purchase Order Form
+
+1. Navigate to `Buying > Purchase Order > New Purchase Order.`
+2. The blank PO form appears with header fields and an empty Items table.
+
+### 2.0 Populate Header Details
+
+- **Supplier:** Select from your vendor list
+- **Order Date:** Defaults to today; change if back-dating
+- **Required By:** Desired delivery date
+- **Company:** Your legal entity (e.g., Charisma Industrial)
+- **Payment Terms Template:** Choose Net 30, Net 60, or custom terms
+
+<Note>
+  Define reusable “Payment Terms” templates under `Buying > Setup > Payment Terms.`
+</Note>
+
+### 3.0 Add Line Items
+
+1. In the **Items** table, click **Add Row** (or **Scan Barcode**).
+2. For each row:
+   - **Item Code:** Search or scan the item
+   - **Description:** Auto-fills from the item record (editable)
+   - **Qty:** Quantity you wish to order
+   - **UOM:** Unit of measure (e.g., Kilogram, Nos)
+   - **Rate:** Unit price (defaults from Item settings)
+   - **Warehouse:** Destination location for receipt
+   - **Cost Center:** (Optional) allocate cost to a department
+3. Repeat for all items needed.
+
+### 4.0 Save, Review & Submit
+
+1. Click **Save** to draft the PO.
+2. Verify totals, taxes, and budget availability.
+3. Click **Submit** to finalize.
+   - The PO number is assigned.
+   - Stock is reserved (if “Reserve Warehouse” is enabled).
+   - The PO becomes available for creating Purchase Receipts and Invoices.
+
+### 5.0 Amend, Cancel or Clone
+
+- **Amend:** Open a submitted PO, click `Actions > Amend`, make changes, and re-submit.
+- **Cancel:** If a PO is no longer needed, click **Cancel** in the header (creates a cancellation record).
+- **Clone:** Use `Actions > Clone` to create a new PO with the same items and terms.

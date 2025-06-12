@@ -110,24 +110,25 @@
            {
             "group": "Finance & Accounts",
             "pages": [
-              "core-features/finance-accounts/create-and-manage-chart-of-accounts",
-              "core-features/finance-accounts/profit-loss-statement",
+              "core-features/finance-accounts/introduction-to-finance-accounts",
+              "core-features/finance-accounts/chart-of-accounts",
+              "core-features/finance-accounts/profit-loss",
               "core-features/finance-accounts/balance-sheet",
-              "core-features/finance-accounts/cash-flow-statement",
+              "core-features/finance-accounts/cash-flow",
               "core-features/finance-accounts/trial-balance",
-              "core-features/finance-accounts/multi-dimensional-reporting-by-company-productline-etc.",
-              "core-features/finance-accounts/track-and-manage-inter-company-transactions",
-              "core-features/finance-accounts/multi-currency-support",
-              "core-features/finance-accounts/payment-scheduling-and-processing",
-              "core-features/finance-accounts/accounts-receivables",
-              "core-features/finance-accounts/account-payables",
-              "core-features/finance-accounts/purchase-orders",
-              "core-features/finance-accounts/bank-account-management",
+              "core-features/finance-accounts/dimensional-reports",
+              "core-features/finance-accounts/inter-company-transactions",
+              "core-features/finance-accounts/multi-currency",
+              "core-features/finance-accounts/payment-scheduling",
+              "core-features/finance-accounts/accounts-receivable",
+              "core-features/finance-accounts/accounts-payable",
+              "core-features/finance-accounts/PO-integration",
+              "core-features/finance-accounts/bank-management",
               "core-features/finance-accounts/general-ledger",
-              "core-features/finance-accounts/sales-tax-VAT-management",
-              "core-features/finance-accounts/withholding-tax-management",
-              "core-features/finance-accounts/audit-trail-for-all-financial-transactions",
-              "core-features/finance-accounts/audit-log-for-user-activities"
+              "core-features/finance-accounts/VAT-sales-tax",
+              "core-features/finance-accounts/withholding-tax",
+              "core-features/finance-accounts/transaction-audit-trail",
+              "core-features/finance-accounts/user-activity-log"
             ]
           }
         ]
@@ -138,7 +139,7 @@
           {
             "group": "Bill of Materials (BOM)",
             "pages": [
-              "manufacturing/introduction-to-bil-of-materials",
+              "manufacturing/introduction-to-bill-of-materials",
               "manufacturing/bill-of-materials-BOM/create-BOM",
               "manufacturing/bill-of-materials-BOM/edit-BOM",
               "manufacturing/bill-of-materials-BOM/delete-BOM",
