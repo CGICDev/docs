@@ -139,7 +139,7 @@
           {
             "group": "Bill of Materials (BOM)",
             "pages": [
-              "manufacturing/introduction-to-bill-of-materials",
+              "manufacturing/bill-of-materials-BOM/introduction-to-bill-of-materials",
               "manufacturing/bill-of-materials-BOM/create-BOM",
               "manufacturing/bill-of-materials-BOM/edit-BOM",
               "manufacturing/bill-of-materials-BOM/delete-BOM",
