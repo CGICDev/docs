@@ -179,7 +179,7 @@
               "manufacturing/production-planning/track-production-output-units-produced",
               "manufacturing/production-planning/calculate-costs",
               "manufacturing/production-planning/integrate-materials",
-              "manufacturing/production-planning/create-work-orders",
+              "manufacturing/production-planning/create-and-manage-work-orders",
               "manufacturing/production-planning/Link Work Orders to BOM",
               "manufacturing/production-planning/manage-work-orders-for-sub-assemblies",
               "manufacturing/production-planning/custom-orders",
