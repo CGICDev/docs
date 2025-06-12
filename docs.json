@@ -45,7 +45,7 @@
               "core-features/raw-materials/search-materials",
               "core-features/raw-materials/categorize-materials",
               "core-features/raw-materials/track-stock-levels",
-              "core-features/raw-materials/manage-material-suppliers",
+              "core-features/raw-materials/manage-raw-material-suppliers",
               "core-features/raw-materials/track-purchases",
               "core-features/raw-materials/set-reorder-points",
               "core-features/raw-materials/monitor-usage",
