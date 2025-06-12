@@ -70,8 +70,8 @@
               "core-features/suppliers/supplier-scorecards",
               "core-features/suppliers/payment-terms",
               "core-features/suppliers/track-supplier-payments",
-              "core-features/suppliers/rreconcile-payments",
-              "core-features/suppliers/Spend Analysisr",
+              "core-features/suppliers/reconcile-payments",
+              "core-features/suppliers/spend-analysis",
               "core-features/suppliers/manage-supplier-groups"
             ]
           },
