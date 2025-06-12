@@ -94,16 +94,17 @@
            {
             "group": "Procurement",
             "pages": [
-              "core-features/procurement/request-for-quotation-RFQ-creation-and-management",
-              "core-features/procurement/create-and-issue-purchase-orders",
-              "core-features/procurement/automated-purchase-order-generation-based-on-inventory-levels",
-              "core-features/procurement/PO-amendments-and-revisions",
-              "core-features/procurement/track-purchase-order-status-open-closed-pending",
-              "core-features/procurement/create-and-manage-material-requests",
-              "core-features/procurement/purchase-invoice",
-              "core-features/procurement/purchase-receipt",
-              "core-features/procurement/purchase-analytics",
-              "core-features/procurement/purchase-taxes-and-charges"
+              "core-features/procurement/introduction-to-procurement",
+              "core-features/procurement/manage-request-for-quotation",
+              "core-features/procurement/issue-purchase-orders",
+              "core-features/procurement/auto-purchase-order-generation",
+              "core-features/procurement/amend-purchase-orders",
+              "core-features/procurement/track-PO-status",
+              "core-features/procurement/handle-material-requests",
+              "core-features/procurement/record-purchase-invoices",
+              "core-features/procurement/process-purchase-receipts",
+              "core-features/procurement/analyze-purchases",
+              "core-features/procurement/manage-purchase-taxes"
             ]
            },
            {

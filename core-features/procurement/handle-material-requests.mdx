@@ -1,0 +1,54 @@
+---
+title: "Handle Material Requests"
+description: "Streamline internal requisitions by raising Material Requests (MRs) for raw materials, components, or finished goods—then track approvals and fulfillments all within the CGIC App."
+---
+
+<Info>
+  Prerequisites
+
+  - Warehouses are configured under `Stock > Warehouse`
+  - Items are defined under `Stock > Item > Item List `
+</Info>
+
+### 1.0 Create a New Material Request
+
+1. Navigate to `Stock > Material Request > New Material Request. `
+2. In the header, fill in:
+   - **Request Type**: _Material Transfer_ (internal) or _Purchase_ (external)
+   - **From Warehouse** (for transfers) or **Supplier** (for purchase)
+   - **Required By** date
+   - **Company**
+3. Click **Save** to draft the request.
+
+### 1.1 Add Requested Items
+
+1. In the **Items** table, click **Add Row**.
+2. For each line, enter:
+   - **Item Code**
+   - **Qty** needed
+   - **UOM**
+   - **Target Warehouse** (for stores) or **Delivery Address** (for purchase)
+3. Click **Save** to update the MR.
+
+### 1.3 Submit & Approve
+
+1. Click **Submit** to send the MR for approval.
+2. Approvers receive a notification; they can open the MR and click **Approve** or **Reject**.
+3. Once approved, the MR status changes to **Approved**.
+
+<Tip>
+  Configure approval workflows under `Stock > Setup > Approvals` to require multi-level sign-off.
+</Tip>
+
+### 2.0 Fulfill via Transfer
+
+1. After approval, click `Create > Stock Entry` from the MR.
+2. Select **Purpose = Material Transfer**.
+3. Verify **Source** and **Target** warehouses and quantities.
+4. Click **Submit** to move stock.
+
+### 2.1 Fulfill via Purchase
+
+1. After approval, click `Create > Purchase Order.`
+2. The PO is pre-populated with MR items.
+3. Review and **Submit** the PO to initiate procurement.
