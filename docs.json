@@ -158,7 +158,7 @@
             "pages": [
               "manufacturing/warehouse-management/introduction-to-warehouse-management",
               "manufacturing/warehouse-management/stock-level-tracking",
-              "manufacturing/warehouse-management/inbound-shipment-receiving",
+              "manufacturing/warehouse-management/manage-inbound-shipments-and-receiving",
               "manufacturing/warehouse-management/allocate-storage-locations",
               "manufacturing/warehouse-management/generate-picking-lists",
               "manufacturing/warehouse-management/manage-outbound-shipments",
