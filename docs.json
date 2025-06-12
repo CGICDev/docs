@@ -78,16 +78,17 @@
            {
             "group": "Customers",
             "pages": [
-              "core-features/customers/create-detailed-customer-profiles",
+              "core-features/customers/introduction-to-customers",
+              "core-features/customers/add-customer",
               "core-features/customers/update-customer",
-              "core-features/customers/view-customer-profile",
+              "core-features/customers/View Profile",
               "core-features/customers/delete-customer",
-              "core-features/customers/manage-customer-accounts",
-              "core-features/customers/customer-credit-balance",
-              "core-features/customers/quotations",
+              "core-features/customers/manage-accounts",
+              "core-features/customers/credit-balances",
+              "core-features/customers/create-quotations",
               "core-features/customers/manage-customer-groups",
-              "core-features/customers/customer-acquisition-reports",
-              "core-features/customers/customer-credit-and-payment-terms"
+              "core-features/customers/acquisition-reports",
+              "core-features/customers/credit-terms"
             ]
           },
            {

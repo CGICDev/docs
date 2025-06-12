@@ -1,0 +1,62 @@
+---
+title: "Manage Groups"
+description: "Organize your customer base into meaningful categories—streamlining segmentation, filtering, and reporting—by creating and maintaining Customer Groups in the CGIC App."
+---
+
+<Card title="Overview" icon="sparkles">
+  **What it does:**
+
+  - Defines named groups for customers (e.g., “Retail,” “Wholesale,” “Distributors,” “Key Accounts”)
+  - Enables assigning each customer to one or more groups
+  - Simplifies filtering, reporting, and applying group-level defaults (pricing, payment terms)
+</Card>
+
+<Info>
+  Prerequisites
+
+  - At least one customer record exists under `Selling > Customer`
+</Info>
+
+### 1.0 Create a New Customer Group
+
+1. Navigate to `Selling > Setup > Customer Group > New Customer Group `
+2. Fill in the form fields:
+   - **Group Name**: e.g., “Retail Customers”
+   - **Parent Group** (optional): choose a higher‐level category if you’re building a hierarchy
+   - **Description** (optional): notes on the group’s purpose or criteria
+3. Click **Save**
+
+<Tip>
+  Use intuitive names (e.g., “Enterprise Clients,” “Online Shoppers”) so that reporting and filtering are self-explanatory.
+</Tip>
+
+### 1.1 Edit or Rename an Existing Group
+
+1. Go to `Selling > Setup > Customer Group > Customer Group List `
+2. Click the name of the group you want to modify
+3. Click **Edit**, update fields (Name, Parent Group, Description), then **Save**
+
+<Warning>
+  Renaming a group does not affect historical reports, but it will immediately reflect in any active filters or dashboards.
+</Warning>
+
+### 1.2 Assign Customers to a Group
+
+1. Navigate to `Selling > Customer > Customer List`
+2. Click on a customer’s **Name** to open the record
+3. In the **Customer Details** section, find **Customer Group**
+4. Select one or more groups from the dropdown (use Ctrl/Cmd-click for multiple selections)
+5. Click **Save**
+
+<Tip>
+  To assign multiple customers at once, use `Tools > Data Import` and update the “Customer Group” column in the CSV template.
+</Tip>
+
+### 1.3 Deactivate or Delete a Customer Group
+
+1. Access `Selling > Setup > Customer Group > Customer Group List`
+2. Click the group you wish to retire
+3. To deactivate (soft delete), check **Disabled** and click **Save**—this preserves historical assignments but prevents new use
+4. To permanently delete (hard delete), ensure no active customers remain in that group, then click `Actions > Delete` and confirm
+
+> Effectively managing Customer Groups in the CGIC App helps you segment your client base, apply consistent settings, and produce focused reports—empowering your sales, marketing, and finance teams to make better decisions and deliver tailored service.
