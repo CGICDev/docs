@@ -62,15 +62,16 @@
            {
             "group": "Suppliers",
             "pages": [
-              "core-features/suppliers/create-add-new-suppliers",
-              "core-features/suppliers/update-supplier-records",
-              "core-features/suppliers/search-supplier-records",
-              "core-features/suppliers/supplier-information-management-inc.-banks",
-              "core-features/suppliers/supplier-score-cards-creation-and-management",
-              "core-features/suppliers/manage-payment-terms-and-schedules-for-suppliers",
-              "core-features/suppliers/process-and-track-supplier-payments",
-              "core-features/suppliers/reconcile-payments-against-supplier-invoices-and-orders",
-              "core-features/suppliers/spend-analysis-by-supplier",
+              "core-features/suppliers/introduction-to-suppliers",
+              "core-features/suppliers/add-supplier",
+              "core-features/suppliers/edit-supplier",
+              "core-features/suppliers/search-suppliers",
+              "core-features/suppliers/manage-supplier-info",
+              "core-features/suppliers/supplier-scorecards",
+              "core-features/suppliers/payment-terms",
+              "core-features/suppliers/track-supplier-payments",
+              "core-features/suppliers/rreconcile-payments",
+              "core-features/suppliers/Spend Analysisr",
               "core-features/suppliers/manage-supplier-groups"
             ]
           },
@@ -226,7 +227,7 @@
           {
             "group": "Employee Management",
             "pages": [
-              "hr/employee-management/aintroduction-to-employee-management",
+              "hr/employee-management/introduction-to-employee-management",
               "hr/employee-management/add-employee",
               "hr/employee-management/update-employee",
               "hr/employee-management/view-profile",
