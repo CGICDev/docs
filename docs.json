@@ -139,7 +139,7 @@
           {
             "group": "Bill of Materials (BOM)",
             "pages": [
-              "manufacturing/bill-of-materials-BOM/introduction-to-bill-of-materials",
+              "manufacturing/bill-of-materials-BOM/introduction-to-bil-of-materials",
               "manufacturing/bill-of-materials-BOM/create-BOM",
               "manufacturing/bill-of-materials-BOM/edit-BOM",
               "manufacturing/bill-of-materials-BOM/delete-BOM",
@@ -184,7 +184,7 @@
               "manufacturing/production-planning/calculate-costs",
               "manufacturing/production-planning/integrate-materials",
               "manufacturing/production-planning/create-and-manage-work-orders",
-              "manufacturing/production-planning/Link Work Orders to BOM",
+              "manufacturing/production-planning/link-work-orders-to-BOM",
               "manufacturing/production-planning/manage-work-orders-for-sub-assemblies",
               "manufacturing/production-planning/custom-orders",
               "manufacturing/production-planning/generate-production-reports",
