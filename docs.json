@@ -264,14 +264,14 @@
           "icon": "globe"
         },
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
+          "anchor": "Brands",
+          "href": "https://charismaindustrial.com/#our-brands",
+          "icon": "heart"
         },
         {
           "anchor": "Blog",
           "href": "https://charismaindustrial.com/news-blog/",
-          "icon": "circle-user"
+          "icon": "rss"
         }
       ]
     }
