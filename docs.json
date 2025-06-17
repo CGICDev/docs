@@ -259,9 +259,9 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Website",
+          "href": "https://charismaindustrial.com/",
+          "icon": "globe"
         },
         {
           "anchor": "Community",
@@ -270,7 +270,7 @@
         },
         {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "href": "https://charismaindustrial.com/news-blog/",
           "icon": "circle-user"
         }
       ]
