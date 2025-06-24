@@ -86,7 +86,7 @@
               "core-features/customers/manage-accounts",
               "core-features/customers/credit-balances",
               "core-features/customers/create-quotations",
-              "core-features/customers/manage-customer-groups",
+              "core-features/customers/manage-groups",
               "core-features/customers/acquisition-reports",
               "core-features/customers/credit-terms"
             ]
