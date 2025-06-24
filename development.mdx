@@ -1,111 +1,82 @@
 ---
-title: "Development"
-description: "Preview changes locally to update your docs"
+title: "Core Concepts"
+description: "Become familiar with the key entities and terminology used throughout the CGIC App"
 ---
 
-<Info>
-  **Prerequisite**: Please install Node.js (version 19 or higher) before proceeding. \\
+**Warehouse**\
+A Warehouse is a logical or physical location where stock is stored; every receipt, shipment, and transfer is recorded against a specific warehouse to give you real-time visibility into inventory levels and movements.
 
-  Please upgrade to `docs.json` before proceeding and delete the legacy `mint.json` file.
-</Info>
+/\
+Stock ▶️ Warehouse
 
-Follow these steps to install and run Mintlify on your operating system:
+**Cost Center**\
+A Cost Center lets you tag transactions to business units (departments, projects, or regions), aligning expenses and revenues with how your company actually operates—whether by product line, facility, or service offering.\
+Accounting ▶️ Chart of Cost Centers
 
-**Step 1**: Install Mintlify:
+**User Role**\
+A User Role bundles permissions that control what features and data a user can access—such as System Manager, Accounts Manager, or Warehouse User—ensuring each team member sees only what they need.\
+Setup ▶️ Role
 
-<CodeGroup>
+**Customer**\
+A Customer can be an individual or organization that buys your products or services; profiles store contact details, billing/shipping addresses, credit terms, and purchase history for accurate order management.\
+Sales ▶️ Customer
 
-```bash npm
-npm i -g mintlify
-```
+**Supplier**\
+A Supplier is any entity that provides goods or services—raw materials, packaging, or maintenance; supplier records capture contacts, payment terms, lead times, and performance metrics.\
+Buying ▶️ Supplier
 
+**Item**\
+An Item is a product, sub-assembly, raw material, or service that CGIC buys, sells, or manufactures; each Item has a unique code, default unit of measure, and can be grouped for reporting and pricing.\
+Stock ▶️ Item
 
-```bash yarn
-yarn global add mintlify
-```
+**Account**\
+An Account is a ledger heading—such as “Cash,” “Sales,” or “Travel Expense”—under which financial transactions post; the CGIC App manages your customers’ and suppliers’ balances automatically, so you only configure truly standalone accounts.\
+Accounting ▶️ Chart of Accounts
 
-</CodeGroup>
+**Fiscal Year**\
+A Fiscal Year defines your accounting period (e.g., Jan–Dec); transactions can only be recorded within open years, and closing one rolls balances into the next as opening balances.\
+Setup ▶️ Company ▶️ Fiscal Year
 
-**Step 2**: Navigate to the docs directory (where the `docs.json` file is located) and execute the following command:
+**Journal Entry**\
+A Journal Entry records one or more General Ledger lines whose debits and credits net to zero, letting you adjust balances, record manual entries, or correct postings behind the scenes.\
+Accounting ▶️ Journal Entry
 
-```bash
-mintlify dev
-```
+**Sales Invoice**\
+A Sales Invoice is the bill you send to a Customer once goods or services are delivered; it records revenue, applies taxes, and creates an Accounts Receivable balance.\
+Accounting ▶️ Sales Invoice
 
-A local preview of your documentation will be available at `http://localhost:3000`.
+**Purchase Invoice**\
+A Purchase Invoice is the bill you receive from a Supplier for delivered items or services; it logs expenses, taxes, and creates an Accounts Payable liability.\
+Accounting ▶️ Purchase Invoice
 
-### Custom Ports
+**Material Request**\
+A Material Request is an internal requisition for raw materials or parts—either manually created by users or auto-generated when stock falls below reorder levels—serving as the first step in your procurement workflow.\
+Procurement ▶️ Material Request
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. To run Mintlify on port 3333, for instance, use this command:
+**Bill of Materials (BOM)**\
+A BOM lists all components, quantities, and operations needed to build a finished or semi-finished product, driving material planning, costing, and work order generation.\
+Production ▶️ Bill of Materials
 
-```bash
-mintlify dev --port 3333
-```
+**Work Order**\
+A Work Order is a production instruction derived from a BOM, specifying the quantity to manufacture, the operations to perform, and the resources to consume on your shop floor.\
+Production ▶️ Work Order
 
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
+**Stock Entry**\
+A Stock Entry records any movement of inventory—receipt, issue, or transfer—updating warehouse balances and triggering stock valuation adjustments in real time.\
+Stock ▶️ Stock Entry
 
-```md
-Port 3000 is already in use. Trying 3001 instead.
-```
+**Purchase Receipt & Delivery Note**\
+A Purchase Receipt confirms goods received from a Supplier (against a PO), and a Delivery Note confirms goods shipped to a Customer (against a Sales Order); both adjust stock levels and link back to their originating documents.\
+Stock ▶️ Purchase Receipt / Delivery Note
 
-## Mintlify Versions
+**Quality Inspection**\
+A Quality Inspection captures test results for an Item at receipt or before delivery, allowing you to accept or reject batches based on defined quality parameters.\
+Stock ▶️ Quality Inspection
 
-Please note that each CLI release is associated with a specific version of Mintlify. If your local website doesn't align with the production version, please update the CLI:
+**Currency**\
+The CGIC App supports multi-currency transactions—converting foreign amounts to your company’s base currency at specified exchange rates—while maintaining the flexibility to report and transact in local terms.\
+Setup ▶️ Currency
 
-<CodeGroup>
-
-```bash npm
-npm i -g mintlify@latest
-```
-
-
-```bash yarn
-yarn global upgrade mintlify
-```
-
-</CodeGroup>
-
-## Validating Links
-
-The CLI can assist with validating reference links made in your documentation. To identify any broken links, use the following command:
-
-```bash
-mintlify broken-links
-```
-
-## Deployment
-
-<Tip>
-  Unlimited editors available under the [Pro
-  Plan](https://mintlify.com/pricing) and above.
-</Tip>
-
-If the deployment is successful, you should see the following:
-
-<Frame>
-  <img
-    src="/images/checks-passed.png"
-    style={{ borderRadius:"0.5rem" }}
-  />
-</Frame>
-
-## Code Formatting
-
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
-    This may be due to an outdated version of node. Try the following:
-
-    1. Remove the currently-installed version of mintlify: `npm remove -g mintlify`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall mintlify: `npm install -g mintlify`
-  </Accordion>
-  <Accordion title="Issue: Encountering an unknown error">
-    Solution: Go to the root of your device and delete the ~/.mintlify folder. Afterwards, run `mintlify dev` again.
-  </Accordion>
-</AccordionGroup>
-
-Curious about what changed in the CLI version? [Check out the CLI changelog.](https://www.npmjs.com/package/mintlify?activeTab=versions)
+**Print Format & Terms**\
+Print Formats and Terms & Conditions let you customize how documents (Quotations, Invoices, POs) look and the legal text they include, ensuring consistent branding and compliance.\
+Setup ▶️ Branding and Printing / Terms and Conditions
