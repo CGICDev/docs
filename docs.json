@@ -81,7 +81,7 @@
               "core-features/customers/introduction-to-customers",
               "core-features/customers/add-customer",
               "core-features/customers/update-customer",
-              "core-features/customers/View Profile",
+              "core-features/customers/view-profile",
               "core-features/customers/delete-customer",
               "core-features/customers/manage-accounts",
               "core-features/customers/credit-balances",
