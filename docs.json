@@ -157,7 +157,8 @@
               "manufacturing/bill-of-materials-BOM/estimate-production-costs",
               "manufacturing/bill-of-materials-BOM/calculate-material-requirements",
               "manufacturing/bill-of-materials-BOM/monitor-material-availability",
-              "manufacturing/bill-of-materials-BOM/generate-BOM-reports"
+              "manufacturing/bill-of-materials-BOM/generate-BOM-reports",
+              "manufacturing/bill-of-materials-BOM/item-alternative"
             ]
           },
           {
