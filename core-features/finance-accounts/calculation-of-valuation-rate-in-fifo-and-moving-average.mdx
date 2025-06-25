@@ -1,0 +1,50 @@
+---
+title: "FIFO/LIFO and Moving Average calculation difference "
+description: "Valuation Rate of an item is calculated based on the total expense incurred to make the product available for sale like freight, labour, cost of raw materials, etc."
+---
+
+When you receive and sell inventory, the **Valuation Rate** determines how much cost you recognize. In the CGIC App you can choose one of three methods under **Stock Settings** on each Item:
+
+- **FIFO (First-In, First-Out)**
+- **LIFO (Last-In, First-Out)**
+- **Moving Average**
+
+Consider these transactions:
+
+| Date       | Transaction | Qty | Unit Cost |
+| :--------- | :---------- | :-- | :-------- |
+| 2020-04-01 | Purchase    | 10  | 100       |
+| 2020-04-06 | Purchase    | 10  | 120       |
+| 2020-04-10 | Sale        | 15  | ?         |
+
+### 1.0 FIFO
+
+With FIFO, you consume oldest stock first:
+
+- Take 10 @ 100 and 5 @ 120
+- **Consumed Value** = (10×100) \+ (5×120) = 1,600
+- Remaining 5 @ 120 → **Balance Value** = 600
+
+### 1.1 LIFO
+
+With LIFO, you consume newest stock first:
+
+- Take 10 @ 120 and 5 @ 100
+- **Consumed Value** = (10×120) \+ (5×100) = 1,700
+- Remaining 5 @ 100 → **Balance Value** = 500
+
+### 1.2 Moving Average
+
+With Moving Average, you recalculate the average cost on each receipt:
+
+- New average = ((10×100) \+ (10×120)) ÷ 20 = 110
+- Sale of 15 × 110 = 1,650 → **Consumed Value** = 1,650
+- Remaining 5 × 110 → **Balance Value** = 550
+
+| Method             | Consumed Value | Balance Value | Total Value |
+| :----------------- | :------------- | :------------ | :---------- |
+| **FIFO**           | 1,600          | 600           | 2,200       |
+| **LIFO**           | 1,700          | 500           | 2,200       |
+| **Moving Average** | 1,650          | 550           | 2,200       |
+
+Each method impacts your Cost of Goods Sold and inventory valuation differently—choose the one that best aligns with your financial strategy and inventory flow.

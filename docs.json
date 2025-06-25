@@ -130,7 +130,8 @@
               "core-features/finance-accounts/VAT-sales-tax",
               "core-features/finance-accounts/withholding-tax",
               "core-features/finance-accounts/transaction-audit-trail",
-              "core-features/finance-accounts/user-activity-log"
+              "core-features/finance-accounts/user-activity-log",
+              "core-features/finance-accounts/calculation-of-valuation-rate-in-fifo-and-moving-average"
             ]
           }
         ]
