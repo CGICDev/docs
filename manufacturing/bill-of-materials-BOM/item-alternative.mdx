@@ -1,0 +1,45 @@
+---
+title: "Item Alternative "
+description: "Item Alternatives let you specify substitute materials for production—so if a raw material in your BOM is out of stock, you can seamlessly use its alternative to keep manufacturing on track."
+---
+
+### 1.0 Enable Item Alternatives
+
+1. **Activate on Item**
+   - Open `Stock > Item List`, select your raw material, and tick **Allow Alternative Item**.
+2. **Access Alternatives**
+   - Go to `Stock > Item Alternative` or click **\+ Item Alternative** on the Item form.
+
+![Screenshot2025 06 25at9 35 59AM Pn](/images/Screenshot2025-06-25at9.35.59AM.png)
+
+<Info>
+  **Prerequisites**
+
+  - The original **Item** and its **Alternative Item** must both exist in the system.
+  - **Allow Alternative Item** enabled on each Item record.
+</Info>
+
+### 2.0 Using Alternatives in a BOM
+
+1. **Edit BOM**
+   - In `Manufacturing > Bill of Materials`, open your BOM and tick **Allow Alternative Item**.
+2. **Select Alternate**
+   - During **Stock Entry** for production, click **Alternate Item** and choose the substitute material.
+
+### 3.0 Using Alternatives in a Work Order
+
+1. **Open Work Order**
+   - In `Manufacturing > Work Order`, tick **Allow Alternative Item** at the top.
+2. **Assign Substitute**
+   - Click the **Alternate Item** button beside a component line to pick its alternative before issuing materials.
+
+### 4.0 Using Alternatives for Subcontracting
+
+When sending raw materials to a subcontractor:
+
+1. **Create Stock Entry**
+   - Under `Stock > Stock Entry`, choose **Subcontract** and tick **Allow Alternative Item**.
+2. **Transfer Alternate**
+   - Select the alternative raw material if the primary one is unavailable.
+3. **Receive Finished Goods**
+   - On **Purchase Receipt** against the Work Order, the system will automatically show the finished item produced using the alternative.
